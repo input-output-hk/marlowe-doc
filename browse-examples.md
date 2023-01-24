@@ -1,120 +1,108 @@
 # Browse examples
 
-
-> NOTE 
+> ### Note
 > 
-> This page is a super rough working document in progress 
-> meant for organizing and sorting information. 
+> In this draft we have a super abundance of examples. 
 > 
-> First goal is to get complete list of all examples we want to show. 
+
+> ### Question for reviewers
 > 
-> Then start working on how to effectively organize and present. 
+> Rather than list all of them, which ones would be best to highlight to demonstrate key expressive abilities of Marlowe?  
+> 
 
-## From the marlowe-cardano/marlowe-cli folder
+- [Very basic contract example](#very_basic_contract_example)
+- [Basic contract examples](#basic_contract_examples)
+- [Intermediate contract example](#intermediate_contract_example)
+- [More Marlowe contract examples](#more_marlowe_contract_examples)
+- [Marlowe Runtime examples](#marlowe_runtime_examples)
+- [Marlowe CLI cookbook examples](#marlowe-cli_cookbook_examples)
+- [Marlowe CLI tool examples](#marlowe_cli_tool_examples)
 
-### Very basic
+## Very basic contract example {#very_basic_contract_example}
 
-[Test of a Simple Contract](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/simple/ReadMe.md) 
+| Example | Description | URL |
+| --- | --- | --- |
+| Test of a Simple Contract | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/simple/ReadMe.md | 
 
-### Basic
+## Basic contract examples {#basic_contract_examples}
 
-[Test of a Simple Contract](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/simpleSelcoins/ReadMe.md)
+| Example | Description | URL |
+| --- | --- | --- |
+| Test of a Simple Contract | A very basic example of a smart contract | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/simple/ReadMe.md |
+| Test of a Contract for Differences | An example of a contract for differences | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/cfd/ReadMe.md |
+| Test of a Covered Call Contract | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/coveredCall/ReadMe.md | 
+| Example Escrow Contract | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/escrow/ReadMe.md |
+| Example Escrow Contract | Everything is alright | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/escrow/everything-is-alright.md | 
+| Example Escrow Contract | Confirm Problem | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/escrow/confirm-problem.md | 
+| Example Escrow Contract | Dismiss Claim | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/escrow/dismiss-claim.md |
+| Example Escrow Contract | Confirm Claim | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/escrow/confirm-claim.md |
+| Test of a Swap Contract | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/swap/ReadMe.md |
+| Test of a Zero-Coupon Bond | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/zcb/ReadMe.md | 
 
-[Test of a Contract for Differences](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/cfd/ReadMe.md)
+## Intermediate contract example {#intermediate_contract_example}
 
-[Test of a Covered Call Contract](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/coveredCall/ReadMe.md)
+| Example | Description | URL |
+| --- | --- | --- |
+| Test of an ACTUS Contract (Zero-Coupon Bond) | Description goes here | https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-cli/examples/actus | 
 
-[Example Escrow Contract](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/escrow/ReadMe.md)
+## More Marlowe contract examples {#more_marlowe_contract_examples}
 
-[Example Escrow Contract: "Confirm Claim"](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/escrow/confirm-claim.md)
+| Example | Description | URL |
+| --- | --- | --- |
+| Unsure of name | `module Marlowe.Contracts.Common` | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-contracts/src/Marlowe/Contracts/Common.hs |
+| Unsure of name | `module Marlowe.Contracts.Escrow` | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-contracts/src/Marlowe/Contracts/Escrow.hs |
+| A forward contract | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-contracts/src/Marlowe/Contracts/Forward.hs |
+| A Future | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-contracts/src/Marlowe/Contracts/Futures.hs | 
+| An option | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-contracts/src/Marlowe/Contracts/Options.hs |
+| Structured Products | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-contracts/src/Marlowe/Contracts/StructuredProducts.hs | 
+| Swap tokens between two parties | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-contracts/src/Marlowe/Contracts/Swap.hs | 
+| A trivial contract | For testing | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-contracts/src/Marlowe/Contracts/Trivial.hs | 
+| A zero-coupon bond | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-contracts/src/Marlowe/Contracts/ZeroCouponBond.hs | 
 
-[Example Escrow Contract: "Confirm Problem"](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/escrow/confirm-problem.md)
+## Marlowe Runtime examples {#marlowe_runtime_examples}
 
-[Example Escrow Contract: "Dismiss Claim"](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/escrow/dismiss-claim.md)
+| Example | Description | URL |
+| --- | --- | --- |
+| Marlowe create | Demonstrating the Marlowe transaction creation component of Marlowe Runtime | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/create.ipynb | 
+| Marlowe advance | Demonstrating the Marlowe transaction deposit component of Marlowe Runtime | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/advance.ipynb | 
+| Marlowe deposit | Demonstrating the Marlowe transaction deposit component of Marlowe Runtime | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/deposit.ipynb | 
+| Marlowe choose | Demonstrating the Marlowe transaction choose component of Marlowe Runtime | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/choose.ipynb | 
+| Marlowe notify | Demonstrating the Marlowe transaction notify component of Marlowe Runtime | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/notify.ipynb | 
+| `marlowe ls` and `marlowe log` | Demonstrating the Marlowe history component of Marlowe Runtime | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/history.ipynb | 
+| `marlowe submit` | Demonstrating the Marlowe transaction submit component of Marlowe Runtime | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/submit.ipynb | 
+| Closing a contract | Close contract on mainnet using Marlowe Runtime | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/runtime-close.ipynb | 
+| Use of role tokens | Demonstrating the Marlowe transaction deposit component of Marlowe Runtime using role tokens | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/roles.ipynb | 
+| A token-bidding contract | Demonstration of Marlowe Runtime capabilities | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/token-bid.ipynb | 
 
-[Example Escrow Contract: "Everything is alright"](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/escrow/everything-is-alright.md)
+## Marlowe CLI cookbook examples {#marlowe_cli_cookbook_examples}
 
-[Test of a Swap Contract](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/swap/ReadMe.md)
+| Example | Description | URL |
+| --- | --- | --- |
+| Using Djed in Marlowe Contracts | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/payment-using-djed.ipynb | 
+| Simple Marlowe Contract for a Token Airdrop | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/token-drop.ipynb |
+| Revenue-Based Loan in Marlowe | Description goes here. There is also a [video](https://vimeo.com/726500312/f90fd85ed7) showing the [contract](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/revenue-based-loan.hs) being run in the Marlowe Playground. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/revenue-based-loan.ipynb | 
+| English Auction | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/english-auction.ipynb |
+| Collective Loan in Marlowe | Description goes here. There is also a [video](https://vimeo.com/735889853/10601168e4) walking through this example in Marlowe Playground and on the Marlowe testnet. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/collective-loan.ipynb | 
+| Collective Loan in Marlowe with 30 Lenders and 70 Borrowers | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/collective-loan-30-70.ipynb |
+| Stabilized Collective Loan in Marlowe | Failure Due to Protocol Limits | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/stabilized-collective-loan-failure.ipynb |
+| Stabilized Collective Loan in Marlowe | Working around Protocol Limits | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/stabilized-collective-loan-success.ipynb |
+| Marlowe Contract for Guessing Game | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/guessing-game.ipynb |
+| Test of a Swap Contract | Description goes here. Is this a duplicate of an example listed above? | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/swap.ipynb |
+| Test of a Zero-Coupon Bond | Description goes here. Is this a duplicate of an example listed above? | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/zcb.ipynb | 
+| Simple Marlowe Transactions in the Babbage Era | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/simple-babbage.ipynb |
+| Running Marlowe with a Reference Script | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/reference-script.ipynb |
+| First Marlowe Using Plutus V2 on Mainnet | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/marlowe-1st-plutusv2.ipynb |
+| Marlowe "Swap" Contract Run on Mainnet Using a Reference Script | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/marlowe-1st-reference-script.ipynb |
+| Coupon-Bond Guaranteed on Mainnet with Reference Scripts | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/coupon-bond-guaranteed.ipynb | 
+| A Geo-Located Smart Contract Using Cardano Beam and Marlowe | Description goes here. See also: [Video](https://youtu.be/DmkYen0eaV0) | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/beamer.ipynb | 
 
-[Test of a Zero-Coupon Bond](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/zcb/ReadMe.md)
+## Marlowe CLI tool examples {#marlowe_cli_tool_examples}
 
-### Intermediate
-
-[Test of an ACTUS Contract (Zero-Coupon Bond)](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-cli/examples/actus)
-
-### Marlowe-cli cookbook examples
-
-[Cookbook of miscellaneous contracts](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-cli/cookbook)
-
-* [Using Djed in Marlowe Contracts](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/payment-using-djed.ipynb)
-
-* [Simple Marlowe Contract for a Token Airdrop](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/token-drop.ipynb)
-
-* [Revenue-Based Loan in Marlowe](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/revenue-based-loan.ipynb) -- There is also a [video](https://vimeo.com/726500312/f90fd85ed7) showing the [contract](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/revenue-based-loan.hs) being run in the Marlowe Playground. 
-
-* [English Auction](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/english-auction.ipynb)
-
-* [Collective Loan in Marlowe](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/collective-loan.ipynb) -- There is also a [video](https://vimeo.com/735889853/10601168e4) walking through this example in Marlowe Playground and on the Marlowe testnet. 
-
-* [Collective Loan in Marlowe with 30 Lenders and 70 Borrowers](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/collective-loan-30-70.ipynb)
-
-* [Stabilized Collective Loan in Marlowe: Failure Due to Protocol Limits](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/stabilized-collective-loan-failure.ipynb)
-
-* [Stabilized Collective Loan in Marlowe: Working around Protocol Limits](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/stabilized-collective-loan-success.ipynb)
-
-* [Marlowe Contract for Guessing Game](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/guessing-game.ipynb)
-
-* [Test of a Swap Contract](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/swap.ipynb) -- is this a duplicate of an example listed above? 
-
-* [Test of a Zero-Coupon Bond](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/zcb.ipynb) -- is this a duplicate of an example listed above? 
-
-* [Simple Marlowe Transactions in the Babbage Era](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/simple-babbage.ipynb)
-
-* [Running Marlowe with a Reference Script](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/reference-script.ipynb)
-
-* [First Marlowe Using Plutus V2 on Mainnet](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/marlowe-1st-plutusv2.ipynb)
-
-* [Marlowe "Swap" Contract Run on Mainnet Using a Reference Script](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/marlowe-1st-reference-script.ipynb)
-
-* [Coupon-Bond Guaranteed on Mainnet with Reference Scripts](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/coupon-bond-guaranteed.ipynb)
-
-* [A Geo-Located Smart Contract Using Cardano Beam and Marlowe](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/beamer.ipynb) -- [video](https://youtu.be/DmkYen0eaV0)
-
-## From the marlowe-cardano/marlowe-runtime folder
-
-[Miscellaneous Examples for Marlowe Runtime](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/ReadMe.md)
-
-* [Marlowe create](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/create.ipynb) Demonstrating the Marlowe Transaction Creation Component of Marlowe Runtime
-
-* [Marlowe advance](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/advance.ipynb) Demonstrating the Marlowe Transaction Deposit Component of Marlowe Runtime
-
-* [Marlowe deposit](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/deposit.ipynb) Demonstrating the Marlowe Transaction Deposit Component of Marlowe Runtime
-
-* [Marlowe choose](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/choose.ipynb) Demonstrating the Marlowe Transaction Choose Component of Marlowe Runtime
-
-* [Marlowe notify](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/notify.ipynb) Demonstrating the Marlowe Transaction Notify Component of Marlowe Runtime
-
-* [marlowe ls and marlowe log](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/history.ipynb) Demonstrating the Marlowe History Component of Marlowe Runtime
-
-* [marlowe submit](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/submit.ipynb) Demonstrating the Marlowe Transaction Submit Component of Marlowe Runtime
-
-* [Closing a contract](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/runtime-close.ipynb) Close Contract on Mainnet Using Marlowe Runtime
-
-* [Use of role tokens](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/roles.ipynb) Demonstrating the Marlowe Transaction Deposit Component of Marlowe Runtime Using Role Tokens
-
-* [A token-bidding contract](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/token-bid.ipynb) Demonstration of Marlowe Runtime Capabilities
-
-## Examples for Marlowe CLI tool
-
-* [Simple contract](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/simple/ReadMe.md)
-
-* [Escrow](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/escrow/ReadMe.md)
-
-* [Swap](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/swap/ReadMe.md)
-
-* [Zero-coupon bond](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/zcb/ReadMe.md)
-
-* [Contract for differences](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/cfd/ReadMe.md)
-
-* [Covered call](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/coveredCall/ReadMe.md)
-
+| Example | Description | URL |
+| --- | --- | --- |
+| Simple contract | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/simple/ReadMe.md | 
+| Escrow | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/escrow/ReadMe.md | 
+| Swap | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/swap/ReadMe.md | 
+| Zero-coupon bond | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/zcb/ReadMe.md | 
+| Contract for differences | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/cfd/ReadMe.md | 
+| Covered call | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/coveredCall/ReadMe.md | 
