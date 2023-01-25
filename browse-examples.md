@@ -2,29 +2,49 @@
 
 > ### Note
 > 
-> In this draft we have a super abundance of examples. 
+> * In this draft we have a super abundance of examples. 
 > 
 
 > ### Question for reviewers
 > 
-> Rather than list all of them, which ones would be best to highlight to demonstrate key expressive abilities of Marlowe?  
+> * Rather than list all of them, which ones would be best to highlight to demonstrate key expressive abilities of Marlowe?  
+> 
+> ### To Do
+> 
+> * Add brief insightful descriptions for all examples. 
+> 
+> * Consider moving some examples to a subsidiary page once we've reached more consensus on which examples to include. 
+> 
+> * Check for duplicates. 
 > 
 
-- [Very basic contract example](#very_basic_contract_example)
-- [Basic contract examples](#basic_contract_examples)
-- [Intermediate contract example](#intermediate_contract_example)
-- [More Marlowe contract examples](#more_marlowe_contract_examples)
-- [Marlowe Runtime examples](#marlowe_runtime_examples)
-- [Marlowe CLI cookbook examples](#marlowe-cli_cookbook_examples)
-- [Marlowe CLI tool examples](#marlowe_cli_tool_examples)
+## Introduction
 
-## Very basic contract example {#very_basic_contract_example}
+> ### To Do 
+> 
+> Write an overall introduction to the Marlowe examples to put them in context for the intended audience. 
+
+## Current grouping of examples -- will come up with more effective way to organization them
+
+- [Very basic contract example](#very-basic-contract-example)
+- [Basic contract examples](#basic-contract-examples)
+- [Intermediate contract example](#intermediate-contract-example)
+- [More Marlowe contract examples](#more-marlowe-contract-examples)
+- [Marlowe Runtime examples](#marlowe-runtime-examples)
+- [Marlowe CLI cookbook examples](#marlowe-cli-cookbook-examples)
+- [Marlowe CLI tool examples](#marlowe-cli-tool-examples)
+
+## Very basic contract example
+
+<a name="very-basic-contract-example"></a>
 
 | Example | Description | URL |
 | --- | --- | --- |
 | Test of a Simple Contract | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/simple/ReadMe.md | 
 
-## Basic contract examples {#basic_contract_examples}
+## Basic contract examples
+
+<a name="basic-contract-examples"></a>
 
 | Example | Description | URL |
 | --- | --- | --- |
@@ -39,13 +59,17 @@
 | Test of a Swap Contract | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/swap/ReadMe.md |
 | Test of a Zero-Coupon Bond | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/zcb/ReadMe.md | 
 
-## Intermediate contract example {#intermediate_contract_example}
+## Intermediate contract example
+
+<a name="intermediate-contract-examples"></a>
 
 | Example | Description | URL |
 | --- | --- | --- |
 | Test of an ACTUS Contract (Zero-Coupon Bond) | Description goes here | https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-cli/examples/actus | 
 
-## More Marlowe contract examples {#more_marlowe_contract_examples}
+## More Marlowe contract examples
+
+<a name="more-marlowe-contract-examples"></a>
 
 | Example | Description | URL |
 | --- | --- | --- |
@@ -59,7 +83,9 @@
 | A trivial contract | For testing | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-contracts/src/Marlowe/Contracts/Trivial.hs | 
 | A zero-coupon bond | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-contracts/src/Marlowe/Contracts/ZeroCouponBond.hs | 
 
-## Marlowe Runtime examples {#marlowe_runtime_examples}
+## Marlowe Runtime examples
+
+<a name="marlowe-runtime-examples"></a>
 
 | Example | Description | URL |
 | --- | --- | --- |
@@ -74,7 +100,9 @@
 | Use of role tokens | Demonstrating the Marlowe transaction deposit component of Marlowe Runtime using role tokens | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/roles.ipynb | 
 | A token-bidding contract | Demonstration of Marlowe Runtime capabilities | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/token-bid.ipynb | 
 
-## Marlowe CLI cookbook examples {#marlowe_cli_cookbook_examples}
+## Marlowe CLI cookbook examples
+
+<a name="marlowe-cli-cookbook-examples"></a>
 
 | Example | Description | URL |
 | --- | --- | --- |
@@ -96,7 +124,9 @@
 | Coupon-Bond Guaranteed on Mainnet with Reference Scripts | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/coupon-bond-guaranteed.ipynb | 
 | A Geo-Located Smart Contract Using Cardano Beam and Marlowe | Description goes here. See also: [Video](https://youtu.be/DmkYen0eaV0) | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/beamer.ipynb | 
 
-## Marlowe CLI tool examples {#marlowe_cli_tool_examples}
+## Marlowe CLI tool examples
+
+<a name="marlowe-cli-tool-examples"></a>
 
 | Example | Description | URL |
 | --- | --- | --- |
