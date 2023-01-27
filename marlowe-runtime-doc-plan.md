@@ -60,11 +60,7 @@ For planning purposes, this document lists the .md and .ipynb files found in the
 
 | Document | Description | URL |
 | --- | --- | --- |
-| Chain Seek Daemon | The `chainseekd` executable provides services for querying the blockchain for information that may relate to Marlowe contracts. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/chainseekd.md | 
-
-### Topics included
-
-* Lists available commands
+| chainseekd.md | The `chainseekd` executable provides services for querying the blockchain for information that may relate to Marlowe contracts. <br> - Lists available commands.| https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/chainseekd.md | 
 
 ------
 ------
@@ -73,7 +69,7 @@ For planning purposes, this document lists the .md and .ipynb files found in the
 
 | Document | Description | URL |
 | --- | --- | --- |
-| Deploying Marlowe Runtime Backend Services Manually | Deploying the Marlowe Runtime requires running six backend services. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/deployment.md | 
+| deployment.md | Deploying the Marlowe Runtime requires running six backend services. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/deployment.md | 
 
 ### Topics included
 
@@ -119,11 +115,7 @@ For planning purposes, this document lists the .md and .ipynb files found in the
 
 | Document | Description | URL |
 | --- | --- | --- |
-| marlowe-chain-indexer.md | The `marlowe-chain-indexer` executable follows a local blockchain node and writes the blocks and transactions to a database. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe-chain-indexer.md | 
-
-### Topics included
-
-* Describes commands
+| marlowe-chain-indexer.md | The `marlowe-chain-indexer` executable follows a local blockchain node and writes the blocks and transactions to a database. <br> - Describes commands.| https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe-chain-indexer.md | 
 
 ------
 ------
@@ -132,11 +124,7 @@ For planning purposes, this document lists the .md and .ipynb files found in the
 
 | Document | Description | URL |
 | --- | --- | --- |
-| marlowe-discovery.md | The `marlowe-discovery` executable provides services for discoverying the on-chain presence of Marlowe contracts. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe-discovery.md | 
-
-### Topics included
-
-* Describes commands
+| marlowe-discovery.md | The `marlowe-discovery` executable provides services for discoverying the on-chain presence of Marlowe contracts. <br> - Describes commands. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe-discovery.md | 
 
 ------
 ------
@@ -145,11 +133,7 @@ For planning purposes, this document lists the .md and .ipynb files found in the
 
 | Document | Description | URL |
 | --- | --- | --- |
-| marlowe-history.md | The `marlowe-history` executable provides services for querying the on-chain history of Marlowe contracts. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe-history.md | 
-
-### Topics included
-
-* Describes commands
+| marlowe-history.md | The `marlowe-history` executable provides services for querying the on-chain history of Marlowe contracts. <br> - Describes commands.| https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe-history.md | 
 
 ------
 ------
@@ -158,11 +142,7 @@ For planning purposes, this document lists the .md and .ipynb files found in the
 
 | Document | Description | URL |
 | --- | --- | --- |
-| marlowe-tx.md | The `marlowe-tx` executable provides services related to building and submitting transactions for Marlowe contracts. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe-tx.md | 
-
-### Topics included
-
-* Describes commands
+| marlowe-tx.md | The `marlowe-tx` executable provides services related to building and submitting transactions for Marlowe contracts. <br> - Describes commands.| https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe-tx.md | 
 
 ------
 ------
@@ -190,11 +170,7 @@ For planning purposes, this document lists the .md and .ipynb files found in the
 
 | Document | Description | URL |
 | --- | --- | --- |
-| marlowe-runtime/doc/marlowe/add.md | Start managing a new contract | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/add.md |
-
-## Topics
-
-* Shows commands
+| marlowe-runtime/doc/marlowe/add.md | Start managing a new contract. <br> - Shows commands. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/add.md |
 
 ------
 ------
@@ -203,11 +179,7 @@ For planning purposes, this document lists the .md and .ipynb files found in the
 
 | Document | Description | URL |
 | --- | --- | --- |
-| marlowe-runtime/doc/marlowe/advance.md | Advance a timed-out contract by applying an empty set of inputs. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/advance.md | 
-
-## Topics
-
-* Shows commands
+| advance.md | Advance a timed-out contract by applying an empty set of inputs. <br> - Shows commands.| https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/advance.md | 
 
 ------
 ------
@@ -216,7 +188,7 @@ For planning purposes, this document lists the .md and .ipynb files found in the
 
 | Document | Description | URL |
 | --- | --- | --- |
-| marlowe-runtime/doc/marlowe/apply.md | Apply inputs to a contract | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/apply.md | 
+| apply.md | Apply inputs to a contract | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/apply.md | 
 
 ------
 ------
@@ -225,7 +197,7 @@ For planning purposes, this document lists the .md and .ipynb files found in the
 
 | Document | Description | URL |
 | --- | --- | --- |
-| marlowe-runtime/doc/marlowe/choose.md | Notify a contract to proceed | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/choose.md | 
+| choose.md | Notify a contract to proceed | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/choose.md | 
 
 ------
 ------
@@ -234,23 +206,27 @@ For planning purposes, this document lists the .md and .ipynb files found in the
 
 | Document | Description | URL |
 | --- | --- | --- |
-| marlowe-runtime/doc/marlowe/create.md | Create a new Marlowe Contract | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/create.md | 
-
-* Shows and explains commands
+| create.md | Create a new Marlowe Contract. <br> - Shows and explains commands. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/create.md | 
 
 ------
 ------
 
-## marlowe-runtime/doc/marlowe/deposit.md
+## Build a Transaction to Deposit Funds into a Contract
 
-* Build a Transaction to Deposit Funds into a Contract
+| Document | Description | URL |
+| --- | --- | --- |
+| deposit.md | Deposit funds into a contract. <br> - Shows commands. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/deposit.md | 
 
 ------
 ------
 
-## marlowe-runtime/doc/marlowe/log.md
+## Output the History of a Contract
 
-* Output the History of a Contract
+| Document | Description | URL |
+| --- | --- | --- |
+| log.md | Display the history of a contract. <br> - Shows commands. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/log.md | 
+
+
 
 ------
 ------
