@@ -4,9 +4,9 @@ For planning purposes, this document lists the .md and .ipynb files found in the
 
 * [marlowe-cardano/marlowe-runtime/doc/](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-runtime/doc)
 
-* [marlowe-cardano/marlowe-runtime/examples/](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-runtime/examples)
-
 * [marlowe-cardano/marlowe-runtime/doc/marlowe/](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-runtime/doc/marlowe)
+
+* [marlowe-cardano/marlowe-runtime/examples/](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-runtime/examples)
 
 * What additional sources of documentation should we be looking at? 
 
@@ -166,6 +166,15 @@ For planning purposes, this document lists the .md and .ipynb files found in the
 ------
 ------
 
+## Marlowe Runtime Tutorial: The ACTUS Principal at Maturity (PAM) Contract
+
+| Document | Description | URL |
+| --- | --- | --- |
+| tutorial.md | This tutorial demonstrates how to run an example Marlowe contract, the ACTUS Principal at Maturity (PAM) contract, using the Marlowe Runtime backend and its command-line tool. See [tutorial.ipynb](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/tutorial.ipynb) to view this tutorial as a Jupyter notebook. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/tutorial.md | 
+
+------
+------
+
 ## Add a Contract to the Set of Tracked Contracts
 
 | Document | Description | URL |
@@ -262,13 +271,6 @@ For planning purposes, this document lists the .md and .ipynb files found in the
 ## marlowe-runtime/doc/marlowe/withdraw.md
 
 * Build a Transaction to Withdraw Funds Paid by a Contract
-
-------
-------
-
-## marlowe-runtime/doc/tutorial.md
-
-* Marlowe Runtime Tutorial: The ACTUS Principal at Maturity (PAM) Contract
 
 ------
 ------
