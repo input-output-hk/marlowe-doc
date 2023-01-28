@@ -1,12 +1,12 @@
-# Marlowe Runtime Documentation Plan
+# Marlowe Runtime Documentation Inventory
 
 For planning purposes, this document lists the .md and .ipynb files found in these repos: 
 
 * [marlowe-cardano/marlowe-runtime/doc/](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-runtime/doc)
 
-* [marlowe-cardano/marlowe-runtime/examples/](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-runtime/examples)
-
 * [marlowe-cardano/marlowe-runtime/doc/marlowe/](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-runtime/doc/marlowe)
+
+* [marlowe-cardano/marlowe-runtime/examples/](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-runtime/examples)
 
 * What additional sources of documentation should we be looking at? 
 
@@ -166,6 +166,15 @@ For planning purposes, this document lists the .md and .ipynb files found in the
 ------
 ------
 
+## Marlowe Runtime Tutorial: The ACTUS Principal at Maturity (PAM) Contract
+
+| Document | Description | URL |
+| --- | --- | --- |
+| tutorial.md | This tutorial demonstrates how to run an example Marlowe contract, the ACTUS Principal at Maturity (PAM) contract, using the Marlowe Runtime backend and its command-line tool. See [tutorial.ipynb](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/tutorial.ipynb) to view this tutorial as a Jupyter notebook. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/tutorial.md | 
+
+------
+------
+
 ## Add a Contract to the Set of Tracked Contracts
 
 | Document | Description | URL |
@@ -226,85 +235,114 @@ For planning purposes, this document lists the .md and .ipynb files found in the
 | --- | --- | --- |
 | log.md | Display the history of a contract. <br> - Shows commands. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/log.md | 
 
+------
+------
 
+## List the Contracts Being Tracked
+
+| Document | Description | URL |
+| --- | --- | --- |
+| ls.md | List managed contracts. <br>- Shows commands | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/ls.md | 
 
 ------
 ------
 
-## marlowe-runtime/doc/marlowe/ls.md
+## Build a Transaction to Notify a Contract
 
-* List the Contracts Being Tracked
-
-------
-------
-
-## marlowe-runtime/doc/marlowe/notify.md
-
-* Build a Transaction to Notify a Contract
+| Document | Description | URL |
+| --- | --- | --- |
+| notify.md | Notify a contract to proceed. <br>- Shows commands. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/notify.md | 
 
 ------
 ------
 
-## marlowe-runtime/doc/marlowe/rm.md
+## Remove a Contract from the Set of Tracked Contracts
 
-* Remove a Contract from the Set of Tracked Contracts
-
-------
-------
-
-## marlowe-runtime/doc/marlowe/submit.md
-
-* Submit a Signed Transaction to the Node
+| Document | Description | URL |
+| --- | --- | --- |
+| rm.md | Stop managing a contract. <br>- Shows commands. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/rm.md | 
 
 ------
 ------
 
-## marlowe-runtime/doc/marlowe/withdraw.md
+## Submit a Signed Transaction to the Node
 
-* Build a Transaction to Withdraw Funds Paid by a Contract
-
-------
-------
-
-## marlowe-runtime/doc/tutorial.md
-
-* Marlowe Runtime Tutorial: The ACTUS Principal at Maturity (PAM) Contract
+| Document | Description | URL |
+| --- | --- | --- |
+| submit.md | Submit a signed transaction to the Cardano node. Expects the CBOR bytes of the signed Tx from stdin. <br>- Shows commands. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/submit.md | 
 
 ------
 ------
 
-## marlowe-runtime/examples/ReadMe.md
+## Build a Transaction to Withdraw Funds Paid by a Contract
 
-* Miscellaneous Examples for Marlowe Runtime
+| Document | Description | URL |
+| --- | --- | --- |
+| withdraw.md | Withdraw funds paid to a role in a contract. <br>- Shows commands. | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/withdraw.md | 
 
 ------
 ------
 
 # Marlowe Runtime Examples
 
-## marlowe-runtime/examples/ repo
+## Miscellaneous Examples for Marlowe Runtime
 
-* marlowe-runtime/examples/advance.ipynb
+| Document | Description | URL |
+| --- | --- | --- |
+| ReadMe.md | List of examples for Marlowe Runtime | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/ReadMe.md | 
 
-* marlowe-runtime/examples/choose.ipynb
+------
+------
+
+## Demonstrating the Marlowe Transaction Creation Component of Marlowe Runtime
+
+| Document | Description | URL |
+| --- | --- | --- |
+| create.ipynb | Preliminaries<br>Setup the faucet<br>Select network<br>Check that the reference script has been published<br>Participants<br>Time computations<br>The Contract<br>Run the Contract<br>Cleanup | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/create.ipynb | 
+
+------
+------
+
+## Demonstrating the Marlowe Transaction Deposit (Advance?) Component of Marlowe Runtime
+
+| Document | Description | URL |
+| --- | --- | --- |
+| advance.ipynb | Preliminaries<br>Setup the faucet<br>Select network<br>Check that the reference script has been published<br>Participants<br>Time computations<br>The Contract<br>Run the Contract<br>Cleanup | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/advance.ipynb | 
+
+------
+------
+
+## Demonstrating the Marlowe Transaction Deposit Component of Marlowe Runtime
+
+| Document | Description | URL |
+| --- | --- | --- |
+| deposit.ipynb | Preliminaries<br>Setup the faucet<br>Select network<br>Check that the reference script has been published<br>Participants<br>The Party<br>The Counterparty<br>Time computations<br>The Contract<br>Run the Contract<br>Transaction 1. Create the contract<br>Transaction 2. Party deposits loan amount<br>Transaction 3. Counterparty repays the loan's interest<br>Transaction 4. Counterparty repays the loan's principal<br>Cleanup | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/deposit.ipynb | 
+
+------
+------
+
+## Demonstrating the Marlowe Transaction Choose Component of Marlowe Runtime
+
+| Document | Description | URL |
+| --- | --- | --- |
+| choose.ipynb | Preliminaries<br>Setup the faucet<br>Select network<br>Check that the reference script has been published<br>Participants<br>Time computations<br>The Contract<br>Run the Contract<br>Transaction 1. Create the contract<br>Transaction 2. Make the choice<br>Cleanup | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/choose.ipynb | 
+
+------
+------
+
+* marlowe-runtime/examples/notify.ipynb
+
+* marlowe-runtime/examples/history.ipynb
+
+* marlowe-runtime/examples/submit.ipynb
+
+* marlowe-runtime/examples/runtime-close.ipynb
+
+* marlowe-runtime/examples/roles.ipynb
+
+* marlowe-runtime/examples/token-bid.ipynb
 
 * marlowe-runtime/examples/create-close-native-tok.ipynb
 
 * marlowe-runtime/examples/create-many-utxos.ipynb
-
-* marlowe-runtime/examples/create.ipynb
-
-* marlowe-runtime/examples/deposit.ipynb
-
-* marlowe-runtime/examples/history.ipynb
-
-* marlowe-runtime/examples/notify.ipynb
-
-* marlowe-runtime/examples/roles.ipynb
-
-* marlowe-runtime/examples/runtime-close.ipynb
-
-* marlowe-runtime/examples/submit.ipynb
-
-* marlowe-runtime/examples/token-bid.ipynb
 
