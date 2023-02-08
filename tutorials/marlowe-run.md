@@ -2,6 +2,8 @@
 title: Using Marlowe Run
 ---
 
+# Using Marlowe Run
+
 Get your smart contracts up and running in minutes. Marlowe Run provides
 an intuitive, straightforward, and seamless interface for you to handle
 financial agreements with your friends, colleagues, or clients on the
@@ -18,7 +20,7 @@ using the prototype version of Marlowe Run.
 that uses test contracts and simulated funds. The full version of
 Marlowe Run will be available soon.
 
-# Accessing the Marlowe Run Demo
+## Accessing the Marlowe Run Demo
 
 To access and view the dashboard, follow these steps:
 
@@ -101,7 +103,7 @@ the owner of the role.
 You can click **Close contract** at any time to close a running
 contract.
 
-# Adding Contacts
+## Adding Contacts
 
 You can maintain a list of your active contacts that you regularly
 communicate with.

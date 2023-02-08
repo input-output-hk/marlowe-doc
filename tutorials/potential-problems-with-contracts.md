@@ -2,6 +2,8 @@
 title: Potential problems with contracts
 ---
 
+# Potential problems with contracts
+
 The Marlowe language is designed to have as few as possible pitfalls and
 gotchas, so that contracts can be written intuitively, avoiding any
 surprises. Nevertheless, it is impossible by design to exclude all
@@ -16,7 +18,7 @@ it is worth being aware of these potential problems, and review how
 Marlowe behaves in these situations. That is the subject of this
 tutorial.
 
-# Warnings
+## Warnings
 
 Marlowe warnings are indications that a contract is written wrongly. A
 well-written contract should never issue a warning, no matter how the
@@ -36,7 +38,7 @@ very computationally expensive, and because mistakes can be made. We
 want badly written contracts to fail in the most harmless way possible,
 that is conservatively.
 
-## Non-positive payments
+### Non-positive payments
 
 When a contract is supposed to pay an amount of money that is less than
 one unit of a currency or token, it will issue a `NonPositivePay`
@@ -46,7 +48,7 @@ Negative payments should be implemented as either positive deposits
 (when paying a participant), or positive payments in the opposite
 direction (when paying between accounts).
 
-## Non-positive deposits
+### Non-positive deposits
 
 When a contract is supposed to expect an amount of money that is less
 than one unit of a currency of token, it will still wait for a
@@ -57,7 +59,7 @@ successful, the contract will issue a `NonPositiveDeposit` warning.
 
 Negative deposits should always be implemented as positive payments.
 
-## Partial payment
+### Partial payment
 
 When a contract is supposed to pay an amount of money that is larger
 than the amount of money that there is in the source account, it will
@@ -70,7 +72,7 @@ produces a partial payment is an explicit contract. Explicit contracts
 reassure their users that they will be enforceable, and that wherever in
 the contract it says a payment is going to happen it will indeed happen.
 
-## `Let` shadowing (not covered by static analysis)
+### `Let` shadowing (not covered by static analysis)
 
 When a contract reaches a `Let` construct that re-defines a value with
 an identifier that was already defined by an outer `Let`, the contract
@@ -83,7 +85,7 @@ or users into thinking that one usage of `Use` is going to be evaluated
 to one amount while it is actually going to be evaluated to some other
 different amount.
 
-# Bad smells
+## Bad smells
 
 There are some other \'bad smells\' that indicate that a contract has
 probably been poorly designed.
@@ -95,7 +97,7 @@ not fully aware of the consequences of the contract, or that the
 developer purposefully wrote the contract in a way that was confusing
 for the reader.
 
-## Undefined `Let` usage (should be a warning)
+### Undefined `Let` usage (should be a warning)
 
 When a `Use` construct uses an identifier that has not been defined yet,
 it will evaluate to the default value of `0`. No warning will be issued
@@ -103,14 +105,14 @@ but, again, this is a bad practice because it can be misleading.
 `(Constant 0)` should be used instead since it makes explicit the amount
 in question.
 
-## Unreachable parts of a contract
+### Unreachable parts of a contract
 
 This is the main bad smell in Marlowe contracts. If part of the contract
 is unreachable, why would it have been included in the first place?
 
 This bad smell takes a number of shapes.
 
-### Sub-`Contract` is not reachable
+#### Sub-`Contract` is not reachable
 
 For example:
 
@@ -122,7 +124,7 @@ The previous contract is equivalent to `contract2`. In general you
 should never use `FalseObs`, and you should only use `TrueObs` as the
 root observation of a `Case` construct.
 
-### `Observation` is always short-cut
+#### `Observation` is always short-cut
 
 For example:
 
@@ -133,7 +135,7 @@ OrObs TrueObs observation1
 The previous observation is equivalent to `observation1`. Again, you
 should only use `TrueObs` as the root observation of a `Case` construct.
 
-### `When` branch is unreachable
+#### `When` branch is unreachable
 
 For example:
 
@@ -147,7 +149,7 @@ When [ Case (Notify TrueObs) contract1
 `contract2` is unreachable, the whole `Case` could be removed from the
 contract and the behaviour would be the same.
 
-### Nested non-increasing timeouts
+#### Nested non-increasing timeouts
 
 For example:
 
@@ -164,14 +166,14 @@ When []
 evolve into `contract2`. The inner `When` does not make any difference
 to the contract.
 
-# Usability issues
+## Usability issues
 
 Even if a contract avoids warnings, and has no unreachable code, it may
 still allow malicious users to force other users into undesirable
 situations that were not originally intended by developer of the
 contract.
 
-## Bad timing of `When` constructs
+### Bad timing of `When` constructs
 
 Consider the following contract:
 
@@ -208,7 +210,7 @@ the number of pending transactions in the blockchain, network attacks,
 etc. So it is important to allow plenty of time, and to be generous with
 timeouts and with increases in timeouts.
 
-# Errors
+## Errors
 
 Finally, even if a contract is perfectly written. Users may use it
 incorrectly, and we call those incorrect usages errors.
@@ -219,7 +221,7 @@ wallet of a user will know in advance whether a transaction is going to
 produce an error, because transactions are deterministic, so users
 should never need to send an erroneous transaction to the blockchain.
 
-## Ambiguous interval
+### Ambiguous interval
 
 When a transaction reaches a timeout, its time interval must be
 unambiguous about whether the timeout has passed or not. For example, if
@@ -233,13 +235,13 @@ separate transactions:
 1.  One with time interval `[1700000000, 1700003599]`.
 2.  Another one with time interval `[1700003600, 1700007200]`.
 
-## Apply no-match
+### Apply no-match
 
 If a transaction does not provide the inputs that are expected by the
 `Contract`, then the contract will issue a `NoMatchError` error, and the
 whole transaction will be discarded.
 
-## Useless transaction
+### Useless transaction
 
 If a transaction does not have any effect on the `Contract` or `State`,
 it will result on a `UselessTransaction` error, and the whole

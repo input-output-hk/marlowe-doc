@@ -2,11 +2,11 @@
 title: The Marlowe Playground
 ---
 
-This tutorial gives an overview of the [Marlowe Playground](), an online
-tool that allows users to create, to analyse, to interact with and to
-simulate the operation of embedded Marlowe contracts.
+# The Marlowe Playground
 
-# Introducing the Marlowe Playground
+This tutorial gives an overview of the [Marlowe Playground](https://play.marlowe-finance.io/#/), an online tool that allows users to create, to analyse, to interact with and to simulate the operation of embedded Marlowe contracts.
+
+## Introducing the Marlowe Playground
 
 For Marlowe to be usable in practice, users need to be able to
 understand how contracts will behave once deployed to the blockchain,
@@ -33,7 +33,7 @@ The rest of this section will cover the operation of the Playground in
 more detail. Note that we use **bold** type for buttons and other
 components in what follows.
 
-# Getting started
+## Getting started
 
 The landing page for the Marlowe Playground looks like this
 
@@ -63,7 +63,7 @@ The program editor used in the Playground is the Monaco editor
 <https://microsoft.github.io/monaco-editor/> and many of its features
 are available, including the menu available on right-click.
 
-# The JavaScript Editor: developing embedded contracts
+## The JavaScript Editor: developing embedded contracts
 
 For details of how the JavaScript embedding for Marlowe is defined, see
 [Marlowe embedded in JavaScript](#_javascipt-embedding)
@@ -133,7 +133,7 @@ Contract metadata not only provides documentation for Marlowe contracts,
 but is also used in Marlowe Run, the end-user client that is to be used
 to run Marlowe contacts on the Cardano blockchain.
 
-# The Haskell Editor: developing embedded contracts
+## The Haskell Editor: developing embedded contracts
 
 The editor supports the development of Marlowe contracts described in
 Haskell. We can use Haskell to make contract definitions more readable
@@ -194,7 +194,7 @@ Contract metadata not only provides documentation for Marlowe contracts,
 but is also used in Marlowe Run, the end-user client that is to be used
 to run Marlowe contacts on the Cardano blockchain.
 
-# Developing contracts in Blockly
+## Developing contracts in Blockly
 
 The playground provides a mechanism for creating and viewing contracts
 in a visual form, rather than in text. This is discussed in this earlier
@@ -202,7 +202,7 @@ section on `Blockly <playground-blockly>`{.interpreted-text role="ref"}.
 Note that the Blockly editor also offers access to the metadata editor
 and static analysis.
 
-# Developing contracts in Marlowe
+## Developing contracts in Marlowe
 
 It is also possible to create contracts in \"raw\" Marlowe too. Marlowe
 is edited in the Marlowe editor, and this gives automatic formatting (on
@@ -224,7 +224,7 @@ Blockly: holes in Marlowe become literal holes in Blockly. To transfer
 to Blockly use the **View as blocks** in the top right-hand corner of
 the screen, and *vice versa*.
 
-# Simulating Marlowe contracts and templates
+## Simulating Marlowe contracts and templates
 
 However a contract is written, when it is sent to simulation this is the
 view seen first. Here we\'re looking at the *Zero coupon bond* example.
@@ -292,7 +292,7 @@ itself. One final note: we chose not to advance the time at any point:
 this is consistent with the contract design; on the other hand we
 didn\'t see any *timeout* actions happening. Why not try this yourself?
 
-# Oracle simulation
+## Oracle simulation
 
 As we noted earlier in the section on
 `marlowe-step-by-step`{.interpreted-text role="ref"}, the Playground
@@ -305,7 +305,7 @@ then the value is *pre-filled* in the simulation like this:
 
 ![Providing an oracle value](images/oracles2.png)
 
-# Saving and Opening Projects
+## Saving and Opening Projects
 
 Projects can be saved on github, and so when you first save a project
 you will be prompted thus:
@@ -325,7 +325,7 @@ like this:
 The Marlowe Playground does not provide a mechanism for deleting
 projects, but this can be done directly on github.
 
-# Analysing a contract
+## Analysing a contract
 
 The static analysis of a contract is performed by selecting the **Static
 analysis** tab in footer at the bottom of the page.

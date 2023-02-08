@@ -2,18 +2,16 @@
 title: The Marlowe model
 ---
 
-Marlowe is designed to support the execution of financial contracts on
-blockchain, and specifically to work on Cardano. Contracts are built by
-putting together a small number of constructs that can be combined to
+# The Marlowe model
+
+Marlowe is designed to support the execution of financial contracts on blockchain, and specifically to work on Cardano. 
+Contracts are built by putting together a small number of constructs that can be combined to
 describe many different kinds of financial contract.
 
-Before we describe those constructs, we need to look at our general
-approach to modelling contracts in Marlowe, and the context in which
-Marlowe contracts are executed, the Cardano blockchain. In doing this we
-also introduce some of the terminology that we will use, indicating
-definitions by *italics*.
+Before we describe those constructs, we need to look at our general approach to modelling contracts in Marlowe, and the context in which Marlowe contracts are executed, the Cardano blockchain. 
+In doing this we also introduce some of the terminology that we will use, indicating definitions by *italics*. 
 
-# Contracts
+## Contracts
 
 Contracts in Marlowe run on a blockchain, but need to interact with the
 off-chain world. The *parties* to the contract, whom we also call the
@@ -28,7 +26,7 @@ inputs.[^1]
 Running a contract may also produce external *effects*, by making
 payments to parties in the contract.
 
-## Participants, roles, and public key
+### Participants, roles, and public key
 
 We should separate the notions of *participant*, *role*, and *public
 keys* in a Marlowe contract. A participant (or party) in the contract
@@ -55,7 +53,7 @@ require handling tokens, but they cannot be traded, because once you
 know the private key for a given public key you cannot prove you have
 forgotten it.
 
-## Accounts
+### Accounts
 
 The Marlowe model allows for a contract to store assets. All parties
 that participate in the contract implicitly own an account with their
@@ -66,7 +64,7 @@ their respective owners. These accounts are *local*: they only exist for
 the duration of the execution of the contract, and during that time they
 are only accessible from within the contract.
 
-## Steps and states
+### Steps and states
 
 Marlowe contracts describe a series of *steps*, typically by describing
 the first step, together with another (sub-) contract that describes
@@ -84,7 +82,7 @@ potentially changes at each step too. A step can also see an action
 taking place, such as money being deposited, or an *effect* being
 produced, e.g. a payment.
 
-# Blockchain
+## Blockchain
 
 While Marlowe is designed to work with blockchains in general,[^2] some
 details of how it interacts with the blockchain are relevant when
@@ -99,7 +97,7 @@ can be generated in each *slot*, which are 1 second long.
 The mechanisms by which these blocks are generated, and by whom, are not
 relevant here, but contracts will be expressed in terms of POSIX time.
 
-## UTxO, wallets and the Marlowe Run app
+### UTxO, wallets and the Marlowe Run app
 
 Value on the blockchain resides in the UTxO, which are protected
 cryptographically by a private key held by the owner. These keys can be
@@ -121,7 +119,7 @@ payments received by them. Note, however, that these are definitely
 typically this will be in the Marlowe Run application: they cannot be
 made to happen by the contract running on chain itself.
 
-## Omniscient simulation
+### Omniscient simulation
 
 The Marlowe Playground supports contract simulation. This is an
 *omniscient* simulation, in which the user is able to perform any action
@@ -133,7 +131,7 @@ only able to interact with a running contract that is waiting for input
 from them; if that\'s not the case, then they will see that the contract
 execution is waiting from someone else\'s participation.
 
-## Values and tokens
+### Values and tokens
 
 In previous examples, whenever a `Value` was required, we have
 exclusively used Ada. This makes a lot of sense, as Ada is the
@@ -172,7 +170,7 @@ ERC-20/ERC-721 standards as primitive values in Cardano. In Marlowe we
 use custom tokens to represent the participants in each contract
 executing on chain.
 
-# Executing a Marlowe contract
+## Executing a Marlowe contract
 
 Executing a Marlowe contract on Cardano blockchain means constraining
 user-generated transactions according to the contract\'s logic. If, at a
@@ -209,9 +207,7 @@ In the *omniscient* simulation available in the Marlowe playground we
 can safely abstract away from transaction grouping, since the grouping
 does not affect the contract\'s behaviour.
 
-::: {.container .formalpara-title}
 **Building a transaction**
-:::
 
 ![transaction](images/transaction.svg)
 

@@ -2,10 +2,12 @@
 title: Migrating from earlier versions of Marlowe
 ---
 
+# Migrating from earlier versions of Marlowe
+
 This tutorial explains how the latest version of Marlowe differs from
 earlier versions of the language.
 
-# Remove `Both`
+## Remove `Both`
 
 We do not include a `Both` construct in the latest version of Marlowe,
 which makes all contracts sequential.
@@ -24,7 +26,7 @@ The reason we removed this construct is that sequential programs are
 easier to analyse and easier to reason about, since there is no need for
 synchronisation and no opportunity for race conditions.
 
-# Include accounts
+## Include accounts
 
 In earlier versions of Marlowe each commitment has its own timeout. This
 means that money deposited in a contract is *not fungible*, because it
@@ -54,7 +56,7 @@ only need to write the appropriate `Pay` commands in the leaves of the
 contract. If all the money is paid to participants, then `Close` has no
 effect.[^1]
 
-## Discussion: Implicit vs Explicit Accounts
+### Discussion: Implicit vs Explicit Accounts
 
 Many of the use cases for accounts -- and all those that we can identify
 for ACTUS contracts -- have one account per participant, and one
@@ -89,7 +91,7 @@ Examples of multiple accounts for one person:
     Only when the first level underwriting of all participants is spent
     will second level spending occur.
 
-# `Close` replaces `Null` / `Pay`
+## `Close` replaces `Null` / `Pay`
 
 Since all contracts are sequential now, we can easily tell when a
 contract terminates, i.e: when only `Null` is left. We use this
@@ -102,7 +104,7 @@ accounts, since all contracts will eventually reduce to `Close`. In
 fact, we can statically and efficiently calculate an upper bound for
 when this will happen, making this aspect of Marlowe analysable.
 
-# Pay
+## Pay
 
 `Pay` is now immediate, and it has a single continuation, and fewer
 parameters.[^2] It allows payments from an account to a participant or
@@ -116,7 +118,7 @@ analysis. With the `Both` construct we could potentially have `Pays`
 happen in any order (since both sides of `Both` are supposed to run
 concurrently).
 
-# Multi-clause When
+## Multi-clause When
 
 We have modified `When` to include a set of possible actions that can be
 input while `When` waits. We call this approach "One of Many", because
@@ -166,7 +168,7 @@ In addition to explicit cases in `When`, we must remember that the
 *timeout* branch is also a case, and it also needs to be triggered
 (similarly to `Notify`).[^3][^4]
 
-# Observations and Values
+## Observations and Values
 
 We have discarded `Observations` and `Values` that can be expressed by
 combining others: like the general `AvailableMoney` (for the whole
@@ -223,7 +225,7 @@ context.
     be evaluated statically if we extend the `When` construct to support
     "many of many" inputs.
 
-# Inclusion of TimeIntervals
+## Inclusion of TimeIntervals
 
 The EUTxO specification provides validation scripts with time-intervals
 instead of with slot numbers. This is to promote determinism in

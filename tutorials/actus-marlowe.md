@@ -2,11 +2,13 @@
 title: ACTUS and Marlowe
 ---
 
+# ACTUS and Marlowe
+
 This tutorial gives an introduction to the general idea of the ACTUS
 standards for the algorithmic representation of financial contracts,
 plus examples implemented in Marlowe.
 
-# ACTUS
+## ACTUS
 
 The ACTUS Financial Research Foundation <https://www.actusfrf.org> has
 created a standard for financial contracts, categorised by means of a
@@ -28,7 +30,7 @@ The ACTUS specifications provide a breadth of exercises for
 implementation in Marlowe, and we illustrate an approach to this in the
 following example.
 
-# Simple Zero Coupon Bond Example
+## Simple Zero Coupon Bond Example
 
 A zero-coupon bond is a debt security that does not pay interest (a
 coupon) but is issued at a discount, rendering profit at maturity when
@@ -105,7 +107,7 @@ realistically, we could ask a third party to be a guarantor of the deal.
 > issuer does make the payment in time, then the guarantor should
 > recover their money.
 
-# Guaranteed Coupon Bond Example
+## Guaranteed Coupon Bond Example
 
 This more complex bond involves an `investor` who deposits 1000
 Lovelace, which is immediately paid to the `issuer`. The `issuer` then

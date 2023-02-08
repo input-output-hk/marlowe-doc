@@ -2,11 +2,13 @@
 title: Marlowe embedded in Haskell
 ---
 
+# Marlowe embedded in Haskell
+
 In this tutorial we go back to the escrow example, and show how we can
 use the *embedding* of Marlowe in Haskell to make more readable, modular
 and reusable descriptions of Marlowe contracts.
 
-# A simple escrow contract, revisited.
+## A simple escrow contract, revisited
 
 ![Escrow](images/escrow.png)
 
@@ -195,7 +197,7 @@ Haskell, namely definitions of constants and functions. In the next
 tutorial you will learn about how to define contracts using the
 JavaScript embedding instead.
 
-## Note
+### Note
 
 A number of other examples of using Haskell to build Marlowe contracts
 can be found in the Marlowe Playground, where it is also possible to

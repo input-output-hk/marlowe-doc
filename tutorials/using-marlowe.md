@@ -2,11 +2,13 @@
 title: Using Marlowe from the ghci command line
 ---
 
+# Using Marlowe from the ghci command line
+
 This tutorial shows you how to use Marlowe from within Haskell, and in
 particular shows how to exercise a contract using the semantics given
 earlier.
 
-# Marlowe in Haskell
+## Marlowe in Haskell
 
 This tutorial works in the version of Marlowe which can be found in the
 `main` branch of the [marlowe-cardano
@@ -28,7 +30,7 @@ repository](https://github.com/input-output-hk/marlowe), but some
 details may be slightly differently, like the use of slots instead of
 POSIX time.
 
-# Stepping through contracts
+## Stepping through contracts
 
 As we saw earlier the semantics of a single transaction are defined by
 the function
@@ -157,7 +159,7 @@ working file, e.g. `Build.hs`, where these definitions will be
 preserved. Indeed, it would be very sensible to include some of the
 definitions used above in such a file.
 
-# Alternative routes through the contract
+## Alternative routes through the contract
 
 An alternative execution of the contract is given by
 

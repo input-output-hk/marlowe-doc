@@ -2,6 +2,8 @@
 title: Marlowe embedded in JavaScript
 ---
 
+# Marlowe embedded in JavaScript
+
 Marlowe is written as a Haskell data type, and thus it is
 straightforward to describe Marlowe smart contracts using Haskell. But
 since Marlowe contracts are "just" a form of data, we can equally well
@@ -22,7 +24,7 @@ We begin this section by explaining the embedding, then explain a couple
 of particular points about embedding in JavaScript, and finally present
 an example of a full contract described using the JS embedding.
 
-# Using the JS Editor in the Marlowe Playground
+## Using the JS Editor in the Marlowe Playground
 
 The library implementation itself is straightforward, and you can find
 all of its source code here:
@@ -101,7 +103,7 @@ should produce a valid JSON representation of a Marlowe contract, so we
 ensure safety of contract generation through the type system of
 TypeScript.
 
-# The `SomeNumber` type
+## The `SomeNumber` type
 
 There is one important type that is not present in the Haskell
 definition of Marlowe, we have called that type SomeNumber, and it is
@@ -151,7 +153,7 @@ but a loss of precision may occur if native numbers are used, as the
 `BigNumber` is constructed, before the conversion occurs, and the API
 cannot do anything about it.
 
-# The `EValue` type and boolean overloading
+## The `EValue` type and boolean overloading
 
 In Haskell, constant boolean observations are represented by `TrueObs`
 and `FalseObs`, and constant integer values are represented by
@@ -165,7 +167,7 @@ they take an `EValue` instead, and `EValue` is defined as follows:
 type EValue = SomeNumber | Value
 ```
 
-# Example: Writing a Swap contract in TypeScript
+## Example: Writing a Swap contract in TypeScript
 
 Whether we start by modifying an existing example, or by creating a new
 JavaScript contract, we are automatically provided with the import list
