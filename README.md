@@ -18,7 +18,7 @@ Our current top-level navigation structure for the documentation will consist of
    * How to deploy Marlowe contracts
    * Additional resources
 * [Browse Examples](browse-examples.md)
-* Tutorials
+* [Tutorials](/tutorials/index.md)
 * Architecture Overview
 * Developer Tools
    * Marlowe Domain Specific Language

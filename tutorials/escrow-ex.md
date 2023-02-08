@@ -2,11 +2,13 @@
 title: A first example
 ---
 
+# A first example
+
 This tutorial introduces a simple financial contract in pseudocode,
 before explaining how it is modified to work in Marlowe, giving the
 first example of a Marlowe contract.
 
-# A simple escrow contract
+## A simple escrow contract
 
 ![Escrow](images/escrow.png)
 
@@ -70,7 +72,7 @@ simpler version where `alice` chooses first.
 > suppose that we want to design a contract to ensure that: what would
 > we need to do to?
 
-# Escrow in Marlowe
+## Escrow in Marlowe
 
 Marlowe contracts incorporate extra constructs to ensure that they
 progress properly. Each time we see a `When`, we need to provide two
@@ -79,7 +81,7 @@ additional things:
 -   a *timeout* after which the contract will progress, and
 -   the *continuation* contract to which it progresses.
 
-# Adding timeouts
+## Adding timeouts
 
 First, let us examine how to modify what we have written to take care of
 the case that the condition of the `When` never becomes true. So, we add
@@ -116,7 +118,7 @@ we wait for one from Bob. If that is not forthcoming by POSIX time
 `1700007200` (2023-11-15 00:13:20 GMT), then Carol is called upon to
 arbitrate.[^2]
 
-# Adding commitments
+## Adding commitments
 
 Next, we should look at how *cash is committed* as the first step of the
 contract.
@@ -148,7 +150,7 @@ on making the deposit; if that is reached without a deposit being made,
 the contract is closed and all the money already in the contract is
 refunded. In this case, that is simply the end of the contract.
 
-# Definitions
+## Definitions
 
 We will see `later <embedded-marlowe>`{.interpreted-text role="ref"}
 that parts of this contract description, such as `arbitrate`,
@@ -172,7 +174,7 @@ Haskell <embedded-marlowe>`{.interpreted-text role="ref"}.
 This example has shown many of the ingredients of the Marlowe contract
 language; in the next tutorial we will present the language in full.
 
-# Notes
+## Notes
 
 -   While the names of Alice, Bob and so on are "hard wired" into the
     contract here, we will see later on that these can be represented by
@@ -180,7 +182,7 @@ language; in the next tutorial we will present the language in full.
     then be associated with specific *participants* when a contract is
     run; we discuss this further in the next section.
 
-# Background
+## Background
 
 These papers cover the original work on using functional programming to
 describe financial contracts.

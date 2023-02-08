@@ -2,12 +2,14 @@
 title: Marlowe in Blockly
 ---
 
+# Marlowe in Blockly
+
 So far in these tutorials we have concentrated on building contracts in
 the textual version of Marlowe, embedded in Haskell, Marlowe contracts
 can also be built using the Blockly visual programming environment, as
 we describe here.
 
-# Getting started
+## Getting started
 
 To start building a Blockly project in the Marlowe Playground, which you
 can find out more about in the section about
@@ -99,7 +101,7 @@ completed as a payment:
 
 ![The complete contract](images/blocklyNew10.png)
 
-## Exercises
+### Exercises
 
 In Blockly, complete for yourself the construction of the contract
 above.
@@ -107,7 +109,7 @@ above.
 What is the effect of the example contract? In particular, what are the
 payments made by the contract?
 
-# Editing Blockly
+## Editing Blockly
 
 Blockly contracts can be manipulated and edited using visual gestures
 and keyboard short cuts.

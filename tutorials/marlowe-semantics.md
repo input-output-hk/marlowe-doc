@@ -1,7 +1,7 @@
 ---
 ---
 
-# The semantics of Marlowe 2.0 {#the_semantics_of_marlowe_2_0}
+# The semantics of Marlowe 2.0
 
 This tutorial gives a high-level formal semantics of Marlowe 2.0 by
 describing the types of inputs supported, and the main semantic

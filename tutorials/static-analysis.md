@@ -2,8 +2,10 @@
 title: Static analysis
 ---
 
+# Static analysis
+
 One distinctive feature of Marlowe -- probably its most distinctive
-feature -- is that we can analyse contracts, and deduce properties of
+feature -- is that we can analyze contracts, and deduce properties of
 them, without running them.
 
 We can check, in advance of running a contract, these properties:
@@ -21,13 +23,13 @@ is the worst kind of error. It is in this case that a payment fails,
 because there is not enough money in the contract (or more strictly in
 the account) to make a complete payment.
 
-# An example
+## An example
 
-Let us look at this example, in Blockly
+Let us look at this example, in Blockly:
 
 ![An example contract in Blockly](images/analysis1.png)
 
-and in pure Marlowe
+and in pure Marlowe:
 
 ![An example contract in Marlowe](images/analysis2.png)
 
@@ -42,7 +44,7 @@ Playground, can diagnose this:
 
 ![Failed analysis](images/analysis3.png)
 
-This shows that the error occurs when
+This shows that the error occurs when:
 
 -   Alice has made the deposit, and
 -   Bob has chosen the value `1`.
@@ -56,7 +58,7 @@ succeed:
 
 ![Successful analysis](images/analysis4.png)
 
-# Under the hood
+## Under the hood
 
 Just to re-iterate: the effect of this analysis is to check *every
 possible execution path* through the contract, using a symbolic version
@@ -69,7 +71,7 @@ contract fail a payment, then the system will also *give an example* of
 how it can go wrong, and present that to the user. Users can then fix
 the problem, and check it again.
 
-# Next steps
+## Next steps
 
 In the next few months we will look at how to present the results of our
 analysis in a more \"user friendly\" way, as well as broadening out the

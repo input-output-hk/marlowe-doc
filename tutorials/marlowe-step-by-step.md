@@ -2,6 +2,8 @@
 title: Marlowe step by step
 ---
 
+# Marlowe step by step
+
 Marlowe has six ways of building contracts. Five of these -- `Pay`,
 `Let`, `If`, `When` and `Assert` -- build a complex contract from
 simpler contracts, and the sixth, `Close`, is a simple contract. At each
@@ -14,7 +16,7 @@ In explaining these contracts we will also explain Marlowe *values*,
 information and inputs to a running contract to control how it will
 evolve.
 
-# Pay
+## Pay
 
 A payment contract `Pay a p t v cont` will make a payment of value `v`
 of token `t` from the account `a` to a payee `p`, which will be one of
@@ -25,7 +27,7 @@ positive balances of other tokens in the account). In the latter case, a
 partial payment (of all the money available) is made. The continuation
 contract is the one given in the contract: `cont`.
 
-# Close
+## Close
 
 A contract `Close` provides for the contract to be closed (or
 terminated). The only action that it performs is to provide refunds to
@@ -36,7 +38,7 @@ single transaction.
 Before discussing other forms of contracts, we need to describe values,
 observations and actions.
 
-# Values, observations and actions
+## Values, observations and actions
 
 **Values** include some quantities that change with time, including "the
 current slot number",[^1] "the current balance of some token in an
@@ -61,7 +63,7 @@ earlier, actions can be
     value (see next section), or
 -   notifying an external value of some kind.
 
-# Oracles
+## Oracles
 
 Oracles are being developed for the Cardano blockchain in general, and
 will be available for use within Marlowe on Cardano. In the meantime, we
@@ -104,13 +106,13 @@ Scale the result down by 10^6^ to get amount in USDT cents.
 
     DivValue (UseValue (ValueId "amount of USDT in microcents")) (Constant 1000000)
 
-# If
+## If
 
 The conditional `If obs cont1 cont2` will continue as `cont1` or
 `cont2`, depending on the Boolean value of the observation `obs` when
 this construct is executed.
 
-# When
+## When
 
 This is the most complex constructor for contracts, with the form
 `When cases timeout cont`. It is a contract that is *triggered on
@@ -128,7 +130,7 @@ In order to make sure that the contract makes progress eventually, the
 contract `When cases timeout cont` will continue as `cont` once the
 `timeout`, a slot number, is reached.
 
-# Let
+## Let
 
 A let contract `Let id val cont` allows a contract to *name a value*
 using an identifier. In this case, the expression `val` is evaluated,
@@ -140,7 +142,7 @@ time, e.g. the current price of oil, or the current slot number, at a
 particular point in the execution of the contract, to be used later on
 in contract execution.
 
-# Assert
+## Assert
 
 An assert contract `Assert obs cont` does not have any effect on the
 state of the contract, it immediately continues as `cont`, but it issues

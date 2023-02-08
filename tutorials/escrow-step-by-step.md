@@ -1,7 +1,7 @@
 ---
 ---
 
-# Marlowe {#escrow-step-by-step}
+# Marlowe escrow step-by-step
 
 ## A new smart contract language for the financial world
 

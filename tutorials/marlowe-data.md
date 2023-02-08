@@ -2,6 +2,8 @@
 title: The Marlowe data types
 ---
 
+# The Marlowe data types
+
 This tutorial formally introduces Marlowe as a Haskell data type, as
 well as presenting the different types used by the model, and discussing
 a number of assumptions about the infrastructure in which contracts will
@@ -15,7 +17,7 @@ The code that we describe here comes from the Haskell modules
 and
 [Util.hs](https://github.com/input-output-hk/marlowe/blob/master/src/Language/Marlowe/Util.hs).
 
-# Marlowe
+## Marlowe
 
 The Marlowe domain-specific language (DSL) is modelled as used above, a
 collection of algebraic types in Haskell, with contracts being given by
@@ -38,7 +40,7 @@ components of the contracts, including accounts, values, observations,
 and actions. We will also look at types that relate to the execution of
 contracts, including inputs, states, the environment.
 
-# Basic components
+## Basic components
 
 In modelling basic parts of Marlowe we use a combination of Haskell
 `data` types, that define *new* types, and `type` synonyms that give a
@@ -148,7 +150,7 @@ Values defined using `Let` are identified by text strings.[^2]
 data ValueId    = ValueId ByteString
 ```
 
-# Values, observations and actions
+## Values, observations and actions
 
 Building on the basic types, we can describe three higher-level
 components of contracts: a type of *values*, on top of that a type of
@@ -233,7 +235,7 @@ Three kinds of action are possible:
 This completes our discussion of the types that make up Marlowe
 contracts.
 
-# Extended Marlowe
+## Extended Marlowe
 
 Extended Marlowe adds templating functionality to Marlowe language, so
 that constants need not be "hard wired" into Marlowe contracts, but can
@@ -262,7 +264,7 @@ cluttering the code that goes on-chain (core Marlowe). In Marlowe Run
 and the Marlowe Playground templates need to be instantiated before
 being run or simulated, respectively.
 
-# Transactions
+## Transactions
 
 As we noted earlier, the semantics of Marlowe consist in building
 *transactions*, like this:
@@ -310,7 +312,7 @@ updated `State` and `Contract`, while the second gives a ordered
 sequence of `Payments` produced by the transaction. The first component
 contains a list of any warnings produced by processing the transaction.
 
-# Time intervals
+## Time intervals
 
 This is part of the architecture of Cardano/Plutus, which acknowledges
 that it is not possible to predict precisely in which instant a
@@ -337,7 +339,7 @@ to either be less or equal than `TimeIntervalStart` (in order for the
 timeout to take effect) or be strictly greater than `TimeIntervalEnd`
 (for normal execution to take place).
 
-## Notes
+### Notes
 
 The model makes a number of assumptions about the blockchain
 infrastructure in which it is run.

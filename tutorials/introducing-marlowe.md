@@ -2,12 +2,14 @@
 title: Introducing Marlowe
 ---
 
+# Introducing Marlowe
+
 This tutorial gives an overview of the ideas behind Marlowe, as a
 domain-specific language embedded in Haskell. It also introduces
 commitments and timeouts, which are central to how Marlowe works in a
 blockchain context.
 
-# Programming Languages and Domain-Specific Languages
+## Programming Languages and Domain-Specific Languages
 
 The first computers were programmed in "machine code". Each kind of
 system had a different code, and these codes were low-level and
@@ -53,7 +55,7 @@ we have also developed a JavaScript environment for Marlowe. The Marlowe
 Playground, the online tool to help you build Marlowe contracts,
 supports both, as well as a visual way of writing Marlowe.
 
-# Marlowe in a nutshell
+## Marlowe in a nutshell
 
 Marlowe is modelled on special-purpose financial contract languages
 popularised in the last decade or so by academics and enterprises such
@@ -74,7 +76,7 @@ number of building blocks that describe making a payment, making an
 observation of something in the "real world", waiting until a certain
 condition becomes true, and so on.
 
-# Timeouts, deposits and commitments
+## Timeouts, deposits and commitments
 
 Where we differ from non-blockchain approaches is in how we make sure
 that the contract is followed. This means not only that the instructions
@@ -114,7 +116,7 @@ automatically, so some aspects of a Marlowe contract can "push" to make
 some things happen, e.g. ensuring that a payment is made to a
 participant by constructing an appropriate transaction output.
 
-# Marlowe in action
+## Marlowe in action
 
 We are working on a production release of Marlowe on the Cardano
 blockchain early in 2023. There already exists a prototype of Marlowe
@@ -135,7 +137,7 @@ using *static analysis*. We can also use logic tools to *formally prove
 properties* of Marlowe contracts, giving users the highest level of
 assurance that their contracts behave as intended.
 
-# Research-based
+## Research-based
 
 Marlowe is based on original, peer reviewed, research conducted by the
 Marlowe team, initially at the University of Kent supported by a
@@ -173,7 +175,7 @@ and in this eprints survey paper.
     Here we give an overview of the scripting languages used in existing
     cryptocurrencies.
 
-# Finding out more
+## Finding out more
 
 Systems
 
