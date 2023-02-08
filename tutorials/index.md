@@ -21,7 +21,7 @@ This document gives an overview of the Marlowe tutorials.
 | [Static analysis](static-analysis.md) | Marlowe contracts can be analysed without running them, and so, for instance, we can verify that a contract will always make the payments that it is required to, irrespective of the inputs that it receives. This tutorial explains this, and how to run an analysis in the playground. | 
 | [ACTUS and Marlowe](actus-marlowe.md) | This tutorial gives an introduction to the general idea of the ACTUS taxonomy, plus examples implemented in Marlowe. | 
 | [Using Marlowe from the ghci command line](using-marlowe.md) | This tutorial shows you how to use Marlowe from the command line in ghci, and in particular shows how to exercise a contract using the semantics given earlier. | 
-| [Using Marlowe Run](marlowe-run.md) | This tutorial shows you how to deploy and interact with Marlowe contracts on-chain using Marlowe Run. | 
+| [Using Marlowe Run--Deprecated](marlowe-run.md) | *DEPRECATED* -- This tutorial shows you how to deploy and interact with Marlowe contracts on-chain using Marlowe Run. | 
 | [Migrating from earlier versions of Marlowe](migrating.md) | Here we explain how the current version of Marlowe is related to earlier versions. | 
 | [Marlowe escrow step-by-step](escrow-step-by-step.md) | **Not previously posted** Need to write a description | 
 | [Implementing Marlowe in Plutus](marlowe-plutus.md) | **Not previously posted** Need to write a description | 
