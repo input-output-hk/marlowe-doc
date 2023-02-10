@@ -52,6 +52,7 @@
    - Running Marlowe Contracts without Blockchain Transactions, Brian Bush
    - Running Marlowe Contracts on the Blockchain, Brian Bush
    - Running Marlowe Contracts with the Marlowe Backend, optional, Brian Bush
+      > Note: This last video, *Running Marlowe Contracts with the Marlowe Backend, optional*, discusses Marlowe Run, which has been deprecated in favor of Marlowe Runtime. 
 
 ## Marlowe CLI
 
@@ -78,8 +79,15 @@
 
 ## Marlowe: Financial contracts on blockchain
 
+A set of videos that introduce Marlowe, a domain-specific language for financial contracts on blockchain, a set of examples of Marlowe in practice, and the Marlowe Playground, a browser-based tool for creating, simulating and analysing Marlowe contracts.
+
+> *NOTE*
+> 
+> *Brian is reviewing this set of videos to identify any that have become obsolete. We can include the full list as a reference on an archive page and present a subset of them here.* 
+
 | Video Title | Presenter | Date |
 |-------------|-----------|-------------|
+| [Playlist](https://www.youtube.com/playlist?list=PLqu19-ygE4ofUgGpslOs5zCr9Z6zCMibq) | Simon Thompson | Last updated Jul 2022 | 
 | [Marlowe 0: Introduction](https://youtu.be/NgCso8_ldAA) | Simon Thompson | Apr 2020 | 
 | [Marlowe 1: Blockchain essentials](https://www.youtube.com/watch?v=yi8-xaoTQT4) | Simon Thompson | Apr 2020 | 
 | [Marlowe 2: Domain-specific languages](https://www.youtube.com/watch?v=T4W19TdJHMw) | Simon Thompson | Apr 2020 | 
@@ -115,7 +123,7 @@
 | [Marlowe Playground 3: Elaborating the contract](https://www.youtube.com/watch?v=DS_ebkGwmXw) | Simon Thompson | Apr 2020 | 
 | [Marlowe Playground 4: Choices and observations](https://www.youtube.com/watch?v=25fnB7C8mPE) | Simon Thompson | Apr 2020 | 
 
-## Need descriptive heading here
+## Miscellaneous Demonstrations of Marlowe Capabilities on Cardano
 
 | Video Title | Presenter | Date |
 |-------------|-----------|-------------|
