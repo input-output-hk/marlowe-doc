@@ -2,6 +2,8 @@
 title: Introducing Marlowe
 ---
 
+Joseph's deep thoughts -- I doubt that this page is actualy a tutorial. Prove me wrong! 
+
 # Introducing Marlowe
 
 This tutorial gives an overview of the ideas behind Marlowe, as a
@@ -11,7 +13,7 @@ blockchain context.
 
 ## Programming Languages and Domain-Specific Languages
 
-The first computers were programmed in "machine code". Each kind of
+The first computers were programmed in "machine code." Each kind of
 system had a different code, and these codes were low-level and
 inexpressive: programs were long sequences of very simple instructions,
 incomprehensible to anyone who had not written them. Nowadays we are
@@ -32,11 +34,11 @@ the case of Marlowe, the domain is the field of financial contracts.
 Using a DSL has many advantages beyond its use by non-programmers:
 
 -   We can ensure that certain sorts of bad programs cannot even be
-    written, by designing those possibilities out of the language. By
+    written by designing those possibilities out of the language. By
     doing this we can aim to avoid some of the unanticipated exploits
     which have been a problem for existing blockchains.
 -   We can also more easily check that programs have the properties that
-    we want: for example, in the case of a Marlowe contract, we can make
+    we want; for example, in the case of a Marlowe contract, we can make
     sure that the contract will never fail to make a payment that it
     should.
 -   Because it is a DSL, we can build special-purpose tools to help
@@ -71,9 +73,11 @@ Marlowe Run is the client application that allows you to run Marlowe
 contracts on chain: it is available as a prototype and will presently be
 running \"live\" on the Cardano blockchain itself.
 
+   > Replace info above about Marlowe Run with info about Marlowe Runtime. 
+
 What does a Marlowe contract look like? It is built by combining a small
 number of building blocks that describe making a payment, making an
-observation of something in the "real world", waiting until a certain
+observation of something in the "real world," waiting until a certain
 condition becomes true, and so on.
 
 ## Timeouts, deposits and commitments
@@ -91,7 +95,7 @@ deposit. Instead, the contract can wait for a period of time for the
 participant to commit to the contract: when that period of time expires,
 the contract moves on to follow some alternative instructions. This
 prevents a participant stopping a contract by not taking part, thus
-making sure that "things happen".
+making sure that "things happen."
 
 All the constructs of Marlowe that require user participation --
 including user deposits and user choices -- are protected by timeouts.
@@ -106,14 +110,14 @@ commitment effectively ends.
 What is more, it is easy for us to *read off* from the contract when it
 will terminate, we call this the *lifetime* of the contract: all
 participants will therefore be able to find out this lifetime before
-taking part in any contract,
+taking part in any contract.
 
 In our model, a running contract cannot force a deposit or a choice to
 happen: all it can do is to request a deposit or choice from a
-participant. In other words, for these actions it cannot "*push*", but
-it can "*pull*". On the other hand, it *can* make payments
+participant. In other words, for these actions it cannot "*push*," but
+it can "*pull*." On the other hand, it *can* make payments
 automatically, so some aspects of a Marlowe contract can "push" to make
-some things happen, e.g. ensuring that a payment is made to a
+some things happen, e.g., ensuring that a payment is made to a
 participant by constructing an appropriate transaction output.
 
 ## Marlowe in action
@@ -125,10 +129,12 @@ it is stable and, therefore, we don\'t recommend using it in production
 at this stage. You are able to explore Marlowe for yourself, either by
 downloading it and using the Haskell implementation directly, by using
 the online Marlowe Playground development tool, the Marlowe Run
-simulator, and the [marlowe-cli]{.title-ref}. These are all covered in
+simulator, and the [marlowe-cli](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-cli). These are all covered in
 subsequent tutorials. We will also cover the details of Marlowe,
 introduce a series of examples, and look deeper into the tools for
 Marlowe.
+
+## Static analysis
 
 Because Marlowe is a DSL, we can work out how Marlowe contracts will
 behave without running them: this means that we can provide valuable
@@ -139,7 +145,7 @@ assurance that their contracts behave as intended.
 
 ## Research-based
 
-Marlowe is based on original, peer reviewed, research conducted by the
+Marlowe is based on original, peer-reviewed research conducted by the
 Marlowe team, initially at the University of Kent supported by a
 research grant from IOHK, and latterly as an internal engineering team
 in the company. We are also working jointly with Wyoming Advanced
@@ -190,9 +196,8 @@ Systems
 -   [The Marlowe Website](https://marlowe-finance.io) landing page for
     all things Marlowe.
 
+   > Note: The reference in the above list to Marlowe Run needs to be replaced with a reference to Marlowe Runtime. 
+
 Videos
 
--   [YouTube playlist: Marlowe: financial contracts on
-    blockchain](https://www.youtube.com/playlist?list=PLqu19-ygE4ofUgGpslOs5zCr9Z6zCMibq).
-    A general introduction to Marlowe from October 2020. Some features
-    of the Playground have been updated since then.
+-   [Marlowe video collection](videos.md)
