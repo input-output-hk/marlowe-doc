@@ -55,19 +55,52 @@ const config = {
         },
         items: [
           {
+            type: 'dropdown',
+            label: 'Getting Started',
+            position: 'left',
+            items: [
+              {
+                label: 'Developers',
+                to: '/docs/marlowe-cli',
+              },
+              {
+                label: 'Examples',
+                to: '/docs/examples',
+              },
+            ],
+          },
+          {
+            type: 'dropdown',
+            label: 'Community',
+            position: 'left',
+            items: [
+              {
+                label: 'Github',
+                href: 'https://github.com/input-output-hk/marlowe',
+              },
+              {
+                label: 'Stack Exchange',
+                href: 'https://cardano.stackexchange.com/',
+              },
+              {
+                label: 'Discord',
+                href: 'https://discord.gg/inputoutput',
+              },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/InputOutputHK',
+              },
+            ],
+          },
+          {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Documentation',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            type: 'search',
             position: 'right',
-          },
-          {
-            to: '/test', label: 'Test', postition: 'left'
           },
         ],
       },
@@ -78,8 +111,12 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Getting Started',
                 to: '/docs/intro',
+              },
+              {
+                label: 'FAQ',
+                to: '/faq',
               },
             ],
           },
@@ -87,16 +124,20 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Github',
+                href: 'https://github.com/input-output-hk/marlowe',
+              },
+              {
+                label: 'Stack Exchange',
+                href: 'https://cardano.stackexchange.com/',
               },
               {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://discord.gg/inputoutput',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/InputOutputHK',
               },
             ],
           },
@@ -104,17 +145,30 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'Privacy Policy',
+                href: 'https://static.iohk.io/gdpr/IOHK-Data-Protection-GDPR-Policy.pdf',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'Terms and Conditions',
+                href: 'https://plutus-static.s3.eu-central-1.amazonaws.com/IOHK+Website+Terms+%26+Conditions+(Final).pdf',
+              },
+              {
+                label: 'iohk.io',
+                href: 'https://iohk.io',
+              },
+              {
+                label: 'cardano.org',
+                href: 'https://cardano.org',
               },
             ],
           },
         ],
         // copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      },
+      algolia: {
+        appId: 'MY_APP_ID',
+        apiKey: 'MY_API_KEY',
+        indexName: '_INDEX',
       },
       prism: {
         theme: lightCodeTheme,
