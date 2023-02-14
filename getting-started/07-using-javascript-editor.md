@@ -3,6 +3,8 @@ title: Using the Javascript Editor
 metaTitle: Using the Javascript Editor
 ---
 
+# Using the Javascript Editor
+
 You can use the embedded JavaScript editor to write Marlowe code.
 
 To use the editor follow these steps:
