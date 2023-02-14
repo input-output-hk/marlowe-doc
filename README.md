@@ -1,12 +1,3 @@
-# marlowe-doc
-Documentation of the Marlowe language and ecosystem. 
-
-The Marlowe team is using this repo for consolidating, organizing and integrating all the Marlowe documentation into one location rather than multiple URLs. We plan to fold it into the main [Marlowe web site](https://marlowe-finance.io/). 
-
-## Top-level docs navigation
-
-Our current top-level navigation structure for the documentation will consist of these categories: 
-
 * Home
    * Core messaging for Marlowe docs landing page
    * About Marlowe
@@ -56,3 +47,47 @@ Our current top-level navigation structure for the documentation will consist of
    * Discord
    * Submit issue through GitHub repos
    * Contact us
+   
+---
+
+# Website
+
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+
+### Installation
+
+```
+$ yarn
+```
+
+### Local Development
+
+```
+$ yarn start
+```
+
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+### Build
+
+```
+$ yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```
+$ USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
