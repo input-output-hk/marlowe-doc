@@ -2,6 +2,7 @@
 title: Marlowe language guide
 metaTitle: Marlowe language guide
 ---
+
 # Marlowe language guide
 
 Marlowe is designed to create the building blocks of financial contracts: payments to and deposits from participants, choices by participants, and real world information. 

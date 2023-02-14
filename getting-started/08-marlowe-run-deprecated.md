@@ -3,6 +3,8 @@ title: Using the Marlowe Run demo
 metaTitle: Using the Marlowe Run demo
 ---
 
+# Marlowe Run is now deprecated
+
 Get your smart contracts up and running in minutes. Marlowe Run provides an intuitive, straightforward, and seamless interface for you to handle financial agreements with your friends, colleagues, or clients on the blockchain. It gives you access to expertly crafted, secure smart contract templates for any type of agreement that you want to use. 
 
 Marlowe Run is a fast and easy way to use and run contracts on Cardano. You will find a selection of financial contract templates so you can pick the right smart contract for you. Once you choose a template, you simply add in roles and terms, and then run your contract. You will be using the prototype version of Marlowe Run.

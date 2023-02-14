@@ -11,17 +11,25 @@ Our current top-level navigation structure for the documentation will consist of
    * Core messaging for Marlowe docs landing page
    * About Marlowe
    * Working with Marlowe
+
 * Getting Started
-   * Lifecycle of a Marlowe contract
-   * Contract templates
-   * How to work with code
-   * How to deploy Marlowe contracts
-   * Additional resources
-* [Browse Examples](browse-examples.md)
+   * [Introducing Marlowe](getting-started/01-introducing-marlowe.md)
+   * [Learn about Marlowe](getting-started/02-learn-about-marlowe.md)
+   * [Getting started with the Marlowe Playground](getting-started/03-marlowe-getting-started.md)
+   * [Marlowe language guide](getting-started/04-marlowe-language-guide.md)
+   * [Writing Marlowe with Blockly](getting-started/05-writing-marlowe-with-blockly.md)
+   * [Using the Haskell Editor](getting-started/06-using-the-haskell-editor.md)
+   * [Using the Javascript Editor](getting-started/07-using-javascript-editor.md)
+
+* Browse Examples
+   * [Browse Examples](browse-examples.md)
+
 * Tutorials 
    * [Written tutorials](/tutorials/index.md)
    * [Video tutorials](/tutorials/videos.md)
+
 * Architecture Overview
+
 * Developer Tools
    * Marlowe Domain Specific Language
    * Marlowe Platform
@@ -30,6 +38,7 @@ Our current top-level navigation structure for the documentation will consist of
    * Marlowe CLI
    * Marlowe Lambda
    * Developer Resources
+
 * Enterprise Integration
    * Business value
    * Integration with existing systems
@@ -41,6 +50,7 @@ Our current top-level navigation structure for the documentation will consist of
    * Maintenance and support
    * Compliance
    * Flexibility and adaptability to changing business needs
+
 * Support
    * FAQ
    * Discord

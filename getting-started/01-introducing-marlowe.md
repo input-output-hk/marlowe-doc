@@ -13,7 +13,7 @@ This introduction covers these topics:
 * What is a Marlowe contract
 * Putting Marlowe in perspective: general purpose programming languages vs. DSL
 * Developing and modeling Marlowe
-* Marlowe is an embedded DSL
+* Marlowe as an embedded DSL
 * How Marlowe contracts are protected
 * Looking ahead
 
