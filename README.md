@@ -1,18 +1,3 @@
-# Website
-
-<<<<<<< HEAD
-The Marlowe team is using this repo for consolidating, organizing and integrating all the Marlowe documentation into one location rather than multiple URLs. We plan to fold it into the main [Marlowe web site](https://marlowe-finance.io/). 
-=======
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
->>>>>>> e781a48 (Initial migration of website to docusaurus)
-
-### Installation
-
-```
-$ yarn
-```
-
-<<<<<<< HEAD
 * Home
    * Core messaging for Marlowe docs landing page
    * About Marlowe
@@ -62,7 +47,19 @@ $ yarn
    * Discord
    * Submit issue through GitHub repos
    * Contact us
-=======
+   
+---
+
+# Website
+
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+
+### Installation
+
+```
+$ yarn
+```
+
 ### Local Development
 
 ```
@@ -94,4 +91,3 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
->>>>>>> e781a48 (Initial migration of website to docusaurus)
