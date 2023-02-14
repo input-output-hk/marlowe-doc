@@ -12,7 +12,7 @@ Our current top-level navigation structure for the documentation will consist of
    * About Marlowe
    * Working with Marlowe
 
-* Getting Started
+* [Getting Started](getting-started/index.md)
    * [Introducing Marlowe](getting-started/01-introducing-marlowe.md)
    * [Learn about Marlowe](getting-started/02-learn-about-marlowe.md)
    * [Getting started with the Marlowe Playground](getting-started/03-marlowe-getting-started.md)
