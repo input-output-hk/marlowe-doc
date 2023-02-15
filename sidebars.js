@@ -12,6 +12,7 @@ const sidebars = {
         'getting-started-with-the-marlowe-playground',
         'marlowe-language-guide',
         'writing-marlowe-with-blockly',
+        'using-the-haskell-editor',
         'architecture',
         'contributing',
       ],
