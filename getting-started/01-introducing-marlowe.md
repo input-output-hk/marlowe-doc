@@ -107,19 +107,19 @@ If you are interested in working with us, please get in touch.
 
 Our research work is reported in these published papers.
 
--   [Marlowe: financial contracts on blockchain](https://iohk.io/en/research/library/papers/marlowefinancial-contracts-on-blockchain/)
+*   [Marlowe: financial contracts on blockchain](https://iohk.io/en/research/library/papers/marlowefinancial-contracts-on-blockchain/)
     The paper that introduced the Marlowe language. 
     It is an earlier version, but nevertheless it explains the principles and rationale behind its design and implementation.
--   [Marlowe: implementing and analysing financial contracts on blockchain](https://iohk.io/en/research/library/papers/marloweimplementing-and-analysing-financial-contracts-on-blockchain/)
+*   [Marlowe: implementing and analysing financial contracts on blockchain](https://iohk.io/en/research/library/papers/marloweimplementing-and-analysing-financial-contracts-on-blockchain/)
     This paper describes the implementation of Marlowe on the Cardano blockchain, and the analysis supported by the Marlowe Playground web-based development and simulation environment.
--   [Efficient static analysis of Marlowe contracts](https://iohk.io/en/research/library/papers/efficient-static-analysis-of-marlowe-contracts/)
+*   [Efficient static analysis of Marlowe contracts](https://iohk.io/en/research/library/papers/efficient-static-analysis-of-marlowe-contracts/)
     This paper explains how we optimised the static analysis explained in the previous paper.
--   [Standardized crypto-loans on the Cardano blockchain](https://iohk.io/en/research/library/papers/standardized-crypto-loans-on-the-cardano-blockchain/)
+*   [Standardized crypto-loans on the Cardano blockchain](https://iohk.io/en/research/library/papers/standardized-crypto-loans-on-the-cardano-blockchain/)
     In this paper we explore a smart contract framework for building standardized crypto-loans using Marlowe, with the ACTUS standard at its core.
 
 and in this eprints survey paper.
 
--   [Scripting smart contracts for distributed ledger technology](https://iohk.io/en/research/library/papers/scripting-smart-contracts-for-distributed-ledger-technology/)
+*   [Scripting smart contracts for distributed ledger technology](https://iohk.io/en/research/library/papers/scripting-smart-contracts-for-distributed-ledger-technology/)
     Here we give an overview of the scripting languages used in existing cryptocurrencies.
 
 ## Finding out more
@@ -135,4 +135,4 @@ Systems
 
 Videos
 
--   [Marlowe video collection](videos.md)
+-   Marlowe vidto collection (add link)
