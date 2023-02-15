@@ -13,8 +13,7 @@ const sidebars = {
         'marlowe-language-guide',
         'writing-marlowe-with-blockly',
         'using-the-haskell-editor',
-        'architecture',
-        'contributing',
+        'using-the-javascript-editor',
       ],
     },
     {
