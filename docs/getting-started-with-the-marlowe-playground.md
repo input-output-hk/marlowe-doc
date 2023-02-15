@@ -1,4 +1,5 @@
 ---
+title: Getting started with the Marlowe Playground
 sidebar_position: 1
 ---
 

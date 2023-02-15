@@ -9,6 +9,9 @@ const sidebars = {
       collapsed: false,
       items: [
         'introduction',
+        'getting-started-with-the-marlowe-playground',
+        'marlowe-language-guide',
+        'writing-marlowe-with-blockly',
         'architecture',
         'contributing',
       ],
