@@ -21,7 +21,7 @@ const sidebars = {
       label: 'Tutorials',
       collapsed: false,
       items: [
-        'tutorials/escrow',
+        'tutorials/tutorials-overview',
       ],
     },
     {
