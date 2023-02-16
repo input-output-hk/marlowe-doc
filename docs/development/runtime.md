@@ -5,7 +5,6 @@ sidebar_position: 6
 
 # Marlowe Runtime
 
-<br>
 
 > NOTE
 > 
@@ -19,11 +18,11 @@ sidebar_position: 6
 > 
 > * Haddock documentation
 
-<br>
+
 
 # Intended audience
 
-This documentation is intended for anyone who needs to deploy or use [Marlowe Runtime](https://github.com/input-output-hk/marlowe-cardano/tree/SCP-5012/marlowe-runtime). With Runtime, you can create a contract, apply inputs to it, list its history, and list contracts, among other tasks. 
+This documentation is intended for anyone who needs to deploy or use [Marlowe Runtime](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-runtime). With Runtime, you can create a contract, apply inputs to it, list its history, and list contracts, among other tasks. 
 
 The documentation here provides the information you need to build transactions, submit transactions, and query contract history. You can also learn essential information for working with the following resources: 
 
@@ -85,7 +84,7 @@ REST API is one of the methods you can use to do this.
    * `marlowe-chain-indexer`
    * `chainseekd`
 
-## [2.3 Chain seek protocol](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-chain-sync/docs/chain-seek-spec-1.0.md)
+## [2.3 Chain seek protocol](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-chain-sync/docs/chain-sync-spec-1.0.md)
 
 * A modification of the Chain Sync Protocol
 * Application-level protocol for writing off-chain code
@@ -127,15 +126,15 @@ The backend services are CLIs, but they are not utilities you would use. Rather,
 > 
 > Looking ahead, Jamie will be writing something like `marlowe-proxy` to simplify the process so that it won't be necessary to work with all five items for backend services shown in this section. 
 
-## [3.1 Chain Seek Daemon](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/chainseekd.md)
+## [3.1 Chain Sync Daemon](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe-chain-sync.md)
 
-* A chain seek server for the Marlowe Runtime
-* The `chainseekd` executable provides services for querying the blockchain for information that may relate to Marlowe contracts. 
+* A chain sync server for the Marlowe Runtime
+* The `marlowe-chain-sync` executable provides services for querying the blockchain for information that may relate to Marlowe contracts. 
 * Document lists command options
 
 * Commands
 
-   * `chainseekd`
+   * `marlowe-chain-sync`
 
 ## [3.2 Chain indexer for Marlowe Runtime](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe-chain-indexer.md)
 
@@ -281,7 +280,7 @@ Marlowe Pipe is a command-line tool that runs marlowe application requests. It r
 
 > NOTE: These examples should primarily live in Runtime, but cross-referencing them from "browse examples" would make sense. 
 
-* These [examples](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/ReadMe.md) are Jupyter notebook files
+* These [examples](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/ReadMe.md) are Jupyter notebook files.
 
 ## [7.1 Demonstrating the Marlowe Transaction Creation Component of Marlowe Runtime](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/create.ipynb) 
 
@@ -343,8 +342,6 @@ Marlowe Pipe is a command-line tool that runs marlowe application requests. It r
 > NOTE: This tutorial section should be moved to the "Getting Started" category instead of under "Runtime." 
 
 * Full-length tutorial document demonstrates how to run an example Marlowe contract, the ACTUS Principal at Maturity (PAM) contract, using the Marlowe Runtime backend and its command-line tool. 
-* See tutorial.ipynb -- 
-https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/tutorial.ipynb -- 
 
-to view this tutorial as a Jupyter notebook. 
+* See [tutorial.ipynb](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/tutorial.ipynb) -- to view this tutorial as a Jupyter notebook. 
 
