@@ -22,6 +22,7 @@ const sidebars = {
       collapsed: false,
       items: [
         'tutorials/tutorials-overview',
+        'tutorials/video-tutorials',
       ],
     },
     {
