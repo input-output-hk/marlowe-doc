@@ -29,8 +29,7 @@ Marlowe contracts to be dependently-typed, and writing expressions that
 are dependently-typed is much more cumbersome.
 
 Instead, Marlowe allows contracts that issue warning to be written, and
-we provide `static analysis
-tools <static-analysis>`{.interpreted-text role="ref"} that let contract
+we provide [static analysis tools](static-analysis.md) that let contract
 developers check whether a particular contract can possibly issue
 warnings. Additionally, we provide fall-back behaviours for when a
 contract produces a warning, despite our advice. We provide fall-back

@@ -14,7 +14,7 @@ earlier.
 This tutorial works in the version of Marlowe which can be found in the
 `main` branch of the [marlowe-cardano
 repository](https://github.com/input-output-hk/marlowe-cardano). We can
-run ghci by using the [nix-shell]{.title-ref} available in
+run ghci by using the *nix-shell* available in 
 [marlowe-dependency-docs
 repository](https://github.com/input-output-hk/marlowe-dependency-docs):
 

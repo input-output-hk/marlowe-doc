@@ -13,8 +13,7 @@ and reusable descriptions of Marlowe contracts.
 
 ![Escrow](images/escrow.png)
 
-Recall that we developed this Marlowe contract in our `earlier
-tutorial <escrow-ex>`{.interpreted-text role="ref"}.
+Recall that we developed this Marlowe contract in our [earlier tutorial](escrow-ex.md). 
 
 While we presented it there as a "monolothic" contract, we can use
 Haskell definitions to make it more readable. To start with, we can

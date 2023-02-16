@@ -33,8 +33,7 @@ data Contract = Close
               | Assert Observation Contract
 ```
 
-We saw `in the previous
-tutorial <marlowe-step-by-step>`{.interpreted-text role="ref"} what
+We saw in the [previous tutorial](marlowe-step-by-step.md) what
 these contracts do. In the rest of this tutorial we will dig a bit
 deeper into the Haskell types that are used to represent the various
 components of the contracts, including accounts, values, observations,

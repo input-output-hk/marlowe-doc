@@ -13,13 +13,11 @@ we describe here.
 ## Getting started
 
 To start building a Blockly project in the Marlowe Playground, which you
-can find out more about in the section about
-`playground overview <playground-overview>`{.interpreted-text
-role="ref"}. On the home screen
+can find out more about in the section about [playground overview](playground-overview.md). On the home screen
 
 ![Playground landing page](images/blocklyNew00.png)
 
-select **Start in Blockly**. You\'ll now see a screen like this:
+select **Start in Blockly**. You will now see a screen like this:
 
 ![Blockly window](images/blocklyNew01.png)
 

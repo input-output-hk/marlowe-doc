@@ -29,9 +29,10 @@ const sidebars = {
       label: 'Examples',
       collapsed: false,
       items: [
-        'examples/cli-cookbook',
         'examples/contract-examples',
         'examples/runtime-examples',
+        'examples/cli-tool-examples',
+        'examples/cli-cookbook',
       ],
     },
     {

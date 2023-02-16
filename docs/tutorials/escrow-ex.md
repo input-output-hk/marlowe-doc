@@ -196,4 +196,4 @@ describe financial contracts.
 [^1]: Lists in Marlowe are included in square brackets, as in `[2,3,4]`.
 
 [^2]: Again, we will describe how `arbitrate` and `agreement` work in
-    `embedded Marlowe <embedded-marlowe>`{.interpreted-text role="ref"}.
+    [embedded Marlowe](embedded-marlowe.md).

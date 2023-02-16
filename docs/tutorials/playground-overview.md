@@ -36,7 +36,7 @@ components in what follows.
 
 ## Getting started
 
-The landing page for the Marlowe Playground looks like this
+The landing page for the Marlowe Playground looks like this:
 
 ![The landing page for the Playground](images/landing-page.png)
 
@@ -47,7 +47,7 @@ The page offers three options
 
 -   **Open existing project** This opens a project that has been saved
     previously. See the section on [Saving and Opening
-    Projects](#_saving_and_opening_projects) below for more details on
+    Projects](#saving-and-opening-projects) below for more details on
     setting this up.
 -   **Open an example** This will load an example into the existing
     project, in the environment chosen by the user.
@@ -60,14 +60,14 @@ The page offers three options
 -   Wherever you start, you will have the chance to **simulate** the
     contracts that you develop.
 
-The program editor used in the Playground is the Monaco editor
-<https://microsoft.github.io/monaco-editor/> and many of its features
+The program editor used in the Playground is the Monaco editor -- 
+<https://microsoft.github.io/monaco-editor/> -- and many of its features
 are available, including the menu available on right-click.
 
 ## The JavaScript Editor: developing embedded contracts
 
 For details of how the JavaScript embedding for Marlowe is defined, see
-[Marlowe embedded in JavaScript](#_javascipt-embedding)
+[Marlowe embedded in JavaScript](javascript-embedding.md). 
 
 We can use JavaScript to make contract definitions more readable by
 using JS definitions for sub-components, abbreviations, and simple
@@ -103,7 +103,7 @@ simulation.
 
 If compilation is successful, the compiled code is shown by selecting
 **Generated code** in the footer of the page; this can subsequently be
-minimised, too.
+minimized, too.
 
 ![JS code compiled to Marlowe](images/js-compiled.png)
 
@@ -199,7 +199,7 @@ to run Marlowe contacts on the Cardano blockchain.
 
 The playground provides a mechanism for creating and viewing contracts
 in a visual form, rather than in text. This is discussed in this earlier
-section on `Blockly <playground-blockly>`{.interpreted-text role="ref"}.
+section on [Blockly](playground-blockly.md). 
 Note that the Blockly editor also offers access to the metadata editor
 and static analysis.
 
@@ -295,10 +295,9 @@ didn\'t see any *timeout* actions happening. Why not try this yourself?
 
 ## Oracle simulation
 
-As we noted earlier in the section on
-`marlowe-step-by-step`{.interpreted-text role="ref"}, the Playground
-provides oracle values to simulations for the role `"kraken"`. When the
-simulation reaches the point of simulating this construct
+As we noted earlier in the section on [Marlowe step by step](marlowe-step-by-step.md), the Playground
+provides oracle values to simulations for the role `"kraken"`. 
+When the simulation reaches the point of simulating this construct:
 
 ![Asking for an oracle value](images/oracles1.png)
 
