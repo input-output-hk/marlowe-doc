@@ -22,7 +22,7 @@ Rules:
 -   Funds will be locked until time 100.
 -   Only after time 100 funds will be redeemable.
 
-![Lock Savings](images/escrow/contract1.png)
+![Lock Savings](../../static/img/contract1.png)
 
 Marlowe code:
 
@@ -49,7 +49,7 @@ Rules:
 -   Alice can redeem funds after time 100 if Bob did not claim the
     payment.
 
-![Lock Savings](images/escrow/contract2.png)
+![Lock Savings](../../static/img/contract2.png)
 
 Marlowe code:
 
@@ -86,7 +86,7 @@ Rules:
     100.
 -   Funds are reedemable by Alice after time 100.
 
-![Lock Savings](images/escrow/contract3.png)
+![Lock Savings](../../static/img/contract3.png)
 
 Marlowe code:
 
@@ -122,7 +122,7 @@ Rules:
     from time 41 to time 100.
 -   Funds are reedemable by Alice after time 100.
 
-![Lock Savings](images/escrow/contract4.png)
+![Lock Savings](../../static/img/contract4.png)
 
 Marlowe code:
 
@@ -169,7 +169,7 @@ Rules:
     payment from time 61 to time 100.
 -   Funds are reedemable by Alice after time 100.
 
-![Lock Savings](images/escrow/contract5.png)
+![Lock Savings](../../static/img/contract5.png)
 
 Marlowe Code:
 
@@ -223,11 +223,11 @@ Rules:
     payment from time 61 to time 100.
 -   Funds are reedemable by Alice after time 100.
 
-![Lock Savings](images/escrow/contract6.png)
+![Lock Savings](../../static/img/contract6.png)
 
 Decision Tree
 
-![Lock Savings](images/escrow/contract8.png)
+![Lock Savings](../../static/img/contract8.png)
 
 Marlowe Code:
 

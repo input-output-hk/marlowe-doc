@@ -17,7 +17,7 @@ To use the Haskell editor follow these steps:
 
     You will see a window like this:
     
-![Haskell](haskell-first-window.jpg)
+![Haskell](../static/img/haskell-first-window.jpg)
 
 4. Now you can start coding in Haskell. 
   
@@ -27,7 +27,7 @@ To use the Haskell editor follow these steps:
 
     The following window will open for an Escrow contract:
     
-![Escrow](haskell-escrow-editor.png)
+![Escrow](../static/img/haskell-escrow-editor.png)
 
 6. Click **Compile** to convert this value from Haskell into Marlowe.
 
