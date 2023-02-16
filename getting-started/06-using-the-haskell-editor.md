@@ -33,4 +33,5 @@ To use the Haskell editor follow these steps:
 
 7. Then, click **Send to Simulator**. 
 
-   The Simulator allows you to simulate Marlowe contracts transaction by transaction. You can find more instructions on how to use the Haskell editor in the [Marlowe tutorial](https://play.marlowe-finance.io/doc/marlowe/tutorials/embedded-marlowe.html).
+   The Simulator allows you to simulate Marlowe contracts transaction by transaction. You can find more instructions on how to use the Haskell editor in the Marlowe embedded in Haskell tutorial. **add link** 
+   

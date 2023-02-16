@@ -9,8 +9,11 @@ const sidebars = {
       collapsed: false,
       items: [
         'introduction',
-        'architecture',
-        'contributing',
+        'getting-started-with-the-marlowe-playground',
+        'marlowe-language-guide',
+        'writing-marlowe-with-blockly',
+        'using-the-haskell-editor',
+        'using-the-javascript-editor',
       ],
     },
     {
@@ -18,7 +21,8 @@ const sidebars = {
       label: 'Tutorials',
       collapsed: false,
       items: [
-        'tutorials/escrow',
+        'tutorials/tutorials-overview',
+        'tutorials/video-tutorials',
       ],
     },
     {
@@ -26,9 +30,10 @@ const sidebars = {
       label: 'Examples',
       collapsed: false,
       items: [
-        'examples/cli-cookbook',
         'examples/contract-examples',
         'examples/runtime-examples',
+        'examples/cli-tool-examples',
+        'examples/cli-cookbook',
       ],
     },
     {

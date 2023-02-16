@@ -1,0 +1,153 @@
+# Videos
+
+## Contents
+
+1. [Introduction](#introduction)
+2. [General introductory videos](#general-introductory-videos)
+3. [Marlowe pioneers 1st cohort](#marlowe-pioneers-1st-cohort)
+4. [Marlowe CLI](#marlowe-cli)
+5. [Plutus pioneer program: Marlowe](#plutus-pioneer-program-marlowe)
+6. [Marlowe webinar](#marlowe-webinar)
+7. [Marlowe: financial contracts on blockchain](#marlowe-financial-contracts-on-blockchain)
+8. [Marlowe Playground tutorials](#marlowe-playground-tutorials)
+9. [Miscellaneous demonstrations of Marlowe capabilities on Cardano](#miscellaneous-demonstrations-of-marlowe-capabilities-on-cardano)
+
+## Introduction
+The videos listed below cover the full spectrum of topics related to Marlowe. Some videos are formal segments to courses. Others are webinar presentations. All of the presenters here (Omer Husain, Simon Thompson, Pablo Lamela, Brian Bush, Lars Brünjes, Yves Hauser, Alexander Nemish, Eric Czuleger) are experts who are deeply involved in the Marlowe team. 
+
+## General introductory videos
+
+| Video Title | Presenter | Date |
+|-------------|-----------|-------------|
+| [Marlowe explained: build low code and no code financial smart contracts on the Cardano blockchain](https://youtu.be/stbM2Zxzios) | Eric Czuleger | Jun 2022 | 
+| [Marlowe on Cardano Explained](https://youtu.be/vv2rJLN2Y1c) | Input Output | May 2021 | 
+
+
+
+
+## [Marlowe Pioneers 1st Cohort](https://www.youtube.com/channel/UCX9j__vYOJu00iqBrCzecVw/playlists?view=50&shelf_id=2)
+
+| Video Title | Presenter | Date |
+|-------------|-----------|-------------|
+| [**1. Welcome**](https://www.youtube.com/playlist?list=PLNEK_Ejlx3x3xkV0OQ0PjRaCtlbPhL0Eg) | Omer Husain | Jul 2022 | 
+| [Why do we need smart contracts](https://youtu.be/LYRovK5beAA) | Simon Thompson | Jul 2022 | 
+| [Why Marlowe](https://youtu.be/khyeRhYumJM) | Omer Husain | Jul 2022 | 
+| [Marlowe suite overview](https://youtu.be/Pxk-M0oBJMg) | Pablo Lamela | Jul 2022 | 
+| [**2. Using Marlowe**](https://www.youtube.com/playlist?list=PLNEK_Ejlx3x1o4Hv1GC_0kxXnquikXl70) | Lars Brünjes | Jul 2022 | 
+| [Introduction](https://www.youtube.com/playlist?list=PLNEK_Ejlx3x1o4Hv1GC_0kxXnquikXl70) | Lars Brünjes | Jul 2022 | 
+| [The EUTxO Model and Marlowe Contracts](https://youtu.be/5FrPxKEokBw) | Lars Brünjes | Jul 2022 | 
+| [Using Daedalus](https://youtu.be/OPDC-zNwyv4) | Lars Brünjes | Jul 2022 | 
+| [Marlowe Run](https://youtu.be/Yfiy7whWlMs) | Lars Brünjes | Jul 2022 | 
+| [The Marlowe Playground](https://youtu.be/zcuAFarkAh4) | Lars Brünjes | Jul 2022 | 
+| [**3. Marlowe in Depth**](https://www.youtube.com/playlist?list=PLNEK_Ejlx3x0beuXQwbcy58pAIyF4kASc) | Lars Brünjes | Jul 2022 | 
+| [Blockly and Marlowe](https://youtu.be/mqxxyjF3rbg) | Lars Brünjes | Jul 2022 | 
+| [Contract Metadata and Gists](https://youtu.be/F6QAN8ZDnZQ) | Lars Brünjes | Jul 2022 | 
+| [Making Choices](https://youtu.be/s07l2O6buKY) | Lars Brünjes | Jul 2022 | 
+| [Static Analysis](https://youtu.be/dpaFJ0qFz8A) | Lars Brünjes | Jul 2022 | 
+| [Homework](https://youtu.be/2ttlUwkV6mo) | Lars Brünjes | Jul 2022 | 
+| [**4. Marlowe Embedded in Haskell and JavaScript**](https://www.youtube.com/playlist?list=PLNEK_Ejlx3x0maFKSYpW-17FV0B0MbAoW) | Lars Brünjes | Jul 2022 | 
+| [Announcement of the Mock Incubator](https://youtu.be/XWqFb6sguQo) | Lars Brünjes | Jul 2022 | 
+| [Marlowe embedded in Haskell Playground](https://youtu.be/E6EghDyqOqE) | Lars Brünjes | Jul 2022 | 
+| [Marlowe embedded in JavaScript Playground](https://youtu.be/mSqnu7hI8RE) | Lars Brünjes | Jul 2022 | 
+| [Marlowe embedded in Haskell local](https://youtu.be/bE_-4h0iQgM) | Lars Brünjes | Jul 2022 | 
+| [Homework](https://youtu.be/82EXgeoKMt8) | Lars Brünjes | Jul 2022 | 
+| [**5. Marlowe and Standardization / ACTUS**](https://www.youtube.com/playlist?list=PLNEK_Ejlx3x0KLofo1maCkO3AYjQKknz-) | Yves Hauser | Jul 2022 | 
+| [Financial contracts and standardization](https://youtu.be/pMlV6aJEbIs) | Yves Hauser | Jul 2022 | 
+| [Example contracts](https://youtu.be/eghWshFt_fE) | Yves Hauser | Jul 2022 | 
+| [Merkelization](https://youtu.be/e6vdq5GN5Q8) | Yves Hauser | Jul 2022 | 
+| [Standardization: ACTUS](https://youtu.be/_brI7mAz-n8) | Yves Hauser | Jul 2022 | 
+| [**6. Assurance and Convenience**](https://www.youtube.com/playlist?list=PLNEK_Ejlx3x3PArP4vcu4WV0Z5xV0OLhy) | Pablo Lamela | Jul 2022 | 
+| [Some things that could go wrong](https://youtu.be/CLE4Z1cCHFY) | Pablo Lamela | Jul 2022 | 
+| [Static analysis and linting](https://youtu.be/k___AoPmcyk) | Pablo Lamela | Jul 2022 | 
+| [Formally verified properties](https://youtu.be/51v89pUtTlM) | Pablo Lamela | Jul 2022 | 
+| [Conclusion](https://youtu.be/m1PKovChW2w) | Pablo Lamela | Jul 2022 | 
+| [**7. Marlowe CLI**](https://www.youtube.com/playlist?list=PLNEK_Ejlx3x0GbvCw-61e9VfRafBT1JSw) | Brian Bush | Jul 2022 | 
+| [Overview of Marlowe CLI](https://youtu.be/lCFPTouvcE8) | Brian Bush | Jul 2022 | 
+| [Installing Marlowe CLI and Associated Tools](https://youtu.be/YeouP725Lfc) | Brian Bush | Jul 2022 | 
+| [Running Marlowe Contracts without Blockchain Transactions](https://youtu.be/o3m1Xz-f2Fk) | Brian Bush | Jul 2022 | 
+| [Running Marlowe Contracts on the Blockchain](https://youtu.be/DmF7dIKmJMo) | Brian Bush | Jul 2022 | 
+| [Running Marlowe Contracts with the Marlowe Backend, optional](https://youtu.be/ZmZdgxz2i9A) | Brian Bush | Jul 2022 | 
+
+   > NOTE: This last video, *Running Marlowe Contracts with the Marlowe Backend, optional*, discusses Marlowe Run, which has been deprecated in favor of Marlowe Runtime. 
+
+## Marlowe CLI
+
+| Video Title | Presenter | Date |
+|-------------|-----------|-------------|
+| [Marlowe CLI: Overview and tutorial](https://youtu.be/r71ZZmMzdno) | Brian Bush | Jul 2022 | 
+
+## [Plutus Pioneer Program: Marlowe](https://youtube.com/playlist?list=PLNEK_Ejlx3x2zSFnzWA4Gbr_AVTz-4rzf)
+
+| Video Title | Presenter | Date |
+|-------------|-----------|-------------|
+| [PPP 030901 - Introduction](https://youtu.be/433VbouC-30) | Lars Brünjes | Mar 2022 | 
+| [PPP 030902 - Simon Thompson: Marlowe Overview](https://youtu.be/ce_Yv8BlW7c) | Simon Thompson | Mar 2022 | 
+| [PPP 030903 - Alexander Nemish: Marlowe in Plutus](https://youtu.be/hd-E5DCN8uc) | Alexander Nemish | Mar 2022 | 
+| [PPP 030904 - Brian Bush: The Marlowe CLI](https://youtu.be/Vx_ygegrY78) | Brian Bush | Mar 2022 | 
+| [PPP 030905 - Marlowe Playground Demo](https://youtu.be/l0LXjh8J-go) | Lars Brünjes | Mar 2022 | 
+| [PPP 030906 - Homework](https://youtu.be/iYdyUaq_enA) | Lars Brünjes | Mar 2022 | 
+
+## Marlowe Webinar
+
+| Video Title | Presenter | Date |
+|-------------|-----------|-------------|
+| [Building a Language for Financial Smart Contracts](https://youtu.be/uwV35IE68dE) | Simon Thompson | Oct 2021 | 
+
+## Marlowe: Financial contracts on blockchain
+
+A set of videos that introduce Marlowe, a domain-specific language for financial contracts on blockchain, a set of examples of Marlowe in practice, and the Marlowe Playground, a browser-based tool for creating, simulating and analysing Marlowe contracts.
+
+> *Internal note*
+> 
+> *Brian is reviewing this set of videos to identify any that have become obsolete. We can include the full list as a reference on an archive page and present a subset of them here.* 
+
+| Video Title | Presenter | Date |
+|-------------|-----------|-------------|
+| [Playlist](https://www.youtube.com/playlist?list=PLqu19-ygE4ofUgGpslOs5zCr9Z6zCMibq) | Simon Thompson | Last updated Jul 2022 | 
+| [Marlowe 0: Introduction](https://youtu.be/NgCso8_ldAA) | Simon Thompson | Apr 2020 | 
+| [Marlowe 1: Blockchain essentials](https://www.youtube.com/watch?v=yi8-xaoTQT4) | Simon Thompson | Apr 2020 | 
+| [Marlowe 2: Domain-specific languages](https://www.youtube.com/watch?v=T4W19TdJHMw) | Simon Thompson | Apr 2020 | 
+| [Marlowe 3: Financial contracts](https://www.youtube.com/watch?v=1HRaRVyj2BI) | Simon Thompson | Apr 2020 | 
+| [Marlowe 4: Onto blockchain](https://www.youtube.com/watch?v=dhcmKmAZslc) | Simon Thompson | Apr 2020 | 
+| [Marlowe 5: Escrow onto blockchain](https://www.youtube.com/watch?v=ADMCMDQK7Yo) | Simon Thompson | Apr 2020 | 
+| [Marlowe 6: Marlowe in full](https://www.youtube.com/watch?v=Ro8iBh7V7oc) | Simon Thompson | Oct 2020 | 
+| [Marlowe 7: Writing Marlowe contracts in Haskell](https://youtu.be/kkJh3UnpfQw) | Simon Thompson | Apr 2020 | 
+| [Marlowe 8: Writing Marlowe contracts in JavaScript](https://www.youtube.com/watch?v=6tkZ3hlYZ7k) | Simon Thompson | Oct 2020 | 
+| [Marlowe 9: ACTUS and financial contracts](https://youtu.be/hyixK5rFhYc) | Simon Thompson | Apr 2020 | 
+| [Marlowe 10: Verifying Marlowe contracts](https://youtu.be/_DqGbupeBcY) | Simon Thompson | Apr 2020 | 
+| [Marlowe 11: Introducing the Marlowe Playground](https://youtu.be/5qe40Z5h5Ls) | Simon Thompson | Nov 2020 | 
+| [Marlowe 12: Using Haskell in the playground](https://www.youtube.com/watch?v=S0crHs-wTAc) | Simon Thompson | Nov 2020 | 
+| [Marlowe 13: Using JavaScript in the playground](https://www.youtube.com/watch?v=Oeuyy5AAQ3o) | Simon Thompson | Nov 2020 | 
+| [Marlowe 14: Building Marlowe directly in the playground](https://www.youtube.com/watch?v=9lHkCq0H4pw) | Simon Thompson | Nov 2020 | 
+| [Marlowe 15: Building contracts in Blockly](https://www.youtube.com/watch?v=9SKB5MfA_L8) | Simon Thompson | Nov 2020 | 
+| [Marlowe 16: Simulation in the playground](https://www.youtube.com/watch?v=3aFoN2wg9oc) | Simon Thompson | Nov 2020 | 
+| [Marlowe 17: Oracles in the playground](https://www.youtube.com/watch?v=LsTQEPMxyIU) | Simon Thompson | Nov 2020 | 
+| [Marlowe 18: Analysis in the playground](https://www.youtube.com/watch?v=VmoUAifui38) | Simon Thompson | Nov 2020 | 
+| [Marlowe 19: ACTUS labs (experimental)](https://www.youtube.com/watch?v=6PPWFZEfkks) | Simon Thompson | Nov 2020 | 
+| [Marlowe 20: Looking forward](https://youtu.be/80eJM2EdAqk) | Simon Thompson | Apr 2020 | 
+
+
+## Marlowe Playground Tutorials
+
+| Video Title | Presenter | Date |
+|-------------|-----------|-------------|
+| [Marlowe Playground in 4 minutes](https://youtu.be/axP-jYQ_6lo) | Simon Thompson | Sep 2021 | 
+| [Marlowe Playground: Contracts in Blockly, Cardano Summit](https://youtu.be/feTlWadaEyE) | Pablo Lamela and Alexander Nemish | Jul 2020 | 
+| [Marlowe Playground: Static Analysis of a Contract using SMT Solver, Cardano Summit](https://youtu.be/btT5RQnNcbY) | Alexander Nemish | Jul 2020 | 
+| [Marlowe Playground 1: Overview](https://youtu.be/yYJiD9GaHxw) | Simon Thompson | Apr 2020 | 
+| [Marlowe Playground 2: A first contract](https://www.youtube.com/watch?v=es4qpcHxr0I) | Simon Thompson | Apr 2020 | 
+| [Marlowe Playground 3: Elaborating the contract](https://www.youtube.com/watch?v=DS_ebkGwmXw) | Simon Thompson | Apr 2020 | 
+| [Marlowe Playground 4: Choices and observations](https://www.youtube.com/watch?v=25fnB7C8mPE) | Simon Thompson | Apr 2020 | 
+
+## Miscellaneous Demonstrations of Marlowe Capabilities on Cardano
+
+| Video Title | Presenter | Date |
+|-------------|-----------|-------------|
+| [1. Tokenizing NFTs as a Marlowe Contract](https://youtu.be/v4KtJb4k0Jc) | Brian Bush | Jan 2023 | 
+| [2. Marlowe Oracle for Cardano](https://youtu.be/n1Mv3I7QoTE) | Brian Bush | Dec 2022 | 
+| [3. Rollbacks on a Cardano Testnet](https://youtu.be/VNa2kORVctM) | Brian Bush | Dec 2022 | 
+| [4. Marlowe Lambda in the Browser](https://youtu.be/o5m_y5l_i_g) | Brian Bush | Nov 2022 | 
+| [5. A Marlowe Runtime Client for AWS Lambda](https://youtu.be/huXbRyrmW60) | Brian Bush | Oct 2022 | 
+| [6. Using the Marlowe Runtime backend to execute a Marlowe contract on Cardano's preview network](https://youtu.be/WlsX9GhpKu8) | Brian Bush | Oct 2022 | 
+| [7. Marlowe Runtime](https://youtu.be/8Bx2b2Gag0o) | Brian Bush | Oct 2022 | 
+| [8. A Geo-Located Smart Contract Using Cardano Beam and Marlowe](https://youtu.be/DmkYen0eaV0) | Brian Bush | Oct 2022 | 
