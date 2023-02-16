@@ -4,17 +4,6 @@ sidebar_position: 1
 
 # Introducing Marlowe
 
-This introduction covers these topics: 
-
-* Marlowe's intended users
-* Advantages of using Marlowe DSL
-* What is a Marlowe contract
-* Putting Marlowe in perspective: general purpose programming languages vs. DSL
-* Developing and modeling Marlowe
-* Marlowe as an embedded DSL
-* How Marlowe contracts are protected
-* Looking ahead
-
 ## Intended for financial contracts experts
 
 Marlowe is a special purpose or domain-specific language (DSL), designed to be used by experts in the domain of financial contracts. They do not need to be programmers. 
@@ -130,4 +119,4 @@ Systems
 
 Videos
 
--   Marlowe video collection (add link)
+-   [Marlowe video tutorials](tutorials/video-tutorials.md)

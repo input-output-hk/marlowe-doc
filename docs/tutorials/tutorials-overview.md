@@ -1,5 +1,5 @@
 ---
-title: Tutorials Overview
+title: Tutorials overview
 sidebar_position: 1
 ---
 
