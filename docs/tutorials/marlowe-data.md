@@ -12,11 +12,11 @@ be run. It also introduces *Extended Marlowe* which we use for
 describing *contract templates* in Marlowe.
 
 The code that we describe here comes from the Haskell modules
-[Semantics/Types.hs](https://github.com/input-output-hk/marlowe/blob/master/src/Language/Marlowe/Semantics/Types.hs)
+[Semantics/Types.hs](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe/src/Language/Marlowe/Core/V1/Semantics/Types.hs)
 ,
-[Semantics.hs](https://github.com/input-output-hk/marlowe/blob/master/src/Language/Marlowe/Semantics.hs)
+[Semantics.hs](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe/src/Language/Marlowe/Core/V1/Semantics.hs)
 and
-[Util.hs](https://github.com/input-output-hk/marlowe/blob/master/src/Language/Marlowe/Util.hs).
+[Util.hs](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe/src/Language/Marlowe/Util.hs).
 
 ## Marlowe
 
@@ -74,7 +74,7 @@ newtype TokenName = TokenName { unTokenName :: ByteString }
 However, Haskell allows us to present and read in these values more
 concisely (by declaring a custom instance of `Show` and using
 *overloaded strings*) so that these can be input and read as used above,
-`"alice"`, `"bob"` etc.
+`"alice"`, `"bob"`, etc.
 
 A Marlowe *account* holds amounts of multiple currencies and/or fungible
 and non-fungible tokens. A concrete amount is indexed by a `Token`,
@@ -86,7 +86,7 @@ newtype CurrencySymbol = CurrencySymbol { unCurrencySymbol :: ByteString }
 data Token = Token CurrencySymbol TokenName
 ```
 
-Cardano\'s Ada token is
+Cardano's Ada token is: 
 
 ``` haskell
 ada = Token adaSymbol adaToken
@@ -102,7 +102,7 @@ type AccountId = Party
 type Accounts = Map (AccountId, Token) Integer
 ```
 
-Tokens of a currency can represent roles in a contract, e.g `"buyer"`
+Tokens of a currency can represent roles in a contract, e.g., `"buyer"`
 and `"seller"`. Think of a legal contract in the sense of \"hereafter
 referred to as used above, the Performer/Vendor/Artist/Consultant\".
 This way we can decouple the notion of ownership of a contract role, and
@@ -128,7 +128,7 @@ We can use overloaded strings to allow us to abbreviate this account by
 the name of its owner: in this case `"alice"`.
 
 A payment can be made to one of the parties to the contract, or to one
-of the accounts of the contract, and this is reflected in the definition
+of the accounts of the contract, and this is reflected in this definition: 
 
 ``` haskell
 data Payee = Account AccountId
@@ -155,7 +155,7 @@ data ValueId    = ValueId ByteString
 Building on the basic types, we can describe three higher-level
 components of contracts: a type of *values*, on top of that a type of
 *observations*, and also a type of *actions*, which trigger particular
-cases. First, looking at `Value` we have
+cases. First, looking at `Value` we have:
 
 ``` haskell
 data Value = AvailableMoney Party Token
@@ -173,7 +173,7 @@ data Value = AvailableMoney Party Token
 ```
 
 The different kinds of values -- all of which are `Integer` -- are
-pretty much self explanatory, but for completeness we have
+pretty much self explanatory, but for completeness we have:
 
 -   Lookup of the value in an account `AvailableMoney`, made in a choice
     `ChoiceValue` and in an identifier that has already been defined
@@ -188,7 +188,7 @@ pretty much self explanatory, but for completeness we have
     `(Cond FalseObs (Constant 1) (Constant 2))` is equivalent to
     `(Constant 2)`
 
-Next we have observations
+Next we have observations:
 
 ``` haskell
 data Observation = AndObs Observation Observation
@@ -269,11 +269,12 @@ being run or simulated, respectively.
 As we noted earlier, the semantics of Marlowe consist in building
 *transactions*, like this:
 
-![transaction](images/transaction.svg) A transaction is built from a
-series of steps, some of which consume an input value, and others
+![transaction](images/transaction.svg) 
+
+A transaction is built from a series of steps, some of which consume an input value, and others
 produce effects, or payments. In describing this we explained that a
 transaction modified a contract (to its continuation) and the state, but
-more precisely we have a function
+more precisely we have a function:
 
 ``` haskell
 computeTransaction :: TransactionInput -> State -> Contract -> TransactionOutput
@@ -353,6 +354,8 @@ infrastructure in which it is run.
     deposits for each transaction.
 -   The model manages the refund of funds back to the owner of a
     particular account when a contract reaches the point of `Close`.
+
+**INTERNAL NOTE: Find better display solution for footnotes here**
 
 [^1]: In fact we used `newtype` declarations rather than `data` types
     because they are more efficiently implemented.

@@ -15,7 +15,7 @@ To use Blockly follow these steps:
     
 ![landing page](../static/img/landing-page-example.png)
 
-2. Click the **Start coding!** button on the bottom left and then select **Blockly** from the menu.
+2. Click the **Start in Blockly** icon on the right.
 
    You will see a window like this:
    

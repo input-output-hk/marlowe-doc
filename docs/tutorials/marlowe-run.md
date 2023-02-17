@@ -3,7 +3,7 @@ title: Using Marlowe Run
 sidebar_position: 1
 ---
 
-# Using Marlowe Run [DEPRECATED]
+# Using Marlowe Run **[DEPRECATED]**
 
 Get your smart contracts up and running in minutes. Marlowe Run provides
 an intuitive, straightforward, and seamless interface for you to handle

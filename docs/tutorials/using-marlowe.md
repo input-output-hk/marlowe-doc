@@ -6,7 +6,7 @@ sidebar_position: 1
 # Using Marlowe from the ghci command line
 
 This tutorial shows you how to use Marlowe from within Haskell, and in
-particular shows how to exercise a contract using the semantics given
+particular shows you how to exercise a contract using the semantics given
 earlier.
 
 ## Marlowe in Haskell
@@ -77,7 +77,7 @@ transaction at a time, and, here, we will do that with the embedded
 escrow contract contained in
 [Escrow.hs](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-contracts/src/Marlowe/Contracts/Escrow.hs).
 
-To load the contract into the interpreter we first import some libraries
+To load the contract into the interpreter, we first import some libraries
 and create utility functions:
 
 ``` haskell
@@ -110,17 +110,13 @@ state (at slot number 0) and the third is the initial escrow contract.
 The first is a `TransactionInput` which contains a `TimeInterval`
 -- here
 `((toPOSIX "2023-01-01 00:00:00.000000 UTC"), (toPOSIX "2023-01-31 23:59:59.000000 UTC"))`
--- and a deposit of 450 Lovelace from `"alice"` into `bob`\'s\' account
+-- and a deposit of 450 Lovelace from `"alice"` into `bob`'s account
 namely `NormalInput (IDeposit "bob" "alice" ada 450)`.
 
-::: note
-::: title
-Note
-:::
-
-If you want to try this for yourself in ghci, you can copy and paste
-from the code examples: they are in horizontally scrolling windows.
-:::
+> **NOTE** 
+> 
+> If you want to try this for yourself in ghci, you can copy and paste
+> from the code examples: they are in horizontally scrolling windows.
 
 The output is matched with
 `TransactionOutput txWarn1 txPay1 state1 con1` so that we can examine
@@ -142,7 +138,7 @@ updates the state to show the balance in the account `"bob"`, and
 updates the contract, ready to receive a choice from Alice.
 
 In the next state the contract is waiting for input, and if Alice agrees
-that \"Everything is alright\", then a payment to Bob is generated. This
+that "Everything is alright", then a payment to Bob is generated. This
 is verified through this interaction in GHCI:
 
 ``` haskell
@@ -156,13 +152,13 @@ State {accounts = Map {unMap = []}, choices = Map {unMap = [(ChoiceId "Everythin
 ```
 
 An alternative way of doing this is to add these definitions to a
-working file, e.g. `Build.hs`, where these definitions will be
+working file, e.g., `Build.hs`, where these definitions will be
 preserved. Indeed, it would be very sensible to include some of the
 definitions used above in such a file.
 
 ## Alternative routes through the contract
 
-An alternative execution of the contract is given by
+An alternative execution of the contract is given by the following: 
 
 -   First step: Alice deposits money as in the earlier example.
 -   Second step: Alice reports a problem and Bob disagrees. This can be
@@ -176,7 +172,7 @@ When [Case (Choice (ChoiceId "Dismiss claim" "carol") [Bound 0 0]) (Pay "alice" 
 State {accounts = Map {unMap = [(("alice",Token "" ""),450)]}, choices = Map {unMap = [(ChoiceId "Report problem" "alice",1),(ChoiceId "Dispute problem" "bob",0)]}, boundValues = Map {unMap = []}, minTime = POSIXTime {getPOSIXTime = 1675209600}}
 ```
 
-This shows that we\'re now in a contract where the choice is up to
+This shows that we're now in a contract where the choice is up to
 Carol, and that there is still the 450 Lovelace in the `"alice"`
 account.
 
@@ -184,9 +180,9 @@ Note that we have two inputs in the same transaction, Marlowe supports
 this as long as the transaction is signed by all relevant parties, and
 the time interval is before the timeout of the earliest `When`.
 
--   Third step: Carol makes a choice. If she chooses \"Dismiss claim\",
-    payment to Bob is made. If she chooses \"Confirm claim\", Alice is
-    refunded. Let\'s do that now:
+-   Third step: Carol makes a choice. If she chooses "Dismiss claim",
+    payment to Bob is made. If she chooses "Confirm claim", Alice is
+    refunded. Let's do that now:
 
 ``` haskell
 > let (TransactionOutput txWarn3 txPay3 state3 con3) = computeTransaction (TransactionInput (toPOSIX "2023-04-01 00:00:00.000000 UTC", toPOSIX "2023-04-30 23:59:59.000000 UTC") [NormalInput (IChoice (ChoiceId "Confirm claim" "carol") 1)]) state2 con2
@@ -204,11 +200,11 @@ containing non-zero balances, and so the contract is terminated.
 
 Why is single stepping useful? It is the equivalent of debugging, and we
 are able to see the internal state of the contract at each stage, the
-contract continuation, i.e. what remains to be executed, and the actions
+contract continuation, i.e., what remains to be executed, and the actions
 produced at each step.
 
-> **Exercise**
->
-> Explore some other ways of engaging with the contract - What happens
-> when Bob confirms there is a problem? - What happens if Bob and Alice
-> disagree, but Carol sides with Bob?
+**Exercise**
+
+Explore some other ways of engaging with the contract. 
+> * What happens when Bob confirms there is a problem? 
+> * What happens if Bob and Alice disagree, but Carol sides with Bob?

@@ -11,7 +11,7 @@ To use the editor follow these steps:
 
 1. Open the [Marlowe Playground](https://play.marlowe-finance.io/#/).
 
-2. Click **Start coding!** and select **Javascript** from the menu.
+2. Click the **Start in Javascript** icon.
 
       You will see a window like this:
       
@@ -27,4 +27,4 @@ To use the editor follow these steps:
 
 6. Then click **Send to Simulator** in the top right-hand corner. 
 
-    You can also find more details about simulation in the [Marlowe tutorial](https://play.marlowe-finance.io/doc/marlowe/tutorials/javascript-embedding.html). 
+    You can also find more details about simulation in the [Marlowe embedded in JavaScript tutorial](https://play.marlowe-finance.io/doc/marlowe/tutorials/javascript-embedding.html). 

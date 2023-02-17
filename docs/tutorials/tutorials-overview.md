@@ -21,11 +21,11 @@ This document gives an overview of the Marlowe tutorials.
 | [Static analysis](static-analysis.md) | Marlowe contracts can be analysed without running them, and so, for instance, we can verify that a contract will always make the payments that it is required to, irrespective of the inputs that it receives. This tutorial explains this, and how to run an analysis in the playground. | 
 | [ACTUS and Marlowe](actus-marlowe.md) | This tutorial gives an introduction to the general idea of the ACTUS taxonomy, plus examples implemented in Marlowe. | 
 | [Using Marlowe from the ghci command line](using-marlowe.md) | This tutorial shows you how to use Marlowe from the command line in ghci, and in particular shows how to exercise a contract using the semantics given earlier. | 
-| [Using Marlowe Run--Deprecated](marlowe-run.md) | *DEPRECATED* -- Replace this tutorial with the equivalent of ACTUS prototype regarding how to deploy and interact with Marlowe contracts on-chain. | 
+| [Using Marlowe Run--Deprecated](marlowe-run.md) | **DEPRECATED** -- Replace this tutorial with the equivalent of ACTUS prototype regarding how to deploy and interact with Marlowe contracts on-chain. | 
 | [Migrating from earlier versions of Marlowe](migrating.md) | Here we explain how the current version of Marlowe is related to earlier versions. | 
-| [Marlowe escrow step-by-step](escrow-step-by-step.md) | **Not previously posted** Need to write a description | 
-| [Implementing Marlowe in Plutus](marlowe-plutus.md) | **Not previously posted** Need to write a description | 
-| [The semantics of Marlowe 2.0](marlowe-semantics.md) | **Not previously posted** Need to write a description | 
+| [Marlowe escrow step-by-step](escrow-step-by-step.md) | **Not previously posted** -- **Include these? Or are they not needed?**  | 
+| [Implementing Marlowe in Plutus](marlowe-plutus.md) | **Not previously posted** -- **Include these? Or are they not needed?** | 
+| [The semantics of Marlowe 2.0](marlowe-semantics.md) | **Not previously posted** -- **Include these? Or are they not needed?** | 
 
 These tutorials address the current version of Marlowe, which is implemented in the [Marlowe Playground](https://play.marlowe-finance.io/#/). 
 

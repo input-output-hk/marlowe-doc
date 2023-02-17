@@ -33,7 +33,7 @@ We should separate the notions of *participant*, *role*, and *public
 keys* in a Marlowe contract. A participant (or party) in the contract
 can be represented by either a `role` or a `public key` (public keys
 will eventually be replaced by
-[addresses](https://docs.cardano.org/core-concepts/cardano-addresses)).
+[addresses](https://docs.cardano.org/core-concepts/cardano-addresses)). **fix broken link**
 
 *Roles* are represented by tokens and they are distributed to addresses
 at the time a contract is deployed to the blockchain. After that,
@@ -48,7 +48,7 @@ in the Marlowe Playground simply presents contract roles.
 
 *Public key* parties, are represented by the hash of a *public key* (or
 eventually an
-[addresses](https://docs.cardano.org/core-concepts/cardano-addresses)).
+[addresses](https://docs.cardano.org/core-concepts/cardano-addresses)). **fix broken link**
 Using public keys to represent parties is simpler because it doesn\'t
 require handling tokens, but they cannot be traded, because once you
 know the private key for a given public key you cannot prove you have
@@ -211,6 +211,8 @@ does not affect the contract\'s behaviour.
 **Building a transaction**
 
 ![transaction](images/transaction.svg)
+
+**INTERNAL NOTE -- fix how we display footnote citations**
 
 [^1]: We can think of oracles as another kind of party to the contract;
     under this view notifications become the choices made by that party.
