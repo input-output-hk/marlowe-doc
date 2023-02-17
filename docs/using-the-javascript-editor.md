@@ -1,9 +1,6 @@
 ---
 title: Using the Javascript Editor
-metaTitle: Using the Javascript Editor
 ---
-
-# Using the Javascript Editor
 
 You can use the embedded JavaScript editor to write Marlowe code.
 
@@ -27,4 +24,5 @@ To use the editor follow these steps:
 
 6. Then click **Send to Simulator** in the top right-hand corner. 
 
-    You can also find more details about simulation in the [Marlowe embedded in JavaScript tutorial](https://play.marlowe-finance.io/doc/marlowe/tutorials/javascript-embedding.html). 
+    You can also find more details about simulation in the [Marlowe embedded in JavaScript tutorial](tutorials/javascript-embedding.md). 
+    

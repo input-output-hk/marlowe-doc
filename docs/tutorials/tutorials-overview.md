@@ -1,11 +1,9 @@
 ---
-title: Tutorials overview
+title: Written tutorials overview
 sidebar_position: 1
 ---
 
-# Marlowe tutorials overview
-
-This document gives an overview of the Marlowe tutorials.
+You can access an extensive selection of written tutorials shown below. 
 
 | Tutorial | Description | 
 | --- | --- | 
