@@ -18,16 +18,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Tutorials',
-      collapsed: false,
-      items: [
-        'tutorials/tutorials-overview',
-        'tutorials/video-tutorials',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Examples',
+      label: 'Browse Examples',
       collapsed: false,
       items: [
         'examples/contract-examples',
@@ -38,7 +29,24 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Development',
+      label: 'Tutorials',
+      collapsed: false,
+      items: [
+        'tutorials/tutorials-overview',
+        'tutorials/video-tutorials',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Architecture Overview',
+      collapsed: false,
+      items: [
+        'architecture',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Developer Tools',
       collapsed: false,
       link: {
         type: 'generated-index',
@@ -52,17 +60,28 @@ const sidebars = {
         'development/runtime',
         'development/cli',
         'development/lambda',
+        'development/dev-resources',
       ],
     },
     {
       type: 'category',
-      label: 'Enterprise',
+      label: 'Enterprise Integration',
       collapsed: false,
       items: [
         'enterprise/integration',
       ],
     },
-    'faq',
+    {
+      type: 'category',
+      label: 'Support',
+      collapsed: false,
+      items: [
+        'support/faq',
+        'support/discord',
+        'support/github-repos',
+        'support/contact',
+      ],
+    },
   ],
 };
 
