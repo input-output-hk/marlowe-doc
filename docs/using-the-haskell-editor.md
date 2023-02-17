@@ -1,11 +1,12 @@
 ---
 title: Using the Haskell Editor
-metaTitle: Using the Haskell Editor
 ---
 
-# Using the Haskell Editor
+## For experienced Haskell developers
 
 As an experienced Haskell developer you can use the Haskell editor to render Marlowe code. Marlowe is written as a Haskell data type, and thus it is straightforward to generate Marlowe smart contracts using Haskell.
+
+## Opening the Marlowe Playground
 
 To use the Haskell editor follow these steps:
 
@@ -17,17 +18,25 @@ To use the Haskell editor follow these steps:
     
 ![Haskell](../static/img/haskell-first-window.jpg)
 
+## Coding in Haskell
+
 3. Now you can start coding in Haskell. 
   
-    Alternatively, you can use some example contracts to work with. 
-    
-4. Describe a contract in the editor. For this, define a top-level value contract of type `Contract`, add conditions, and close the contract. 
+    Alternatively, you can use some [example contracts](examples/contract-examples.md#more-marlowe-contract-examples) to work with. 
+
+## Describing a contract
+
+4. To describe a contract in the editor, define a top-level value contract of type `Contract`, add conditions, and close the contract. 
 
     The following window will open for an Escrow contract:
     
 ![Escrow](../static/img/haskell-escrow-editor.png)
 
+## Compiling into Marlowe
+
 5. Click **Compile** to convert this value from Haskell into Marlowe.
+
+## Sending to simulator
 
 6. Then, click **Send to Simulator**. 
 

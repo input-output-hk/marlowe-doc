@@ -5,20 +5,7 @@ sidebar_position: 6
 
 # Marlowe Runtime
 
-
-> NOTE
-> 
-> This is a review draft to identify essential topics and clarify overall organization. 
-> 
-> Are we missing any major pieces? 
-> 
-> The following topics are not yet addressed: 
-> 
-> * REST API using OpenAPI spec
-> 
-> * Haddock documentation
-
-
+[Marlowe Runtime](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/ReadMe.md) is an application back-end for running Marlowe contracts on the Cardano blockchain.
 
 # Intended audience
 

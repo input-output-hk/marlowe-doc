@@ -23,8 +23,6 @@ The videos listed below cover the full spectrum of topics related to Marlowe. So
 | [Marlowe on Cardano Explained](https://youtu.be/vv2rJLN2Y1c) | Input Output | May 2021 | 
 
 
-
-
 ## [Marlowe Pioneers 1st Cohort](https://www.youtube.com/channel/UCX9j__vYOJu00iqBrCzecVw/playlists?view=50&shelf_id=2)
 
 | Video Title | Presenter | Date |

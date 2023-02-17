@@ -54,6 +54,7 @@ const sidebars = {
         description: 'Learn more about Marlowe\'s ecosystem of developer tools',
       },
       items: [
+        'development/deployment-overview',
         'development/dsl',
         'development/platform',
         'development/playground',
@@ -77,8 +78,7 @@ const sidebars = {
       collapsed: false,
       items: [
         'support/faq',
-        'support/discord',
-        'support/github-repos',
+        'support/dev-discussions',
         'support/contact',
       ],
     },

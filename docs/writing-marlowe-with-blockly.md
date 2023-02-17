@@ -3,9 +3,9 @@ title: Writing Marlowe with Blockly
 metaTitle: Writing Marlowe with Blockly
 ---
 
-# Writing Marlowe with Blockly
-
 You can write Marlowe code directly as Marlowe text, or alternatively use the Blockly visual interface to piece together the parts of the contract. This is a very useful tool for those users who may not have experience in programming editors, and want to build the contracts visually.
+
+## Using Blockly
 
 To use Blockly follow these steps:
 
@@ -21,11 +21,15 @@ To use Blockly follow these steps:
    
 ![Blockly](../static/img/blockly.png)
 
+## Building contracts
+
 3. You can build contracts by adding components to the *Contract* block. 
 
    You will see a list of options for forming a contract by clicking **Contracts** in the menu. 
    
 ![Blockly](../static/img/blockly-contracts.png)
+
+## Selecting a block
 
 4. Click **Contracts** and select a block.
 
@@ -39,6 +43,8 @@ To use Blockly follow these steps:
 
 ![Blockly](../static/img/blockly-five.png)
 
+## Constructing a Deposit action
+
    The following example shows how to construct a *Deposit* action and fit it into the first gap in the contract that you are building.
 
 ![Blockly](../static/img/blockly-six.png)
@@ -51,7 +57,11 @@ To use Blockly follow these steps:
    
 ![Blockly](../static/img/blockly-seven.png)
 
+## Adding other actions
+
 8. You can add other actions. For this, choose actions, add them, and fill out information. Respective action will require different types of information.  Add the *Close* tab after *Continue as* so that the contract closes after making the deposit.
+
+## Completing your contract
 
 9. Finally, when all actions are inserted and conditions are added, you can complete your contract by adding a *Close* tab to the main contract. This shows how the contract should behave in case the deposit is not made before the specified timeout. 
 
