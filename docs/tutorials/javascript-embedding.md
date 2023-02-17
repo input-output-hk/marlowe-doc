@@ -29,7 +29,10 @@ an example of a full contract described using the JS embedding.
 
 The library implementation itself is straightforward, and you can find
 all of its source code here:
-<https://github.com/input-output-hk/plutus/blob/master/marlowe-playground-client/src/Language/Javascript/MarloweJS.ts>
+
+   * <https://github.com/input-output-hk/marlowe-playground/blob/main/marlowe-playground-client/src/Language/Javascript/MarloweJS.ts>
+
+
 It is based on the principle that for each Haskell *type* there is a
 corresponding TypeScript type, and corresponding to each *constructor*
 there is a constant definition.
@@ -176,10 +179,10 @@ and the function declaration. We can start by deleting everything that
 is not grayed-out, and start writing inside the curly brackets of the
 provided function definition.
 
-Let\'s say we want to write a contract so that Alice can exchange 1000
-Ada with Bob for \$100.
+Let's say we want to write a contract so that Alice can exchange 1000
+Ada with Bob for $100.
 
-First let\'s calculate the amounts we want to work with of each unit, we
+First let's calculate the amounts we want to work with of each unit, we
 can define some numerical constants using const:
 
 ``` typescript
@@ -194,8 +197,8 @@ The amount in the contract must be written in Lovelace, which is
 1,000 Ada for 1,000,000. The amount of dollars is 100 in our example.
 
 The API already provides a constructor for the currency ADA, and there
-isn\'t currently a currency symbol in Cardano for dollars, but let us
-imagine there is, and let\'s define it as follows:
+isn't currently a currency symbol in Cardano for dollars, but let us
+imagine there is, and let's define it as follows:
 
 ``` typescript
 const dollars : Token = Token("85bb65", "dollar")
@@ -206,7 +209,7 @@ symbol, which is a hash and must be written in base16 (hexadecimal
 representation of a byte string). And the string `"dollar"` would
 correspond to the token name.
 
-Let\'s now define an object type to hold the information about the
+Let's now define an object type to hold the information about the
 parties and what they want to exchange for convenience:
 
 ``` typescript
@@ -235,9 +238,9 @@ const bob : SwapParty = {
 }
 ```
 
-Now we are ready to start writing our contract. First let\'s define the
+Now we are ready to start writing our contract. First let's define the
 deposits. We take the information from the party that must do the
-deposit, the timeout until which we\'ll wait for the deposit to be made,
+deposit, the timeout until which we'll wait for the deposit to be made,
 and the continuation contract that will be enforced if the deposit is
 successful.
 
@@ -291,8 +294,8 @@ The contract has four steps:
 2.  Bob can deposit until POSIX time 1700003600 (2023-11-14 23:13:20
     GMT), one hour later, otherwise Alice gets a refund and the contract
     is aborted.
-3.  Then we pay Alice\'s deposit to Bob.
-4.  We pay Bob\'s deposit to Alice.
+3.  Then we pay Alice's deposit to Bob.
+4.  We pay Bob's deposit to Alice.
 
 And that is it. You can find the full source code for a templated
 version of the swap smart contract in the examples in the Marlowe

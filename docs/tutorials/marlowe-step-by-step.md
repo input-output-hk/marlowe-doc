@@ -78,7 +78,9 @@ If a role in a contract is `"kraken"`, and that role makes a choice such
 as `"dir-adausd"` then, in the Playground simulation, this choice will
 be *pre-filled*, based on data from Cryptowat.ch, with the current value
 of the *direct* ADA/USD conversion rate. You can find all supported
-currency pairs here <https://api.cryptowat.ch/markets/kraken>
+currency pairs here: 
+
+   <https://api.cryptowat.ch/markets/kraken>
 
 It is also possible to obtain the *inverse* rates of currency pairs
 listed by adding the prefix `inv-` instead. For example, `"inv-adausd"`

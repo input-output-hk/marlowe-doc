@@ -109,10 +109,10 @@ are refunded.
 
 `Close` is typically the last step in every "path" through a Marlowe
 contract, and its effect is to refund the money in the contract to the
-participants; we will describe this in more detail when we look at
-`Marlowe step by step <marlowe-step-by-step>`{.interpreted-text
-role="ref"} in a later tutorial. In this particular case, refund will
-happen at POSIX time `1700003600` (2023-11-14 23:13:20 GMT).
+participants; we will describe this in more detail when we look at 
+[Marlowe step by step](marlowe-step-by-step.md) in a later tutorial. 
+In this particular case, refund will happen at POSIX time `1700003600` 
+(2023-11-14 23:13:20 GMT).
 
 Looking at the inner constructs, if Alice\'s choice has been made, then
 we wait for one from Bob. If that is not forthcoming by POSIX time
@@ -153,14 +153,12 @@ refunded. In this case, that is simply the end of the contract.
 
 ## Definitions
 
-We will see `later <embedded-marlowe>`{.interpreted-text role="ref"}
-that parts of this contract description, such as `arbitrate`,
-`agreement`, and `price`, use the Haskell *embedding* of Marlowe DSL to
+We will see [later](embedded-marlowe.md) that parts of this contract description, 
+such as `arbitrate`, `agreement`, and `price`, use the Haskell *embedding* of Marlowe DSL to
 give some shorthand definitions. We also use *overloaded* strings to
 make some descriptions -- e.g. of accounts -- more concise.
 
-These are discussed in more detail when we look at `Marlowe embedded in
-Haskell <embedded-marlowe>`{.interpreted-text role="ref"}.
+These are discussed in more detail when we look at [Marlowe embedded in Haskell](embedded-marlowe.md).
 
 > **Exercise**
 >
@@ -196,4 +194,4 @@ describe financial contracts.
 [^1]: Lists in Marlowe are included in square brackets, as in `[2,3,4]`.
 
 [^2]: Again, we will describe how `arbitrate` and `agreement` work in
-    [embedded Marlowe](embedded-marlowe.md).
+    [Marlowe embedded in Haskell](embedded-marlowe.md).

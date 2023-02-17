@@ -71,17 +71,17 @@ accounts which do not conform to the 1-1 model.
 Examples where multiple participants use an account.
 
 -   Alice owns an account to which she commits money for Bob to spend
-    (think of Alice as Bob\'s employer). Bob is able to spend up to the
+    (think of Alice as Bob's employer). Bob is able to spend up to the
     limit in the account, but after the commitment times out, Alice
     recovers anything remaining.
 -   Alice owns an account to which she commits money for Bob and Carol
-    to spend (think of Alice as Bob\'s and Carol\'s employer). They are
+    to spend (think of Alice as Bob's and Carol's employer). They are
     able to spend (jointly) up to the limit in the account, but after
     the commitment times out, Alice recovers anything remaining.
 -   On the other hand, they could each be given a separate account from
     which to spend: that would enforce individual limits as well as an
     aggregate limit.
--   If Bob \[and Carol\] want to spend money they can also add money to
+-   If Bob [and Carol] want to spend money they can also add money to
     the account, but they should realise that anything unused will be
     refunded to Alice.
 

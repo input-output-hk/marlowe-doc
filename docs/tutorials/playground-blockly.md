@@ -6,14 +6,15 @@ sidebar_position: 1
 # Marlowe in Blockly
 
 So far in these tutorials we have concentrated on building contracts in
-the textual version of Marlowe, embedded in Haskell, Marlowe contracts
+the textual version of Marlowe, embedded in Haskell. Marlowe contracts
 can also be built using the Blockly visual programming environment, as
 we describe here.
 
 ## Getting started
 
 To start building a Blockly project in the Marlowe Playground, which you
-can find out more about in the section about [playground overview](playground-overview.md). On the home screen
+can find out more about in the section about [playground overview](playground-overview.md). 
+On the home screen: 
 
 ![Playground landing page](images/blocklyNew00.png)
 
@@ -26,9 +27,6 @@ To build a contract, we have to fill the single, top-level, hole here in
 the CONTRACT block with a `Contract`: you can see that it filled with a
 `Close` here.
 
-Blocks are selected by clicking on them: the currently selected blocks
-are outlined in yellow, as here:
-
 ![Selected blocks in the Blockly window](images/blocklyNew02.png)
 
 Once a block or blocks are selected you can move them directly; cut,
@@ -38,7 +36,10 @@ and access other operations by right-clicking on them.
 Suppose that you remove the `Close` block and you want to build another
 contract. The block templates for contracts are found by clicking on
 **Contracts** in the menu on the left hand side. Doing this shows all
-the different blocks that build contracts, as shown here:
+the different blocks that build contracts. 
+
+Blocks are selected by clicking on them: the currently selected blocks
+are outlined in yellow, as here:
 
 ![Contracts in Blockly](images/blocklyNew03.png)
 
@@ -55,7 +56,7 @@ block outlined in yellow).
 In the example here you can see that the upper hole requires a *case*
 block while the lower one needs to be filled by another *contract*.
 
-Let\'s fit the contract into the top-level hole, so that we\'re
+Now we will fit the contract into the top-level hole, so that we are
 constructing a contract with a `When` as its main construct.
 
 ![Fitting in a contract block](images/blocklyNew05.png)
@@ -65,7 +66,7 @@ components -- all of which are shown in the menu on the left-hand side
 -- to build a complete contract, that is a contract that contains no
 holes.
 
-Let\'s fill in the timeout information and add a `Close` contract to be
+We fill in the timeout information and add a `Close` contract to be
 performed in the case of timeout:
 
 ![Adding timeout information](images/blocklyNew06.png)
@@ -80,7 +81,7 @@ holes to fill.
 
 ![Making a Deposit](images/blocklyNew08.png)
 
-Here we have to choose
+Here we have to choose from the following: 
 
 -   A **from_party** for the depositor,
 -   A **value**, which is the amount deposited ...
@@ -90,12 +91,12 @@ Here we have to choose
 -   The continuation **contract**.
 
 In filling in some of these we have also to fill in a text field, or a
-number, as shown in the final result here.
+number, as shown in the final result here:
 
 ![Completing a Deposit contract](images/blocklyNew09.png)
 
 Finally, we have to decide what the *continutation* contract is: what
-does the contract do next? That\'s another contract. Here it is
+does the contract do next? That is another contract. Here it is
 completed as a payment:
 
 ![The complete contract](images/blocklyNew10.png)

@@ -33,6 +33,8 @@ following example.
 
 ## Simple Zero Coupon Bond Example
 
+> **NOTE**: 1 ada = 1,000,000 Lovelace. So the numbers should be adjusted in this example to take that into account. Currently the two terms appear to be used interchangeably. 
+
 A zero-coupon bond is a debt security that does not pay interest (a
 coupon) but is issued at a discount, rendering profit at maturity when
 the bond is redeemed for its full face value.
@@ -43,7 +45,7 @@ time*, here `1672531200` (2023-01-01 00:00:00 GMT).
 
 One month later, after *maturity date*, time `1675209600` (2023-02-01
 00:00:00 GMT) here, the investor can exchange the bond for its full
-notional, i.e. 1000 Lovelace.
+notional, i.e., 1000 Lovelace.
 
 ``` haskell
 When [
@@ -80,9 +82,9 @@ deposited the 850 Lovelace, it will be immediately paid to the `issuer`
 (if the `investor` does not invest in time, the contract ends). After
 that, two outcomes are possible
 
--   the `issuer` deposits 1000 Lovelace in the `investor`\'s account,
+-   the `issuer` deposits 1000 Lovelace in the `investor`'s account,
     and that is then immediately paid to the `investor` in full;
--   if the `investor` doesn\'t make the deposit, then the contract is
+-   if the `investor` doesn't make the deposit, then the contract is
     closed and all the money in the contract is refunded, but there is
     *no* money in the contract at this point, so the `investor` loses
     her money.

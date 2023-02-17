@@ -20,7 +20,7 @@ smart-contracts written in Marlowe.
 Contracts can be authored in four different ways in the Playground. We
 can write directly in Marlowe, or use the Blockly representation of
 Marlowe. Marlowe is also embedded in Haskell and JavaScript, and we can
-author contracts in these languages and then convert (\"compile\") them
+author contracts in these languages and then convert ("compile") them
 to Marlowe in the Playground. Once a contract has been written in
 Blockly, Haskell, or JavaScript, we can move to the Simulator to analyse
 and simulate the contract.
@@ -43,7 +43,7 @@ The landing page for the Marlowe Playground looks like this:
 The title bar has a link to this tutorial at the right-hand side, and
 the footer has some general links.
 
-The page offers three options
+The page offers three options:
 
 -   **Open existing project** This opens a project that has been saved
     previously. See the section on [Saving and Opening
@@ -54,7 +54,7 @@ The page offers three options
 
 ![Opening an example](images/open-example.png)
 
--   **Start something new** Here you\'re given the **choice** to start
+-   **Start something new** Here you're given the **choice** to start
     in Javascript, Haskell, Marlowe or Blockly.
 -   Each of these choices is covered now.
 -   Wherever you start, you will have the chance to **simulate** the
@@ -92,8 +92,8 @@ The buttons in the header bar provide standard functionality:
 -   **Open** an existing project
 -   **Open** one of the built in **examples**
 -   **Rename** the existing project
--   **Save** the current project under its current name (if it has one).
--   **Save** the current project **as** a newly named one.
+-   **Save** the current project under its current name (if it has one)
+-   **Save** the current project **as** a newly named one
 
 When you click the **Compile** button (in the top right-hand corner),
 the code in the editor is executed, and the JSON object returned by the
@@ -119,11 +119,11 @@ the contract **Metadata**.
 ![Metadata for JavaScript Marlowe contracts](images/js-metadata.png)
 
 The metadata editor contains fields for general descriptions of every
-contract, but also supports the entry of information describing
+contract, but also supports the entry of information describing these: 
 
--   roles
--   parameters
--   choices
+*   roles
+*   parameters
+*   choices
 
 When a contract is compiled successfully, the metadata editor will
 prompt you to add metadata for the fields that correspond to the
@@ -148,12 +148,12 @@ The editor supports auto-complete, error checking during editing, and
 information about bindings on mouse over. The buttons in the header bar
 provide standard functionality:
 
--   Create a **New Project**
--   **Open** an existing project
--   **Open** one of the built in **examples**
--   **Rename** the existing project
--   **Save** the current project under its current name (if it has one).
--   **Save** the current project **as** a newly named one.
+*   Create a **New Project**
+*   **Open** an existing project
+*   **Open** one of the built in **examples**
+*   **Rename** the existing project
+*   **Save** the current project under its current name (if it has one)
+*   **Save** the current project **as** a newly named one
 
 The Haskell editor is open here on the Escrow example contained in the
 examples. To describe a Marlowe contract in the editor, we have to
@@ -180,11 +180,11 @@ the contract **Metadata**.
 ![Metadata for Haskell Marlowe contracts](images/haskell-metadata.png)
 
 The metadata editor contains fields for general descriptions of every
-contract, but also supports the entry of information describing
+contract, but also supports the entry of information describing these: 
 
--   roles
--   parameters
--   choices
+*   roles
+*   parameters
+*   choices
 
 When a contract is compiled successfully, the metadata editor will
 prompt you to add metadata for the fields that correspond to the
@@ -192,8 +192,8 @@ appropriate elements of the contract, and to delete the fields that do
 not correspond to anything in the contract.
 
 Contract metadata not only provides documentation for Marlowe contracts,
-but is also used in Marlowe Run, the end-user client that is to be used
-to run Marlowe contacts on the Cardano blockchain.
+but is also used in the front end web app, the end-user client that is to be used
+to run Marlowe contacts on the Cardano blockchain in conjunction with Marlowe Runtime.
 
 ## Developing contracts in Blockly
 
@@ -205,7 +205,7 @@ and static analysis.
 
 ## Developing contracts in Marlowe
 
-It is also possible to create contracts in \"raw\" Marlowe too. Marlowe
+It is also possible to create contracts in "raw" Marlowe too. Marlowe
 is edited in the Marlowe editor, and this gives automatic formatting (on
 right click) and supports **holes** too.
 
@@ -228,7 +228,7 @@ the screen, and *vice versa*.
 ## Simulating Marlowe contracts and templates
 
 However a contract is written, when it is sent to simulation this is the
-view seen first. Here we\'re looking at the *Zero coupon bond* example.
+view seen first. Here we're looking at the *Zero coupon bond* example.
 
 ![The Simulation pane](images/simulation-tab.png)
 
@@ -246,7 +246,7 @@ simulated. Once the simulation has begun, whatever of the contract
 remains to be simulated is highlighted. The footer gives data about the
 simulation.
 
-For our example let\'s fill in the parameters like this.
+For our example let's fill in the parameters like this.
 
 ![Parameters added.](images/completed-params.png)
 
@@ -262,7 +262,7 @@ deposit of 10,000 Ada, or the time can advance to the next minute, the
 next timeout (in this case the *Loan deadline* timeout that we just set,
 at which the wait for a deposit times out), or directly to the
 expiration time of the contract. Two other generic actions can be taken
-too
+too: 
 
 -   **Undo** will undo the last action made in the simulator. This means
     that we can explore a contract interactively, making some moves,
@@ -273,7 +273,7 @@ too
 
 For our example, let us select for the *Lender* to make the deposit of
 10,000 Ada. We can do that with the **+** button next to this input.
-After doing that we see
+After doing that we see:
 
 ![Simulation step 2](images/simulation2.png)
 
@@ -291,7 +291,7 @@ The log on the right hand side of the screen now gives a complete list
 of the actions undertaken by the participants and by the contract
 itself. One final note: we chose not to advance the time at any point:
 this is consistent with the contract design; on the other hand we
-didn\'t see any *timeout* actions happening. Why not try this yourself?
+didn't see any *timeout* actions happening. Why not try this yourself?
 
 ## Oracle simulation
 
@@ -341,8 +341,7 @@ say that the contract passed all the tests, or to explain how it fails,
 and giving the sequence of transactions that lead to the error. As an
 exercise, try this with the `Escrow` contract, changing the initial
 deposit from Alice to something smaller than 450 lovelace. More details
-are given in the section on
-`static analysis <static-analysis>`{.interpreted-text role="ref"} below.
+are given in the section on [static analysis](static-analysis.md) below. 
 
 The **Analyse reachability** button will check whether any parts of a
 contract will never be executed, however participants interact with the

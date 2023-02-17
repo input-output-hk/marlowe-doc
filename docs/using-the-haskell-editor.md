@@ -11,27 +11,25 @@ To use the Haskell editor follow these steps:
 
 1. Open the [Marlowe Playground](https://play.marlowe-finance.io).
 
-2. Click **Start coding!** 
-
-3. Select the Haskell version from the menu. 
+2. Click the **Start in Haskell** icon. 
 
     You will see a window like this:
     
 ![Haskell](../static/img/haskell-first-window.jpg)
 
-4. Now you can start coding in Haskell. 
+3. Now you can start coding in Haskell. 
   
     Alternatively, you can use some example contracts to work with. 
     
-5. Describe a contract in the editor. For this, define a top-level value contract of type `Contract`, add conditions, and close the contract. 
+4. Describe a contract in the editor. For this, define a top-level value contract of type `Contract`, add conditions, and close the contract. 
 
     The following window will open for an Escrow contract:
     
 ![Escrow](../static/img/haskell-escrow-editor.png)
 
-6. Click **Compile** to convert this value from Haskell into Marlowe.
+5. Click **Compile** to convert this value from Haskell into Marlowe.
 
-7. Then, click **Send to Simulator**. 
+6. Then, click **Send to Simulator**. 
 
-   The Simulator allows you to simulate Marlowe contracts transaction by transaction. You can find more instructions on how to use the Haskell editor in the Marlowe embedded in Haskell tutorial. **add link** 
+   The Simulator allows you to simulate Marlowe contracts transaction by transaction. You can find more instructions on how to use the Haskell editor in the [Marlowe embedded in Haskell tutorial](tutorials/embedded-marlowe.md). 
    

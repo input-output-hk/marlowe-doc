@@ -11,12 +11,12 @@ them, without running them.
 
 We can check, in advance of running a contract, these properties:
 
--   Partial payments: i.e. payments when there was not enough money in
+-   Partial payments: i.e., payments when there was not enough money in
     account.
--   Non positive deposits: under which the contract asks for a value
+-   Non-positive deposits: under which the contract asks for a value
     which is negtive or zero.
--   Non positive payments: payments of 0 or a negative amount.
--   Shadowing of Lets , where two `Lets` set the same identifier in the
+-   Non-positive payments: payments of 0 or a negative amount.
+-   Shadowing of Lets, where two `Lets` set the same identifier in the
     same execution path.
 
 In the rest of this tutorial we will focus on the first of these, which
@@ -36,10 +36,10 @@ and in pure Marlowe:
 
 The contract first requires a deposit from Alice of `1` Lovelace, and
 then asks Bob to make a choice (called `bool`) of `0` or `1`. The
-contract then pays this choice *plus one* to Bob from Alice\'s account.
+contract then pays this choice *plus one* to Bob from Alice's account.
 
 So, we can see that while the contract works OK when Bob chooses `0`,
-there won\'t be enough in the contract to pay him if he chooses `1`. Our
+there won't be enough in the contract to pay him if he chooses `1`. Our
 analysis, which is built into the SIMULATION tab in the Marlowe
 Playground, can diagnose this:
 
@@ -67,17 +67,17 @@ of the contract. This gets passed to the Z3 SMT solver, which is a
 state-of-the-art automated system for deciding whether logic formulas
 are satisfiable.
 
-If the analysis is not successful, i.e. if there is a way of making the
+If the analysis is not successful, i.e., if there is a way of making the
 contract fail a payment, then the system will also *give an example* of
 how it can go wrong, and present that to the user. Users can then fix
 the problem, and check it again.
 
 ## Next steps
 
-In the next few months we will look at how to present the results of our
-analysis in a more \"user friendly\" way, as well as broadening out the
+Going forward, we will look at how to present the results of our
+analysis in a more "user friendly" way, as well as broadening out the
 scope of our work.
 
-Use the analysis button in the Marlowe Playground to analyse some of the
+Use the analysis button in the Marlowe Playground to analyze some of the
 contracts that you have already written. If the analysis fails, can you
 see why, and correct the contracts so that they do not fail.
