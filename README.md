@@ -3,21 +3,21 @@
    * About Marlowe
    * Working with Marlowe
 
-* [Getting Started](getting-started/index.md)
-   * [Introducing Marlowe](getting-started/01-introducing-marlowe.md)
-   * [Learn about Marlowe](getting-started/02-learn-about-marlowe.md)
-   * [Getting started with the Marlowe Playground](getting-started/03-marlowe-getting-started.md)
-   * [Marlowe language guide](getting-started/04-marlowe-language-guide.md)
-   * [Writing Marlowe with Blockly](getting-started/05-writing-marlowe-with-blockly.md)
-   * [Using the Haskell Editor](getting-started/06-using-the-haskell-editor.md)
-   * [Using the Javascript Editor](getting-started/07-using-javascript-editor.md)
+* Getting Started
+   * Introducing Marlowe
+   * Learn about Marlowe
+   * Getting started with the Marlowe Playground
+   * Marlowe language guide
+   * Writing Marlowe with Blockly
+   * Using the Haskell Editor
+   * Using the Javascript Editor
 
 * Browse Examples
-   * [Browse Examples](browse-examples.md)
+   * Browse Examples
 
 * Tutorials 
-   * [Written tutorials](/tutorials/index.md)
-   * [Video tutorials](/tutorials/videos.md)
+   * Written tutorials
+   * Video tutorials
 
 * Architecture Overview
 
@@ -25,7 +25,7 @@
    * Marlowe Domain Specific Language
    * Marlowe Platform
    * Marlowe Playground
-   * [Runtime--single doc version](https://github.com/input-output-hk/marlowe-doc/blob/main/runtime/index.md)
+   * Runtime
    * Marlowe CLI
    * Marlowe Lambda
    * Developer Resources
