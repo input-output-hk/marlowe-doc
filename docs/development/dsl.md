@@ -1,6 +1,6 @@
 ---
 title: Domain Specific Language
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 Marlowe is a domain-specific language (DSL) that enables users to create blockchain applications that are specifically designed for financial contracts.
