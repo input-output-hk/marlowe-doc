@@ -1,6 +1,6 @@
 ---
 title: Marlowe Playground
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 The Marlowe Playground is a plug-and-play smart contract builder and simulator that is simple to use, visual, and modular. Build, simulate, and analyze Marlowe contracts in this 4-minute tour of the Marlowe Playground.

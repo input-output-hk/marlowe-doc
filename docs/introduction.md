@@ -3,9 +3,11 @@ title: Introducing Marlowe
 sidebar_position: 1
 ---
 
-Marlowe is a domain-specific language (DSL) that enables users to create blockchain applications that are specifically designed for financial contracts.
+Marlowe is a low-code special purpose language that enables users to build smart contracts on the Cardano blockchain. 
 
-> * [Advantages of using Marlowe DSL](development/dsl.md)
+Marlowe is designed specifically for financial contracts. 
+
+* [Advantages of using Marlowe DSL](development/dsl.md)
 
 ## Intended for financial contracts experts
 

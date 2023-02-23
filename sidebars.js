@@ -19,7 +19,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Browse Examples',
-      collapsed: false,
+      collapsed: true,
       items: [
         'examples/contract-examples',
         'examples/runtime-examples',
@@ -30,7 +30,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Tutorials',
-      collapsed: false,
+      collapsed: true,
       items: [
         'tutorials/tutorials-overview',
         'tutorials/video-tutorials',
@@ -39,7 +39,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Architecture Overview',
-      collapsed: false,
+      collapsed: true,
       items: [
         'architecture',
       ],
@@ -47,7 +47,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Developer Tools',
-      collapsed: false,
+      collapsed: true,
       link: {
         type: 'generated-index',
         title: 'Developers',
@@ -60,14 +60,13 @@ const sidebars = {
         'development/playground',
         'development/runtime',
         'development/cli',
-        'development/lambda',
         'development/dev-resources',
       ],
     },
     {
       type: 'category',
       label: 'Enterprise Integration',
-      collapsed: false,
+      collapsed: true,
       items: [
         'enterprise/integration',
       ],
@@ -75,7 +74,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Support',
-      collapsed: false,
+      collapsed: true,
       items: [
         'support/faq',
         'support/dev-discussions',
