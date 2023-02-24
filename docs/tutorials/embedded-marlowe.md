@@ -3,8 +3,6 @@ title: Marlowe embedded in Haskell
 sidebar_position: 1
 ---
 
-# Marlowe embedded in Haskell
-
 In this tutorial we go back to the escrow example, and show how we can
 use the *embedding* of Marlowe in Haskell to make more readable, modular
 and reusable descriptions of Marlowe contracts.

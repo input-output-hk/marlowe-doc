@@ -3,8 +3,6 @@ title: ACTUS and Marlowe
 sidebar_position: 1
 ---
 
-# ACTUS and Marlowe
-
 This tutorial gives an introduction to the general idea of the ACTUS
 standards for the algorithmic representation of financial contracts,
 plus examples implemented in Marlowe.

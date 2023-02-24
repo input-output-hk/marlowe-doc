@@ -36,6 +36,14 @@ body {
   font-family: Barlow, sans-serif;
 }
 
+main ul {
+  list-style: disc;
+}
+
+main ol {
+  list-style: decimal;
+}
+
 .new-tab a::after {
   content: url("/static/img/chevron-external-light.svg");
   width: 24px;
