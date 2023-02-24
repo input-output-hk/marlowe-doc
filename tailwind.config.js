@@ -136,8 +136,6 @@ module.exports = {
     fontWeight: true,
     height: true,
     lineHeight: true,
-    listStylePosition: false,
-    listStyleType: false,
     maxHeight: true,
     maxWidth: true,
     minHeight: true,

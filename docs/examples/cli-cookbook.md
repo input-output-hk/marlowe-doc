@@ -2,8 +2,6 @@
 title: Marlowe CLI cookbook examples
 ---
 
-# Marlowe CLI cookbook examples
-
 | Example | Description | URL |
 | --- | --- | --- |
 | Using Djed in Marlowe Contracts | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/cookbook/payment-using-djed.ipynb | 

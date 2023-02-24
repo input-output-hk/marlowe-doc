@@ -3,9 +3,9 @@ title: Dev and Deployment Overview
 sidebar_position: 1
 ---
 
-# Resources for Developing and Deploying Marlowe Contracts
+## Resources for Developing and Deploying Marlowe Contracts
 
-## How do I run my Marlowe contract on the Cardano blockchain?
+### How do I run my Marlowe contract on the Cardano blockchain?
 
 1. Design your contract using [Marlowe Playground](https://play.marlowe-finance.io/#/).
 

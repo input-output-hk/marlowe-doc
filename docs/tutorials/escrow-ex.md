@@ -3,8 +3,6 @@ title: A first example
 sidebar_position: 1
 ---
 
-# A first example
-
 This tutorial introduces a simple financial contract in pseudocode,
 before explaining how it is modified to work in Marlowe, giving the
 first example of a Marlowe contract.
