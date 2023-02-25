@@ -2,8 +2,6 @@
 title: Marlowe Runtime examples
 ---
 
-# Marlowe Runtime examples
-
 | Example | Description | URL |
 | --- | --- | --- |
 | Marlowe create | Demonstrating the Marlowe transaction creation component of Marlowe Runtime | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/create.ipynb | 

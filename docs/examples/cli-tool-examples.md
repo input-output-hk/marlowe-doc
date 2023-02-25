@@ -2,9 +2,6 @@
 title: Marlowe CLI tool examples
 ---
 
-# Marlowe CLI tool examples
-
-
 | Example | Description | URL |
 | --- | --- | --- |
 | Simple contract | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/simple/ReadMe.md | 

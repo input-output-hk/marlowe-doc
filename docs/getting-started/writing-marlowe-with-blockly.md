@@ -12,13 +12,13 @@ To use Blockly follow these steps:
 
     You will see a window like this:
     
-![landing page](../static/img/landing-page-example.png)
+![landing page](../../static/img/landing-page-example.png)
 
 2. Click the **Start in Blockly** icon on the right.
 
    You will see a window like this:
    
-![Blockly](../static/img/blockly.png)
+![Blockly](../../static/img/blockly.png)
 
 ## Building contracts
 
@@ -26,7 +26,7 @@ To use Blockly follow these steps:
 
    You will see a list of options for forming a contract by clicking **Contracts** in the menu. 
    
-![Blockly](../static/img/blockly-contracts.png)
+![Blockly](../../static/img/blockly-contracts.png)
 
 ## Selecting a block
 
@@ -36,17 +36,17 @@ To use Blockly follow these steps:
 
    The following example shows how to construct a contract starting with `When` as its main construct.
    
-![Blockly](../static/img/blockly-four.png)
+![Blockly](../../static/img/blockly-four.png)
 
 6. Continue building the contract. To build a contract with `When`, it needs to include one or more actions that trigger the contract. These can be chosen from the **Actions** menu item.
 
-![Blockly](../static/img/blockly-five.png)
+![Blockly](../../static/img/blockly-five.png)
 
 ## Constructing a Deposit action
 
    The following example shows how to construct a *Deposit* action and fit it into the first gap in the contract that you are building.
 
-![Blockly](../static/img/blockly-six.png)
+![Blockly](../../static/img/blockly-six.png)
 
 7. Next, insert the following information:
  
@@ -54,7 +54,7 @@ To use Blockly follow these steps:
    - the value and currency (token) of the deposit
    - whose account it should be deposited to (the recipient).
    
-![Blockly](../static/img/blockly-seven.png)
+![Blockly](../../static/img/blockly-seven.png)
 
 ## Adding other actions
 
@@ -64,4 +64,4 @@ To use Blockly follow these steps:
 
 9. Finally, when all actions are inserted and conditions are added, you can complete your contract by adding a *Close* tab to the main contract. This shows how the contract should behave in case the deposit is not made before the specified timeout. 
 
-![Blockly](../static/img/blockly-eight.png)
+![Blockly](../../static/img/blockly-eight.png)

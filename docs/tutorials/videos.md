@@ -13,6 +13,7 @@
 9. [Miscellaneous demonstrations of Marlowe capabilities on Cardano](#miscellaneous-demonstrations-of-marlowe-capabilities-on-cardano)
 
 ## Introduction
+
 The videos listed below cover the full spectrum of topics related to Marlowe. Some videos are formal segments to courses. Others are webinar presentations. All of the presenters here (Omer Husain, Simon Thompson, Pablo Lamela, Brian Bush, Lars Brünjes, Yves Hauser, Alexander Nemish, Eric Czuleger) are experts who are deeply involved in the Marlowe team. 
 
 ## General introductory videos
@@ -21,9 +22,6 @@ The videos listed below cover the full spectrum of topics related to Marlowe. So
 |-------------|-----------|-------------|
 | [Marlowe explained: build low code and no code financial smart contracts on the Cardano blockchain](https://youtu.be/stbM2Zxzios) | Eric Czuleger | Jun 2022 | 
 | [Marlowe on Cardano Explained](https://youtu.be/vv2rJLN2Y1c) | Input Output | May 2021 | 
-
-
-
 
 ## [Marlowe Pioneers 1st Cohort](https://www.youtube.com/channel/UCX9j__vYOJu00iqBrCzecVw/playlists?view=50&shelf_id=2)
 

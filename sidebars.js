@@ -9,11 +9,11 @@ const sidebars = {
       collapsed: false,
       items: [
         'introduction',
-        'getting-started-with-the-marlowe-playground',
-        'marlowe-language-guide',
-        'writing-marlowe-with-blockly',
-        'using-the-haskell-editor',
-        'using-the-javascript-editor',
+        'getting-started/getting-started-with-the-marlowe-playground',
+        'getting-started/marlowe-language-guide',
+        'getting-started/writing-marlowe-with-blockly',
+        'getting-started/using-the-haskell-editor',
+        'getting-started/using-the-javascript-editor',
       ],
     },
     {

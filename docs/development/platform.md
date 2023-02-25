@@ -22,6 +22,10 @@ In developing Marlowe, we have adapted these languages to work on blockchain.
 Marlowe is implemented on the Cardano blockchain, but could equally well be implemented on Ethereum or other blockchain platforms;
 in this respect it is "platform agnostic" just like modern programming languages such as Java and C++. 
 
+Marlowe has been designed as an industry-scale solution and embodies examples from the [ACTUS](https://www.actusfrf.org/) taxonomy and standard for financial contracts. Contracts written in Marlowe can be integrated on Cardano or an alternative blockchain. 
+
+Marlowe can interact with real-world data – such as oracles – and the participants in the contract make choices within the contract flow to determine what happens both on- and off- chain, such as in a wallet. Marlowe is blockchain-agnostic: it enables the expression of smart contacts on top of an account-based model, such as Ethereum, and on the [extended unspent transaction output (EUTXO)](https://docs.cardano.org/learn/eutxo-explainer) model of [Cardano](https://cardano.org/).
+
 The Marlowe Playground online simulation allows you to experiment with, develop, simulate and analyze Marlowe contracts in your web browser, without having to install any software.
 Marlowe Runtime is an API with a service behind it that programmers can use to run Marlowe contracts. 
 Marlowe DApps use Marlowe Runtime to interact with and create Marlowe contracts on-chain. 

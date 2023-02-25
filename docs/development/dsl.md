@@ -3,7 +3,7 @@ title: Domain Specific Language
 sidebar_position: 2
 ---
 
-Marlowe is a domain-specific language (DSL) that enables users to create blockchain applications that are specifically designed for financial contracts.
+Marlowe is a domain-specific language (DSL) that you can use to create blockchain applications that are specifically designed for financial contracts. It allows you to apply your domain expertise to write and manage contracts conveniently, without the steep learning curve associated with software development, blockchain, or smart contracts. 
 
 ## Advantages of using Marlowe DSL
 
@@ -20,10 +20,11 @@ Beyond the notable benefit of being usable by non-programmers, the Marlowe DSL h
 
 ## Embedded DSL
 
-Marlowe is an *embedded* DSL, hosted in the [Haskell](https://www.haskell.org) programming language. 
-While it is possible to use "pure" Marlowe if we wish, being embedded in a general-purpose language allows contract writers to selectively exploit features of Haskell in writing Marlowe contracts, making them easier to read and re-use. 
-In fact, Marlowe is not tied to Haskell, and we have also developed a JavaScript environment for Marlowe. 
-The Marlowe Playground, the online tool to help you build Marlowe contracts, supports both Haskell and JavaScript, as well as a visual way of writing Marlowe using Blockly.
+Marlowe is an *embedded* DSL, hosted in both [JavaScript](https://www.javascript.com/) and [Haskell](https://www.haskell.org/), offering you a choice of editors depending on your preference and skillset. 
+
+Javascript offers flexibility and speed of use with a thriving ecosystem, while Haskell is a functional programming language with its own established ecosystem and solid testing framework. 
+
+While it is possible to use "pure" Marlowe if you wish, being embedded in a general-purpose language allows contract writers to selectively exploit features of JavaScript or Haskell in writing Marlowe contracts, making them easier to read and re-use. 
 
 ## Putting Marlowe in perspective -- general purpose programming languages vs. DSL
 
