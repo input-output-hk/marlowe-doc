@@ -2,14 +2,13 @@
 title: Marlowe contract examples
 ---
 
-# Very basic Marlowe contract example
+## Very basic Marlowe contract example
 
 | Example | Description | URL |
 | --- | --- | --- |
 | Test of a Simple Contract | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/simple/ReadMe.md | 
 
-# Basic Marlowe contract examples
-
+## Basic Marlowe contract examples
 
 | Example | Description | URL |
 | --- | --- | --- |
@@ -24,15 +23,13 @@ title: Marlowe contract examples
 | Test of a Swap Contract | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/swap/ReadMe.md |
 | Test of a Zero-Coupon Bond | Description goes here | https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/examples/zcb/ReadMe.md | 
 
-# Intermediate Marlowe contract example
-
+## Intermediate Marlowe contract example
 
 | Example | Description | URL |
 | --- | --- | --- |
 | Test of an ACTUS Contract (Zero-Coupon Bond) | Description goes here | https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-cli/examples/actus | 
 
-# More Marlowe contract examples
-
+## More Marlowe contract examples
 
 | Example | Description | URL |
 | --- | --- | --- |
