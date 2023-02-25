@@ -10,7 +10,6 @@ const sidebars = {
       items: [
         'introduction',
         'getting-started/getting-started-with-the-marlowe-playground',
-        'getting-started/marlowe-language-guide',
         'getting-started/writing-marlowe-with-blockly',
         'getting-started/using-the-haskell-editor',
         'getting-started/using-the-javascript-editor',
@@ -56,6 +55,7 @@ const sidebars = {
       items: [
         'development/deployment-overview',
         'development/dsl',
+        'development/marlowe-language-guide',
         'development/platform',
         'development/playground',
         'development/runtime',
