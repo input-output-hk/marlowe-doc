@@ -2,6 +2,10 @@
 title: Using the Haskell Editor
 ---
 
+> NOTE TO REVIEWERS 
+> 
+> Please review for essential technical content accuracy. Nuances of the marketing messaging and points of emphasis are subject to change right now. 
+
 ## For experienced Haskell developers
 
 As an experienced Haskell developer you can use the Haskell editor to render Marlowe code. Marlowe is written as a Haskell data type, and thus it is straightforward to generate Marlowe smart contracts using Haskell.

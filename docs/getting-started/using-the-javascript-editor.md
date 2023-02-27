@@ -2,6 +2,12 @@
 title: Using the Javascript Editor
 ---
 
+> NOTE TO REVIEWERS 
+> 
+> Please review for essential technical content accuracy. Nuances of the marketing messaging and points of emphasis are subject to change right now. 
+
+## For experienced JavaScript developers
+
 You can use the embedded JavaScript editor to write Marlowe code.
 
 To use the editor follow these steps:
