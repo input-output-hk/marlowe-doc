@@ -1,10 +1,7 @@
 ---
 title: Using the Javascript Editor
+sidebar_position: 1
 ---
-
-> NOTE TO REVIEWERS 
-> 
-> Please review for essential technical content accuracy. Nuances of the marketing messaging and points of emphasis are subject to change right now. 
 
 ## For experienced JavaScript developers
 
