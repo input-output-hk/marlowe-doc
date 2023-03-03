@@ -1,5 +1,6 @@
 ---
 title: Writing Marlowe with Blockly
+sidebar_position: 1
 ---
 
 You can write Marlowe code directly as Marlowe text, or alternatively use the Blockly visual interface to piece together the parts of the contract. This is a very useful tool for those users who may not have experience in programming editors, and want to build the contracts visually.

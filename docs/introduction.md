@@ -3,6 +3,11 @@ title: Introducing Marlowe
 sidebar_position: 1
 ---
 
+> NOTE TO REVIEWERS 
+> 
+> Please review for essential technical content accuracy. Nuances of the marketing messaging and points of emphasis are subject to change right now. 
+
+
 Marlowe, designed specifically for financial contracts, is a low-code, easy-to-learn language that you can use to build and deploy smart contracts on the Cardano blockchain. Since Marlowe is a special-purpose language, it is fairly easy to read, write, and understand Marlowe contracts. 
 
 Marlowe is designed for decentralized finance (DeFi) and supports direct, peer-to-peer lending, contracts for difference (CFD), and other similar instruments. 

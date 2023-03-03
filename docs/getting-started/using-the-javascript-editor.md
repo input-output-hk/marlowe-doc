@@ -1,6 +1,9 @@
 ---
 title: Using the Javascript Editor
+sidebar_position: 1
 ---
+
+## For experienced JavaScript developers
 
 You can use the embedded JavaScript editor to write Marlowe code.
 

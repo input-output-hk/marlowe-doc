@@ -17,13 +17,10 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Browse Examples',
+      label: 'Examples',
       collapsed: true,
       items: [
-        'examples/contract-examples',
-        'examples/runtime-examples',
-        'examples/cli-tool-examples',
-        'examples/cli-cookbook',
+        'examples/examples_v1',
       ],
     },
     {

@@ -1,5 +1,6 @@
 ---
 title: Using the Haskell Editor
+sidebar_position: 1
 ---
 
 ## For experienced Haskell developers
