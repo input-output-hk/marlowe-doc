@@ -5,30 +5,33 @@
 
 * Getting Started
    * Introducing Marlowe
-   * Learn about Marlowe
    * Getting started with the Marlowe Playground
-   * Marlowe language guide
    * Writing Marlowe with Blockly
    * Using the Haskell Editor
-   * Using the Javascript Editor
+   * Using the JavaScript Editor
 
-* Browse Examples
-   * Browse Examples
+* Examples
+   * Example Contracts
+      * Zero-coupon bond
+      * Swap
+      * Escrow
 
 * Tutorials 
    * Written tutorials
    * Video tutorials
 
 * Architecture Overview
+   * TBD
 
 * Developer Tools
-   * Marlowe Domain Specific Language
-   * Marlowe Platform
+   * Development and Deployment Overview
+   * Domain Specific Language
+   * Marlowe language guide
+   * Platform
    * Marlowe Playground
-   * Runtime
+   * Marlowe Runtime
    * Marlowe CLI
-   * Marlowe Lambda
-   * Developer Resources
+   * Resources
 
 * Enterprise Integration
    * Business value
@@ -44,10 +47,9 @@
 
 * Support
    * FAQ
-   * Discord
-   * Submit issue through GitHub repos
+   * Developer discussions
    * Contact us
-   
+
 ---
 
 # Website

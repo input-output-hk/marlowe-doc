@@ -7,3 +7,15 @@ Marlowe contracts are straightforward as they are optimized for financial transa
 
 Financial institutions can use Marlowe to develop and deploy unique instruments for their customers and clients, for example. 
 
+## Potential topics to be developed 
+
+   * Business value
+   * Integration with existing systems
+   * Time to value
+   * Technical feasibility
+   * Scalability
+   * Risk and security
+   * User adoption, effort required
+   * Maintenance and support
+   * Compliance
+   * Flexibility and adaptability to changing business needs
