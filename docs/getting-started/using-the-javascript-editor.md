@@ -3,6 +3,10 @@ title: Using the Javascript Editor
 sidebar_position: 1
 ---
 
+## About the Marlowe library, JavaScript, and TypeScript
+
+Even though we use the term "JavaScript," the Marlowe *Script framework* is written in TypeScript. Although JavaScript is a subset of TypeScript, a programmer who knows no TypeScript cannot really read the Marlowe "JavaScript" code. 
+
 ## For experienced JavaScript developers
 
 You can use the embedded JavaScript editor to write Marlowe code.
