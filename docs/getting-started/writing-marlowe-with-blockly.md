@@ -5,6 +5,14 @@ sidebar_position: 1
 
 You can write Marlowe code directly as Marlowe text, or alternatively use the Blockly visual interface to piece together the parts of the contract. This is a very useful tool for those users who may not have experience in programming editors, and want to build the contracts visually.
 
+## Opening Examples
+
+For reference, you may find it helpful to look at some of the examples to see what a contract looks like in its completed state. 
+
+1. From Marlowe Playground, select **Open Example** along the top menu. The Demo Files window opens. 
+
+2. Select from the available examples according to what most closely matches your requirements. 
+
 ## Using Blockly
 
 To use Blockly follow these steps:
