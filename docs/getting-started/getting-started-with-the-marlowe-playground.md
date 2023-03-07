@@ -3,18 +3,13 @@ title: Getting started with the Marlowe Playground
 sidebar_position: 1
 ---
 
-> NOTE TO REVIEWERS 
-> 
-> Please review for essential technical content accuracy. Nuances of the marketing messaging and points of emphasis are subject to change right now. 
-
-
 ## A low-code pathway for building financial smart contracts
 
 Intended to be used by either low-code financial professionals or experienced developers, the [Playground](https://play.marlowe-finance.io) provides methods for building Marlowe financial smart contracts in a sandbox environment using an iterative design process through simulations. 
 
 ## Choose from three Playground pathways
 
-1. Write directly in Marlowe text. 
+1. Write directly in the Marlowe language's text format.
 
 2. Use the [Blockly visual programming tool](writing-marlowe-with-blockly.md) to create contracts by fitting together blocks that represent the different components. 
 
