@@ -29,6 +29,8 @@ const sidebars = {
       collapsed: false,
       items: [
         'tutorials/tutorials-overview',
+        'tutorials/written-tutorials-index',
+        'tutorials/video-tutorials-index',
         'tutorials/escrow-ex',
         'tutorials/marlowe-model',
         'tutorials/marlowe-step-by-step',
@@ -42,7 +44,6 @@ const sidebars = {
         'tutorials/actus-marlowe',
         'tutorials/using-marlowe',
         'tutorials/migrating',
-        'tutorials/video-tutorials',
       ],
     },
     {
