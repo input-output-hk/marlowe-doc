@@ -1,5 +1,5 @@
 ---
-title: A first example
+title: Marlowe escrow step-by-step
 sidebar_position: 1
 ---
 
