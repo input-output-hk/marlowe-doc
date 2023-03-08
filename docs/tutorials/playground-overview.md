@@ -80,7 +80,7 @@ contained in the examples. To describe a Marlowe contract in the editor,
 a value of the type `Contract` must be returned as result of the
 provided function by using the instruction `return`.
 
-![The value returned by \`\`return\`\` defines the contract.](images/js-editor-cont.png)
+![The value returned by ``return`` defines the contract.](images/js-editor-cont.png)
 
 The editor supports auto-complete, error checking during editing, and
 information about bindings on mouse over. In particular, using mouse

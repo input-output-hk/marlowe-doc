@@ -57,7 +57,7 @@ data Party = PubKey PubKeyHash
 In order to progress a Marlowe contract, a party must provide an
 evidence. For `PubKey` party that would be a valid signature of a
 transaction signed by a private key of the public key, similarly to
-Bitcoin\'s `Pay to Public Key Hash` mechanism.
+Bitcoin's `Pay to Public Key Hash` mechanism.
 
 ``` haskell
 newtype PubKeyHash = PubKeyHash { getPubKeyHash :: ByteString }
@@ -103,8 +103,8 @@ type Accounts = Map (AccountId, Token) Integer
 ```
 
 Tokens of a currency can represent roles in a contract, e.g., `"buyer"`
-and `"seller"`. Think of a legal contract in the sense of \"hereafter
-referred to as used above, the Performer/Vendor/Artist/Consultant\".
+and `"seller"`. Think of a legal contract in the sense of "hereafter
+referred to as used above, the Performer/Vendor/Artist/Consultant".
 This way we can decouple the notion of ownership of a contract role, and
 make it tradable. So you can sell your loan or buy a share of a role in
 some contract.

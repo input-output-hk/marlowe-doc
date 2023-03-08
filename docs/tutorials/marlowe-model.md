@@ -21,7 +21,7 @@ off-chain world. The *parties* to the contract, whom we also call the
 *Notification* is another form of input that is used to tell the
 contract that a certain condition has been met, anybody can do this, and
 it is only necessary because once a contract becomes dormant
-(quiescent), it cannot \"wake up\" on its own, it can only respond to
+(quiescent), it cannot "wake up" on its own, it can only respond to
 inputs.[^1]
 
 Running a contract may also produce external *effects*, by making
@@ -33,7 +33,7 @@ We should separate the notions of *participant*, *role*, and *public
 keys* in a Marlowe contract. A participant (or party) in the contract
 can be represented by either a `role` or a `public key` (public keys
 will eventually be replaced by
-[addresses](https://docs.cardano.org/core-concepts/cardano-addresses)). **fix broken link**
+[addresses](https://docs.cardano.org/learn/cardano-addresses)). 
 
 *Roles* are represented by tokens and they are distributed to addresses
 at the time a contract is deployed to the blockchain. After that,
@@ -48,8 +48,8 @@ in the Marlowe Playground simply presents contract roles.
 
 *Public key* parties, are represented by the hash of a *public key* (or
 eventually an
-[addresses](https://docs.cardano.org/core-concepts/cardano-addresses)). **fix broken link**
-Using public keys to represent parties is simpler because it doesn\'t
+[addresses](https://docs.cardano.org/learn/cardano-addresses)). 
+Using public keys to represent parties is simpler because it doesn't
 require handling tokens, but they cannot be traded, because once you
 know the private key for a given public key you cannot prove you have
 forgotten it.
@@ -113,8 +113,8 @@ can propagate itself throughout a chain of transactions.
 
 To interact with a contract running on the blockchain, users will need
 to use the Marlowe Run client application. This, in turn, will interact
-with users\' wallets to authenticate transactions that spend
-crypto-assets, since deposits are made from users\' wallets, and
+with users' wallets to authenticate transactions that spend
+crypto-assets, since deposits are made from users' wallets, and
 payments received by them. Note, however, that these are definitely
 *off-chain* actions that need to be initiated by code running off chain,
 typically this will be in the Marlowe Run application: they cannot be
@@ -129,8 +129,8 @@ all the users simultaneously. This contrasts with the experience of
 running a contract in Marlowe Run, in which each participant sees the
 contract from their own point of view. In particular, participants are
 only able to interact with a running contract that is waiting for input
-from them; if that\'s not the case, then they will see that the contract
-execution is waiting from someone else\'s participation.
+from them; if that's not the case, then they will see that the contract
+execution is waiting from someone else's participation.
 
 ### Values and tokens
 
@@ -174,7 +174,7 @@ executing on chain.
 ## Executing a Marlowe contract
 
 Executing a Marlowe contract on Cardano blockchain means constraining
-user-generated transactions according to the contract\'s logic. If, at a
+user-generated transactions according to the contract's logic. If, at a
 particular point of execution, a contract expects a deposit of 100 Ada
 from Alice, only such a transaction will succeed, anything else will be
 rejected.
@@ -198,7 +198,7 @@ contracts look like, and how they are evaluated step by step.
 
 We have shown,[^4] that the behaviour of a Marlowe is independent of how
 inputs are collected into transactions, and so when we simulate the
-action of a contract we don\'t need to group inputs into transactions
+action of a contract we don't need to group inputs into transactions
 explicitly. For concreteness we can think of each transaction having at
 most one input. While the semantics of a contract is independent of how
 inputs are grouped into transactions, the *costs of execution* may be
@@ -206,7 +206,7 @@ lower if multiple inputs can be grouped into a single transaction.
 
 In the *omniscient* simulation available in the Marlowe playground we
 can safely abstract away from transaction grouping, since the grouping
-does not affect the contract\'s behaviour.
+does not affect the contract's behaviour.
 
 **Building a transaction**
 
