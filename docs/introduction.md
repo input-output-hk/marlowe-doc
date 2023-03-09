@@ -22,7 +22,7 @@ A Marlowe contract is built by combining a small number of building blocks that 
 
 ## Tutorials
 
-If you want to learn Marlowe from the ground up, start with Marlowe's [written tutorials](tutorials/tutorials-overview.md) and [video tutorials](tutorials/videos.md). 
+If you want to learn Marlowe from the ground up, start with Marlowe's [written tutorials](tutorials/written-tutorials-index.md) and [video tutorials](tutorials/video-tutorials-index.md). 
 
 Or jump right into the [Marlowe Playground](https://play.marlowe-finance.io): 
 

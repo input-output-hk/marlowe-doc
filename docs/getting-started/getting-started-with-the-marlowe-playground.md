@@ -39,4 +39,4 @@ We have [tutorials](tutorials/tutorials-overview.md) for you that outline exampl
 
 ## [Marlowe Playground in-depth written tutorial](tutorials/playground-overview.md)
 
-## [Marlowe Playground video tutorials](tutorials/video-tutorials.md#marlowe-playground-tutorials)
+## [Marlowe Playground video tutorials](tutorials/video-tutorials-index.md#marlowe-playground-tutorials)
