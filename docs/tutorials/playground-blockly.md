@@ -30,7 +30,7 @@ the CONTRACT block with a `Contract`: you can see that it filled with a
 ![Selected blocks in the Blockly window](images/blocklyNew02.png)
 
 Once a block or blocks are selected you can move them directly; cut,
-copy and delete them using your operating system\'s usual short cuts;
+copy and delete them using your operating system's usual short cuts;
 and access other operations by right-clicking on them.
 
 Suppose that you remove the `Close` block and you want to build another

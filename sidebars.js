@@ -18,7 +18,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Examples',
-      collapsed: true,
+      collapsed: false,
       items: [
         'examples/examples_v1',
       ],
@@ -26,16 +26,30 @@ const sidebars = {
     {
       type: 'category',
       label: 'Tutorials',
-      collapsed: true,
+      collapsed: false,
       items: [
         'tutorials/tutorials-overview',
-        'tutorials/video-tutorials',
+        'tutorials/written-tutorials-index',
+        'tutorials/video-tutorials-index',
+        'tutorials/escrow-ex',
+        'tutorials/marlowe-model',
+        'tutorials/marlowe-step-by-step',
+        'tutorials/playground-blockly',
+        'tutorials/marlowe-data',
+        'tutorials/embedded-marlowe',
+        'tutorials/javascript-embedding',
+        'tutorials/playground-overview',
+        'tutorials/potential-problems-with-contracts',
+        'tutorials/static-analysis',
+        'tutorials/actus-marlowe',
+        'tutorials/using-marlowe',
+        'tutorials/migrating',
       ],
     },
     {
       type: 'category',
       label: 'Architecture Overview',
-      collapsed: true,
+      collapsed: false,
       items: [
         'architecture',
       ],
@@ -43,7 +57,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Developer Tools',
-      collapsed: true,
+      collapsed: false,
       link: {
         type: 'generated-index',
         title: 'Developers',
@@ -63,7 +77,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Enterprise Integration',
-      collapsed: true,
+      collapsed: false,
       items: [
         'enterprise/integration',
       ],
@@ -71,7 +85,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Support',
-      collapsed: true,
+      collapsed: false,
       items: [
         'support/faq',
         'support/dev-discussions',

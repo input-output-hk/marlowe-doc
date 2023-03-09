@@ -3,8 +3,7 @@
 
 # Implementing Marlowe in Plutus
 
-So far these tutorials have dealt with Marlowe as a
-`stand alone'' artefact; this tutorial describes how Marlowe is implemented on blockchain, using the`mockchain\'\'
+So far these tutorials have dealt with Marlowe as a 'stand alone' artifact; this tutorial describes how Marlowe is implemented on blockchain, using the 'mockchain'
 that provides a high-fidelity simulation of the Cardano SL layer.
 
 ## Implementation
@@ -19,7 +18,7 @@ paper](https://iohk.io/research/papers/#functional-blockchain-contracts).
 Marlowe contract execution on the blockchain consists of a chain of
 transactions where, at each stage, the remaining contract and its state
 are passed through the *data script*, and actions and inputs
-(i.e. \*choices\* and *oracle* values) are passed as *redeemer scripts*.
+(i.e. *choices* and *oracle* values) are passed as *redeemer scripts*.
 Each step in contract execution is a transaction that spends a Marlowe
 contract script output by providing a valid input in a redeemer script,
 and produces a transaction output with a Marlowe contract as
@@ -38,9 +37,8 @@ number of advantages:
     for all Marlowe contracts, thus making it easier to implement,
     review, and test what we have done.
 -   It is close to the semantics of Marlowe, as described in the
-    `earlier
-    tutorial <marlowe-data>`{.interpreted-text role="ref"}, so making it
-    easier to validate.
+    [earlier tutorial](marlowe-data.md), so making it
+    easier to validate. 
 -   It means that the same implementation can be used for both on- and
     off-chain (wallet) execution of Marlowe code.
 -   It allows client-side contract evaluation, where we reuse the same
@@ -83,7 +81,7 @@ shown here.
 
 **Execution.** Marlowe contract execution consists of a chain of
 transactions, where the remaining contract and state are passed through
-the *data script*, and actions and inputs (i.e. \*choices\* and *oracle*
+the *data script*, and actions and inputs (i.e. *choices* and *oracle*
 values) are passed as *redeemer scripts*.
 
 Each step is a transaction that spends a Marlowe contract script output
@@ -190,7 +188,7 @@ state can be precisely evaluated beforehand using `eval` function.
 To ensure that the user provides valid remaining `Contract` and `State`,
 the Marlowe validator script will compare the evaluated contract and
 state with those provided by the user, and will reject a transaction if
-those do not match. To ensure that the remaining contract\'s data script
+those do not match. To ensure that the remaining contract's data script
 has the same `Contract` and `State` as was passed with the redeemer
 script, we check that data script hash is the same as that of the
 redeemer script.

@@ -98,7 +98,7 @@ actual Marlowe contract. Once that is successful it is possible to
 **Send to Simulator**; how this works is described in the next section.
 
 In principle you could write JavaScript code that produces the
-Marlowe\'s JSON representation directly, but you should not have to
+Marlowe's JSON representation directly, but you should not have to
 worry about JSON at all when using the JS library.
 
 When you use the JS Marlowe library, and your use of the functions and
@@ -162,7 +162,7 @@ cannot do anything about it.
 In Haskell, constant boolean observations are represented by `TrueObs`
 and `FalseObs`, and constant integer values are represented by
 `Constant` followed by an `Integer`. In JavaScript and TypeScript you
-can also use these constructors, but you don\'t have to, because the
+can also use these constructors, but you don't have to, because the
 Observation type is overloaded to also accept the native JavaScript
 booleans, and functions that in Haskell take a `Value`, in JavaScript
 they take an `EValue` instead, and `EValue` is defined as follows:

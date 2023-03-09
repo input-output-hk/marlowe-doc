@@ -58,7 +58,7 @@ When [ Case aliceChoice
 
 In this contract, either Alice or Bob can make the first choice; the
 other then makes a choice. If they agree, then that is done; if not,
-Carol arbitrates. In the remainder of the tutorial we\'ll revert to the
+Carol arbitrates. In the remainder of the tutorial we'll revert to the
 simpler version where `alice` chooses first.
 
 > **Exercise**
@@ -112,7 +112,7 @@ participants; we will describe this in more detail when we look at
 In this particular case, refund will happen at POSIX time `1700003600` 
 (2023-11-14 23:13:20 GMT).
 
-Looking at the inner constructs, if Alice\'s choice has been made, then
+Looking at the inner constructs, if Alice's choice has been made, then
 we wait for one from Bob. If that is not forthcoming by POSIX time
 `1700007200` (2023-11-15 00:13:20 GMT), then Carol is called upon to
 arbitrate.[^2]

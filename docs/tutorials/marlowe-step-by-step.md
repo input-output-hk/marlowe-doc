@@ -87,12 +87,12 @@ listed by adding the prefix `inv-` instead. For example, `"inv-adausd"`
 would return the value of the USD/ADA conversion rate.
 
 Note, that we support only whole numbers as choice inputs. How then do
-we use current ADA/USD price, which might be \$0.098924? We simply
+we use current ADA/USD price, which might be $0.098924? We simply
 multiply the price by 10^8^, so the price would appear as 9892400. You
 can use `DivValue` with the resulting value after doing your
 calculations.
 
-For example, you\'d like to buy USDT for 12 ADA, using Oracle price.
+For example, you'd like to buy USDT for 12 ADA, using Oracle price.
 
 Get the price:
 

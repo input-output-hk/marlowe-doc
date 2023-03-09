@@ -16,7 +16,7 @@ more transactions can be processed -- in sequence -- by a contract.
 From the point of view of the semantics, a transaction consists of a
 list of inputs, and the whole transaction may be *signed* by one or more
 participants. Concretely, we represent a transaction as a list of
-\`AnyInput\`s together with a set of integers representing the set of
+`AnyInput`s together with a set of integers representing the set of
 signatories.
 
 As we mentioned in `the previous
@@ -50,7 +50,7 @@ functions: `reduce`, `fetchPrimitive`, and `eval`.
 -   The `reduce` function (and its auxiliary function `reduceRec`) are
     applied before and after each input,
 -   `fetchPrimitive` is applied only for inputs that are actions (i.e:
-    \`Commit\`s and \`Pay\`s), and
+    `Commit`s and `Pay`s), and
 -   `eval` is applied to the result of `fetchPrimitive` whenever
     appropriate.
 
@@ -198,7 +198,7 @@ reduceRec blockNum state env c@(Pay _ _ _ _ timeout _ continuation) =
 
 ## Non-action input processing
 
-`` Choice+`s and  ``+Oracle+\`s inputs are processed very differently to
+`` Choice+`s and  ``+Oracle+`s inputs are processed very differently to
 actions. They are relatively independent of the state of the contract,
 and they may be issued at any time, as long as the values provided can
 potentially be used by the contract. In other words, there must be
@@ -211,7 +211,7 @@ problems like DoS. For these reasons, the Marlowe 2.0 semantics
 disallows providing information that is not required.
 
 Other than that, the only thing that Marlowe does when provided with
-`` Choice+`s and  ``+Oracle+\`s is to record them in the state so that
+`` Choice+`s and  ``+Oracle+`s is to record them in the state so that
 the [+reduce]{.title-ref} function can access them.
 
 ## Combinators and `Null`
@@ -262,7 +262,7 @@ to replace a contract by a smaller but equivalent one. For example,
 The `Both` construct allows two contracts to be active simultaneously.
 It would be like having two separate contracts deployed simultaneously,
 except in that when using `Both` they will share `State`, and thus
-`` Commit+`s made in one of the contracts can be used for  ``+Pay+\`s in
+`` Commit+`s made in one of the contracts can be used for  ``+Pay+`s in
 the other contract. We have also taken a lot of care in ensuring that
 [+Both]{.title-ref} is symmetric, that is, writing `Both A B` should be
 equivalent to writing `Both B A`, no matter what `A` and `B` are.
@@ -305,7 +305,7 @@ reduceRec blockNum state env c@(When obs timeout cont1 cont2) =
 ```
 
 It is worth noting that, because Marlowe follows a `pull' model, it is
-not just enough for the `+Observation+\` to become true for `When` to
+not just enough for the `+Observation+` to become true for `When` to
 evolve; the contract needs to be triggered while the `Observation` is
 true. The contract can be triggered at any time by issuing a transaction
 that does not need to have any inputs and does not need to be signed;
@@ -347,12 +347,12 @@ the `Commit`.
 ### `Scale`
 
 The `Scale` construct scales the amounts paid by `Commit` and `Pay`. It
-takes three \`Value\`s, the first one is the numerator, the second one
+takes three `Value`s, the first one is the numerator, the second one
 is the denominator, and the third one is the default.
 
 As soon as the `Scale` construct is activated, it activates its
 subcontract `contract`, and it evaluates all the three `` Value+`s and
-replaces them with a  ``+Constant\` (so that they may not change any
+replaces them with a  ``+Constant` (so that they may not change any
 more).
 
 ``` haskell
@@ -376,7 +376,7 @@ scaleValue :: Integer -> Integer -> Integer -> Integer -> Integer
 scaleValue divid divis def val = if (divis == 0) then def else ((val * divid) `div` divis)
 ```
 
-The process of scaling `` Commit+`s and  ``+Pay+\`s is carried out by
+The process of scaling `` Commit+`s and  ``+Pay+`s is carried out by
 the [+fetchPrimitive]{.title-ref} function.
 
 ``` haskell
@@ -391,7 +391,7 @@ fetchPrimitive idAction blockNum state (Scale divid divis def subContract) =
         sDef = evalValue blockNum state def
 ```
 
-Once there are no `` Commit+`s or  ``+Pay+\`s inside a
+Once there are no `` Commit+`s or  ``+Pay+`s inside a
 [+Scale]{.title-ref}, it gets removed by the `simplify` function.
 
 ### `Let` and `Use`
