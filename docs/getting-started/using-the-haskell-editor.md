@@ -43,3 +43,10 @@ To use the Haskell editor follow these steps:
 
    The Simulator allows you to simulate Marlowe contracts transaction by transaction. You can find more instructions on how to use the Haskell editor in the [Marlowe embedded in Haskell tutorial](tutorials/embedded-marlowe.md). 
    
+See also: 
+
+## IOG Academy's self-paced course on learning Haskell
+
+* [On YouTube](https://youtu.be/pkU8eiNZipQ)
+
+* [On GitHub](https://github.com/input-output-hk/haskell-course)
