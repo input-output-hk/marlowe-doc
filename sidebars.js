@@ -27,6 +27,11 @@ const sidebars = {
       type: 'category',
       label: 'Tutorials',
       collapsed: false,
+      link: {
+        type: 'generated-index',
+        title: 'Tutorials',
+        description: 'Learn from Marlowe\'s library of written and video tutorials',
+      },
       items: [
         'tutorials/tutorials-overview',
         'tutorials/written-tutorials-index',
@@ -69,7 +74,22 @@ const sidebars = {
         'development/marlowe-language-guide',
         'development/platform',
         'development/playground',
-        'development/runtime',
+        {
+          type: 'category',
+          label: 'Runtime',
+          items: [
+            'development/runtime',
+            'development/deploying-marlowe-runtime',
+            'development/using-marlowe-runtime',
+            'development/runtime-executables-for-backend-services',
+            'development/marlowe-runtime-cli',
+            'development/marlowe-web-server',
+            'development/clients-of-runtime',
+            'development/marlowe-runtime-examples',
+            'development/txpipe-and-demeter',
+            'development/runtime-tutorial-actus-pam',
+          ]
+        },
         'development/cli',
         'development/dev-resources',
       ],
@@ -86,6 +106,11 @@ const sidebars = {
       type: 'category',
       label: 'Support',
       collapsed: false,
+      link: {
+        type: 'generated-index',
+        title: 'Support',
+        description: 'Check out our FAQ, developer discussions, and do not hesitate to contact us',
+      },
       items: [
         'support/faq',
         'support/dev-discussions',
