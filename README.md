@@ -58,8 +58,17 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 
 ### Installation
 
+#### For a Nix environment
+
 ```
-$ yarn
+$ nix-shell -p yarn
+$ yarn install
+```
+
+#### For a non-Nix environment
+
+```
+$ yarn install
 ```
 
 ### Local Development
