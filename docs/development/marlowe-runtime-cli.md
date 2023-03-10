@@ -1,8 +1,8 @@
 ---
-title: Command-Line Interface to Marlowe Runtime
+title: Marlowe Runtime CLI
 ---
 
-# Section 4: Command-Line Interface to Marlowe Runtime
+## Section 4: Marlowe Runtime CLI
 
 ## [4.1 Command-Line Interface to Marlowe Runtime](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe.md) 
 
