@@ -34,31 +34,9 @@ The ReadMe file covers the following topics:
 * Marlowe Runtime diagrams
 * Architecture
 * Backend Services
->   * Chain Sync Daemon executable
->   * Marlowe Transaction executable
->   * UTxO diagrams
 * Marlowe Runtime command-line interface
 * Web services
 * Related documentation
->   * Overview of Marlowe language
->   * Example Marlowe contracts
->   * Marlowe language and semantics
->   * Marlowe implementation on Cardano
->   * Testing tools
-
-## Using Runtime
-
-| Additional Runtime documentation sections | 
-|-------------------------------------------| 
-| [Section 1. Deploying Marlowe Runtime](deploying-marlowe-runtime.md) | 
-| [Section 2. Using Runtime](using-marlowe-runtime.md) | 
-| [Section 3. Runtime Executables for Backend Services](runtime-executables-for-backend-services.md) | 
-| [Section 4. Marlowe Runtime CLI](marlowe-runtime-cli.md) | 
-| [Section 5. Marlowe Web Server](marlowe-web-server.md) | 
-| [Section 6. Clients of Runtime](clients-of-runtime.md) | 
-| [Section 7. Marlowe Runtime Examples](marlowe-runtime-examples.md) | 
-| [Section 8. TxPipe and Demeter](txpipe-and-demeter.md) | 
-| [Section 9. Runtime Tutorial: The ACTUS Principal at Maturity (PAM) Contract](runtime-tutorial-actus-pam.md) | 
 
 See also: 
 

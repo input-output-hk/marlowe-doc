@@ -1,10 +1,9 @@
 ---
 title: Using Marlowe Runtime
+sidebar_position: 1
 ---
 
-# Section 2: Using Marlowe Runtime
-
-## [2.1 High-level introduction to Marlowe runtime](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/ReadMe.md)
+## [High-level introduction to Marlowe runtime](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/ReadMe.md)
 
 > NOTE: The marlowe-runtime/doc/ReadMe.md needs to be updated to reflect that Marlowe History and Discovery are soon deprecated in favor of Marlowe Sync. Replace these two topics with Marlowe Sync. 
 
@@ -18,7 +17,7 @@ title: Using Marlowe Runtime
 * Web Services
 * Links to related documentation
 
-## [2.2 Introduction and overview of Marlowe chain sync](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-chain-sync/README.md)
+## [Introduction and overview of Marlowe chain sync](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-chain-sync/README.md)
 
 * An efficient chain indexer and synchronization engine for Marlowe Runtime
 
@@ -33,7 +32,7 @@ title: Using Marlowe Runtime
    * `marlowe-chain-indexer`
    * `chainseekd`
 
-## [2.3 Chain seek protocol](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-chain-sync/docs/chain-sync-spec-1.0.md)
+## [Chain seek protocol](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-chain-sync/docs/chain-sync-spec-1.0.md)
 
 * A modification of the Chain Sync Protocol
 * Application-level protocol for writing off-chain code
@@ -49,7 +48,7 @@ title: Using Marlowe Runtime
     * Appendix
     * state machine diagram
 
-## [2.4 Marlowe sync](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe-sync.md)
+## [Marlowe sync](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe-sync.md)
 
 The `marlowe-sync` executable provides protocols that access Marlowe contract information.
 It performs contract synchronization and query services for Marlowe Runtime. 

@@ -2,10 +2,8 @@
 title: Runtime Executables for Backend Services
 ---
 
-# Section 3: Runtime executables for backend services
-
 Runtime executables for backend services help you run Marlowe contracts. 
-"Backend services" refers to code that's running behind the scenes such as Marlowe web-server, Marlowe lambda, and Marlowe CLI. 
+"Backend services" refers to code that's running behind the scenes such as Marlowe web-server and Marlowe CLI. 
 Backend services help out with running the front end with utilities and support. 
 
 Backend services may reside in a docker container. 
@@ -17,7 +15,7 @@ The backend services are CLIs, but they are not utilities you would use. Rather,
 > 
 > Looking ahead, Jamie will be writing something like `marlowe-proxy` to simplify the process so that it won't be necessary to work with all five items for backend services shown in this section. 
 
-## [3.1 Chain Sync Daemon](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe-chain-sync.md)
+## [Chain Sync Daemon](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe-chain-sync.md)
 
 * A chain sync server for the Marlowe Runtime
 * The `marlowe-chain-sync` executable provides services for querying the blockchain for information that may relate to Marlowe contracts. 
@@ -27,7 +25,7 @@ The backend services are CLIs, but they are not utilities you would use. Rather,
 
    * `marlowe-chain-sync`
 
-## [3.2 Chain indexer for Marlowe Runtime](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe-chain-indexer.md)
+## [Chain indexer for Marlowe Runtime](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe-chain-indexer.md)
 
 * The `marlowe-chain-indexer` executable follows a local blockchain node and writes the blocks and transactions to a database.
 * Document lists command options
@@ -35,13 +33,13 @@ The backend services are CLIs, but they are not utilities you would use. Rather,
 
    * `marlowe-chain-indexer`
 
-## 3.3 Marlowe indexer
+## Marlowe indexer
 
 `marlowe-indexer`
 
 **Missing content here**
 
-## [3.4 Marlowe Transaction Service](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe-tx.md)
+## [Marlowe Transaction Service](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe-tx.md)
 
 * Runtime transaction creation server
 * The `marlowe-tx` executable provides services related to building and submitting transactions for Marlowe contracts. 
@@ -51,7 +49,7 @@ The backend services are CLIs, but they are not utilities you would use. Rather,
 
    * `marlowe-tx`
 
-## 3.5 Marlowe Sync Service
+## Marlowe Sync Service
 
 Add info about Marlow Sync Service. 
 
