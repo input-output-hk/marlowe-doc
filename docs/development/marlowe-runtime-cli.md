@@ -2,9 +2,7 @@
 title: Marlowe Runtime CLI
 ---
 
-## Section 4: Marlowe Runtime CLI
-
-## [4.1 Command-Line Interface to Marlowe Runtime](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe.md) 
+## [Command-Line Interface to Marlowe Runtime](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe.md) 
 
 > NOTE 
 > 
@@ -21,7 +19,7 @@ title: Marlowe Runtime CLI
 
    * `marlowe`
 
-### Section 4.1.1 Building transactions
+### Building transactions
 
 * [Create a Contract](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/create.md)
 
@@ -37,17 +35,18 @@ title: Marlowe Runtime CLI
 
 * [Withdraw Funds Paid by a Contract](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/withdraw.md)
 
-### Section 4.1.2 Submitting transactions
+### Submitting transactions
 
 * [Submit a Signed Transaction to the Node](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/submit.md)
 
-### Section 4.1.3 Querying history
+### Querying history
 
-* [List the Contracts Being Tracked](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/ls.md)
+* Add a Contract to the Set of Tracked Contracts -- need updated link
 
-* [Add a Contract to the Set of Tracked Contracts](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/add.md)
+* Remove a Contract from the Set of Tracked Contracts -- need updated link
 
-* [Remove a Contract from the Set of Tracked Contracts](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/rm.md)
+## [Lecture: Running Marlowe Contracts on the Blockchain](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/lectures/04-marlowe-cli-concrete.md)
 
-* [Output the History of a Contract](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/ls.md)
+* This is a lecture that demonstrates how to use marlowe-cli to run Marlowe contracts on the blockchain, but without using the Marlowe Backend. 
 
+## [Tutorial for Marlowe Runtime -- The ACTUS Principal at Maturity (PAM) Contract](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/tutorial.ipynb)

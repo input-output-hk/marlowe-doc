@@ -3,12 +3,8 @@ title: Deploying Marlowe Runtime
 sidebar_position: 1
 ---
 
-# Section 1: Deploying Marlowe Runtime
+To install and deploy Marlowe Runtime backend services, please refer to the following instructions: 
 
-## Deploying Marlowe Runtime backend services
+* [For deploying manually, on a service-by-service basis](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/deployment.md)
 
-If you need to install and deploy Runtime, refer to the following instructions for deploying manually or by using Docker: 
-
-* [Manually](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/deployment.md)
-* [Using Docker](https://github.com/input-output-hk/marlowe-cardano#docker-compose)
-
+* [For deploying using Docker](https://github.com/input-output-hk/marlowe-cardano#docker-compose)
