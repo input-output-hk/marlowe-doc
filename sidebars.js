@@ -6,7 +6,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Getting Started',
-      collapsed: false,
+      collapsed: true,
       items: [
         'introduction',
         'getting-started/getting-started-with-the-marlowe-playground',
@@ -18,7 +18,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Examples',
-      collapsed: false,
+      collapsed: true,
       items: [
         'examples/examples_v1',
       ],
@@ -26,7 +26,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Tutorials',
-      collapsed: false,
+      collapsed: true,
       link: {
         type: 'generated-index',
         title: 'Tutorials',
@@ -54,7 +54,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Architecture Overview',
-      collapsed: false,
+      collapsed: true,
       items: [
         'architecture',
       ],
@@ -62,7 +62,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Developer Tools',
-      collapsed: false,
+      collapsed: true,
       link: {
         type: 'generated-index',
         title: 'Developers',
@@ -77,6 +77,11 @@ const sidebars = {
         {
           type: 'category',
           label: 'Runtime',
+          link: {
+            type: 'generated-index',
+            title: 'Runtime',
+            description: 'Learn more about Marlowe Runtime',
+          },
           items: [
             'development/runtime',
             'development/deploying-marlowe-runtime',
@@ -97,7 +102,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Enterprise Integration',
-      collapsed: false,
+      collapsed: true,
       items: [
         'enterprise/integration',
       ],
@@ -105,7 +110,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Support',
-      collapsed: false,
+      collapsed: true,
       link: {
         type: 'generated-index',
         title: 'Support',
