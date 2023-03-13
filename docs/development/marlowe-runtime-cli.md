@@ -39,12 +39,6 @@ title: Marlowe Runtime CLI
 
 * [Submit a Signed Transaction to the Node](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/marlowe/submit.md)
 
-### Querying history
-
-* Add a Contract to the Set of Tracked Contracts -- need updated link
-
-* Remove a Contract from the Set of Tracked Contracts -- need updated link
-
 ## [Lecture: Running Marlowe Contracts on the Blockchain](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/lectures/04-marlowe-cli-concrete.md)
 
 * This is a lecture that demonstrates how to use marlowe-cli to run Marlowe contracts on the blockchain, but without using the Marlowe Backend. 
