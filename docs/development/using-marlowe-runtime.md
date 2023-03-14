@@ -3,20 +3,6 @@ title: Using Marlowe Runtime
 sidebar_position: 1
 ---
 
-## [High-level introduction to Marlowe runtime](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/ReadMe.md)
-
-> NOTE: The marlowe-runtime/doc/ReadMe.md needs to be updated to reflect that Marlowe History and Discovery are soon deprecated in favor of Marlowe Sync. Replace these two topics with Marlowe Sync. 
-
-* Introduction
-* Architecture
-* Backend Services
-* Chain Seek Daemon executable
-* Marlowe Sync
-* Marlowe Transaction executable
-* Command-Line Interface
-* Web Services
-* Links to related documentation
-
 ## [Introduction and overview of Marlowe chain sync](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-chain-sync/README.md)
 
 * An efficient chain indexer and synchronization engine for Marlowe Runtime

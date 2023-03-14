@@ -1,37 +1,26 @@
 ---
-title: Marlowe CLI Tool
+title: Marlowe CLI
 sidebar_position: 6
 ---
 
-An important distinction to understand is that there are two CLIs: 
+## About Marlowe CLI
 
-   * Marlowe CLI 
-   * Marlowe Runtime CLI 
+* Provides capabilities to work with Marlowe's Plutus validators and run Marlowe contracts manually. 
+* Lightweight: No other tools or services needed.
+* Executable program: `marlowe-cli`.
 
-| Tool | Definition | 
-|-------------|-----------|
-| Marlowe CLI Tool | `marlowe-cli` is a command-line tool built specifically for running Marlowe contracts. It enables developers to submit transactions with Marlowe contracts on the Cardano blockchain, just as the `cardano-cli` tool has enabled them to do for plain transactions, simple scripts, and Plutus scripts. |
-| [Marlowe Runtime CLI](marlowe-runtime-cli.md) | Explanation |
+Marlowe CLI is a command-line tool that provides access to Marlowe capabilities on testnet and mainnet. It is specifically built for running Marlowe contracts directly without needing a web browser or mobile app. 
 
-## Marlowe CLI use cases
+Just as the `cardano-cli` tool has enabled you to do for plain transactions, simple scripts, and Plutus scripts, the Marlowe CLI tool facilitates your ability to interact with and develop Marlowe contracts. You can measure transaction size, submit transactions, test your integration with wallets, and debug validators. It provides a very concrete representation of Marlowe contracts that is quite close to what is occurring on chain. 
 
-The Marlowe CLI tool facilitates your ability to interact with and develop Marlowe contracts. For example, you can measure transaction size, submit transactions to the blockchain, test your integration with wallets, and debug validators. 
-
-Marlowe CLI provides access to Marlowe capabilities on testnet and mainnet. You can run Marlowe contracts directly without needing a web browser, a mobile app. You can create your own workflow that operates Marlowe. 
-
-Can integrate with your own workflow or toolset so you can wrap the Marlowe cli tool in the way that folks have wrapped cardano cli to create services such as libraries, faucets, marketplaces, etc. Can be used for training in the use of Marlowe to help people get a deeper understanding of how Marlowe transactions work. 
-
-Marlowe cli provides a very concrete representation of them that's quite close to what is occurring on chain. 
-
-Three levels of interaction with Marlowe on the blockchain. 
-
+You can create your own workflow that operates Marlowe or your own toolset so you can wrap the Marlowe CLI tool in the way that developers have wrapped `cardano-cli` to create services such as libraries, faucets and marketplaces. 
 
 ## [ReadMe.md](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/ReadMe.md)
 
 See the [ReadMe.md](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/ReadMe.md) file for details about the following topics: 
 
 * installation instructions (Nix or Cabal) 
-* `marlowe-cli` command descriptions 
+* Marlowe CLI command descriptions 
 * descriptions of high-level and low-level workflows for specific use cases 
 * examples 
 * test cases 
@@ -48,7 +37,6 @@ Use the `marlowe-cli` commands to perform these types of tasks:
 * create inputs to a contract 
 * create and submit transactions 
 * other utilities 
-
 
 ## [Marlowe CLI video tutorials](../tutorials/video-tutorials-index.md#marlowe-cli)
 

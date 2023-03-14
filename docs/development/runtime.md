@@ -27,7 +27,7 @@ More specifically, the tasks you can do with Runtime include the following:
 
 For a detailed overview description of Runtime, please see: 
 
-* [Marlowe Runtime's GitHub repository ReadMe](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/ReadMe.md) file
+* [High-level introduction to Marlowe Runtime](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/ReadMe.md)
 
 The ReadMe file covers the following topics: 
 
