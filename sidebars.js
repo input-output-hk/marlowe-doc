@@ -59,6 +59,8 @@ const sidebars = {
         'architecture',
       ],
     },
+
+
     {
       type: 'category',
       label: 'Developer Tools',
@@ -69,7 +71,16 @@ const sidebars = {
         description: 'Learn more about Marlowe\'s ecosystem of developer tools',
       },
       items: [
-        'development/deployment-overview',
+        {
+          type: 'category',
+          label: 'Deployment Overview',
+          collapsed: true,
+          items: [
+            'development/deployment-overview',
+            'development/deployment-overview-low-code-audience',
+            'development/deployment-overview-developer-audience',
+          ],
+        },
         'development/dsl',
         'development/marlowe-language-guide',
         'development/platform',
