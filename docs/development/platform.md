@@ -74,3 +74,9 @@ and in this eprints survey paper.
 
 *   [Scripting smart contracts for distributed ledger technology](https://iohk.io/en/research/library/papers/scripting-smart-contracts-for-distributed-ledger-technology/)
     Here we give an overview of the scripting languages used in existing cryptocurrencies.
+
+## Further important information
+
+### [Best Practices for Marlowe on Cardano](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe/best-practices.md)
+
+### [Marlowe Security Guide](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe/security.md)

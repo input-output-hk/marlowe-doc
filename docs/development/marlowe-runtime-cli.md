@@ -14,7 +14,7 @@ title: Marlowe Runtime CLI
 > 
 >  The document `marlowe-runtime/doc/marlowe.md` is out of date. It's likely that the `add`, `rm`, and `submit` commands will be removed, perhaps before the end of this PI. 
 
-Please see the links below to access more detailed documentation of the Runtime commands. 
+Please see the links below to access more detailed documentation of the Runtime CLI commands. 
 
 ### Building transactions
 
