@@ -20,15 +20,13 @@ Beyond the notable benefit of being usable by non-programmers, the Marlowe langu
 
 ## Embedded DSL
 
-Marlowe is an [*embedded* DSL](https://en.wikipedia.org/wiki/Domain-specific_language), hosted in both [JavaScript](https://www.javascript.com/) and [Haskell](https://www.haskell.org/), offering you a choice of editors depending on your preference and skillset. 
+Marlowe is an [*embedded* DSL](https://en.wikipedia.org/wiki/Domain-specific_language), hosted in [TypeScript](https://www.typescriptlang.org/), [JavaScript](https://www.javascript.com/) and [Haskell](https://www.haskell.org/), offering you a choice of editors depending on your preference and skillset. 
 
-Javascript offers flexibility and speed of use with a thriving ecosystem, while Haskell is a functional programming language with its own established ecosystem and solid testing framework. 
+> * "TypeScript code converts to JavaScript, which runs anywhere JavaScript runs." ([from the typescriptlang.org website](https://www.typescriptlang.org/))
 
-While it is possible to use "pure" Marlowe if you wish, being embedded in a general-purpose language allows contract writers to selectively exploit features of JavaScript or Haskell in writing Marlowe contracts, making them easier to read and re-use. 
+TypeScript and JavaScript offer flexibility and speed of use with a thriving ecosystem, while Haskell is a functional programming language with its own established ecosystem and solid testing framework. 
 
-> NOTE
-> 
-> Even though we use the term "JavaScript," the Marlowe *Script framework* is written in TypeScript. Although JavaScript is a subset of TypeScript, programmers with limited TypeScript expertise are advised to learn the basics of TypeScript before using the Marlowe "JavaScript" code. 
+While it is possible to use "pure" Marlowe if you wish, being embedded in a general-purpose language allows contract writers to selectively exploit features of TypeScript or Haskell in writing Marlowe contracts, making them easier to read and re-use. 
 
 Marlowe's implementation ("under the hood") is in Plutus. For further details about Plutus, please see: 
 
