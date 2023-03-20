@@ -7,8 +7,8 @@
    * Introducing Marlowe
    * Getting started with the Marlowe Playground
    * Writing Marlowe with Blockly
-   * Using the Haskell Editor
    * Using the JavaScript Editor
+   * Using the Haskell Editor
 
 * Examples
    * Example contracts
@@ -28,6 +28,8 @@
 
 * Developer Tools
    * Development and deployment overview
+      * Low-code audience
+      * Developer audience
    * Domain Specific Language
    * Marlowe language guide
    * Platform
