@@ -16,9 +16,9 @@ Once you have created a contract, you can analyze its behavior through formal ve
 
 1. Write directly in the Marlowe language's text format.
 
-2. Use the [Blockly visual programming tool](writing-marlowe-with-blockly.md) to create contracts by fitting together blocks that represent the different components. 
+2. Use the [Blockly visual programming tool](../getting-started/writing-marlowe-with-blockly.md) to create contracts by fitting together blocks that represent the different components. 
 
-3. Use either the embedded or [JavaScript/TypeScript](using-the-javascript-editor.md) or [Haskell](using-the-haskell-editor.md) editors. 
+3. Use either the embedded or [JavaScript/TypeScript](../getting-started/using-the-javascript-editor.md) or [Haskell](../getting-started/using-the-haskell-editor.md) editors. 
 
 ## [Marlowe Playground in-depth written tutorial](../tutorials/playground-overview.md)
 
