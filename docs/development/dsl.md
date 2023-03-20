@@ -5,11 +5,11 @@ sidebar_position: 2
 
 Marlowe is a domain-specific language (DSL) that you can use to create blockchain applications that are specifically designed for financial contracts. It allows you to apply your domain expertise to write and manage contracts conveniently, without the steep learning curve associated with software development, blockchain, or smart contracts. 
 
-## Advantages of using Marlowe DSL
+## Advantages of using Marlowe language
 
-Beyond the notable benefit of being usable by non-programmers, the Marlowe DSL has many other advantages:
+Beyond the notable benefit of being usable by non-programmers, the Marlowe language has many other advantages:
 
-*   Ensures that certain sorts of bad programs cannot even be written by designing those possibilities out of the language. 
+*   Ensures that certain sorts of flawed programs cannot even be written by designing those possibilities out of the language. 
 *   Avoids some of the unanticipated exploits which have been a problem for existing blockchains.
 *   More easily checks that programs have the intended properties. 
 *   Makes sure that the contract will never fail to make a payment that it should.
@@ -20,11 +20,19 @@ Beyond the notable benefit of being usable by non-programmers, the Marlowe DSL h
 
 ## Embedded DSL
 
-Marlowe is an *embedded* DSL, hosted in both [JavaScript](https://www.javascript.com/) and [Haskell](https://www.haskell.org/), offering you a choice of editors depending on your preference and skillset. 
+Marlowe is an [*embedded* DSL](https://en.wikipedia.org/wiki/Domain-specific_language), hosted in [TypeScript](https://www.typescriptlang.org/), [JavaScript](https://www.javascript.com/) and [Haskell](https://www.haskell.org/), offering you a choice of editors depending on your preference and skillset. 
 
-Javascript offers flexibility and speed of use with a thriving ecosystem, while Haskell is a functional programming language with its own established ecosystem and solid testing framework. 
+> * "TypeScript code converts to JavaScript, which runs anywhere JavaScript runs." ([from the typescriptlang.org website](https://www.typescriptlang.org/))
 
-While it is possible to use "pure" Marlowe if you wish, being embedded in a general-purpose language allows contract writers to selectively exploit features of JavaScript or Haskell in writing Marlowe contracts, making them easier to read and re-use. 
+TypeScript and JavaScript offer flexibility and speed of use with a thriving ecosystem, while Haskell is a functional programming language with its own established ecosystem and solid testing framework. 
+
+While it is possible to use "pure" Marlowe if you wish, being embedded in a general-purpose language allows contract writers to selectively exploit features of TypeScript or Haskell in writing Marlowe contracts, making them easier to read and re-use. 
+
+Marlowe's implementation ("under the hood") is in Plutus. For further details about Plutus, please see: 
+
+* [Plutus Core and Plutus Tx user guide](https://plutus.readthedocs.io/en/latest/)
+
+* [Plutus tools SDK user guide](https://plutus-apps.readthedocs.io/en/latest/index.html)
 
 ## Putting Marlowe in perspective -- general purpose programming languages vs. DSL
 
