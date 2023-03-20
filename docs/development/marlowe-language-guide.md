@@ -2,26 +2,38 @@
 title: Marlowe language guide
 ---
 
-Marlowe is designed to create the building blocks of financial contracts: payments to and deposits from participants, choices by participants, and real world information. 
+Marlowe is designed to create the following building blocks of financial contracts: 
 
-Marlowe is a small language, with a handful of different constructs that, for each contract, describe behaviour involving a fixed, finite set of roles. When a contract is run, the roles it involves are fulfilled by participants, which are identities on the blockchain. Each role is represented by a token on the chain and roles can be transferred during contract execution, meaning that they can essentially be traded. 
+* payments to and deposits from participants, 
+* choices by participants, and 
+* real world information. 
 
-Contracts can be built by putting together a small number of these constructs that in combination can be used to describe and model many different kinds of financial contracts. Some examples include a running contract that can make a payment to a role or to a public key, a contract that can wait for an action by one of the roles, such as a deposit of currency, or a choice from a set of options. See the Sample Escrow Contract below.
+Marlowe is a small language, with a handful of different constructs that, for each contract, describe behaviour involving a fixed, finite set of roles. When a contract is run, the roles it involves are fulfilled by participants, which are identities on the blockchain. Each role is represented by a token on the chain. Roles can be transferred during contract execution, meaning that they can essentially be traded. 
 
-Crucially, a contract cannot wait indefinitely for an action: if no action has been initiated by a given time (the timeout), then the contract will continue with an alternative behavior, for example, take a remedial action like refunding any funds in the contract. 
+Contracts are built by putting together a small number of these constructs that, in combination, describe and model many different kinds of financial contracts. Some examples include: 
 
-Marlowe contracts can branch based on alternatives and have a finite lifetime, at the end of which any remaining money is returned to the participants. This feature means that money cannot be forever locked in a contract. Depending on the current state of a contract, it may make a choice between two alternative future courses of action, which are themselves contracts. When no further actions are required, the contract will close, and any remaining currency in the contract will be refunded.
+* a running contract that can make a payment to a role or to a public key, 
+* a contract that can wait for an action by one of the roles, such as a deposit of currency, or 
+* a choice from a set of options. 
+
+See the Sample Escrow Contract below.
+
+Crucially, a contract cannot wait indefinitely for an action: if no action has been initiated by a given time (the timeout), then the contract will continue with an alternative behavior, such as, for example, refunding any funds in the contract as a remedial action. 
+
+Marlowe contracts can branch based on alternatives and have a finite lifetime, at the end of which any remaining money is returned to the participants. This feature means that money cannot be locked forever in a contract. Depending on the current state of a contract, it may make a choice between two alternative future courses of action, which are themselves contracts. When no further actions are required, the contract will close, and any remaining currency in the contract will be refunded.
 
 ## Using Haskell types
 
 Haskell types are used to represent the various components of the contract, including *accounts*, *values*, *observations*, and *actions*. These Marlowe elements are used to supply external information and inputs to a running contract to control how it will evolve.
 
-In modelling basic parts of Marlowe a combination of Haskell `data` types are used, that define *new* types, and `type` synonyms that give a new name to an existing type.
+In modelling basic parts of Marlowe, a combination of Haskell `data` types are used, that define *new* types, and `type` synonyms that give a new name to an existing type.
+
+## Programming environments
 
 In addition to writing contracts in the textual version of Marlowe, you can also use one of the following visual programming environments:
 
 1. [Using Blockly](getting-started/writing-marlowe-with-blockly.md)
-2. [Using JavaScript](getting-started/using-the-javascript-editor.md)
+2. [Using JavaScript(TypeScript)](getting-started/using-the-javascript-editor.md)
 3. [Using Haskell](getting-started/using-the-haskell-editor.md)
 
 ## About a Marlowe contract
@@ -43,7 +55,7 @@ Marlowe has *six* ways of building contracts. Five of these methods – `Pay`, `
 
 ### Pay
 
-A payment contract `Pay a p t v cont` will make a payment of value `v` of token `t` from the account `a` to a payee `p`, which will be one of the contract participants or another account in the contract. Warnings will be generated if the value v is not positive, or if there is not enough in the account to make the payment in full (even if there are positive balances of other tokens in the account). In the latter case, a partial payment (of all the money available) is made. The continuation contract is the one given in the contract: `cont`.
+A payment contract `Pay a p t v cont` will make a payment of value `v` of token `t` from the account `a` to a payee `p`, which will be one of the contract participants or another account in the contract. Warnings will be generated if the value `v` is not positive, or if there is not enough in the account to make the payment in full (even if there are positive balances of other tokens in the account). In the latter case, a partial payment (of all the money available) is made. The continuation contract is the one given in the contract: `cont`.
 
 ### Close
 

@@ -61,11 +61,11 @@ const config = {
             items: [
               {
                 label: 'Developers',
-                to: '/docs/marlowe-cli',
+                to: '/docs/category/developer-tools',
               },
               {
                 label: 'Examples',
-                to: '/docs/examples',
+                to: '/docs/examples/examples_v1',
               },
             ],
           },
