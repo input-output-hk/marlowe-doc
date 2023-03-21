@@ -20,6 +20,7 @@ const sidebars = {
       label: 'Examples',
       collapsed: true,
       items: [
+        'examples/examples-contract-gallery',
         'examples/examples_v1',
       ],
     },
