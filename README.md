@@ -48,18 +48,6 @@
    * Marlowe CLI
    * Resources
 
-* Enterprise Integration
-   * Business value
-   * Integration with existing systems
-   * Time to value
-   * Technical feasibility
-   * Scalability
-   * Risk and security
-   * User adoption, effort required
-   * Maintenance and support
-   * Compliance
-   * Flexibility and adaptability to changing business needs
-
 * Support
    * FAQ
    * Developer discussions

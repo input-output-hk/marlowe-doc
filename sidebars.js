@@ -112,14 +112,6 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Enterprise Integration',
-      collapsed: true,
-      items: [
-        'enterprise/integration',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Support',
       collapsed: true,
       link: {
