@@ -1,7 +1,4 @@
-* Home
-   * Core messaging for Marlowe docs landing page
-   * About Marlowe
-   * Working with Marlowe
+Documentation site map
 
 * Getting Started
    * Introducing Marlowe
