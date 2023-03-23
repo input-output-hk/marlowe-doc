@@ -12,9 +12,11 @@
 
 * Examples
    * Example contracts
-      * Zero-coupon bond
-      * Swap
-      * Escrow
+      * Marlowe starter kit repo
+         * Zero-coupon bond
+         * Escrow
+         * Swap
+   * Contract gallery
 
 * Tutorials 
    * Tutorials overview
