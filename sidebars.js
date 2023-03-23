@@ -110,6 +110,7 @@ const sidebars = {
             'development/marlowe-runtime-examples',
             'development/txpipe-and-demeter',
             'development/runtime-tutorial-actus-pam',
+            'development/runtime-protocol-reference',
           ]
         },
         'development/cli',
