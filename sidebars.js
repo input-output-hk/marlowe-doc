@@ -19,6 +19,11 @@ const sidebars = {
       type: 'category',
       label: 'Examples',
       collapsed: true,
+      link: {
+        type: 'generated-index',
+        title: 'Examples',
+        description: 'Fork and clone the Marlowe starter kit repo, browse the contract gallery',
+      },
       items: [
         'examples/examples_v1',
         'examples/examples-contract-gallery',
