@@ -1,10 +1,10 @@
 ---
-title: Contract Gallery
+title: Contract gallery
 ---
 
 [![Gallery of Marlowe Contracts on Cardano Mainnet](../../static/img/contract-gallery.png)](http://testing.marlowe.run/real-world-marlowe.svg)
 
-## Example Contracts on Cardano Mainnet
+## Example contracts on Cardano mainnet
 
 If you want some inspiration and would like to get an idea of the variety of Marlowe contracts we have already run on mainnet, please browse through the examples accessed through the linked image above or through the links listed below. The contract gallery contains a mixture of various Marlowe contract use cases that have already been executed successfully on mainnet. 
 

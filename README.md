@@ -1,7 +1,4 @@
-* Home
-   * Core messaging for Marlowe docs landing page
-   * About Marlowe
-   * Working with Marlowe
+Documentation site map
 
 * Getting Started
    * Introducing Marlowe
@@ -12,9 +9,11 @@
 
 * Examples
    * Example contracts
-      * Zero-coupon bond
-      * Swap
-      * Escrow
+      * Marlowe starter kit repo
+         * Zero-coupon bond
+         * Escrow
+         * Swap
+   * Contract gallery
 
 * Tutorials 
    * Tutorials overview
