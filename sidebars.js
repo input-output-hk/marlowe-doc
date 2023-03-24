@@ -77,6 +77,7 @@ const sidebars = {
         description: 'Learn more about Marlowe\'s ecosystem of developer tools',
       },
       items: [
+        'development/dev-tools-overview',
         {
           type: 'category',
           label: 'Deployment Overview',
