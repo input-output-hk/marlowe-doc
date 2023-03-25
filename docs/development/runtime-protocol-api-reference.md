@@ -169,20 +169,24 @@ The Marlowe Header Sync sub-protocol is defined here:
 
 The Marlowe Header Sync sub-protocol is used to synchronize contract creation transactions. The client receives a stream of blocks, each of which contains one or more "contract header(s)". A contract header contains minimal information about a transaction that creates a new Marlowe contract. 
 
+This is like the "subscribe to all of the contracts" protocol. This is what you would use to stay synchronized with the contracts on-chain. As the chain advances, as new contracts are found, it will deliver them to the client. 
+
 ### Sub-protocol states
 
 | Sub-protocol state | Description |
 | --- | --- |
 | 1. Idle | The initial state. | 
-|   | Agency: client. | 
+|   | Agency: belongs to the client. | 
 | 2. Intersect | When the client asks the server to fast-forward to a known chain point. | 
 |   | Agency: server. | 
 | 3. Next | When the client asks the server to provide the next block of contract headers. | 
-|   | Agency: server. | 
+|   | Agency: belongs to the server. | 
 | 4. Wait | When the server has no more blocks to send (i.e., the client has reached the tip of the chain). | 
-|   | Agency: client. | 
+|   | Agency: belongs to the client. | 
 | 5. Done | The terminal state. | 
-|   | Agency: nobody. | 
+|   | Agency: belongs to nobody. | 
+
+More about intersect: The intersect is when the client asks the server to fast forward to a known chain point. Imagine that the client has already done a fair amount of synchronization and then quits. When it starts up again, rather than start again from the beginning, it can say, here is where I last left off, so start from here. The Intersect is the server recognizing I know about that point too, let's start from there. Or, I don't know what you're talking about, start from the beginning. 
 
 ### Messages
 
@@ -195,27 +199,27 @@ The Marlowe Header Sync sub-protocol is used to synchronize contract creation tr
 |   | Transitions to: Idle | 
 |   | Payload: | 
 |   | [0]: A block header (the block to which the server has advanced the client) | 
-|   | [1]: A list of contract headers that appear in that block | 
-|   | Description: The server sends the next block of headers to the client. | 
+|   | [1]: A list of contract headers that appear in that block. The typial synchronization loop is the client sends a request 'next', server sends new headers, goes back into idle, client sends another request next, server sends new headers, grabs the headers one block at a time from the server until it catches up to the tip, when the server says 'wait', then the client has to pull new information. | 
+|   | Description: The server sends the next block of headers to the client.  | 
 | 3. RollBackward | Available from: Next | 
 |   | Transitions to: Idle | 
-|   | Payload: Chain point (either a block header or Genesis)
+|   | Payload: Chain point (either a block header or Genesis if the chain has rolled all the way back to genesis)
 |   | Description: The client's current position was rolled back, the server tells the client where it was rolled back to. | 
 | 4. Wait | Available from: Next | 
 |   | Transitions to: Wait | 
 |   | Description: The client is at the chain tip, there are no more Marlowe contract headers to send, so the client may choose to wait and poll until more are available. | 
 | 5. Poll | Available from: Wait | 
 |   | Transitions to: Next | 
-|   | Description: The client is checking with the server if there are new headers available. | 
+|   | Description: The client is checking with the server to find out if there are new headers available. | 
 | 6. Cancel | Available from: Wait | 
 |   | Transitions to: Idle | 
-|   | Description: The client doesn't wish to wait, and returns to the idle state. | 
+|   | Description: The client doesn't wish to wait, and returns to the idle state. Usually, when you send a 'cancel', in 90% of cases, it is followed by a 'done' message. This is the case where the particular client you are writing, all it is concerned with getting everything that is currently on the chain and when it reaches the tip, it says "I'm done." | 
 | 7. Done | Available from: Idle | 
 |   | Transitions to: Done | 
 |   | Description: The client disconnects from the server. | 
 | 8. Intersect | Available from: Idle | 
 |   | Transitions to: Intersect | 
-|   | Payload: List of block headers, in ascending order | 
+|   | Payload: List of block headers, in ascending order. These block headers represent the most recent blocks that I have as the client. It is a list because the client may be communicating with the server, it sees the last header that it sees after it detaches, the server might pull that block back. There is a chance that the client will send the most recent block and the server won't recognize it. Instead we allow the client to send a list of blocks, the server tries to find the most recent one that it also knows about, and that is where it begins syncing from. A mutually known reference point. | 
 |   | Description: The client tells the server which blocks it has already seen so that the server can start syncing from an appropriate point in the chain. | 
 | 9. IntersectFound | Available from: Intersect | 
 |   | Transitions to: Idle | 
@@ -241,14 +245,16 @@ TO DO
 
 ## Tx Job sub-protocol
 
+The TxJob protocol is defined in two places. It is an instance of the generic Job protocol, which is a protocol that allows jobs to be run and their progress to be monitored. But it leaves abstract, what are the jobs and the commands that are available. In Marlowe Tx we have a specific set of commands that can be run. 
+
 The Tx Job sub-protocol is defined here: 
 
 * [marlowe-runtime/tx-api/Language/Marlowe/Runtime/Transaction/Api.hs](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/tx-api/Language/Marlowe/Runtime/Transaction/Api.hs)
 
   - The `MarloweTxCommand` type describes the available commands for marlowe-tx.
 
-Defined in `marlowe-protocols/src/Network/Protocol/Job/Types.hs`
-  - Defines the generic job protocol (command agnostic).
+It is also defined in `marlowe-protocols/src/Network/Protocol/Job/Types.hs`
+  - Defines the generic job protocol (command agnostic). 
 
 ### Sub-protocol states
 
