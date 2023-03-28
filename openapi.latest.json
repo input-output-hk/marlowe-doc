@@ -1,0 +1,2233 @@
+{
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "paths": {
+    "/contracts": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "roleCurrency",
+            "schema": {
+              "items": {
+                "description": "The hex-encoded minting policy ID for a native Cardano token",
+                "pattern": "^[a-fA-F0-9]*$",
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          {
+            "in": "query",
+            "name": "tag",
+            "schema": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          {
+            "in": "header",
+            "name": "Range",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "206": {
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListObject_(WithLink_\"transactions\"_(WithLink_\"contract\"_ContractHeader))"
+                }
+              }
+            },
+            "description": "",
+            "headers": {
+              "Accept-Ranges": {
+                "schema": {
+                  "items": {
+                    "enum": [
+                      "contractId"
+                    ],
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              },
+              "Content-Range": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Next-Range": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Total-Count": {
+                "schema": {
+                  "maximum": 9223372036854776000,
+                  "minimum": -9223372036854776000,
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `Range` or `tag` or `roleCurrency`"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Change-Address",
+            "required": true,
+            "schema": {
+              "description": "A cardano address",
+              "example": "addr1w94f8ywk4fg672xasahtk4t9k6w3aql943uxz5rt62d4dvq8evxaf",
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-Address",
+            "required": false,
+            "schema": {
+              "description": "A comma-separated list of values",
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-Collateral-UTxO",
+            "required": false,
+            "schema": {
+              "description": "A comma-separated list of values",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/PostContractsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "properties": {
+                    "links": {
+                      "properties": {
+                        "contract": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "resource": {
+                      "$ref": "#/components/schemas/CreateTxBody"
+                    }
+                  },
+                  "required": [
+                    "resource",
+                    "links"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": ""
+          },
+          "400": {
+            "description": "Invalid `X-Collateral-UTxO` or `X-Address` or `X-Change-Address` or `body`"
+          }
+        }
+      }
+    },
+    "/contracts/{contractId}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "contractId",
+            "required": true,
+            "schema": {
+              "description": "A reference to a transaction output with a transaction ID and index.",
+              "example": "98d601c9307dd43307cf68a03aad0086d4e07a789b66919ccf9f7f7676577eb7#1",
+              "pattern": "^[a-fA-F0-9]{64}#[0-9]+$",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "properties": {
+                    "links": {
+                      "properties": {
+                        "transactions": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "resource": {
+                      "$ref": "#/components/schemas/ContractState"
+                    }
+                  },
+                  "required": [
+                    "resource",
+                    "links"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": ""
+          },
+          "404": {
+            "description": "`contractId` not found"
+          }
+        }
+      },
+      "put": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "contractId",
+            "required": true,
+            "schema": {
+              "description": "A reference to a transaction output with a transaction ID and index.",
+              "example": "98d601c9307dd43307cf68a03aad0086d4e07a789b66919ccf9f7f7676577eb7#1",
+              "pattern": "^[a-fA-F0-9]{64}#[0-9]+$",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/TextEnvelope"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json;charset=utf-8": {}
+            },
+            "description": ""
+          },
+          "400": {
+            "description": "Invalid `body`"
+          },
+          "404": {
+            "description": "`contractId` not found"
+          }
+        }
+      }
+    },
+    "/contracts/{contractId}/transactions": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "contractId",
+            "required": true,
+            "schema": {
+              "description": "A reference to a transaction output with a transaction ID and index.",
+              "example": "98d601c9307dd43307cf68a03aad0086d4e07a789b66919ccf9f7f7676577eb7#1",
+              "pattern": "^[a-fA-F0-9]{64}#[0-9]+$",
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "Range",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "206": {
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListObject_(WithLink_\"transaction\"_TxHeader)"
+                }
+              }
+            },
+            "description": "",
+            "headers": {
+              "Accept-Ranges": {
+                "schema": {
+                  "items": {
+                    "enum": [
+                      "transactionId"
+                    ],
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              },
+              "Content-Range": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Next-Range": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Total-Count": {
+                "schema": {
+                  "maximum": 9223372036854776000,
+                  "minimum": -9223372036854776000,
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `Range`"
+          },
+          "404": {
+            "description": "`contractId` not found"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "contractId",
+            "required": true,
+            "schema": {
+              "description": "A reference to a transaction output with a transaction ID and index.",
+              "example": "98d601c9307dd43307cf68a03aad0086d4e07a789b66919ccf9f7f7676577eb7#1",
+              "pattern": "^[a-fA-F0-9]{64}#[0-9]+$",
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-Change-Address",
+            "required": true,
+            "schema": {
+              "description": "A cardano address",
+              "example": "addr1w94f8ywk4fg672xasahtk4t9k6w3aql943uxz5rt62d4dvq8evxaf",
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-Address",
+            "required": false,
+            "schema": {
+              "description": "A comma-separated list of values",
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-Collateral-UTxO",
+            "required": false,
+            "schema": {
+              "description": "A comma-separated list of values",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/PostTransactionsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "properties": {
+                    "links": {
+                      "properties": {
+                        "transaction": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "resource": {
+                      "$ref": "#/components/schemas/ApplyInputsTxBody"
+                    }
+                  },
+                  "required": [
+                    "resource",
+                    "links"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": ""
+          },
+          "400": {
+            "description": "Invalid `X-Collateral-UTxO` or `X-Address` or `X-Change-Address` or `body`"
+          },
+          "404": {
+            "description": "`contractId` not found"
+          }
+        }
+      }
+    },
+    "/contracts/{contractId}/transactions/{transactionId}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "contractId",
+            "required": true,
+            "schema": {
+              "description": "A reference to a transaction output with a transaction ID and index.",
+              "example": "98d601c9307dd43307cf68a03aad0086d4e07a789b66919ccf9f7f7676577eb7#1",
+              "pattern": "^[a-fA-F0-9]{64}#[0-9]+$",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "transactionId",
+            "required": true,
+            "schema": {
+              "description": "The hex-encoded identifier of a Cardano transaction",
+              "pattern": "^[a-fA-F0-9]{64}$",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "properties": {
+                    "links": {
+                      "properties": {
+                        "next": {
+                          "type": "string"
+                        },
+                        "previous": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "resource": {
+                      "$ref": "#/components/schemas/Tx"
+                    }
+                  },
+                  "required": [
+                    "resource",
+                    "links"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": ""
+          },
+          "404": {
+            "description": "`contractId` or `transactionId` not found"
+          }
+        }
+      },
+      "put": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "contractId",
+            "required": true,
+            "schema": {
+              "description": "A reference to a transaction output with a transaction ID and index.",
+              "example": "98d601c9307dd43307cf68a03aad0086d4e07a789b66919ccf9f7f7676577eb7#1",
+              "pattern": "^[a-fA-F0-9]{64}#[0-9]+$",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "transactionId",
+            "required": true,
+            "schema": {
+              "description": "The hex-encoded identifier of a Cardano transaction",
+              "pattern": "^[a-fA-F0-9]{64}$",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/TextEnvelope"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json;charset=utf-8": {}
+            },
+            "description": ""
+          },
+          "400": {
+            "description": "Invalid `body`"
+          },
+          "404": {
+            "description": "`contractId` or `transactionId` not found"
+          }
+        }
+      }
+    },
+    "/withdrawals": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "roleCurrency",
+            "schema": {
+              "items": {
+                "description": "The hex-encoded minting policy ID for a native Cardano token",
+                "pattern": "^[a-fA-F0-9]*$",
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          {
+            "in": "header",
+            "name": "Range",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "206": {
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListObject_(WithLink_\"withdrawal\"_WithdrawalHeader)"
+                }
+              }
+            },
+            "description": "",
+            "headers": {
+              "Accept-Ranges": {
+                "schema": {
+                  "items": {
+                    "enum": [
+                      "withdrawalId"
+                    ],
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              },
+              "Content-Range": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Next-Range": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Total-Count": {
+                "schema": {
+                  "maximum": 9223372036854776000,
+                  "minimum": -9223372036854776000,
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `Range` or `roleCurrency`"
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Change-Address",
+            "required": true,
+            "schema": {
+              "description": "A cardano address",
+              "example": "addr1w94f8ywk4fg672xasahtk4t9k6w3aql943uxz5rt62d4dvq8evxaf",
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-Address",
+            "required": false,
+            "schema": {
+              "description": "A comma-separated list of values",
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-Collateral-UTxO",
+            "required": false,
+            "schema": {
+              "description": "A comma-separated list of values",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/PostWithdrawalsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "properties": {
+                    "links": {
+                      "properties": {
+                        "withdrawal": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "resource": {
+                      "$ref": "#/components/schemas/WithdrawTxBody"
+                    }
+                  },
+                  "required": [
+                    "resource",
+                    "links"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": ""
+          },
+          "400": {
+            "description": "Invalid `X-Collateral-UTxO` or `X-Address` or `X-Change-Address` or `body`"
+          }
+        }
+      }
+    },
+    "/withdrawals/{withdrawalId}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "withdrawalId",
+            "required": true,
+            "schema": {
+              "description": "The hex-encoded identifier of a Cardano transaction",
+              "pattern": "^[a-fA-F0-9]{64}$",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Withdrawal"
+                }
+              }
+            },
+            "description": ""
+          },
+          "404": {
+            "description": "`withdrawalId` not found"
+          }
+        }
+      },
+      "put": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "withdrawalId",
+            "required": true,
+            "schema": {
+              "description": "The hex-encoded identifier of a Cardano transaction",
+              "pattern": "^[a-fA-F0-9]{64}$",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json;charset=utf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/TextEnvelope"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json;charset=utf-8": {}
+            },
+            "description": ""
+          },
+          "400": {
+            "description": "Invalid `body`"
+          },
+          "404": {
+            "description": "`withdrawalId` not found"
+          }
+        }
+      }
+    },
+    "/healthcheck": {
+      "get": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json;charset=utf-8": {}
+            },
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ListObject_(WithLink_\"transactions\"_(WithLink_\"contract\"_ContractHeader))": {
+        "properties": {
+          "results": {
+            "items": {
+              "properties": {
+                "links": {
+                  "properties": {
+                    "contract": {
+                      "type": "string"
+                    },
+                    "transactions": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "resource": {
+                  "$ref": "#/components/schemas/ContractHeader"
+                }
+              },
+              "required": [
+                "resource",
+                "links"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "results"
+        ],
+        "type": "object"
+      },
+      "ContractHeader": {
+        "properties": {
+          "block": {
+            "$ref": "#/components/schemas/BlockHeader"
+          },
+          "continuations": {
+            "type": "string"
+          },
+          "contractId": {
+            "$ref": "#/components/schemas/TxOutRef"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "type": "object"
+          },
+          "roleTokenMintingPolicyId": {
+            "$ref": "#/components/schemas/PolicyId"
+          },
+          "status": {
+            "$ref": "#/components/schemas/TxStatusHeader"
+          },
+          "tags": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "type": "object"
+          },
+          "version": {
+            "$ref": "#/components/schemas/MarloweVersion"
+          }
+        },
+        "required": [
+          "contractId",
+          "roleTokenMintingPolicyId",
+          "version",
+          "tags",
+          "metadata",
+          "status"
+        ],
+        "type": "object"
+      },
+      "TxOutRef": {
+        "description": "A reference to a transaction output with a transaction ID and index.",
+        "example": "98d601c9307dd43307cf68a03aad0086d4e07a789b66919ccf9f7f7676577eb7#1",
+        "pattern": "^[a-fA-F0-9]{64}#[0-9]+$",
+        "type": "string"
+      },
+      "PolicyId": {
+        "description": "The hex-encoded minting policy ID for a native Cardano token",
+        "pattern": "^[a-fA-F0-9]*$",
+        "type": "string"
+      },
+      "MarloweVersion": {
+        "description": "A version of the Marlowe language.",
+        "enum": [
+          "v1"
+        ],
+        "type": "string"
+      },
+      "Metadata": {
+        "description": "An arbitrary JSON value for storage in a metadata key"
+      },
+      "TxStatusHeader": {
+        "description": "A header of the status of a transaction on the local node.",
+        "enum": [
+          "unsigned",
+          "submitted",
+          "confirmed"
+        ],
+        "type": "string"
+      },
+      "BlockHeader": {
+        "properties": {
+          "blockHeaderHash": {
+            "type": "string"
+          },
+          "blockNo": {
+            "format": "int64",
+            "maximum": 18446744073709552000,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "slotNo": {
+            "format": "int64",
+            "maximum": 18446744073709552000,
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "slotNo",
+          "blockNo",
+          "blockHeaderHash"
+        ],
+        "type": "object"
+      },
+      "CreateTxBody": {
+        "properties": {
+          "contractId": {
+            "$ref": "#/components/schemas/TxOutRef"
+          },
+          "txBody": {
+            "$ref": "#/components/schemas/TextEnvelope"
+          }
+        },
+        "required": [
+          "contractId",
+          "txBody"
+        ],
+        "type": "object"
+      },
+      "TextEnvelope": {
+        "properties": {
+          "cborHex": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "description",
+          "cborHex"
+        ],
+        "type": "object"
+      },
+      "PostContractsRequest": {
+        "properties": {
+          "contract": {
+            "$ref": "#/components/schemas/Contract"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "type": "object"
+          },
+          "minUTxODeposit": {
+            "format": "int64",
+            "maximum": 18446744073709552000,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "roles": {
+            "$ref": "#/components/schemas/RolesConfig"
+          },
+          "tags": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "type": "object"
+          },
+          "version": {
+            "$ref": "#/components/schemas/MarloweVersion"
+          }
+        },
+        "required": [
+          "tags",
+          "metadata",
+          "version",
+          "contract",
+          "minUTxODeposit"
+        ],
+        "type": "object"
+      },
+      "RolesConfig": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/PolicyId"
+          },
+          {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/RoleTokenConfig"
+            },
+            "type": "object"
+          }
+        ]
+      },
+      "RoleTokenConfig": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/Address"
+          },
+          {
+            "properties": {
+              "address": {
+                "$ref": "#/components/schemas/Address"
+              },
+              "metadata": {
+                "$ref": "#/components/schemas/TokenMetadata"
+              }
+            },
+            "required": [
+              "address",
+              "metadata"
+            ],
+            "type": "object"
+          }
+        ]
+      },
+      "Address": {
+        "description": "A cardano address",
+        "type": "string"
+      },
+      "TokenMetadata": {
+        "additionalProperties": true,
+        "description": "Metadata for an NFT, as described by https://cips.cardano.org/cips/cip25/",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "files": {
+            "items": {
+              "$ref": "#/components/schemas/TokenMetadataFile"
+            },
+            "type": "array"
+          },
+          "image": {
+            "type": "string"
+          },
+          "mediaType": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "image"
+        ],
+        "type": "object"
+      },
+      "TokenMetadataFile": {
+        "additionalProperties": true,
+        "properties": {
+          "mediaType": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "src": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "src",
+          "mediaType"
+        ],
+        "type": "object"
+      },
+      "Contract": {
+        "description": "Contract terms specified in Marlowe",
+        "oneOf": [
+          {
+            "description": "No more payments will be sent and the balance of the contract is 0.",
+            "enum": [
+              "close"
+            ],
+            "type": "string"
+          },
+          {
+            "description": "A payment will be sent from an account to a payee.",
+            "properties": {
+              "from_account": {
+                "$ref": "#/components/schemas/Party"
+              },
+              "pay": {
+                "$ref": "#/components/schemas/Value"
+              },
+              "then": {
+                "$ref": "#/components/schemas/Contract"
+              },
+              "to": {
+                "$ref": "#/components/schemas/Payee"
+              },
+              "token": {
+                "$ref": "#/components/schemas/Token"
+              }
+            },
+            "required": [
+              "from_account",
+              "to",
+              "token",
+              "pay",
+              "then"
+            ],
+            "type": "object"
+          },
+          {
+            "description": "If an observation is true, the first contract applies, otherwise the second contract applies.",
+            "properties": {
+              "else": {
+                "$ref": "#/components/schemas/Contract"
+              },
+              "if": {
+                "$ref": "#/components/schemas/Observation"
+              },
+              "then": {
+                "$ref": "#/components/schemas/Contract"
+              }
+            },
+            "required": [
+              "if",
+              "then",
+              "else"
+            ],
+            "type": "object"
+          },
+          {
+            "description": "Wait for an action to be performed and apply the matching contract when it does. Apply the timeout contract if no actions have been performed in the timeout period.",
+            "properties": {
+              "timeout": {
+                "type": "integer"
+              },
+              "timeout_continuation": {
+                "$ref": "#/components/schemas/Contract"
+              },
+              "when": {
+                "items": {
+                  "$ref": "#/components/schemas/Case"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "when",
+              "timeout",
+              "timeout_continuation"
+            ],
+            "type": "object"
+          },
+          {
+            "description": "Bind a value to a name within the scope of a sub-contract.",
+            "properties": {
+              "be": {
+                "$ref": "#/components/schemas/Value"
+              },
+              "let": {
+                "type": "string"
+              },
+              "then": {
+                "$ref": "#/components/schemas/Contract"
+              }
+            },
+            "required": [
+              "let",
+              "be",
+              "then"
+            ],
+            "type": "object"
+          },
+          {
+            "description": "Check an observation and produce a warning if it is false.",
+            "properties": {
+              "assert": {
+                "$ref": "#/components/schemas/Observation"
+              },
+              "then": {
+                "$ref": "#/components/schemas/Contract"
+              }
+            },
+            "required": [
+              "assert",
+              "then"
+            ],
+            "type": "object"
+          }
+        ]
+      },
+      "Party": {
+        "description": "A participant in a contract",
+        "oneOf": [
+          {
+            "description": "Refers to a party by role name.",
+            "properties": {
+              "role_token": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "role_token"
+            ],
+            "type": "object"
+          },
+          {
+            "description": "Refers to a party by Cardano address.",
+            "properties": {
+              "address": {
+                "$ref": "#/components/schemas/Address"
+              }
+            },
+            "required": [
+              "address"
+            ],
+            "type": "object"
+          }
+        ]
+      },
+      "Payee": {
+        "description": "A recipient of a payment",
+        "oneOf": [
+          {
+            "description": "Pays funds into a party's account in the contract.",
+            "properties": {
+              "account": {
+                "$ref": "#/components/schemas/Party"
+              }
+            },
+            "required": [
+              "account"
+            ],
+            "type": "object"
+          },
+          {
+            "description": "Pays funds to a party.",
+            "properties": {
+              "party": {
+                "$ref": "#/components/schemas/Party"
+              }
+            },
+            "required": [
+              "party"
+            ],
+            "type": "object"
+          }
+        ]
+      },
+      "Token": {
+        "description": "A token with a currency symbol (minting policy ID) and token name.",
+        "properties": {
+          "currency_symbol": {
+            "type": "string"
+          },
+          "token_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "currency_symbol",
+          "token_name"
+        ],
+        "type": "object"
+      },
+      "Value": {
+        "description": "A time-varying expression that evaluates to a boolean",
+        "oneOf": [
+          {
+            "properties": {
+              "amount_of_token": {
+                "$ref": "#/components/schemas/Token"
+              },
+              "in_account": {
+                "$ref": "#/components/schemas/Party"
+              }
+            },
+            "required": [
+              "amount_of_token",
+              "in_account"
+            ],
+            "type": "object"
+          },
+          {
+            "format": "int64",
+            "type": "integer"
+          },
+          {
+            "properties": {
+              "negate": {
+                "$ref": "#/components/schemas/Value"
+              }
+            },
+            "required": [
+              "negate"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "add": {
+                "$ref": "#/components/schemas/Value"
+              },
+              "and": {
+                "$ref": "#/components/schemas/Value"
+              }
+            },
+            "required": [
+              "add",
+              "and"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "minus": {
+                "$ref": "#/components/schemas/Value"
+              },
+              "value": {
+                "$ref": "#/components/schemas/Value"
+              }
+            },
+            "required": [
+              "value",
+              "minus"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "multiply": {
+                "$ref": "#/components/schemas/Value"
+              },
+              "times": {
+                "$ref": "#/components/schemas/Value"
+              }
+            },
+            "required": [
+              "multiply",
+              "times"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "by": {
+                "$ref": "#/components/schemas/Value"
+              },
+              "divide": {
+                "$ref": "#/components/schemas/Value"
+              }
+            },
+            "required": [
+              "divide",
+              "by"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "value_of_choice": {
+                "$ref": "#/components/schemas/ChoiceId"
+              }
+            },
+            "required": [
+              "value_of_choice"
+            ],
+            "type": "object"
+          },
+          {
+            "enum": [
+              "time_interval_start",
+              "time_interval_end"
+            ],
+            "type": "string"
+          },
+          {
+            "properties": {
+              "use_value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "use_value"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "else": {
+                "$ref": "#/components/schemas/Value"
+              },
+              "if": {
+                "$ref": "#/components/schemas/Observation"
+              },
+              "then": {
+                "$ref": "#/components/schemas/Value"
+              }
+            },
+            "required": [
+              "if",
+              "then",
+              "else"
+            ],
+            "type": "object"
+          }
+        ]
+      },
+      "ChoiceId": {
+        "description": "Refers to a party by role name.",
+        "properties": {
+          "choice_name": {
+            "type": "string"
+          },
+          "choice_owner": {
+            "$ref": "#/components/schemas/Party"
+          }
+        },
+        "required": [
+          "choice_name",
+          "choice_owner"
+        ],
+        "type": "object"
+      },
+      "Observation": {
+        "description": "A time-varying expression that evaluates to an integer",
+        "oneOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "properties": {
+              "and": {
+                "$ref": "#/components/schemas/Observation"
+              },
+              "both": {
+                "$ref": "#/components/schemas/Observation"
+              }
+            },
+            "required": [
+              "both",
+              "and"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "either": {
+                "$ref": "#/components/schemas/Observation"
+              },
+              "or": {
+                "$ref": "#/components/schemas/Observation"
+              }
+            },
+            "required": [
+              "either",
+              "or"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "not": {
+                "$ref": "#/components/schemas/Observation"
+              }
+            },
+            "required": [
+              "not"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "chose_something_for": {
+                "$ref": "#/components/schemas/ChoiceId"
+              }
+            },
+            "required": [
+              "chose_something_for"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "ge_than": {
+                "$ref": "#/components/schemas/Value"
+              },
+              "value": {
+                "$ref": "#/components/schemas/Value"
+              }
+            },
+            "required": [
+              "value",
+              "ge_than"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "gt": {
+                "$ref": "#/components/schemas/Value"
+              },
+              "value": {
+                "$ref": "#/components/schemas/Value"
+              }
+            },
+            "required": [
+              "value",
+              "gt"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "lt": {
+                "$ref": "#/components/schemas/Value"
+              },
+              "value": {
+                "$ref": "#/components/schemas/Value"
+              }
+            },
+            "required": [
+              "value",
+              "lt"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "le_than": {
+                "$ref": "#/components/schemas/Value"
+              },
+              "value": {
+                "$ref": "#/components/schemas/Value"
+              }
+            },
+            "required": [
+              "value",
+              "le_than"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "equal_to": {
+                "$ref": "#/components/schemas/Value"
+              },
+              "value": {
+                "$ref": "#/components/schemas/Value"
+              }
+            },
+            "required": [
+              "value",
+              "equal_to"
+            ],
+            "type": "object"
+          }
+        ]
+      },
+      "Case": {
+        "description": "A contract which becomes active when an action occurs.",
+        "oneOf": [
+          {
+            "properties": {
+              "case": {
+                "$ref": "#/components/schemas/Action"
+              },
+              "then": {
+                "$ref": "#/components/schemas/Contract"
+              }
+            },
+            "required": [
+              "case",
+              "then"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "case": {
+                "$ref": "#/components/schemas/Action"
+              },
+              "merkleized_then": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "case",
+              "merkleized_then"
+            ],
+            "type": "object"
+          }
+        ]
+      },
+      "Action": {
+        "description": "A contract which becomes active when an action occurs.",
+        "oneOf": [
+          {
+            "properties": {
+              "deposits": {
+                "$ref": "#/components/schemas/Value"
+              },
+              "into_account": {
+                "$ref": "#/components/schemas/Party"
+              },
+              "of_token": {
+                "$ref": "#/components/schemas/Token"
+              },
+              "party": {
+                "$ref": "#/components/schemas/Party"
+              }
+            },
+            "required": [
+              "party",
+              "deposits",
+              "of_token",
+              "into_account"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "choose_between": {
+                "items": {
+                  "$ref": "#/components/schemas/Bound"
+                },
+                "type": "array"
+              },
+              "for_choice": {
+                "$ref": "#/components/schemas/ChoiceId"
+              }
+            },
+            "required": [
+              "for_choice",
+              "choose_between"
+            ],
+            "type": "object"
+          },
+          {
+            "properties": {
+              "notify_if": {
+                "$ref": "#/components/schemas/Observation"
+              }
+            },
+            "required": [
+              "notify_if"
+            ],
+            "type": "object"
+          }
+        ]
+      },
+      "Bound": {
+        "description": "An inclusive range of values for a choice.",
+        "properties": {
+          "from": {
+            "type": "integer"
+          },
+          "to": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "from",
+          "to"
+        ],
+        "type": "object"
+      },
+      "ContractState": {
+        "properties": {
+          "block": {
+            "$ref": "#/components/schemas/BlockHeader"
+          },
+          "continuations": {
+            "type": "string"
+          },
+          "contractId": {
+            "$ref": "#/components/schemas/TxOutRef"
+          },
+          "currentContract": {
+            "$ref": "#/components/schemas/Contract"
+          },
+          "initialContract": {
+            "$ref": "#/components/schemas/Contract"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "type": "object"
+          },
+          "roleTokenMintingPolicyId": {
+            "$ref": "#/components/schemas/PolicyId"
+          },
+          "state": {
+            "$ref": "#/components/schemas/MarloweState"
+          },
+          "status": {
+            "$ref": "#/components/schemas/TxStatusHeader"
+          },
+          "tags": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "type": "object"
+          },
+          "txBody": {
+            "$ref": "#/components/schemas/TextEnvelope"
+          },
+          "utxo": {
+            "$ref": "#/components/schemas/TxOutRef"
+          },
+          "version": {
+            "$ref": "#/components/schemas/MarloweVersion"
+          }
+        },
+        "required": [
+          "contractId",
+          "roleTokenMintingPolicyId",
+          "version",
+          "tags",
+          "metadata",
+          "status",
+          "initialContract"
+        ],
+        "type": "object"
+      },
+      "MarloweState": {
+        "description": "The on-chain state of a Marlowe contract.",
+        "properties": {
+          "accounts": {
+            "items": {
+              "items": [
+                {
+                  "items": [
+                    {
+                      "$ref": "#/components/schemas/Party"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Token"
+                    }
+                  ],
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "type": "array"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2,
+              "type": "array"
+            },
+            "type": "array"
+          },
+          "boundValues": {
+            "items": {
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2,
+              "type": "array"
+            },
+            "type": "array"
+          },
+          "choices": {
+            "items": {
+              "items": [
+                {
+                  "$ref": "#/components/schemas/ChoiceId"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2,
+              "type": "array"
+            },
+            "type": "array"
+          },
+          "minTime": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "accounts",
+          "choices",
+          "boundValues",
+          "minTime"
+        ],
+        "type": "object"
+      },
+      "ListObject_(WithLink_\"transaction\"_TxHeader)": {
+        "properties": {
+          "results": {
+            "items": {
+              "properties": {
+                "links": {
+                  "properties": {
+                    "transaction": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "resource": {
+                  "$ref": "#/components/schemas/TxHeader"
+                }
+              },
+              "required": [
+                "resource",
+                "links"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "results"
+        ],
+        "type": "object"
+      },
+      "TxHeader": {
+        "properties": {
+          "block": {
+            "$ref": "#/components/schemas/BlockHeader"
+          },
+          "continuations": {
+            "type": "string"
+          },
+          "contractId": {
+            "$ref": "#/components/schemas/TxOutRef"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "type": "object"
+          },
+          "status": {
+            "$ref": "#/components/schemas/TxStatusHeader"
+          },
+          "tags": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "type": "object"
+          },
+          "transactionId": {
+            "$ref": "#/components/schemas/TxId"
+          },
+          "utxo": {
+            "$ref": "#/components/schemas/TxOutRef"
+          }
+        },
+        "required": [
+          "contractId",
+          "transactionId",
+          "tags",
+          "metadata",
+          "status"
+        ],
+        "type": "object"
+      },
+      "TxId": {
+        "description": "The hex-encoded identifier of a Cardano transaction",
+        "pattern": "^[a-fA-F0-9]{64}$",
+        "type": "string"
+      },
+      "ApplyInputsTxBody": {
+        "properties": {
+          "contractId": {
+            "$ref": "#/components/schemas/TxOutRef"
+          },
+          "transactionId": {
+            "$ref": "#/components/schemas/TxId"
+          },
+          "txBody": {
+            "$ref": "#/components/schemas/TextEnvelope"
+          }
+        },
+        "required": [
+          "contractId",
+          "transactionId",
+          "txBody"
+        ],
+        "type": "object"
+      },
+      "PostTransactionsRequest": {
+        "properties": {
+          "inputs": {
+            "items": {
+              "$ref": "#/components/schemas/Input"
+            },
+            "type": "array"
+          },
+          "invalidBefore": {
+            "$ref": "#/components/schemas/UTCTime"
+          },
+          "invalidHereafter": {
+            "$ref": "#/components/schemas/UTCTime"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "type": "object"
+          },
+          "tags": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "type": "object"
+          },
+          "version": {
+            "$ref": "#/components/schemas/MarloweVersion"
+          }
+        },
+        "required": [
+          "version",
+          "tags",
+          "metadata",
+          "inputs"
+        ],
+        "type": "object"
+      },
+      "UTCTime": {
+        "example": "2016-07-22T00:00:00Z",
+        "format": "yyyy-mm-ddThh:MM:ssZ",
+        "type": "string"
+      },
+      "Input": {
+        "description": "An input to a Marlowe transaction",
+        "oneOf": [
+          {
+            "description": "Notify a contract to check a condition and provide the continuation of the contract",
+            "properties": {
+              "continuation_hash": {
+                "type": "string"
+              },
+              "merkleized_continuation": {
+                "$ref": "#/components/schemas/Contract"
+              }
+            },
+            "required": [
+              "merkleized_continuation",
+              "continuation_hash"
+            ],
+            "type": "object"
+          },
+          {
+            "description": "Notify a contract to check a condition",
+            "enum": [
+              "input_notify"
+            ],
+            "type": "string"
+          },
+          {
+            "description": "Make a choice in a contract and provide the continuation of the contract",
+            "properties": {
+              "continuation_hash": {
+                "type": "string"
+              },
+              "for_choice_id": {
+                "$ref": "#/components/schemas/ChoiceId"
+              },
+              "input_that_chooses_num": {
+                "type": "integer"
+              },
+              "merkleized_continuation": {
+                "$ref": "#/components/schemas/Contract"
+              }
+            },
+            "required": [
+              "input_that_chooses_num",
+              "for_choice_id",
+              "merkleized_continuation",
+              "continuation_hash"
+            ],
+            "type": "object"
+          },
+          {
+            "description": "Make a choice in a contract",
+            "properties": {
+              "for_choice_id": {
+                "$ref": "#/components/schemas/ChoiceId"
+              },
+              "input_that_chooses_num": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "input_that_chooses_num",
+              "for_choice_id"
+            ],
+            "type": "object"
+          },
+          {
+            "description": "Deposit funds into an account in a contract and provide the continuation of the contract",
+            "properties": {
+              "continuation_hash": {
+                "type": "string"
+              },
+              "input_from_party": {
+                "$ref": "#/components/schemas/Party"
+              },
+              "into_account": {
+                "$ref": "#/components/schemas/Party"
+              },
+              "merkleized_continuation": {
+                "$ref": "#/components/schemas/Contract"
+              },
+              "of_token": {
+                "$ref": "#/components/schemas/Token"
+              },
+              "that_deposits": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "input_from_party",
+              "that_deposits",
+              "of_token",
+              "into_account",
+              "merkleized_continuation",
+              "continuation_hash"
+            ],
+            "type": "object"
+          },
+          {
+            "description": "Deposit funds into an account in a contract",
+            "properties": {
+              "input_from_party": {
+                "$ref": "#/components/schemas/Party"
+              },
+              "into_account": {
+                "$ref": "#/components/schemas/Party"
+              },
+              "of_token": {
+                "$ref": "#/components/schemas/Token"
+              },
+              "that_deposits": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "input_from_party",
+              "that_deposits",
+              "of_token",
+              "into_account"
+            ],
+            "type": "object"
+          }
+        ]
+      },
+      "Tx": {
+        "properties": {
+          "block": {
+            "$ref": "#/components/schemas/BlockHeader"
+          },
+          "consumingTx": {
+            "$ref": "#/components/schemas/TxId"
+          },
+          "continuations": {
+            "type": "string"
+          },
+          "contractId": {
+            "$ref": "#/components/schemas/TxOutRef"
+          },
+          "inputUtxo": {
+            "$ref": "#/components/schemas/TxOutRef"
+          },
+          "inputs": {
+            "items": {
+              "$ref": "#/components/schemas/Input"
+            },
+            "type": "array"
+          },
+          "invalidBefore": {
+            "$ref": "#/components/schemas/UTCTime"
+          },
+          "invalidHereafter": {
+            "$ref": "#/components/schemas/UTCTime"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "type": "object"
+          },
+          "outputContract": {
+            "$ref": "#/components/schemas/Contract"
+          },
+          "outputState": {
+            "$ref": "#/components/schemas/MarloweState"
+          },
+          "outputUtxo": {
+            "$ref": "#/components/schemas/TxOutRef"
+          },
+          "status": {
+            "$ref": "#/components/schemas/TxStatusHeader"
+          },
+          "tags": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Metadata"
+            },
+            "type": "object"
+          },
+          "transactionId": {
+            "$ref": "#/components/schemas/TxId"
+          },
+          "txBody": {
+            "$ref": "#/components/schemas/TextEnvelope"
+          }
+        },
+        "required": [
+          "contractId",
+          "transactionId",
+          "tags",
+          "metadata",
+          "status",
+          "inputUtxo",
+          "inputs",
+          "invalidBefore",
+          "invalidHereafter"
+        ],
+        "type": "object"
+      },
+      "ListObject_(WithLink_\"withdrawal\"_WithdrawalHeader)": {
+        "properties": {
+          "results": {
+            "items": {
+              "properties": {
+                "links": {
+                  "properties": {
+                    "withdrawal": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "resource": {
+                  "$ref": "#/components/schemas/WithdrawalHeader"
+                }
+              },
+              "required": [
+                "resource",
+                "links"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "results"
+        ],
+        "type": "object"
+      },
+      "WithdrawalHeader": {
+        "properties": {
+          "block": {
+            "$ref": "#/components/schemas/BlockHeader"
+          },
+          "status": {
+            "$ref": "#/components/schemas/TxStatusHeader"
+          },
+          "withdrawalId": {
+            "$ref": "#/components/schemas/TxId"
+          }
+        },
+        "required": [
+          "withdrawalId",
+          "status"
+        ],
+        "type": "object"
+      },
+      "WithdrawTxBody": {
+        "properties": {
+          "txBody": {
+            "$ref": "#/components/schemas/TextEnvelope"
+          },
+          "withdrawalId": {
+            "$ref": "#/components/schemas/TxId"
+          }
+        },
+        "required": [
+          "withdrawalId",
+          "txBody"
+        ],
+        "type": "object"
+      },
+      "PostWithdrawalsRequest": {
+        "properties": {
+          "contractId": {
+            "$ref": "#/components/schemas/TxOutRef"
+          },
+          "role": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "role",
+          "contractId"
+        ],
+        "type": "object"
+      },
+      "Withdrawal": {
+        "properties": {
+          "block": {
+            "$ref": "#/components/schemas/BlockHeader"
+          },
+          "payouts": {
+            "items": {
+              "$ref": "#/components/schemas/PayoutRef"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/TxStatusHeader"
+          },
+          "withdrawalId": {
+            "$ref": "#/components/schemas/TxId"
+          }
+        },
+        "required": [
+          "payouts",
+          "withdrawalId",
+          "status"
+        ],
+        "type": "object"
+      },
+      "PayoutRef": {
+        "properties": {
+          "contractId": {
+            "$ref": "#/components/schemas/TxOutRef"
+          },
+          "payout": {
+            "$ref": "#/components/schemas/TxOutRef"
+          },
+          "role": {
+            "type": "string"
+          },
+          "roleTokenMintingPolicyId": {
+            "$ref": "#/components/schemas/PolicyId"
+          }
+        },
+        "required": [
+          "contractId",
+          "payout",
+          "roleTokenMintingPolicyId",
+          "role"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "openapi": "3.0.0"
+}
