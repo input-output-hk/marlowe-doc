@@ -40,7 +40,7 @@ The ReadMe file covers the following topics:
 
 See also: 
 
-## [Runtime protocol reference](runtime-protocol-reference.md)
+## [Runtime protocol API reference](runtime-protocol-api-reference.md)
 
 ## Runtime video tutorials
 
