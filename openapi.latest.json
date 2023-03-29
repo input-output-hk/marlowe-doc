@@ -1,11 +1,19 @@
 {
   "info": {
-    "title": "",
-    "version": ""
+    "title": "Marlowe Runtime Web",
+    "version": "0.0.0",
+    "description": "REST endpoints for Marlowe",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    }
   },
   "paths": {
     "/contracts": {
       "get": {
+        "security": [],
+        "summary": "Get contracts",
+        "operationId": "getContracts",
         "parameters": [
           {
             "in": "query",
@@ -43,7 +51,7 @@
             "content": {
               "application/json;charset=utf-8": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListObject_(WithLink_\"transactions\"_(WithLink_\"contract\"_ContractHeader))"
+                  "$ref": "#/components/schemas/ListObject_WithLink_transactions_WithLink_contract_ContractHeader"
                 }
               }
             },
@@ -85,6 +93,9 @@
         }
       },
       "post": {
+        "security": [],
+        "summary": "Create contracts",
+        "operationId": "createContracts",
         "parameters": [
           {
             "in": "header",
@@ -160,6 +171,9 @@
     },
     "/contracts/{contractId}": {
       "get": {
+        "security": [],
+        "summary": "Get contracts by ID",
+        "operationId": "getContractsByID",
         "parameters": [
           {
             "in": "path",
@@ -207,6 +221,9 @@
         }
       },
       "put": {
+        "security": [],
+        "summary": "Create contracts by ID",
+        "operationId": "createContractsByID",
         "parameters": [
           {
             "in": "path",
@@ -247,6 +264,9 @@
     },
     "/contracts/{contractId}/transactions": {
       "get": {
+        "security": [],
+        "summary": "Get transactions",
+        "operationId": "getTransactions",
         "parameters": [
           {
             "in": "path",
@@ -273,7 +293,7 @@
             "content": {
               "application/json;charset=utf-8": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListObject_(WithLink_\"transaction\"_TxHeader)"
+                  "$ref": "#/components/schemas/ListObject_WithLink_transaction_TxHeader"
                 }
               }
             },
@@ -318,6 +338,9 @@
         }
       },
       "post": {
+        "security": [],
+        "summary": "Create transactions",
+        "operationId": "createTransactions",
         "parameters": [
           {
             "in": "path",
@@ -407,6 +430,9 @@
     },
     "/contracts/{contractId}/transactions/{transactionId}": {
       "get": {
+        "security": [],
+        "summary": "Get transaction by ID",
+        "operationId": "getTransactionByID",
         "parameters": [
           {
             "in": "path",
@@ -467,6 +493,9 @@
         }
       },
       "put": {
+        "security": [],
+        "summary": "Create transaction by ID",
+        "operationId": "createTransactionByID",
         "parameters": [
           {
             "in": "path",
@@ -517,6 +546,9 @@
     },
     "/withdrawals": {
       "get": {
+        "security": [],
+        "summary": "Get withdrawals",
+        "operationId": "getWithdrawals",
         "parameters": [
           {
             "in": "query",
@@ -544,7 +576,7 @@
             "content": {
               "application/json;charset=utf-8": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListObject_(WithLink_\"withdrawal\"_WithdrawalHeader)"
+                  "$ref": "#/components/schemas/ListObject_WithLink_withdrawal_WithdrawalHeader"
                 }
               }
             },
@@ -586,6 +618,9 @@
         }
       },
       "post": {
+        "security": [],
+        "summary": "Create withdrawals",
+        "operationId": "createWithdrawals",
         "parameters": [
           {
             "in": "header",
@@ -661,6 +696,9 @@
     },
     "/withdrawals/{withdrawalId}": {
       "get": {
+        "security": [],
+        "summary": "Get withdrawal by ID",
+        "operationId": "getWithdrawalByID",
         "parameters": [
           {
             "in": "path",
@@ -690,6 +728,9 @@
         }
       },
       "put": {
+        "security": [],
+        "summary": "Create withdrawal",
+        "operationId": "createWithdrawalByID",
         "parameters": [
           {
             "in": "path",
@@ -729,11 +770,17 @@
     },
     "/healthcheck": {
       "get": {
+        "security": [],
+        "summary": "Health check endpoint",
+        "operationId": "healthz",
         "responses": {
           "200": {
             "content": {
               "application/json;charset=utf-8": {}
             },
+            "description": ""
+          },
+          "400": {
             "description": ""
           }
         }
@@ -742,7 +789,7 @@
   },
   "components": {
     "schemas": {
-      "ListObject_(WithLink_\"transactions\"_(WithLink_\"contract\"_ContractHeader))": {
+      "ListObject_WithLink_transactions_WithLink_contract_ContractHeader": {
         "properties": {
           "results": {
             "items": {
@@ -1762,7 +1809,7 @@
         ],
         "type": "object"
       },
-      "ListObject_(WithLink_\"transaction\"_TxHeader)": {
+      "ListObject_WithLink_transaction_TxHeader": {
         "properties": {
           "results": {
             "items": {
@@ -2099,7 +2146,7 @@
         ],
         "type": "object"
       },
-      "ListObject_(WithLink_\"withdrawal\"_WithdrawalHeader)": {
+      "ListObject_WithLink_withdrawal_WithdrawalHeader": {
         "properties": {
           "results": {
             "items": {
@@ -2229,5 +2276,11 @@
       }
     }
   },
-  "openapi": "3.0.0"
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "localhost:3780",
+      "description": ""
+    }
+  ]
 }
