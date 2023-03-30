@@ -84,22 +84,18 @@ Once in that protocol state, the protocol stays there for the rest of the sessio
 
 ### Descriptions of the Marlowe protocol states
 
-| Marlowe protocol state | Description |
-| --- | --- |
-| 1. `Init` | The initial state. | 
-|     | Client has agency. | 
-| 2. `MarloweSync` | The peers are communicating via the `MarloweSync` sub-protocol. | 
-|  | Agency depends on sub-protocol. | 
-|  | *Associated data:* a `MarloweSync` sub-protocol state. | 
-| 3. `MarloweHeaderSync` | The peers are communicating via the `MarloweHeaderSync` sub-protocol. | 
-|   | Agency depends on sub-protocol. | 
-|   | *Associated data:* a `MarloweHeaderSync` sub-protocol state. | 
-| 4. `MarloweQuery` | The peers are communicating via the `MarloweQuery` sub-protocol. | 
-|   | Agency depends on sub-protocol. | 
-|   | *Associated data:* a `MarloweQuery` sub-protocol state. | 
-| 5. `TxJob` | The peers are communicating via the `TxJob` sub-protocol. | 
-|   | Agency depends on sub-protocol. | 
-|   | *Associated data:* a `TxJob` sub-protocol state. | 
+| Protocol state | Agency | Parameter | Description |
+| --- | --- | --- | --- |
+| 1. `Init` | `Client` | | The initial state. |
+| 2. `MarloweSync st` | Determined by `st` | | The peers are communicating via the `MarloweSync` sub-protocol. |
+| | | `st` | A protocol state from [MarloweSync](#1-marlowe-sync-sub-protocol) |
+| 3. `MarloweHeaderSync st` | Determined by `st` | | The peers are communicating via the `MarloweHeaderSync` sub-protocol. |
+| | | `st` | A protocol state from [MarloweHeaderSync](#1-marlowe-header-sync-sub-protocol) |
+| 4. `MarloweQuery st` | Determined by `st` | | The peers are communicating via the `MarloweQuery` sub-protocol. |
+| | | `st` | A protocol state from [MarloweQuery](#1-marlowe-query-sub-protocol) |
+| 5. `TxJob` | Determined by `st` | | The peers are communicating via the `Job MarloweTxCommand` sub-protocol. |
+| | | `st` | A protocol state from [Job MarloweTxCommand](#1-tx-job-sub-protocol) |
+
 
 ### Eight message types
 
@@ -107,37 +103,20 @@ There are eight message types in the Marlowe protocol.
 Each of them, described below, has a message type that is a carrier for that sub-protocol. 
 For example, the `MsgMarloweSync` message type embeds a message from the sub-protocol in the Marlowe protocol. 
 
-| Message | Description |
-| --- | --- |
-| 1. `MsgRunMarloweSync` | Choose to communicate via `MarloweSync`. | 
-|   |  Available from `Init`. | 
-|   | Transitions to `MarloweSync`. | 
-| 2. `MsgRunMarloweHeaderSync` | Choose to communicate via `MarloweHeaderSync`. | 
-|   | Available from `Init`. | 
-|   | Transitions to `MarloweHeaderSync`. | 
-| 3. `MsgRunMarloweQuery` | Choose to communicate via `MarloweQuery`. | 
-|   |  Available from `Init`. | 
-|   |  Transitions to `MarloweQuery`. | 
-| 4. `MsgRunTxJob` | Choose to communicate via `TxJob`. | 
-|   |  Available from `Init`. | 
-|   |  Transitions to `TxJob`. | 
-| 5. `MsgMarloweSync` | Send a `MarloweSync` message. | 
-|   |  Available from `MarloweSync` (with sub state st). | 
-|   |  Transitions to `MarloweSync` (with sub state determined by the payload message). | 
-|   |  Payload: A `MarloweSync` message (available from sub state st). | 
-| 6. `MsgMarloweHeaderSync` | Send a `MarloweHeaderSync` message. | 
-|   |  Available from `MarloweHeaderSync` (with sub state st). | 
-|   |  Transitions to `MarloweHeaderSync` (with sub state determined by the payload message). | 
-|   |  Payload: A `MarloweHeaderSync` message (available from sub state st). | 
-| 7. `MsgMarloweQuery` | Send a `MarloweQuery` message. | 
-|   |  Available from `MarloweQuery` (with sub state st). | 
-|   |  Transitions to `MarloweQuery` (with sub state determined by the payload message). | 
-|   |  Payload: A `MarloweQuery` message (available from sub state st). | 
-| 8. `MsgTxJob` | Send a `TxJob` message. | 
-|   |  Available from `TxJob` (with sub state st). | 
-|   |  Transitions to `TxJob` (with sub state determined by the payload message). | 
-|   |  Payload: A `TxJob` message (available from sub state st). | 
-
+| Message | Begin State | End State | Parameter | Description |
+| --- | --- | --- | --- | --- |
+| 1. `MsgRunMarloweSync` | `Init` | `MarloweSync Init` |  | Start a `MarloweSync` session. |
+| 2. `MsgRunMarloweHeaderSync` | `Init` | `MarloweHeaderSync Idle` |  | Start a `MarloweHeaderSync` session. |
+| 3. `MsgRunMarloweQuery` | `Init` | `MarloweQuery Req` |  | Start a `MarloweQuery` session. |
+| 4. `MsgRunTxJob` | `Init` | `TxJob Init` |  | Start a `TxJob` session. |
+| 5. `MsgMarloweSync msg` | `MarloweSync st` | `MarloweSync st'` |  | Wrap a `MarloweSync` message. |
+| | | | `msg` | A `MarloweSync` message with begin state `st` and end state `st'` |
+| 6. `MsgMarloweHeaderSync msg` | `MarloweHeaderSync st` | `MarloweHeaderSync st'` |  | Wrap a `MarloweHeaderSync` message. |
+| | | | `msg` | A `MarloweHeaderSync` message with begin state `st` and end state `st'` |
+| 7. `MsgMarloweQuery msg` | `MarloweQuery st` | `MarloweQuery st'` |  | Wrap a `MarloweQuery` message. |
+| | | | `msg` | A `MarloweQuery` message with begin state `st` and end state `st'` |
+| 8. `MsgTxJob msg` | `TxJob st` | `TxJob st'` |  | Wrap a `Job MarloweTxCommand` message. |
+| | | | `msg` | A `TxJob` message with begin state `st` and end state `st'` |
 
 ### Binary format for sending messages over TCP
 
