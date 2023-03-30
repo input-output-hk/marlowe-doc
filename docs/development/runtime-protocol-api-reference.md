@@ -101,21 +101,21 @@ Once in that protocol state, the protocol stays there for the rest of the sessio
 
 There are eight message types in the Marlowe protocol. 
 Each of them, described below, has a message type that is a carrier for that sub-protocol. 
-For example, the `MsgMarloweSync` message type embeds a message from the sub-protocol in the Marlowe protocol. 
+For example, the `MarloweSync` message type embeds a message from the sub-protocol in the Marlowe protocol. 
 
 | Message | Begin State | End State | Parameter | Description |
 | --- | --- | --- | --- | --- |
-| 1. `MsgRunMarloweSync` | `Init` | `MarloweSync Init` |  | Start a `MarloweSync` session. |
-| 2. `MsgRunMarloweHeaderSync` | `Init` | `MarloweHeaderSync Idle` |  | Start a `MarloweHeaderSync` session. |
-| 3. `MsgRunMarloweQuery` | `Init` | `MarloweQuery Req` |  | Start a `MarloweQuery` session. |
-| 4. `MsgRunTxJob` | `Init` | `TxJob Init` |  | Start a `TxJob` session. |
-| 5. `MsgMarloweSync msg` | `MarloweSync st` | `MarloweSync st'` |  | Wrap a `MarloweSync` message. |
+| 1. `RunMarloweSync` | `Init` | `MarloweSync Init` |  | Start a `MarloweSync` session. |
+| 2. `RunMarloweHeaderSync` | `Init` | `MarloweHeaderSync Idle` |  | Start a `MarloweHeaderSync` session. |
+| 3. `RunMarloweQuery` | `Init` | `MarloweQuery Req` |  | Start a `MarloweQuery` session. |
+| 4. `RunTxJob` | `Init` | `TxJob Init` |  | Start a `TxJob` session. |
+| 5. `MarloweSync msg` | `MarloweSync st` | `MarloweSync st'` |  | Wrap a `MarloweSync` message. |
 | | | | `msg` | A `MarloweSync` message with begin state `st` and end state `st'` |
-| 6. `MsgMarloweHeaderSync msg` | `MarloweHeaderSync st` | `MarloweHeaderSync st'` |  | Wrap a `MarloweHeaderSync` message. |
+| 6. `MarloweHeaderSync msg` | `MarloweHeaderSync st` | `MarloweHeaderSync st'` |  | Wrap a `MarloweHeaderSync` message. |
 | | | | `msg` | A `MarloweHeaderSync` message with begin state `st` and end state `st'` |
-| 7. `MsgMarloweQuery msg` | `MarloweQuery st` | `MarloweQuery st'` |  | Wrap a `MarloweQuery` message. |
+| 7. `MarloweQuery msg` | `MarloweQuery st` | `MarloweQuery st'` |  | Wrap a `MarloweQuery` message. |
 | | | | `msg` | A `MarloweQuery` message with begin state `st` and end state `st'` |
-| 8. `MsgTxJob msg` | `TxJob st` | `TxJob st'` |  | Wrap a `Job MarloweTxCommand` message. |
+| 8. `TxJob msg` | `TxJob st` | `TxJob st'` |  | Wrap a `Job MarloweTxCommand` message. |
 | | | | `msg` | A `TxJob` message with begin state `st` and end state `st'` |
 
 ### Binary format for sending messages over TCP
@@ -130,9 +130,9 @@ The binary format describes how each message type is converted into binary data,
 ## Messaging behavior
 
 On a functional level, the Marlowe protocol multiplexes the four sub-protocols into one. 
-The client always sends one of these four message types (`MsgRunMarloweSync`, `MsgRunMarloweHeaderSync`, `MsgRunMarloweQuery`, `MsgRunTxJob`) to start. 
+The client always sends one of these four message types (`RunMarloweSync`, `RunMarloweHeaderSync`, `RunMarloweQuery`, `RunTxJob`) to start. 
 Depending on which one it started the session with, it will then continuously send that message type between client and server. 
-If it starts with `MsgRunMarloweSync`, the client and server will then just exchange `MsgMarloweSync` messages back and forth. 
+If it starts with `RunMarloweSync`, the client and server will then just exchange `MarloweSync` messages back and forth. 
 Inside each of those is a message from the underlying `MarloweSync` protocol. 
 When finished, it disconnects and the session is over. 
 
@@ -141,7 +141,7 @@ When finished, it disconnects and the session is over.
 There is a data structure in the Haskell source files that describes the different states of the protocol. 
 There is a message type that shows what all the available messages are for that protocol. 
 Each message indicates the initial state of the message. 
-For example, `MsgRunMarloweSync` starts in the state `StInit`, then transitions into the `MarloweSync.StInit` state. 
+For example, `RunMarloweSync` starts in the state `StInit`, then transitions into the `MarloweSync.StInit` state. 
 
 ## 1. MarloweSync sub-protocol
 
@@ -149,54 +149,56 @@ The MarloweSync sub-protocol is defined here:
 
 * [https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/history-api/Language/Marlowe/Protocol/Sync/Types.hs](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/history-api/Language/Marlowe/Protocol/Sync/Types.hs)
 
-For example, for `MsgMarloweSync`, the data you can put in there is one of the messages from the Marlowe Sync protocol. 
-Every message from the Marlowe Sync protocol is contained inside this message type. 
+The MarloweSync sub-protocol is used to synchronize the history of a specific Marlowe contract.
+The client receives a stream of blocks, the first of which contains a "create step", with subsequent blocks containing one or more "contract step(s)". 
+A create step is information related to the contract creation transaction.
+A contract step is either an "apply inputs" step with an apply inputs transaction that advances the contract, or a "withdraw" step where funds paid by the contract are withdrawn from the payout validator.
 
 ### Sub-protocol states
 
-Init
-
-Follow
-
-Done
-
-Idle
-
-Next
-
-Wait
-
-Intersect
+| Protocol state | Agency | Parameter | Description |
+| --- | --- | --- | --- |
+| 1. `Init` | `Client` | | The initial state. |
+| 2. `Follow` | `Server` | | The server is processing a request to follow a contract. |
+| 3. `Done` | `Nobody` | | The terminal state. |
+| 4. `Idle v` | `Client` | | A contract is being followed, the server is waiting for the client to send a message. |
+| | | `v` | The version of the Marlowe contract |
+| 5. `Next v` | `Server` | | The server is looking up the next block that contain contract steps. |
+| | | `v` | The version of the Marlowe contract |
+| 6. `Wait v` | `Client` | | The client has reached the last block with steps for the current contract and is waiting for a new block to arrive. |
+| | | `v` | The version of the Marlowe contract |
+| 7. `Intersect v` | `Server` | | The server is processing an intersect request for a contract. |
+| | | `v` | The version of the Marlowe contract |
 
 ### Messages
 
-MsgFollowContract
-
-MsgIntersect
-
-MsgContractNotFound
-
-MsgContractFound
-
-MsgDone
-
-MsgRequestNext
-
-MsgRollForward
-
-MsgRollBackward
-
-MsgRollBackCreation
-
-MsgWait
-
-MsgPoll
-
-MsgCancel
-
-MsgIntersectFound
-
-MsgIntersectNotFound
+| Message | Begin State | End State | Parameter | Description |
+| --- | --- | --- | --- | --- |
+| 1. `FollowContract id` | `Init` | `Follow` |  | Follow a contract by id. |
+| | | | `id` | The ID of the contract to follow (i.e. the tx-in that created the contract |
+| 2. `ContractNotFound` | `Follow` | `Done` |  | The requested contract could not be found. |
+| 3. `ContractFound blk v create` | `Follow` | `Idle v` |  | The requested contract was found. |
+| | | | `blk` | The block header of the block that contains the creation transaction. |
+| | | | `v` | The version of contract. |
+| | | | `create` | The create step for the contract. |
+| 4. `Done` | `Idle v` | `Done` |  | Ends the session. |
+| 5. `RequestNext` | `Idle v` | `Next v` |  | Request the next block of contract steps. |
+| 6. `RollForward blk steps` | `Next v` | `Idle v` |  | The server sends the next block of steps.
+| | | | `blk` | The block header of the block that contains the new steps. |
+| | | | `steps` | The (non-empty) list of steps in this block, in order. |
+| 7. `RollBackward blk` | `Next v` | `Idle v` |  | The server is rolling the client back to a previous block. |
+| | | | `blk` | The block header of the block that the client is now at. |
+| 8. `RollBackCreation` | `Next v` | `Done` |  | The creation transaction was rolled back - the contract no longer exists. |
+| 9. `Wait` | `Next v` | `Wait v` |  | There are no more blocks with steps for this contract. The client can wait for new ones. |
+| 10. `Poll` | `Wait v` | `Next v` |  | The client is checking if new blocks are available. |
+| 11. `Cancel` | `Wait v` | `Idle v` |  | The client does not wish to wait indefinitely for new blocks to arrive. |
+| 12. `Intersect id v blks` | `Init` | `Intersect v` |  | Send a request to start syncing from a known point in a contract's history. |
+| | | | `id` | The id of the contract to intersect with. |
+| | | | `v` | The expected version of the contract. |
+| | | | `blks` | A list of blocks in the contract's history which the client has record of. Must be a contiguous subset of blocks (none skipped) in increasing order. |
+| 13. `IntersectFound blk` | `Intersect v` | `Idle v` |  | The server found a matching block for this contract and will resume syncing from that point. |
+| | | | `blk` | The greatest common block the server knows about in the blocks provided by the client. |
+| 13. `IntersectNotFound` | `Intersect v` | `Done` |  | The server could not find an intersection with the client. Either the contract was not found, no points matched, or the version was wrong. |
 
 ## 2. MarloweHeaderSync sub-protocol
 
@@ -280,6 +282,8 @@ On the other hand, if the server does not or cannot recognize what the client is
 The MarloweQuery sub-protocol is defined here: 
 
 * [https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/sync-api/Language/Marlowe/Protocol/Query/Types.hs](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/sync-api/Language/Marlowe/Protocol/Query/Types.hs)
+
+The `MarloweQuery` protocol allows clients to query the current state of on-chain Marlowe contracts.
 
 ### Sub-protocol states
 
