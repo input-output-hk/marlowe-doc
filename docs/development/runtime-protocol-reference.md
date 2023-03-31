@@ -1,27 +1,25 @@
 ---
-title: Runtime protocol API reference
+title: Runtime protocol reference
 sidebar_position: 5
 ---
 
 > NOTE: Draft in progress
 
-> * Add examples
+> * Add code examples
 
 ## Introduction
 
 Marlowe Runtime is the application backend for managing Marlowe contracts on the Cardano blockchain. 
 The term "Runtime" refers to the whole system, its components and sub-components. 
-Runtime and its protocols and sub-protocols communicate with one another to enable Runtime's core functions, which are discovering and querying on-chain Marlowe contracts, and creating Marlowe transactions. 
+The Runtime and its protocols and sub-protocols communicate with one another to enable the Runtime's core functions, which are discovering and querying on-chain Marlowe contracts, and creating Marlowe transactions. 
 
-The Runtime API protocol enables communicating with Runtime directly. 
-The Marlowe Runtime protocol API defines everything you can do with the Runtime. 
-Anything that can't be done through these protocols can't be done with the Runtime. 
+The Marlowe Runtime protocol enables communicating with the Runtime directly. 
 
-These protocols, and specifically this root-level Marlowe protocol, is the primary API for the Runtime. 
-If you want to communicate with the Runtime, ultimately, you will be using the Marlowe protocol and its sub-protocols. 
+These protocols, and specifically this root-level `marlowe-runtime` protocol, is the primary API for the Runtime. 
+If you want to communicate with the Runtime, ultimately, you will be using the `marlowe-runtime` protocol and its sub-protocols. 
 
-In the larger context of working with Runtime, you don't necessarily need to be aware of the protocols to be able to communicate with the Runtime. 
-For example, if you are using the REST API, Runtime CLI or Marlowe CLI, under the hood, they all communicate with the Runtime using this protocol, as does everything that communicates with the Runtime. 
+In the larger context of working with the Runtime, you don't necessarily need to be aware of the protocols to be able to communicate with the Runtime. 
+For example, if you are using the REST API or Runtime CLI, under the hood, they all communicate with the Runtime using this protocol, as does everything that communicates with the Runtime. 
 
 ### Intended audience
 
@@ -35,7 +33,7 @@ If you don't want to use the REST API, Runtime CLI or Marlowe CLI, or any other 
 | --- | --- |
 | Peer Role | The peer role is either server or client. All protocol sessions take place between two peers -- one server and one client. | 
 | Protocol State | A description of the current state of a protocol session. | 
-| Peer Agency | Describes which peer role is able to send messages to the other in a given protocol state. Agency is exclusive (either server or client has agency, never both). When one peer is able to send a message to the other peer, it has agency. When a peer is in a state of only being able to receive a message, we say it does not have agency. | 
+| Peer Agency | Describes which peer role is able to send messages to the other in a given protocol state. Agency is exclusive (either server or client has agency, never both). When one peer is able to send a message to the other peer, it has agency. When a peer is in a state of only being able to receive a message, we say it does not have agency. States in which neither peer has agency are terminal states. | 
 | Messages | Packets of data that a peer can send to another peer when it has agency. When a message is sent, that event transitions the protocol state from one state to another state. | 
 
 ### About messages and agency
@@ -46,15 +44,39 @@ For example, the client will send a message to the server, then the server will 
 Then the server sends a message back to the client and the client will gain agency again. 
 There are some cases in which one peer will send multiple messages and keep agency between them, but for the most part it is a back and forth process. 
 
-## Marlowe protocol
+## Marlowe Runtime protocol
 
-The top-level protocol is the Marlowe protocol. It is defined here: 
+stateDiagram-v2
+    direction LR
+    state "Init" as init
+    state "MarloweSync" as ms
+    state "MarloweHeaderSync" as mhs
+    state "MarloweQuery" as mq
+    state "TxJob" as tj
+    [*] --> init
+    init --> ms: RunMarloweSync
+    init --> mhs: RunMarloweHeaderSync
+    init --> mq: RunMarloweQuery
+    init --> tj: RunTxJob
+    ms --> ms: MarloweSync
+    mhs --> mhs: MarloweHeaderSync
+    mq --> mq: MarloweQuery
+    tj --> tj: TxJob
+    ms --> [*]
+    mhs --> [*]
+    mq --> [*]
+    tj --> [*]
+
+
+> NOTE: The protocols are all defined using the [typed-protocols library](https://github.com/input-output-hk/typed-protocols). 
+
+The top-level protocol is the Marlowe Runtime protocol. It is defined here: 
 
 * [https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/proxy-api/Language/Marlowe/Protocol/Types.hs](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/proxy-api/Language/Marlowe/Protocol/Types.hs)
 
 ### Four sub-protocols
 
-The Marlowe protocol consists of four sub-protocols: 
+The Marlowe Runtime protocol consists of four sub-protocols: 
 
 1. Marlowe Sync 
 2. Marlowe Header Sync 
@@ -65,9 +87,9 @@ The Marlowe protocol consists of four sub-protocols:
 
 The Client starts a session by sending a message to the server saying which sub-protocol it intends to communicate with, then a protocol session for the sub-protocol begins. 
 
-### Marlowe protocol states
+### Marlowe Runtime protocol states
 
-At any given time, the Marlowe protocol can be in one of five states: 
+At any given time, the Marlowe Runtime protocol can be in one of five states: 
 
 1. `Init` 
 2. `MarloweSync` 
@@ -78,11 +100,11 @@ At any given time, the Marlowe protocol can be in one of five states:
 There is an `init` state, then there is one protocol state per sub-protocol. 
 These states transition in a fairly straightforward manner. 
 
-The protocol starts in the `init` state, and then via one of the message types, it will transition into either the `MarloweSync`, the `MarloweHeaderSync`, the `MarloweQuery` or the `TxJob` state. 
+The protocol starts in the `Init` state, and then via one of the message types, it will transition into either the `MarloweSync`, the `MarloweHeaderSync`, the `MarloweQuery` or the `TxJob` state. 
 
 Once in that protocol state, the protocol stays there for the rest of the session, communicating in that protocol. 
 
-### Descriptions of the Marlowe protocol states
+### Descriptions of the Marlowe Runtime protocol states
 
 | Protocol state | Agency | Parameter | Description |
 | --- | --- | --- | --- |
@@ -99,9 +121,10 @@ Once in that protocol state, the protocol stays there for the rest of the sessio
 
 ### Eight message types
 
-There are eight message types in the Marlowe protocol. 
-Each of them, described below, has a message type that is a carrier for that sub-protocol. 
-For example, the `MarloweSync` message type embeds a message from the sub-protocol in the Marlowe protocol. 
+There are eight message types in the Marlowe Runtime protocol. 
+The first four message types initiate sub-protocol sessions. 
+The final four are carriers for sub-protocol messages. 
+For example, the `MarloweSync` message type embeds a message from the sub-protocol in the Marlowe Runtime protocol. 
 
 | Message | Begin State | End State | Parameter | Description |
 | --- | --- | --- | --- | --- |
@@ -120,16 +143,16 @@ For example, the `MarloweSync` message type embeds a message from the sub-protoc
 
 ### Binary format for sending messages over TCP
 
-Use the binary format for the Marlowe protocol to send messages over TCP. 
+Use the binary format for the Marlowe Runtime protocol to send messages over TCP. 
 The binary format describes how each message type is converted into binary data, then read and decoded. 
 
-> 
-> Jamie will write this up. 
-> 
+At this time, Haskell is the only supported language that has the functions for this. 
+
+If you are using Haskell, use the [Marlowe client library](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-client), one of our libraries in our marlowe-cardano repo. It exports a monad transformer called `MarloweT` that enables you to run a client of the Marlowe Runtime protocol. Run that monad transformer by providing the port number and host addresss of the Runtime and it will connect to it and handle the binary format for you. 
 
 ## Messaging behavior
 
-On a functional level, the Marlowe protocol multiplexes the four sub-protocols into one. 
+On a functional level, the Marlowe Runtime protocol multiplexes the four sub-protocols into one. 
 The client always sends one of these four message types (`RunMarloweSync`, `RunMarloweHeaderSync`, `RunMarloweQuery`, `RunTxJob`) to start. 
 Depending on which one it started the session with, it will then continuously send that message type between client and server. 
 If it starts with `RunMarloweSync`, the client and server will then just exchange `MarloweSync` messages back and forth. 
@@ -142,6 +165,8 @@ There is a data structure in the Haskell source files that describes the differe
 There is a message type that shows what all the available messages are for that protocol. 
 Each message indicates the initial state of the message. 
 For example, `RunMarloweSync` starts in the state `StInit`, then transitions into the `MarloweSync.StInit` state. 
+
+> For more detailed documentation about the typed protocol framework, please see: [Network.TypedProtocol.Core documentation](https://input-output-hk.github.io/ouroboros-network/typed-protocols/Network-TypedProtocol-Core.html). 
 
 ## 1. MarloweSync sub-protocol
 
@@ -227,7 +252,7 @@ As the chain advances, and as new contracts are found, it will deliver them to t
 ### The Intersect state 
 
 The intersect is when the client asks the server to fast forward to a known chain point. 
-For example, in a situation where the client has already done a fair amount of synchronization, and then quits, when it starts up again, rather than starting over from the beginning of the chain, it can instead start from the point where it last left off. 
+For example, in a situation where the client has already done a fair amount of synchronization, and then quits, when it starts up again, rather than starting over from genesis, it can instead start from the point where it last left off. 
 The Intersect is the server recognizing a point that both it and the client know about, then starting from there. 
 On the other hand, if the server does not or cannot recognize what the client is referencing, it will start from the beginning of the chain (from genesis). 
 
