@@ -93,7 +93,7 @@ Once in that protocol state, the protocol stays there for the rest of the sessio
 | | | `st` | A protocol state from [MarloweHeaderSync](#1-marlowe-header-sync-sub-protocol) |
 | 4. `MarloweQuery st` | Determined by `st` | | The peers are communicating via the `MarloweQuery` sub-protocol. |
 | | | `st` | A protocol state from [MarloweQuery](#1-marlowe-query-sub-protocol) |
-| 5. `TxJob` | Determined by `st` | | The peers are communicating via the `Job MarloweTxCommand` sub-protocol. |
+| 5. `TxJob st` | Determined by `st` | | The peers are communicating via the `Job MarloweTxCommand` sub-protocol. |
 | | | `st` | A protocol state from [Job MarloweTxCommand](#1-tx-job-sub-protocol) |
 
 
