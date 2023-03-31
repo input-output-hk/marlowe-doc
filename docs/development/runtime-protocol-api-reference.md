@@ -216,18 +216,13 @@ As the chain advances, and as new contracts are found, it will deliver them to t
 
 ### Sub-protocol states
 
-| Sub-protocol state | Description |
-| --- | --- |
-| 1. `Idle` | The initial state. | 
-|   | Client has agency. | 
-| 2. `Intersect` | When the client asks the server to fast-forward to a known chain point. | 
-|   | Server has agency. | 
-| 3. `Next` | When the client asks the server to provide the next block of contract headers. | 
-|   | Server has agency. | 
-| 4. `Wait` | When the server has no more blocks to send (i.e., the client has reached the tip of the chain). | 
-|   | Client has agency. | 
-| 5. `Done` | The terminal state. | 
-|   | Nobody has agency. | 
+| Protocol state | Agency | Description |
+| --- | --- | --- |
+| 1. `Idle` | `Client` | The initial state. | 
+| 2. `Intersect` | `Server` | When the client asks the server to fast-forward to a known chain point. | 
+| 3. `Next` | `Server` | When the client asks the server to provide the next block of contract headers. | 
+| 4. `Wait` | `Client` | When the server has no more blocks to send (i.e., the client has reached the tip of the chain). | 
+| 5. `Done` | `Nobody` | The terminal state. | 
 
 ### The Intersect state 
 
@@ -238,44 +233,23 @@ On the other hand, if the server does not or cannot recognize what the client is
 
 ### MarloweHeaderSync sub-protocol messages
 
-| Sub-protocol messages | Attributes/Description |
-| --- | --- |
-| 1. `RequestNext` | Available from: `Idle`. | 
-|   | Transitions to: `Next` | 
-|   | Description: The client requests the next block of headers from the server. | 
-| 2. `NewHeaders` | Available from: `Next` | 
-|   | Transitions to: `Idle` | 
-|   | Payload: | 
-|   | [0]: A block header (the block to which the server has advanced the client) | 
-|   | [1]: A list of contract headers that appear in that block. The typical synchronization loop behavior is that the client sends a request, `next`; the server sends new headers, then goes back into idle; the client sends another request `next`; the server sends new headers; the client continues to grab more headers from the server one block at a time until it catches up to the tip, when the server says `wait`. As the tip keeps getting extended with new blocks, the client has to pull new information and the cycle continues. | 
-|   | Description: The server sends the next block of headers to the client.  | 
-| 3. `RollBackward` | Available from: `Next` | 
-|   | Transitions to: `Idle` | 
-|   | Payload: Chain point (either a block header or Genesis if the chain has rolled all the way back to Genesis). 
-|   | Description: The client's current position was rolled back, the server tells the client of the point to which it was rolled back. | 
-| 4. `Wait` | Available from: `Next` | 
-|   | Transitions to: `Wait` | 
-|   | Description: The client is at the chain tip. There are no more Marlowe contract headers to send. The client may choose to wait and poll until more are available. | 
-| 5. `Poll` | Available from: `Wait` | 
-|   | Transitions to: `Next` | 
-|   | Description: The client is checking with the server to find out if there are new headers available. | 
-| 6. `Cancel` | Available from: `Wait` | 
-|   | Transitions to: `Idle` | 
-|   | Description: The client doesn't wish to wait, and returns to the idle state. Usually, when you send a `cancel`, in nearly all cases, it is followed by a `done` message. This is the case for clients that are only concerned about getting everything that is currently on the chain. Once that point is reached, when it reaches the tip, it communicates `done`. | 
-| 7. `Done` | Available from: `Idle` | 
-|   | Transitions to: `Done` | 
-|   | Description: The client disconnects from the server. | 
-| 8. `Intersect` | Available from: `Idle` | 
-|   | Transitions to: `Intersect` | 
-|   | Payload: A list of block headers in ascending order. It is a list because the client may be communicating with the server. These block headers represent the most recent blocks that the client has. It sees the last header that it sees after it detaches. The server might pull that block back. There is a chance that the client will send the most recent block and the server won't recognize it. Instead we allow the client to send a list of blocks. The server tries to find the most recent one that it also knows about, a mutually known reference point where it begins syncing from.  | 
-|   | Description: The client tells the server which blocks it has already seen so that the server can start syncing from an appropriate point in the chain. | 
-| 9. `IntersectFound` | Available from: `Intersect` | 
-|   | Transitions to: `Idle` | 
-|   | Payload: A block header (the most recent point the server has in common with the client). | 
-|   | Description: The server has found an intersection point with the client and will start syncing *after* this point (i.e., the next `NewHeaders` message will be after this block). | 
-| 10. `IntersectNotFound` | Available from: `Intersect` | 
-|   | Transitions to: `Idle` | 
-|   | Description: The server was unable to find an intersection point with the client and will start syncing from Genesis. |
+| Message | Begin State | End State | Parameter | Description |
+| --- | --- | --- | --- | --- |
+| 1. `RequestNext` | `Idle` | `Next` | | The client requests the next block of headers from the server. |
+| 2. `NewHeaders blk headers` | `Next` | `Idle` | | The server sends the next block of headers to the client. |
+| | | | `blk` | A block header (the block to which the server has advanced the client) |
+| | | | `headers` | A list of contract headers that appear in that block. |
+| 3. `RollBackward point` | `Next` | `Idle` | | The client's current position was rolled back, the server tells the client of the point to which it was rolled back. |
+| | | | `point` | Chain point (either a block header or Genesis if the chain has rolled all the way back to Genesis). |
+| 4. `Wait` | `Next` | `Wait` | | The client is at the chain tip. There are no more Marlowe contract headers to send. The client may choose to wait and poll until more are available. |
+| 5. `Poll` | `Wait` | `Next` | | The client is checking with the server to find out if there are new headers available. |
+| 6. `Cancel` | `Wait` | `Idle` | | The client doesn't wish to wait, and returns to the idle state. Usually, when you send a `cancel`, in nearly all cases, it is followed by a `done` message. This is the case for clients that are only concerned about getting everything that is currently on the chain. Once that point is reached, when it reaches the tip, it communicates `done`. |
+| 7. `Done` | `Idle` | `Done` | | Terminate the session. |
+| 8. `Intersect blks` | `Idle` | `Intersect` | | The client tells the server which blocks it has already seen so that the server can start syncing from an appropriate point in the chain. |
+| | | | `blks` | A contiguous list of block headers in ascending order. These block headers represent the most recent blocks from the client' chain. |
+| 9. `IntersectFound blk` | `Intersect` | `Idle` | | The server has found an intersection point with the client and will start syncing *after* this point (i.e., the next `NewHeaders` message will be after this block). |
+| | | | `blk` | The most recent block contained in both the client's chain and the server's chain. |
+| 10. `IntersectNotFound` | `Intersect` | `Idle` | |The server was unable to find an intersection point with the client and will start syncing from Genesis. |
 
 ## 3. MarloweQuery sub-protocol
 
