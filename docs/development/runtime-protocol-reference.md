@@ -15,8 +15,8 @@ The Runtime and its protocols and sub-protocols communicate with one another to 
 
 The Marlowe Runtime protocol enables communicating with the Runtime directly. 
 
-These protocols, and specifically this root-level `marlowe-runtime` protocol, is the primary API for the Runtime. 
-If you want to communicate with the Runtime, ultimately, you will be using the `marlowe-runtime` protocol and its sub-protocols. 
+These protocols, and specifically this root-level `marlowe-runtime-cli` protocol, is the primary API for the Runtime. 
+If you want to communicate with the Runtime, ultimately, you will be using the `marlowe-runtime-cli` protocol and its sub-protocols. 
 
 In the larger context of working with the Runtime, you don't necessarily need to be aware of the protocols to be able to communicate with the Runtime. 
 For example, if you are using the REST API or Runtime CLI, under the hood, they all communicate with the Runtime using this protocol, as does everything that communicates with the Runtime. 
@@ -46,6 +46,7 @@ There are some cases in which one peer will send multiple messages and keep agen
 
 ## Marlowe Runtime protocol
 
+```mermaid
 stateDiagram-v2
     direction LR
     state "Init" as init
@@ -66,7 +67,7 @@ stateDiagram-v2
     mhs --> [*]
     mq --> [*]
     tj --> [*]
-
+```
 
 > NOTE: The protocols are all defined using the [typed-protocols library](https://github.com/input-output-hk/typed-protocols). 
 
