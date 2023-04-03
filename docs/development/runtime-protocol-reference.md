@@ -46,6 +46,10 @@ There are some cases in which one peer will send multiple messages and keep agen
 
 ## Marlowe Runtime protocol
 
+> NOTE: Need to install a Mermaid library to display diagram correctly. 
+
+Below is a state diagram for the Marlowe Runtime protocol: 
+
 ```mermaid
 stateDiagram-v2
     direction LR
@@ -174,6 +178,36 @@ For example, `RunMarloweSync` starts in the state `StInit`, then transitions int
 The MarloweSync sub-protocol is defined here: 
 
 * [https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/history-api/Language/Marlowe/Protocol/Sync/Types.hs](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/history-api/Language/Marlowe/Protocol/Sync/Types.hs)
+
+> NOTE: Need to install a Mermaid library to display diagram correctly. 
+
+Below is a state diagram for the MarloweSync sub-protocol: 
+
+```mermaid
+stateDiagram-v2
+    state "Init" as in
+    state "Follow" as f
+    state "Done" as d
+    state "Idle" as id
+    state "Next" as n
+    state "Wait" as w
+    state "Intersect" as int
+    [*] --> in
+    in --> f: FollowContract
+    in --> int: Intersect
+    f --> d: ContractNotFound
+    f --> id: ContractFound
+    id --> n: RequestNext
+    n --> id: RollForward
+    n --> id: RollBackward
+    n --> w: Wait
+    w --> n: Poll
+    w --> id: Cancel
+    int --> id: IntersectFound
+    id --> d: Done
+    n --> d: RollBackCreation
+    int --> d: IntersectNotFound
+```
 
 The MarloweSync sub-protocol is used to synchronize the history of a specific Marlowe contract.
 The client receives a stream of blocks, the first of which contains a "create step", with subsequent blocks containing one or more "contract step(s)". 
