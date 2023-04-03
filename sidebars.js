@@ -104,6 +104,7 @@ const sidebars = {
             'development/runtime',
             'development/deploying-marlowe-runtime',
             'development/using-marlowe-runtime',
+            'development/runtime-protocol-reference',
             'development/runtime-executables-for-backend-services',
             'development/marlowe-runtime-cli',
             'development/marlowe-web-server',
@@ -111,7 +112,6 @@ const sidebars = {
             'development/marlowe-runtime-examples',
             'development/txpipe-and-demeter',
             'development/runtime-tutorial-actus-pam',
-            'development/runtime-protocol-reference',
           ]
         },
         'development/cli',
