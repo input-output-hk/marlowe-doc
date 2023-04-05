@@ -109,7 +109,6 @@ const sidebars = {
             'development/marlowe-runtime-cli',
             'development/marlowe-web-server',
             'development/clients-of-runtime',
-            'development/marlowe-runtime-examples',
             'development/txpipe-and-demeter',
             'development/runtime-tutorial-actus-pam',
           ]
