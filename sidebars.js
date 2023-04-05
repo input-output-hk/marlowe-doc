@@ -92,6 +92,7 @@ const sidebars = {
         'development/marlowe-language-guide',
         'development/platform',
         'development/playground',
+
         {
           type: 'category',
           label: 'Runtime',
@@ -102,9 +103,28 @@ const sidebars = {
           },
           items: [
             'development/runtime',
+
+
+            {
+              type: 'category',
+              label: 'Runtime protocol reference',
+              link: {
+                type: 'generated-index',
+                title: 'Runtime protocol reference',
+                description: 'Learn more about Marlowe Runtime protocol',
+              },
+                  items: [
+                'development/runtime-protocol-reference',
+                'development/marlowesync-subprotocol',
+                'development/marloweheadersync-subprotocol',
+                'development/marlowequery-subprotocol',
+                'development/txjob-subprotocol',
+                  ],
+            },
+
+
             'development/deploying-marlowe-runtime',
             'development/using-marlowe-runtime',
-            'development/runtime-protocol-reference',
             'development/runtime-executables-for-backend-services',
             'development/marlowe-runtime-cli',
             'development/marlowe-web-server',
@@ -113,6 +133,7 @@ const sidebars = {
             'development/runtime-tutorial-actus-pam',
           ]
         },
+
         'development/cli',
         'development/dev-resources',
       ],
