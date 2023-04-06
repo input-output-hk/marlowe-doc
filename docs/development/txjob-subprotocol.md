@@ -10,9 +10,15 @@ The TxJob sub-protocol is defined here:
 
   - The `MarloweTxCommand` type describes the available commands for marlowe-tx.
 
-It is also defined in `marlowe-protocols/src/Network/Protocol/Job/Types.hs`
+It is also defined in [`marlowe-protocols/src/Network/Protocol/Job/Types.hs`](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-protocols/src/Network/Protocol/Job/Types.hs)
 
   - Defines the generic job protocol (command agnostic). 
+
+:::note
+
+The TxJob sub-protocol is intended for developers who are using Haskell. If you are interested in working with the protocol with a binary approach using a different language, reach out to us and let us know. We can discuss possibilities with you. 
+
+:::
 
 ### Sub-protocol states
 
@@ -55,6 +61,16 @@ It is also defined in `marlowe-protocols/src/Network/Protocol/Job/Types.hs`
 
 ### `MarloweTxCommand` commands
 
+:::note
+
+The first three commands have no status type (technically their status type is the uninhabited type `Void`). This means that a client will never be told to wait for a response; they will receive either a `Fail` or a `Success`. It also means that these commands have no job IDs, and hence cannot be attached to.
+
+:::
+
+For more details on the types mentioned, please see: 
+
+* [marlowe-runtime/tx-api/Language/Marlowe/Runtime/Transaction/Api.hs](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/tx-api/Language/Marlowe/Runtime/Transaction/Api.hs)
+
 | Command | Status | Error | Result | Parameter | Description |
 | --- | --- | --- | --- | --- | --- |
 | 1. `Create` | none | `CreateError` | `ContractCreated` | | Build a transaction which starts a new Marlowe contract. |
@@ -80,14 +96,4 @@ It is also defined in `marlowe-protocols/src/Network/Protocol/Job/Types.hs`
 |  | | | | `role` | The role to withdraw funds for. The wallet must contain a UTxO with a valid role token for this role and contract. |
 | 4. `Submit` | `SubmitStatus` | `WithdrawError` | `TxBody BabbageEra` | | Submit a transaction to the upstream node and wait for confirmation. |
 |  | | | | `tx` | A babbage transaction to submit to the upstream node. |
-
-:::note
-
-The first three commands have no status type (technically their status type is the uninhabited type `Void`). This means that a client will never be told to wait for a response - they will either receive a `Fail` or a `Success`. It also means that these commands have no job IDs, and hence cannot be attached to.
-
-:::
-
-For more details on the types mentioned above, please see:
-
-* [marlowe-runtime/tx-api/Language/Marlowe/Runtime/Transaction/Api.hs](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/tx-api/Language/Marlowe/Runtime/Transaction/Api.hs)
 

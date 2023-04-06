@@ -104,7 +104,6 @@ const sidebars = {
           items: [
             'development/runtime',
 
-
             {
               type: 'category',
               label: 'Runtime protocol reference',
@@ -114,23 +113,65 @@ const sidebars = {
                 description: 'Learn more about Marlowe Runtime protocol',
               },
                   items: [
-                'development/runtime-protocol-reference',
-                'development/marlowesync-subprotocol',
-                'development/marloweheadersync-subprotocol',
-                'development/marlowequery-subprotocol',
-                'development/txjob-subprotocol',
+                   'development/runtime-protocol-reference',
+                   'development/marlowesync-subprotocol',
+                   'development/marloweheadersync-subprotocol',
+                   'development/marlowequery-subprotocol',
+                   'development/txjob-subprotocol',
                   ],
             },
 
 
-            'development/deploying-marlowe-runtime',
-            'development/using-marlowe-runtime',
-            'development/runtime-executables-for-backend-services',
-            'development/marlowe-runtime-cli',
+
+            {
+              type: 'category',
+              label: 'Runtime internals',
+              link: {
+                type: 'generated-index',
+                title: 'Runtime internals',
+                description: 'Learn more about Marlowe Runtime internals',
+              },
+                  items: [
+                    `development/runtime-internals`,
+                    `development/marlowe-chain-indexer`,
+                    `development/marlowe-chain-sync`,
+                    `development/marlowe-indexer`,
+                    `development/marlowe-sync`,
+                    `development/marlowe-tx`,
+                    `development/marlowe-proxy`,
+                  ],
+            },
+
+            'development/rest-api',
+
+            {
+              type: 'category',
+              label: 'Marlowe Runtime CLI',
+              link: {
+                type: 'generated-index',
+                title: 'Marlowe Runtime CLI',
+                description: 'Learn more about Marlowe Runtime CLI',
+              },
+                  items: [
+                   `development/marlowe-runtime-cli`,
+                   'development/create',
+                   'development/advance',
+                   'development/choose',
+                   'development/deposit',
+                   'development/notify',
+                   `development/apply`,
+                   `development/withdraw`,
+                   `development/submit`,
+                   `development/log`,
+                  ],
+            },
+
+
             'development/marlowe-web-server',
             'development/clients-of-runtime',
             'development/txpipe-and-demeter',
             'development/runtime-tutorial-actus-pam',
+            'development/deploying-marlowe-runtime',
           ]
         },
 
