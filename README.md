@@ -60,6 +60,14 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 
 ### Installation
 
+#### Updating Yarn to the latest version
+
+Currently the latest major version is Yarn v3. Run the following command to update your environment to this version: 
+
+```
+$ yarn set version stable
+```
+
 #### For a Nix environment
 
 ```
