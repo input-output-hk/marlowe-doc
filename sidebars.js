@@ -66,7 +66,6 @@ const sidebars = {
       ],
     },
 
-
     {
       type: 'category',
       label: 'Developer Tools',
@@ -121,8 +120,6 @@ const sidebars = {
                   ],
             },
 
-
-
             {
               type: 'category',
               label: 'Runtime internals',
@@ -142,7 +139,7 @@ const sidebars = {
                   ],
             },
 
-            'development/rest-api',
+            'development/runtime-rest-api',
 
             {
               type: 'category',
@@ -166,12 +163,26 @@ const sidebars = {
                   ],
             },
 
+            {
+              type: 'category',
+              label: 'Clients of Runtime',
+              link: {
+                type: 'generated-index',
+                title: 'Clients of Runtime',
+                description: 'Learn more about examples of using the Runtime services',
+              },
+                  items: [
+                   'development/clients-of-runtime',
+                   'development/finder',
+                   'development/scaling',
+                   'development/oracle',
+                   'development/pipe',
+                  ],
+            },
 
-            'development/marlowe-web-server',
-            'development/clients-of-runtime',
             'development/txpipe-and-demeter',
             'development/runtime-tutorial-actus-pam',
-            'development/deploying-marlowe-runtime',
+            'development/deploying-runtime-with-docker',
           ]
         },
 
