@@ -2,15 +2,15 @@
 title: Notify a contract
 ---
 
-## Build a Transaction to Notify a Contract
+## Build a transaction to notify a contract
 
 ```console
-Usage: marlowe notify --change-address ADDRESS [-a|--address ADDRESS] 
-                      [--collateral-utxo UTXO] --manual-sign FILE_PATH 
-                      [-m|--metadata-file FILE_PATH] (-c|--contract CONTRACT_ID)
-                      [--continuation-file FILE_PATH] 
-                      [-l|--validity-lower-bound TIMESTAMP] 
-                      [-u|--validity-upper-bound TIMESTAMP]
+Usage: marlowe-runtime-cli notify --change-address ADDRESS [-a|--address ADDRESS] 
+                                  [--collateral-utxo UTXO] --manual-sign FILE_PATH 
+                                  [-m|--metadata-file FILE_PATH] (-c|--contract CONTRACT_ID)
+                                  [--continuation-file FILE_PATH] 
+                                  [-l|--validity-lower-bound TIMESTAMP] 
+                                  [-u|--validity-upper-bound TIMESTAMP]
 
   Notify a contract to proceed
 

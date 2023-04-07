@@ -2,13 +2,13 @@
 title: Withdraw funds paid by a contract
 ---
 
-## Build a Transaction to Withdraw Funds Paid by a Contract
+## Build a transaction to withdraw funds paid by a contract
 
 ```console
-Usage: marlowe withdraw --change-address ADDRESS [-a|--address ADDRESS] 
-                        [--collateral-utxo UTXO] --manual-sign FILE_PATH 
-                        [-m|--metadata-file FILE_PATH]
-                        (-c|--contract CONTRACT_ID) [--v1] --role ROLE_NAME
+Usage: marlowe-runtime-cli withdraw --change-address ADDRESS [-a|--address ADDRESS] 
+                                    [--collateral-utxo UTXO] --manual-sign FILE_PATH 
+                                    [-m|--metadata-file FILE_PATH]
+                                    (-c|--contract CONTRACT_ID) [--v1] --role ROLE_NAME
 
   Withdraw funds paid to a role in a contract
 

@@ -2,20 +2,20 @@
 title: Deposit funds into a contract
 ---
 
-## Build a Transaction to Deposit Funds into a Contract
+## Build a transaction to deposit funds into a contract
 
 ```console
-Usage: marlowe deposit --change-address ADDRESS [-a|--address ADDRESS] 
-                       [--collateral-utxo UTXO] --manual-sign FILE_PATH 
-                       [-m|--metadata-file FILE_PATH]
-                       (-c|--contract CONTRACT_ID) --to-party ROLE_NAME|ADDRESS
-                       --from-party ROLE_NAME|ADDRESS 
-                       ((-c|--currency MINTING_POLICY_ID)
-                         (-n|--token-name TOKEN_NAME) (-q|--quantity INTEGER) |
-                         (-l|--lovelace INTEGER)) 
-                       [--continuation-file FILE_PATH] 
-                       [-l|--validity-lower-bound TIMESTAMP] 
-                       [-u|--validity-upper-bound TIMESTAMP]
+Usage: marlowe-runtime-cli deposit --change-address ADDRESS [-a|--address ADDRESS] 
+                                   [--collateral-utxo UTXO] --manual-sign FILE_PATH 
+                                   [-m|--metadata-file FILE_PATH]
+                                   (-c|--contract CONTRACT_ID) --to-party ROLE_NAME|ADDRESS
+                                   --from-party ROLE_NAME|ADDRESS 
+                                   ((-c|--currency MINTING_POLICY_ID)
+                                     (-n|--token-name TOKEN_NAME) (-q|--quantity INTEGER) |
+                                     (-l|--lovelace INTEGER)) 
+                                   [--continuation-file FILE_PATH] 
+                                   [-l|--validity-lower-bound TIMESTAMP] 
+                                   [-u|--validity-upper-bound TIMESTAMP]
 
   Deposit funds into a contract
 

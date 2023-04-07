@@ -2,10 +2,9 @@
 title: Output the history of a contract
 ---
 
-## Output the history of a contract
 
 ```console
-Usage: marlowe log [-t|--tail] [-c|--show-contract] CONTRACT_ID
+Usage: marlowe-runtime-cli log [-t|--tail] [-c|--show-contract] CONTRACT_ID
 
   Display the history of a contract
 

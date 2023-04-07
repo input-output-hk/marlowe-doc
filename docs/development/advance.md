@@ -2,15 +2,15 @@
 title: Advance a contract through a timeout
 ---
 
-## Build a Transaction to Advance a Contract through a Timeout
+## Build a transaction to advance a contract through a timeout
 
 ```console
-Usage: marlowe advance --change-address ADDRESS [-a|--address ADDRESS] 
-                       [--collateral-utxo UTXO] --manual-sign FILE_PATH 
-                       [-m|--metadata-file FILE_PATH]
-                       (-c|--contract CONTRACT_ID) 
-                       [-l|--validity-lower-bound TIMESTAMP] 
-                       [-u|--validity-upper-bound TIMESTAMP]
+Usage: marlowe-runtime-cli advance --change-address ADDRESS [-a|--address ADDRESS] 
+                                   [--collateral-utxo UTXO] --manual-sign FILE_PATH 
+                                   [-m|--metadata-file FILE_PATH]
+                                   (-c|--contract CONTRACT_ID) 
+                                   [-l|--validity-lower-bound TIMESTAMP] 
+                                   [-u|--validity-upper-bound TIMESTAMP]
 
   Advance a timed-out contract by applying an empty set of inputs.
 

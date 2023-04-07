@@ -2,10 +2,9 @@
 title: Submit a signed transaction to the node
 ---
 
-## Submit a Signed Transaction to the Node
 
 ```console
-Usage: marlowe submit FILE_PATH
+Usage: marlowe-runtime-cli submit FILE_PATH
 
   Submit a signed transaction to the Cardano node. Expects the CBOR bytes of the
   signed Tx from stdin.

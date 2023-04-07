@@ -2,19 +2,19 @@
 title: Create a contract
 ---
 
-## Build a Transaction to Create a Contract
+## Build a transaction to create a contract
 
 ```console
-Usage: marlowe create --change-address ADDRESS [-a|--address ADDRESS] 
-                      [--collateral-utxo UTXO] --manual-sign FILE_PATH 
-                      [-m|--metadata-file FILE_PATH] [--v1] 
-                      [(-r|--role ROLE=ADDRESS) | 
-                        --roles-config-file FILE_PATH | 
-                        --role-token-policy-id POLICY_ID] 
-                      (--core-file FILE_PATH | --contract-file FILE_PATH 
-                        [--args-file FILE_PATH | 
-                          [--timeout-arg NAME=POSIX_TIMESTAMP] 
-                          [--value-arg NAME=INTEGER]]) --min-utxo LOVELACE
+Usage: marlowe-runtime-cli create --change-address ADDRESS [-a|--address ADDRESS] 
+                                  [--collateral-utxo UTXO] --manual-sign FILE_PATH 
+                                  [-m|--metadata-file FILE_PATH] [--v1] 
+                                  [(-r|--role ROLE=ADDRESS) | 
+                                    --roles-config-file FILE_PATH | 
+                                    --role-token-policy-id POLICY_ID] 
+                                  (--core-file FILE_PATH | --contract-file FILE_PATH 
+                                    [--args-file FILE_PATH | 
+                                      [--timeout-arg NAME=POSIX_TIMESTAMP] 
+                                      [--value-arg NAME=INTEGER]]) --min-utxo LOVELACE
 
   Create a new Marlowe Contract
 

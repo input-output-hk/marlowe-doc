@@ -2,15 +2,15 @@
 title: Apply multiple inputs to a contract
 ---
 
-## Build a Transaction to Apply Multiple Inputs to a Contract
+## Build a transaction to apply multiple inputs to a contract
 
 ```console
-Usage: marlowe apply --change-address ADDRESS [-a|--address ADDRESS] 
-                     [--collateral-utxo UTXO] --manual-sign FILE_PATH 
-                     [-m|--metadata-file FILE_PATH] (-c|--contract CONTRACT_ID)
-                     --inputs-file FILE_PATH 
-                     [-l|--validity-lower-bound TIMESTAMP] 
-                     [-u|--validity-upper-bound TIMESTAMP]
+Usage: marlowe-runtime-cli apply --change-address ADDRESS [-a|--address ADDRESS] 
+                                 [--collateral-utxo UTXO] --manual-sign FILE_PATH 
+                                 [-m|--metadata-file FILE_PATH] (-c|--contract CONTRACT_ID)
+                                 --inputs-file FILE_PATH 
+                                 [-l|--validity-lower-bound TIMESTAMP] 
+                                 [-u|--validity-upper-bound TIMESTAMP]
 
   Apply inputs to a contract
 

@@ -2,16 +2,16 @@
 title: Apply a choice to a contract
 ---
 
-## Build a Transaction to Apply a Choice to a Contract
+## Build a transaction to apply a choice to a contract
 
 ```console
-Usage: marlowe choose --change-address ADDRESS [-a|--address ADDRESS] 
-                      [--collateral-utxo UTXO] --manual-sign FILE_PATH 
-                      [-m|--metadata-file FILE_PATH] (-c|--contract CONTRACT_ID)
-                      --choice CHOICE_NAME --party ROLE_NAME|ADDRESS
-                      --value INTEGER [--continuation-file FILE_PATH] 
-                      [-l|--validity-lower-bound TIMESTAMP] 
-                      [-u|--validity-upper-bound TIMESTAMP]
+Usage: marlowe-runtime-cli choose --change-address ADDRESS [-a|--address ADDRESS] 
+                                  [--collateral-utxo UTXO] --manual-sign FILE_PATH 
+                                  [-m|--metadata-file FILE_PATH] (-c|--contract CONTRACT_ID)
+                                  --choice CHOICE_NAME --party ROLE_NAME|ADDRESS
+                                  --value INTEGER [--continuation-file FILE_PATH] 
+                                  [-l|--validity-lower-bound TIMESTAMP] 
+                                  [-u|--validity-upper-bound TIMESTAMP]
 
   Notify a contract to proceed
 
