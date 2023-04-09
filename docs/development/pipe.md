@@ -2,7 +2,7 @@
 title: A pipe client for Marlowe Runtime
 ---
 
-This [Marlowe Runtime](../marlowe-runtime) client reads JSON requests from standard input and writes JSON responses to standard output. The service may be used with any Marlowe contract.
+This [Marlowe Runtime](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-runtime) client reads JSON requests from standard input and writes JSON responses to standard output. The service may be used with any Marlowe contract.
 
 
 ## Example
