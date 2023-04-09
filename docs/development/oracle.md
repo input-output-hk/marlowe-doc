@@ -25,7 +25,7 @@ The `SOFR` data feed provides the [Secured Overnight Financing Rate from the New
 
 The `BTCETH`, `BTCEUR`, `BTCGBP`, `BTCJPY`, `BTCUSD`, `ADABTC`, `ADAETH`, `ADAEUR`, `ADAGBP`, `ADAJPY`, `ADAUSD`, `ETHBTC`, `ETHEUR`, `ETHGBP`, `ETHJPY`, and `ETHUSD` data feeds provide cryptocurrency prices from [CoinGecko](https://www.coingecko.com/), measured in parts per hundred million (/ 100,000,000). The first three letters of the symbol are the *base currency* and the last three letters are the *quote currency*. Thus a report of `20970500` for `ADAGBP` corresponds to £0.209705/₳.
 
-One can add data feeds to the oracle by adding a new oracle module (like [`Network.Oracle.Sofr`](oracle/Network/Oracle/Sofr.hs)) modifying [`Network.Oracle`](oracle/Network/Oracle.hs).
+One can add data feeds to the oracle by adding a new oracle module (like [`Network.Oracle.Sofr`](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-apps/oracle/Network/Oracle/Sofr.hs)) modifying [`Network.Oracle`](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-apps/oracle/Network/Oracle.hs).
 
 
 ## Running the Oracle
