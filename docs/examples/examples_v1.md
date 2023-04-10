@@ -6,7 +6,7 @@ To help jumpstart your Marlowe contract creation experience, we encourage you to
 
 The Marlowe starter kit provides tutorials for developers to learn and run simple Marlowe contracts on the Cardano blockchain. There are two methods available for deployment: 
 
-1. Through the cloud-hosted Marlowe Runtime extension in [demeter.run](demeter.run), you can use the starter kit without installing any software. 
+1. Through the cloud-hosted Marlowe Runtime extension in [demeter.run](https://demeter.run), you can use the starter kit without installing any software. 
 
 2. Alternatively, you can run your own Docker containers locally for Marlowe Runtime. 
 
