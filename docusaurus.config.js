@@ -62,14 +62,12 @@ const config = {
           src: 'img/marlowe-logo-light.svg',
         },
         items: [
-
           {
             type: 'doc',
             docId: 'introduction',
             position: 'left',
             label: 'Getting Started',
           },
-
           {
             type: 'dropdown',
             label: 'Documentation',
@@ -84,12 +82,15 @@ const config = {
                 to: '/docs/category/tutorials',
               },
               {
-                label: 'Developers',
+                label: 'Platform and Architecture',
+                to: '/docs/category/platform-and-architecture',
+              },
+              {
+                label: 'Developer Tools',
                 to: '/docs/category/developer-tools',
               },
             ],
           },
-
           {
             type: 'dropdown',
             label: 'Community',

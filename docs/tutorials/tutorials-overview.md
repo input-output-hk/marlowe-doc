@@ -12,7 +12,6 @@ Take a look at our written tutorials and video tutorials.
 > * [A simple escrow contract](escrow-ex.md)
 > * [The Marlowe model](marlowe-model.md)
 > * [Marlowe step by step](marlowe-step-by-step.md)
-> * [Marlowe in Blockly](playground-blockly.md)
 > * [The Marlowe data types](marlowe-data.md)
 > * [Marlowe embedded in Haskell](embedded-marlowe.md)
 > * [Marlowe embedded in JavaScript](javascript-embedding.md)

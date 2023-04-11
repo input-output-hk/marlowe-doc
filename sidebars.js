@@ -44,7 +44,6 @@ const sidebars = {
         'tutorials/marlowe-model',
         'tutorials/marlowe-step-by-step',
         'tutorials/escrow-ex',
-        'tutorials/playground-blockly',
         'tutorials/marlowe-data',
         'tutorials/embedded-marlowe',
         'tutorials/javascript-embedding',
@@ -58,30 +57,33 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Architecture Overview',
+      label: 'Platform and Architecture',
       collapsed: true,
+      link: {
+        type: 'generated-index',
+        title: 'Platform and Architecture',
+        description: 'Learn about Marlowe\'s platform and architecture',
+      },
       items: [
         'architecture',
+        'development/platform',
+        'development/dsl',
+        'development/marlowe-language-guide',
       ],
     },
-
     {
       type: 'category',
       label: 'Developer Tools',
       collapsed: true,
       link: {
         type: 'generated-index',
-        title: 'Developers',
+        title: 'Developer Tools',
         description: 'Learn more about Marlowe\'s ecosystem of developer tools',
       },
       items: [
         'development/dev-tools-overview',
         'development/deployment-overview-developer-audience',
-        'development/dsl',
-        'development/marlowe-language-guide',
-        'development/platform',
         'development/playground',
-
         {
           type: 'category',
           label: 'Runtime',
@@ -92,7 +94,6 @@ const sidebars = {
           },
           items: [
             'development/runtime',
-
             {
               type: 'category',
               label: 'Runtime protocol reference',
@@ -109,7 +110,6 @@ const sidebars = {
                    'development/txjob-subprotocol',
                   ],
             },
-
             {
               type: 'category',
               label: 'Runtime internals',
@@ -128,9 +128,7 @@ const sidebars = {
                     `development/marlowe-proxy`,
                   ],
             },
-
             'development/runtime-rest-api',
-
             {
               type: 'category',
               label: 'Marlowe Runtime CLI',
@@ -152,7 +150,6 @@ const sidebars = {
                    `development/log`,
                   ],
             },
-
             {
               type: 'category',
               label: 'Clients of Runtime',
@@ -169,13 +166,11 @@ const sidebars = {
                    'development/pipe',
                   ],
             },
-
             'development/txpipe-and-demeter',
             'development/runtime-tutorial-actus-pam',
             'development/deploying-runtime-with-docker',
           ]
         },
-
         'development/cli',
         'development/dev-resources',
       ],
