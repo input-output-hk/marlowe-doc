@@ -23,7 +23,7 @@ To use the Haskell editor follow these steps:
 
 3. Now you can start coding in Haskell. 
   
-    Alternatively, you can use some [example contracts](examples/examples_v1.md) to work with. 
+    Alternatively, you can use some [example contracts](examples/examples-starter-kit.md) to work with. 
 
 ## Describing a contract
 
