@@ -39,12 +39,11 @@ const sidebars = {
         description: 'Learn from Marlowe\'s library of written and video tutorials',
       },
       items: [
-        'tutorials/tutorials-overview',
         'tutorials/written-tutorials-index',
         'tutorials/video-tutorials-index',
-        'tutorials/escrow-ex',
         'tutorials/marlowe-model',
         'tutorials/marlowe-step-by-step',
+        'tutorials/escrow-ex',
         'tutorials/playground-blockly',
         'tutorials/marlowe-data',
         'tutorials/embedded-marlowe',

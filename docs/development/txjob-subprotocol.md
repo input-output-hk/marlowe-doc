@@ -93,7 +93,7 @@ For more details on the types mentioned, please see:
 |  | | | | `v` | The version of the contract. |
 |  | | | | `wallet` | A `WalletAddresses` record of the wallet authorizing the transaction. Funds will be sent to the change address. |
 |  | | | | `contractID` | The ID of the contract whose role token currency to withdraw from. |
-|  | | | | `role` | The role to withdraw funds for. The wallet must contain a UTxO with a valid role token for this role and contract. |
+|  | | | | `role` | The role to withdraw funds for. The wallet must contain a UTXO with a valid role token for this role and contract. |
 | 4. `Submit` | `SubmitStatus` | `WithdrawError` | `TxBody BabbageEra` | | Submit a transaction to the upstream node and wait for confirmation. |
 |  | | | | `tx` | A babbage transaction to submit to the upstream node. |
 

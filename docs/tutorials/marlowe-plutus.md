@@ -12,7 +12,7 @@ To implement Marlowe contracts we use the PlutusTx compiler, which
 compiles Haskell code into serialized Plutus Core code, to create a
 Cardano *validator script* that ensures the correct execution of the
 contract. This form of implementation relies on the extensions to the
-UTxO model that are described in [this
+UTXO model that are described in [this
 paper](https://iohk.io/research/papers/#functional-blockchain-contracts).
 
 Marlowe contract execution on the blockchain consists of a chain of
@@ -56,7 +56,7 @@ In our implementation, we store the remaining contract in the *data
 script* (see Section 4), which makes it visible to everyone. This
 simplifies contract reflection and retrospection.
 
-## Contract lifecycle on extended UTxO model
+## Contract lifecycle on extended UTXO model
 
 The current implementation works on the mockchain, as described in TODO.
 We expect to have to make only minimal changes to run on the production
@@ -72,7 +72,7 @@ must be the first output), with the particular Marlowe contract in the
 data script, and protected by the Marlowe validator script. The
 transaction has to put some money (at least one Lovelace) on that
 transaction output, in order for it to become an unspent transaction
-output (UTxO). We consider this value a *contract deposit*, which can be
+output (UTXO). We consider this value a *contract deposit*, which can be
 spent during the completion phase. Note that we do not place any
 restriction on the transaction inputs, which could use any other
 transaction outputs, including scripts. It is possible to initialize a

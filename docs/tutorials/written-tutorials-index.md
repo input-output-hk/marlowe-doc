@@ -5,9 +5,9 @@ sidebar_position: 1
 
 | Written Tutorial | Description | 
 | --- | --- | 
-| [A simple escrow contract](escrow-ex.md) | This tutorial introduces a simple financial contract in pseudocode, before explaining how it is modified to work in Marlowe, giving the first example of a Marlowe contract. |
 | [The Marlowe model](marlowe-model.md) | In this tutorial we look at our general approach to modelling contracts in Marlowe, and the context in which Marlowe contracts are executed: the Cardano blockchain. In doing this we also introduce some of the standard terminology that we will use in describing Marlowe. | 
 | [Marlowe step by step](marlowe-step-by-step.md) | This tutorial explains the five ways of building contracts in Marlowe. Four of these -- `Pay`, `Let`, `If` and `When` -- build a complex contract from simpler contracts, and the fifth, `Close`, is a simple contract. In explaining these contracts we will also explain Marlowe *values*, *observations* and *actions*, which are used to supply external information and inputs to a running contract to control how it will evolve. | 
+| [A simple escrow contract](escrow-ex.md) | This tutorial introduces a simple financial contract in pseudocode, before explaining how it is modified to work in Marlowe, giving the first example of a Marlowe contract. |
 | [Marlowe in Blockly](playground-blockly.md) | This section shows how Marlowe contracts are built using the Blockly visual programming environment. | 
 | [The Marlowe data types](marlowe-data.md) | This tutorial formally introduces Marlowe as a Haskell data type, as well as presenting the different types used by the model, and discussing a number of assumptions about the infrastructure in which contracts will be run. | 
 | [Marlowe embedded in Haskell](embedded-marlowe.md) | This tutorial shows how to use some simple features of Haskell to write Marlowe contracts that are more readable, maintainable and reusable, illustrated by revisiting the escrow contract. | 

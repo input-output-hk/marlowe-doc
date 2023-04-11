@@ -36,7 +36,7 @@ The videos listed below cover the full spectrum of topics related to Marlowe. So
 | [Marlowe suite overview](https://youtu.be/Pxk-M0oBJMg) | Pablo Lamela | Jul 2022 | 
 | [**2. Using Marlowe**](https://www.youtube.com/playlist?list=PLNEK_Ejlx3x1o4Hv1GC_0kxXnquikXl70) | Lars Brünjes | Jul 2022 | 
 | [Introduction](https://www.youtube.com/playlist?list=PLNEK_Ejlx3x1o4Hv1GC_0kxXnquikXl70) | Lars Brünjes | Jul 2022 | 
-| [The EUTxO Model and Marlowe Contracts](https://youtu.be/5FrPxKEokBw) | Lars Brünjes | Jul 2022 | 
+| [The EUTXO Model and Marlowe Contracts](https://youtu.be/5FrPxKEokBw) | Lars Brünjes | Jul 2022 | 
 | [Using Daedalus](https://youtu.be/OPDC-zNwyv4) | Lars Brünjes | Jul 2022 | 
 | [Marlowe Run -- *deprecated but still on YouTube*](https://youtu.be/Yfiy7whWlMs) | Lars Brünjes | Jul 2022 | 
 | [The Marlowe Playground](https://youtu.be/zcuAFarkAh4) | Lars Brünjes | Jul 2022 | 
