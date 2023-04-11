@@ -25,7 +25,7 @@ const sidebars = {
         description: 'Fork and clone the Marlowe starter kit repo, browse the contract gallery',
       },
       items: [
-        'examples/examples_v1',
+        'examples/examples-starter-kit',
         'examples/examples-contract-gallery',
       ],
     },
