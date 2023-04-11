@@ -76,16 +76,7 @@ const sidebars = {
       },
       items: [
         'development/dev-tools-overview',
-        {
-          type: 'category',
-          label: 'Deployment Overview',
-          collapsed: true,
-          items: [
-            'development/deployment-overview',
-            'development/deployment-overview-low-code-audience',
-            'development/deployment-overview-developer-audience',
-          ],
-        },
+        'development/deployment-overview-developer-audience',
         'development/dsl',
         'development/marlowe-language-guide',
         'development/platform',

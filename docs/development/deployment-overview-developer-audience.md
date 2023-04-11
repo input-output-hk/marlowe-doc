@@ -1,5 +1,5 @@
 ---
-title: Development and Deployment Overview, Developer Audience
+title: Development and deployment overview
 sidebar_position: 1
 ---
 
