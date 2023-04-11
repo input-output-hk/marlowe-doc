@@ -62,21 +62,34 @@ const config = {
           src: 'img/marlowe-logo-light.svg',
         },
         items: [
+
+          {
+            type: 'doc',
+            docId: 'introduction',
+            position: 'left',
+            label: 'Getting Started',
+          },
+
           {
             type: 'dropdown',
-            label: 'Getting Started',
+            label: 'Documentation',
             position: 'left',
             items: [
+              {
+                label: 'Examples',
+                to: '/docs/category/examples',
+              },
+              {
+                label: 'Tutorials',
+                to: '/docs/category/tutorials',
+              },
               {
                 label: 'Developers',
                 to: '/docs/category/developer-tools',
               },
-              {
-                label: 'Examples',
-                to: '/docs/examples/examples_v1',
-              },
             ],
           },
+
           {
             type: 'dropdown',
             label: 'Community',
@@ -101,12 +114,6 @@ const config = {
             ],
           },
           {
-            type: 'doc',
-            docId: 'introduction',
-            position: 'left',
-            label: 'Documentation',
-          },
-          {
             type: 'search',
             position: 'right',
           },
@@ -124,7 +131,7 @@ const config = {
               },
               {
                 label: 'FAQ',
-                to: '/docs/faq',
+                to: '/docs/support/faq',
               },
             ],
           },
