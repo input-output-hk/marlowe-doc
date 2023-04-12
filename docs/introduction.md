@@ -29,7 +29,7 @@ Or jump right into the [Marlowe Playground](https://play.marlowe-finance.io):
 
 See also: 
 
-## [Marlowe contract development and deployment overview](development/deployment-overview.md)
+## [Marlowe contract development and deployment overview](development/deployment-overview-developer-audience.md)
 
 ## [Advantages of using Marlowe DSL](development/dsl.md)
 
