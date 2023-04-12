@@ -292,7 +292,7 @@ For planning purposes, this document lists the .md and .ipynb files found in the
 
 | Document | Description | URL |
 | --- | --- | --- |
-| runtime-close.ipynb | This is the first contract executed on `mainnet` solely using the Marlowe Runtime backend. <br>Transaction 1. Create the contract<br>Build the transaction.<br>Sign the transaction.<br>Submit the transaction using Marlowe Runtime.<br>View the contract's UTxO.<br>Watch the contract.<br>View the contract's history.<br>Transaction 2. Party deposits loan amount<br>Sign the transaction.<br>Submit the transaction using Marlowe Runtime.<br>We see that the contract did indeed close.<br>The contract address is empty.<br>The party received their 2 Ada. | [marlowe-runtime/examples/runtime-close.ipynb](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/runtime-close.ipynb) | 
+| runtime-close.ipynb | This is the first contract executed on `mainnet` solely using the Marlowe Runtime backend. <br>Transaction 1. Create the contract<br>Build the transaction.<br>Sign the transaction.<br>Submit the transaction using Marlowe Runtime.<br>View the contract's UTXO.<br>Watch the contract.<br>View the contract's history.<br>Transaction 2. Party deposits loan amount<br>Sign the transaction.<br>Submit the transaction using Marlowe Runtime.<br>We see that the contract did indeed close.<br>The contract address is empty.<br>The party received their 2 Ada. | [marlowe-runtime/examples/runtime-close.ipynb](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/runtime-close.ipynb) | 
 
 ## Demonstrating the Marlowe Transaction Deposit Component of Marlowe Runtime Using Role Tokens
 
@@ -310,7 +310,7 @@ For planning purposes, this document lists the .md and .ipynb files found in the
 
 | Document | Description | URL |
 | --- | --- | --- |
-| create-close-native-tok.ipynb | Transaction 1. Create the contract<br>See what UTxOs the transaction-creation will have available to select from.<br>Build the transaction.<br>Sign the transaction.<br>Submit the transaction using Marlowe Runtime.<br>Watch the contract.<br>View the contract's UTxO.<br>Advance the contract | [marlowe-runtime/examples/create-close-native-tok.ipynb](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/create-close-native-tok.ipynb) | 
+| create-close-native-tok.ipynb | Transaction 1. Create the contract<br>See what UTXOs the transaction-creation will have available to select from.<br>Build the transaction.<br>Sign the transaction.<br>Submit the transaction using Marlowe Runtime.<br>Watch the contract.<br>View the contract's UTXO.<br>Advance the contract | [marlowe-runtime/examples/create-close-native-tok.ipynb](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/examples/create-close-native-tok.ipynb) | 
 
 ## Demonstrating the Marlowe Transaction Creation Component of Marlowe Runtime
 

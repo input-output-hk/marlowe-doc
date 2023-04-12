@@ -89,26 +89,26 @@ While Marlowe is designed to work with blockchains in general,[^2] some
 details of how it interacts with the blockchain are relevant when
 describing the semantics and implementation of Marlowe.
 
-A UTxO-based blockchain is a chain of *blocks*, each of which contains a
+A UTXO-based blockchain is a chain of *blocks*, each of which contains a
 collection of transactions. Each *transaction* has a set of inputs and
 outputs, and the blockchain is built by linking *unspent transaction
-outputs* (UTxO) to the inputs of a new transaction. At most one block
+outputs* (UTXO) to the inputs of a new transaction. At most one block
 can be generated in each *slot*, which are 1 second long.
 
 The mechanisms by which these blocks are generated, and by whom, are not
 relevant here, but contracts will be expressed in terms of POSIX time.
 
-### UTxO, wallets and the Marlowe Run app
+### UTXO, wallets and the Marlowe Run app
 
-Value on the blockchain resides in the UTxO, which are protected
+Value on the blockchain resides in the UTXO, which are protected
 cryptographically by a private key held by the owner. These keys can be
 used to *redeem* the output, and so to use them as inputs to new
 transactions, which can be seen as spending the value in the inputs.
 Users typically keep track of their private keys, and the values
 attached to them, in a cryptographically-secure *wallet*.
 
-Alternatively, UTxOs can be protected by a script, and that is
-essentially what a contract is, a script that protects an UTxO, and it
+Alternatively, UTXOs can be protected by a script, and that is
+essentially what a contract is, a script that protects an UTXO, and it
 can propagate itself throughout a chain of transactions.
 
 To interact with a contract running on the blockchain, users will need

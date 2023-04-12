@@ -88,9 +88,9 @@ Build a transaction that creates a new Marlowe contract.
 , "minUtxo" : "/* the number of lovelace to send to store in the contract when it is created */"
 , "roles" : "/* an object that maps role names to the addresses to which the corresponding role tokens should be sent after it is minted */"
 , "metadata" : "/* the transaction metadata in JSON format */"
-, "addresses" : "/* the list of addresses, in addition to the change address, where UTxOs can be used as input to the transaction */"
+, "addresses" : "/* the list of addresses, in addition to the change address, where UTXOs can be used as input to the transaction */"
 , "change" : "/* the address to which change from the transaction will be sent */"
-, "collateral" : "/* the list of UTxOs that may be used for collateral, or an empty list if any UTxO may be used for collateral */"
+, "collateral" : "/* the list of UTXOs that may be used for collateral, or an empty list if any UTXO may be used for collateral */"
 }
 ```
 
@@ -111,9 +111,9 @@ Build a transaction that applies input to a Marlowe contract.
 , "validityLowerBound" : "/* the POSIX time in integer milliseconds before which the transaction is not valid */"
 , "validityUpperBound" : "/* the POSIX time in integer milliseconds after which the transaction is not valid */"
 , "metadata" : "/* the transaction metadata in JSON format */"
-, "addresses" : "/* the list of addresses, in addition to the change address, where UTxOs can be used as input to the transaction */"
+, "addresses" : "/* the list of addresses, in addition to the change address, where UTXOs can be used as input to the transaction */"
 , "change" : "/* the address to which change from the transaction will be sent */"
-, "collateral" : "/* the list of UTxOs that may be used for collateral, or an empty list if any UTxO may be used for collateral */"
+, "collateral" : "/* the list of UTXOs that may be used for collateral, or an empty list if any UTXO may be used for collateral */"
 }
 ```
 
@@ -131,9 +131,9 @@ Build a transaction that withdraws funds paid by a Marlowe contract.
   "request" : "withdraw"
 , "contractId" : "/* the contract ID from which funds will be withdrawn */"
 , "role" : "/* the name of the role making the withdrawal */"
-, "addresses" : "/* the list of addresses, in addition to the change address, where UTxOs can be used as input to the transaction */"
+, "addresses" : "/* the list of addresses, in addition to the change address, where UTXOs can be used as input to the transaction */"
 , "change" : "/* the address to which change from the transaction will be sent */"
-, "collateral" : "/* the list of UTxOs that may be used for collateral, or an empty list if any UTxO may be used for collateral */"
+, "collateral" : "/* the list of UTXOs that may be used for collateral, or an empty list if any UTXO may be used for collateral */"
 }
 ```
 

@@ -228,7 +228,7 @@ context.
 
 ## Inclusion of TimeIntervals
 
-The EUTxO specification provides validation scripts with time-intervals
+The EUTXO specification provides validation scripts with time-intervals
 instead of with slot numbers. This is to promote determinism in
 validation scripts. Nevertheless, we have kept the timeout of `When`
 (the only timeout) as a single timestamp even though it is now
