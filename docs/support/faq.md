@@ -3,9 +3,9 @@ title: FAQ
 sidebar_position: 1
 ---
 
-# Why can't I run my Marlowe contract on `mainnet`?
+**FAQs in development**
 
-- Marlowe's audit is not complete, so it is not advisable to run Marlowe contracts on `mainnet`.
-- However, a pull request [enable Marlowe on `mainnet`](https://github.com/input-output-hk/marlowe-cardano/pull/377) modifies Marlowe tools for running on `mainnet`.
+Q: When can I run Marlowe on mainnet? 
 
-**MORE FAQs TBD**
+A: Today. 
+
