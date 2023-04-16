@@ -10,7 +10,7 @@ The Marlowe starter kit provides tutorials for developers to learn and run simpl
 
 2. Alternatively, you can run your own Docker containers locally for Marlowe Runtime. 
 
-> * [Demonstration of deploying Marlowe Runtime using Docker](https://www.youtube.com/watch?v=wgSvPlWUrf8) for use with the Marlowe starter kit. 
+> * [Demonstration of deploying Marlowe Runtime using Docker](https://youtu.be/45F5ld8NNHM) for use with the Marlowe starter kit. 
 
 If you are unfamiliar with the Marlowe language, you may want to experiment with Marlowe Playground before trying the starter kit. 
 
