@@ -185,7 +185,6 @@ const sidebars = {
         description: 'Check out our FAQ, developer discussions, and do not hesitate to contact us',
       },
       items: [
-        'support/faq',
         'support/dev-discussions',
         'support/contact',
       ],

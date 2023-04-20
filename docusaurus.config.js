@@ -140,10 +140,6 @@ const config = {
                 label: 'Getting Started',
                 to: '/docs/introduction',
               },
-              {
-                label: 'FAQ',
-                to: '/docs/support/faq',
-              },
             ],
           },
           {
