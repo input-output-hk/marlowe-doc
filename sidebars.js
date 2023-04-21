@@ -166,7 +166,7 @@ const sidebars = {
                    'development/pipe',
                   ],
             },
-            'development/txpipe-and-demeter',
+            'development/cloud-hosted-runtime-extension',
             'development/runtime-tutorial-actus-pam',
             'development/deploying-runtime-with-docker',
           ]
