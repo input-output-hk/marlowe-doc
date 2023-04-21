@@ -31,8 +31,6 @@ following example.
 
 ## Simple Zero Coupon Bond Example
 
-> **NOTE**: 1 ada = 1,000,000 Lovelace. So the numbers should be adjusted in this example to take that into account. Currently the two terms appear to be used interchangeably. 
-
 A zero-coupon bond is a debt security that does not pay interest (a
 coupon) but is issued at a discount, rendering profit at maturity when
 the bond is redeemed for its full face value.
