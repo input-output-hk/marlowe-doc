@@ -5,7 +5,7 @@ sidebar_position: 1
 
 ## About the Marlowe library, JavaScript, and TypeScript
 
-Even though we use the term "JavaScript," the Marlowe *Script framework* is written in TypeScript. Although JavaScript is a subset of TypeScript, programmers with limited TypeScript expertise are advised to learn the basics of TypeScript before using the Marlowe "JavaScript" code. 
+Even though we use the term "JavaScript," the Marlowe *Script framework* is written in TypeScript. Although JavaScript is a subset of TypeScript, programmers with limited TypeScript expertise are advised to learn the basics of TypeScript before using the Marlowe JavaScript code. For more information, see the [TypeScript](https://www.typescriptlang.org/) website. 
 
 ## For experienced JavaScript developers
 
