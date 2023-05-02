@@ -2,8 +2,6 @@
 title: Marlowe transaction service
 ---
 
-## Marlowe Transaction Service
-
 The `marlowe-tx` executable provides services related to building and submitting transactions for Marlowe contracts.
 
 ```console

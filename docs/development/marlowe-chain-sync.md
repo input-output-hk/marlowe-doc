@@ -2,8 +2,6 @@
 title: Marlowe chain sync service
 ---
 
-## Chain Sync Daemon
-
 The `marlowe-chain-sync` executable provides services for querying the blockchain for information that may relate to Marlowe contracts.
 
 ```console

@@ -15,7 +15,6 @@ All of the Marlowe Runtime services must be installed and running in order for M
 `marlowe-runtime-cli` 
 
 
-
 ```console
 Usage: marlowe-runtime-cli [--history-host HOST_NAME] [--history-sync-port PORT_NUMBER]
                            [--tx-host HOST_NAME] [--tx-command-port PORT_NUMBER]
@@ -58,30 +57,14 @@ Low level commands
                            Expects the CBOR bytes of the signed Tx from stdin.
 ```
 
-Please see the links below to access detailed documentation of the associated Marlowe Runtime CLI commands. 
+## Additional command-line help documentation
 
-### Building transactions
+Navigate through the nine pages that follow in this section of the documentation to access details about the associated Marlowe Runtime CLI commands regarding building transactions, submitting transactions and querying history. 
 
-- [Create a contract](create.md)
-- [Advance a contract through a timeout](advance.md)
-- [Apply a choice to a contract](choose.md)
-- [Deposit funds into a contract](deposit.md)
-- [Notify a contract](notify.md)
-- [Apply multiple inputs to a contract](apply.md)
-- [Withdraw funds paid by a contract](withdraw.md)
-
-### Submitting transactions
-
-- [Submit a signed transaction to the node](submit.md)
-
-### Querying history
-
-- [Output the history of a contract](log.md)
-
-## See also
+## See also:
 
 ### [Lecture: Running Marlowe Contracts on the Blockchain](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/lectures/04-marlowe-cli-concrete.md)
 
-* This is a lecture that demonstrates how to use marlowe-cli to run Marlowe contracts on the blockchain, but without using the Marlowe Backend. 
+* This is a lecture that demonstrates how to use `marlowe-runtime-cli` to run Marlowe contracts on the blockchain, but without using the Marlowe Backend. 
 
 ### [Tutorial for Marlowe Runtime -- The ACTUS Principal at Maturity (PAM) Contract](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/tutorial.ipynb)

@@ -2,9 +2,6 @@
 title: Marlowe indexer service
 ---
 
-
-## Marlowe Indexer Daemon
-
 The `marlowe-indexer` executable follows `marlowe-chain-sync` and writes Marlowe contract transactions to a database.
 
 ```console

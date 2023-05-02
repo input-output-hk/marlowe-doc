@@ -13,14 +13,14 @@ title: Developer tools overview
 > * Command line
 > * REST webserver
 
-### Marlowe CLI: High Level
+### Marlowe CLI: high Level
 
 * Supports a straightforward workflow for users that just want to run contracts from the command line.
 * Hides details of input and state of Marlowe contracts.
 * Hides and automates many aspects of Plutus and interaction with the Cardano node.
 * Focuses on the Marlowe contract.
 
-### Marlowe CLI: Low Level
+### Marlowe CLI: low Level
 
 * Supports developer workflows for debugging and fine-grained control of each atomic operation involved in running Marlowe contracts.
 * Controls modification of Marlowe state and construction of Marlowe input.

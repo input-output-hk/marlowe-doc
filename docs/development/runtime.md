@@ -44,7 +44,7 @@ See also:
 
 ## Runtime video tutorials
 
-| Video Title | Presenter | Date |
+| Video title | Presenter | Date |
 |-------------|-----------|-------------|
 | [Using the Marlowe Runtime backend to execute a Marlowe contract on Cardano's preview network](https://youtu.be/WlsX9GhpKu8) | Brian Bush | Oct 2022 | 
 | [Marlowe Runtime](https://youtu.be/8Bx2b2Gag0o) | Brian Bush | Oct 2022 | 

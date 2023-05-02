@@ -1,5 +1,5 @@
 ---
-title: Using the Haskell Editor
+title: Using the Haskell editor
 sidebar_position: 1
 ---
 

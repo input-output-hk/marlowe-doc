@@ -1,5 +1,5 @@
 ---
-title: General-Purpose Oracle for Marlowe Runtime
+title: General-purpose oracle for Marlowe Runtime
 ---
 
 This oracle watches the blockchain for Marlowe contracts that have a `Choice` action ready for input. The start of the contract remaining on chain must be of the form `When [... (Case (Choice (ChoiceId symbol address) ...)) ...] ...`, where `address` is the address of the oracle and `symbol` is the symbol that the oracle should report a value for (see [the list of data feeds](#data-feeds-available)). If the `When` contract contains several `Case` terms for oracle input, the oracle arbitrarily selects one of them. Note that the `ChosenNum` provided by the oracle is an `Integer` representing the scaled value of the raw real number. For example, a 4.30% annual interest rate might be reported as `4300`. Needless to say, it is *critically important* that the Marlowe contract correctly interpret the integer that the oracle reports to it.
@@ -10,7 +10,7 @@ This oracle watches the blockchain for Marlowe contracts that have a `Choice` ac
 A [video demonstrates the Marlowe oracle](https://youtu.be/n1Mv3I7QoTE).
 
 
-## Security Considerations
+## Security considerations
 
 *The security of a Marlowe contract that uses oracle(s) depends upon trust in the oracle(s). For the oracle presented here, this means that the parties to the contract must trust the holder of the signing (private) key for the oracle address and the infrastructure running the oracle.*
 
@@ -19,7 +19,7 @@ The security of an oracle-reliant Marlowe contract might be increased by combini
 ![Averaging three oracles in a Marlowe contract](../../static/img/oracle-averaging.png)
 
 
-## Data Feeds Available
+## Data feeds available
 
 The `SOFR` data feed provides the [Secured Overnight Financing Rate from the New York Federal Reserve Board](https://www.newyorkfed.org/markets/reference-rates/sofr), *measured in basis points*. Thus a report of `430` corresponds to a 4.30% annual rate.
 
@@ -28,7 +28,7 @@ The `BTCETH`, `BTCEUR`, `BTCGBP`, `BTCJPY`, `BTCUSD`, `ADABTC`, `ADAETH`, `ADAEU
 One can add data feeds to the oracle by adding a new oracle module (like [`Network.Oracle.Sofr`](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-apps/oracle/Network/Oracle/Sofr.hs)) modifying [`Network.Oracle`](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-apps/oracle/Network/Oracle.hs).
 
 
-## Running the Oracle
+## Running the oracle
 
 The oracle requires two command-line arguments:
 
@@ -117,7 +117,7 @@ might result in the following output:
 In the above, the oracle attempted to provide input to the first contract, but the time for oracle input had already passed. The oracle ignored the second contract because the oracle does not provide a feed for the `XYZ` symbol. The oracle confirmed that it reported a value for `ADAGBP` to the third contract.
 
 
-## Creating Example Contracts
+## Creating example contracts
 
 The `bash` script [create-example-contracts.sh](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-apps/create-example-contract.sh) is provided for creating Marlowe contracts that require oracle input. It takes three arguments:
 

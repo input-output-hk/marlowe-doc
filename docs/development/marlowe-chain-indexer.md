@@ -2,8 +2,6 @@
 title: Marlowe chain indexer service
 ---
 
-## Chain Indexer Daemon
-
 The `marlowe-chain-indexer` executable follows a local blockchain node and writes the blocks and transactions to a database.
 
 ```console

@@ -3,7 +3,7 @@ title: Written tutorials index
 sidebar_position: 1
 ---
 
-| Written Tutorial | Description | 
+| Written tutorial | Description | 
 | --- | --- | 
 | [The Marlowe model](marlowe-model.md) | In this tutorial we look at our general approach to modelling contracts in Marlowe, and the context in which Marlowe contracts are executed: the Cardano blockchain. In doing this we also introduce some of the standard terminology that we will use in describing Marlowe. | 
 | [Marlowe step by step](marlowe-step-by-step.md) | This tutorial explains the five ways of building contracts in Marlowe. Four of these -- `Pay`, `Let`, `If` and `When` -- build a complex contract from simpler contracts, and the fifth, `Close`, is a simple contract. In explaining these contracts we will also explain Marlowe *values*, *observations* and *actions*, which are used to supply external information and inputs to a running contract to control how it will evolve. | 

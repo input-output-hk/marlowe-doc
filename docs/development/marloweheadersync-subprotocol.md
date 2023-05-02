@@ -33,7 +33,7 @@ On the other hand, if the server does not or cannot recognize what the client is
 
 ### MarloweHeaderSync sub-protocol messages
 
-| Message | Begin State | End State | Parameter | Description |
+| Message | Begin state | End state | Parameter | Description |
 | --- | --- | --- | --- | --- |
 | 1. `RequestNext` | `Idle` | `Next` | | The client requests the next block of headers from the server. |
 | 2. `NewHeaders blk headers` | `Next` | `Idle` | | The server sends the next block of headers to the client. |

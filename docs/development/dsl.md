@@ -1,5 +1,5 @@
 ---
-title: Domain Specific Language
+title: Domain specific language
 sidebar_position: 2
 ---
 
