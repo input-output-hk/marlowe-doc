@@ -129,7 +129,7 @@ The first four message types initiate sub-protocol sessions.
 The final four are carriers for sub-protocol messages. 
 For example, the `MarloweSync` message type embeds a message from the sub-protocol in the Marlowe Runtime protocol. 
 
-| Message | Begin State | End State | Parameter | Description |
+| Message | Begin state | End state | Parameter | Description |
 | --- | --- | --- | --- | --- |
 | 1. `RunMarloweSync` | `Init` | `MarloweSync Init` |  | Start a `MarloweSync` session. |
 | 2. `RunMarloweHeaderSync` | `Init` | `MarloweHeaderSync Idle` |  | Start a `MarloweHeaderSync` session. |
