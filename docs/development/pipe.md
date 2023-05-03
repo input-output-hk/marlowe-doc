@@ -37,7 +37,7 @@ The JSON API for Marlowe Pipe contains the following requests and responses.
 ### Requests
 
 
-#### List Contract IDs
+#### List contract IDs
 
 List all Marlowe contract IDs on the blockchain.
 
@@ -50,7 +50,7 @@ List all Marlowe contract IDs on the blockchain.
 The response is [Contracts](#contracts).
 
 
-#### List Contract Headers
+#### List contract headers
 
 List all Marlowe contract headers on the blockchain.
 
@@ -319,7 +319,7 @@ See `Transaction` in [`Language.Marlowe.Runtime.Core.Api`](https://github.com/in
 ## Help
 
 
-### Marlowe Pipe
+### Marlowe pipe
 
 ```console
 $ marlowe-pipe --help

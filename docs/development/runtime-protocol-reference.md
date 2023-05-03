@@ -27,9 +27,9 @@ If you don't want to use the REST API, Runtime CLI or Marlowe CLI, or any other 
 
 | Concepts | Description |
 | --- | --- |
-| Peer Role | The peer role is either server or client. All protocol sessions take place between two peers -- one server and one client. | 
-| Protocol State | A description of the current state of a protocol session. | 
-| Peer Agency | Describes which peer role is able to send messages to the other in a given protocol state. Agency is exclusive (either server or client has agency, never both). When one peer is able to send a message to the other peer, it has agency. When a peer is in a state of only being able to receive a message, we say it does not have agency. States in which neither peer has agency are terminal states. | 
+| Peer role | The peer role is either server or client. All protocol sessions take place between two peers -- one server and one client. | 
+| Protocol state | A description of the current state of a protocol session. | 
+| Peer agency | Describes which peer role is able to send messages to the other in a given protocol state. Agency is exclusive (either server or client has agency, never both). When one peer is able to send a message to the other peer, it has agency. When a peer is in a state of only being able to receive a message, we say it does not have agency. States in which neither peer has agency are terminal states. | 
 | Messages | Packets of data that a peer can send to another peer when it has agency. When a message is sent, that event transitions the protocol state from one state to another state. | 
 
 ### About messages and agency
@@ -129,7 +129,7 @@ The first four message types initiate sub-protocol sessions.
 The final four are carriers for sub-protocol messages. 
 For example, the `MarloweSync` message type embeds a message from the sub-protocol in the Marlowe Runtime protocol. 
 
-| Message | Begin State | End State | Parameter | Description |
+| Message | Begin state | End state | Parameter | Description |
 | --- | --- | --- | --- | --- |
 | 1. `RunMarloweSync` | `Init` | `MarloweSync Init` |  | Start a `MarloweSync` session. |
 | 2. `RunMarloweHeaderSync` | `Init` | `MarloweHeaderSync Idle` |  | Start a `MarloweHeaderSync` session. |

@@ -19,7 +19,7 @@ The `MarloweQuery` protocol allows clients to query the current state of on-chai
 
 ### MarloweQuery sub-protocol messages
 
-| Message | Begin State | End State | Parameter | Description |
+| Message | Begin state | End state | Parameter | Description |
 | --- | --- | --- | --- | --- |
 | 1. `Request req` | `Req` | `Res a` |  | Send a request to the server. |
 | | | | `req` | A request with a result of type `a`. |

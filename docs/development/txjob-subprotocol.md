@@ -41,7 +41,7 @@ The TxJob sub-protocol is intended for developers who are using Haskell. If you 
 
 ### Job sub-protocol messages
 
-| Message | Begin State | End State | Parameter | Description |
+| Message | Begin state | End state | Parameter | Description |
 | --- | --- | --- | --- | --- |
 | 1. `Exec cmd` | `Init` | `Cmd status err res` |  | Request the server to execute a command. |
 | | | | `cmd` | A command with status type `status`, error type `err`, and result type `res` |

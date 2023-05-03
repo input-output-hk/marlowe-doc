@@ -2,8 +2,6 @@
 title: Marlowe proxy service
 ---
 
-## Marlowe Sync
-
 The `marlowe-proxy` executable provides a single unified public API for the whole runtime.
 
 ```console

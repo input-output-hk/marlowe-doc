@@ -57,7 +57,7 @@ A contract step is either an "apply inputs" step with an apply inputs transactio
 
 ### Messages
 
-| Message | Begin State | End State | Parameter | Description |
+| Message | Begin state | End state | Parameter | Description |
 | --- | --- | --- | --- | --- |
 | 1. `FollowContract id` | `Init` | `Follow` |  | Follow a contract by id. |
 | | | | `id` | The ID of the contract to follow (i.e. the tx-in that created the contract |

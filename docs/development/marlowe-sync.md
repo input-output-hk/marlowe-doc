@@ -2,8 +2,6 @@
 title: Marlowe sync service
 ---
 
-## Marlowe Sync
-
 The `marlowe-sync` executable provides protocols that access Marlowe contract information.
 
 ```console

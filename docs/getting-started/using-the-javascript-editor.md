@@ -1,5 +1,5 @@
 ---
-title: Using the JavaScript Editor
+title: Using the JavaScript editor
 sidebar_position: 1
 ---
 
