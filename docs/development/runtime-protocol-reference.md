@@ -7,7 +7,7 @@ sidebar_position: 5
 
 Marlowe Runtime is the application backend for managing Marlowe contracts on the Cardano blockchain. 
 The term "Runtime" refers to the whole system, its components and sub-components. 
-The Runtime and its protocols and sub-protocols communicate with one another to enable the Runtime's core functions, which are discovering and querying on-chain Marlowe contracts, and creating Marlowe transactions. 
+The Runtime and its protocols and sub-protocols communicate with one another to enable the Runtime core functions, which are discovering and querying on-chain Marlowe contracts, and creating Marlowe transactions. 
 
 The Marlowe Runtime protocol enables communicating with the Runtime directly. 
 
@@ -151,7 +151,7 @@ The binary format describes how each message type is converted into binary data,
 
 At this time, Haskell is the only supported language that has the functions for this. 
 
-If you are using Haskell, use the [Marlowe client library](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-client), one of our libraries in our marlowe-cardano repo. It exports a monad transformer called `MarloweT` that enables you to run a client of the Marlowe Runtime protocol. Run that monad transformer by providing the port number and host addresss of the Runtime and it will connect to it and handle the binary format for you. 
+If you are using Haskell, use the [Marlowe client library](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-client), one of our libraries in our marlowe-cardano repo. It exports a monad transformer called `MarloweT` that enables you to run a client of the Marlowe Runtime protocol. Run that monad transformer by providing the port number and host address of the Runtime and it will connect to it and handle the binary format for you. 
 
 ## Messaging behavior
 

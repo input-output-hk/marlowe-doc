@@ -122,7 +122,7 @@ In general, `When` offers a list of cases, each with an action and a correspondi
                                   arbitrate) ],
            ]
 
-In this contract, either Alice or Bob can make the first choice; the other thens makes a choice. If they agree, then that is done; if not, Carol arbitrates. 
+In this contract, either Alice or Bob can make the first choice; the other then makes a choice. If they agree, then that is done; if not, Carol arbitrates. 
 
 ### Escrow in Marlowe
 

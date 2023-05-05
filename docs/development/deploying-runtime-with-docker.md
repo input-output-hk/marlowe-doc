@@ -30,8 +30,8 @@ Services currently included:
 
 The following commands may be useful:
 
-* `docker compose exec postgres /exec/run-sqitch`: Run the sqitch migrations for the chain-sync database.
-* `docker compose exec postgres psql -U postgres -d chain`: Run psql in the `chain` database.
+* `docker compose exec postgres /exec/run-sqitch`: Run the `sqitch` migrations for the chain-sync database.
+* `docker compose exec postgres psql -U postgres -d chain`: Run `psql` in the `chain` database.
 * `docker compose port`, e.g. `docker compose port web 8080` will show the local port that maps to port `8080` for the `web` service
 
 ### Accessing the node socket

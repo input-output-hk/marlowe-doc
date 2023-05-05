@@ -13,7 +13,7 @@ and reusable descriptions of Marlowe contracts.
 
 Recall that we developed this Marlowe contract in our [earlier tutorial](escrow-ex.md). 
 
-While we presented it there as a "monolothic" contract, we can use
+While we presented it there as a "monolithic" contract, we can use
 Haskell definitions to make it more readable. To start with, we can
 separate the initial commitment from the *inner* working part of the
 contract:

@@ -14,7 +14,7 @@ We can check, in advance of running a contract, these properties:
 -   Partial payments: i.e., payments when there was not enough money in
     account.
 -   Non-positive deposits: under which the contract asks for a value
-    which is negtive or zero.
+    which is negative or zero.
 -   Non-positive payments: payments of 0 or a negative amount.
 -   Shadowing of Lets, where two `Lets` set the same identifier in the
     same execution path.

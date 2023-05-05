@@ -155,7 +155,7 @@ This notion of *value* encompasses Ada, fungible tokens (think
 currencies), non-fungible tokens or NFTs (custom tokens that are not
 interchangeable with other tokens), and more exotic mixed cases:
 
--   Ada has the *empty bytestring* as `CurrencySymbol` and `TokenName`.
+-   Ada has the *empty `bytestring`* as `CurrencySymbol` and `TokenName`.
 -   A *fungible* token is represented by a `CurrencySymbol` for which
     there is exactly one `TokenName` which can have an arbitrary
     non-negative integer quantity (of which Ada is a special case).
