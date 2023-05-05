@@ -1,5 +1,5 @@
 ---
-title: Cloud-hosted Runtime extension
+title: Deploying with cloud-hosted Runtime extension
 ---
 
 ## Demeter.run extension for Runtime

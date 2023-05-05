@@ -96,6 +96,37 @@ const sidebars = {
             'development/runtime',
             {
               type: 'category',
+              label: 'Deploying Runtime',
+              link: {
+                type: 'generated-index',
+                title: 'Deploying Runtime',
+                description: 'Learn about several approaches for deploying Runtime',
+              },
+                  items: [
+                   'development/deploying-runtime-with-docker',
+                   'development/deploying-with-cloud-hosted-runtime-extension',
+                   {
+                    type: 'category',
+                    label: 'Deploying Runtime manually',
+                    link: {
+                      type: 'generated-index',
+                      title: 'Deploying Runtime manually',
+                      description: 'Learn more about deploying Runtime manually',
+                    },
+                        items: [
+                          `development/deploying-runtime-manually`,
+                          `development/marlowe-chain-indexer`,
+                          `development/marlowe-chain-sync`,
+                          `development/marlowe-indexer`,
+                          `development/marlowe-sync`,
+                          `development/marlowe-tx`,
+                          `development/marlowe-proxy`,
+                        ],
+                   },
+                        ],
+            },
+            {
+              type: 'category',
               label: 'Runtime protocol reference',
               link: {
                 type: 'generated-index',
@@ -110,25 +141,23 @@ const sidebars = {
                    'development/txjob-subprotocol',
                   ],
             },
+            'development/runtime-rest-api',
             {
               type: 'category',
-              label: 'Runtime internals',
+              label: 'Clients of Runtime',
               link: {
                 type: 'generated-index',
-                title: 'Runtime internals',
-                description: 'Learn more about Marlowe Runtime internals',
+                title: 'Clients of Runtime',
+                description: 'Learn more about examples of using the Runtime services',
               },
                   items: [
-                    `development/runtime-internals`,
-                    `development/marlowe-chain-indexer`,
-                    `development/marlowe-chain-sync`,
-                    `development/marlowe-indexer`,
-                    `development/marlowe-sync`,
-                    `development/marlowe-tx`,
-                    `development/marlowe-proxy`,
+                   'development/clients-of-runtime',
+                   'development/finder',
+                   'development/scaling',
+                   'development/oracle',
+                   'development/pipe',
                   ],
             },
-            'development/runtime-rest-api',
             {
               type: 'category',
               label: 'Marlowe Runtime CLI',
@@ -150,25 +179,7 @@ const sidebars = {
                    `development/log`,
                   ],
             },
-            {
-              type: 'category',
-              label: 'Clients of Runtime',
-              link: {
-                type: 'generated-index',
-                title: 'Clients of Runtime',
-                description: 'Learn more about examples of using the Runtime services',
-              },
-                  items: [
-                   'development/clients-of-runtime',
-                   'development/finder',
-                   'development/scaling',
-                   'development/oracle',
-                   'development/pipe',
-                  ],
-            },
-            'development/cloud-hosted-runtime-extension',
             'development/runtime-tutorial-actus-pam',
-            'development/deploying-runtime-with-docker',
           ]
         },
         'development/cli',
