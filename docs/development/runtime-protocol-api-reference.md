@@ -235,7 +235,7 @@ Or, I don't know what you're talking about, start from the beginning.
 |   | Transitions to: `Idle` | 
 |   | Payload: | 
 |   | [0]: A block header (the block to which the server has advanced the client) | 
-|   | [1]: A list of contract headers that appear in that block. The typial synchronization loop is the client sends a request 'next', server sends new headers, goes back into idle, client sends another request next, server sends new headers, grabs the headers one block at a time from the server until it catches up to the tip, when the server says 'wait', then the client has to pull new information. | 
+|   | [1]: A list of contract headers that appear in that block. The typical synchronization loop is the client sends a request 'next', server sends new headers, goes back into idle, client sends another request next, server sends new headers, grabs the headers one block at a time from the server until it catches up to the tip, when the server says 'wait', then the client has to pull new information. | 
 |   | Description: The server sends the next block of headers to the client.  | 
 | 3. `RollBackward` | Available from: `Next` | 
 |   | Transitions to: `Idle` | 

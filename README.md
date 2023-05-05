@@ -97,6 +97,12 @@ $ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
+### Linting
+
+Docusaurus supports broken link checking out of the box although external  links will still require additional tooling to verify.
+
+[Vale](https://vale.sh) is used for spell check in addition to linting. This can be used through the `Vale VSCode` extension or from the command line via `vale ./docs`
+
 ### Deployment
 
 Using SSH:

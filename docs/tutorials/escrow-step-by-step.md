@@ -80,7 +80,7 @@ Goal:
 Rules:
 
 -   Alice has from time 0 to time 10 to deposit 500 ada.
--   Alice has from time 11 to time 40 to choose if she actualy
+-   Alice has from time 11 to time 40 to choose if she actually
     authorizes the payment to Bob.
 -   If Alice chooses to pay, Bob can claim payment from time 41 to time
     100.
@@ -145,7 +145,7 @@ Test cases:
 
 -   Bob can collect even if Alice doesn't give an instruction.
 -   Alice can cancel payment
--   Bob can't claim payment before block 40 or approval from alice.
+-   Bob can't claim payment before block 40 or approval from Alice.
 
 ### Contract 5. Simple Escrow
 
@@ -218,7 +218,7 @@ Rules:
 -   Carol has from time 11 to time 60 to vote if she approves or denies
     the payment.
 -   If two out of three participants vote not to pay, funds are
-    redeemable immediatly.
+    redeemable immediately.
 -   If two out of three participants vote to pay, Bob can claim the
     payment from time 61 to time 100.
 -   Funds are reedemable by Alice after time 100.

@@ -70,7 +70,7 @@ An overview card is displayed, as follows:
 -   Title
 -   Roles: Buyer, Mediator, Seller
 -   Terms: Price, Payment deadline, Complaint deadline, Complaint
-    response deadline, Mediaton deadline
+    response deadline, Mediation deadline
 
 11. Then click **Review**.
 12. Review the information on the confirmation card.

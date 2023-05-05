@@ -183,7 +183,7 @@ Let's say we want to write a contract so that Alice can exchange 1000
 Ada with Bob for $100.
 
 First let's calculate the amounts we want to work with of each unit, we
-can define some numerical constants using const:
+can define some numerical constants using `const`:
 
 ``` typescript
 const lovelacePerAda : SomeNumber = 1000000n;
