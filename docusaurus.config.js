@@ -51,8 +51,8 @@ const config = {
       require.resolve("@easyops-cn/docusaurus-search-local"),
       /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
       ({
-
         hashed: true,
+        indexBlog: false,
       }),
     ],
   ],
@@ -186,11 +186,6 @@ const config = {
           },
         ],
         // copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-      },
-      algolia: {
-        appId: 'MY_APP_ID',
-        apiKey: 'MY_API_KEY',
-        indexName: '_INDEX',
       },
       prism: {
         theme: lightCodeTheme,
