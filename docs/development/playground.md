@@ -52,7 +52,7 @@ Experienced Haskell developers can use the embedded Haskell editor in the Playgr
 
 * More about how to use the Haskell editor: [Marlowe embedded in Haskell](tutorials/embedded-marlowe.md) 
 
-* [Marlowe Playground in-depth written tutorial](../tutorials/playground-overview.md)
+* [Marlowe Playground in-depth written tutorial](tutorials/playground-overview.md)
 
 * [More Marlowe Playground video tutorials](tutorials/video-tutorials-index.md#marlowe-playground-tutorials)
 

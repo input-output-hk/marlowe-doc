@@ -198,7 +198,7 @@ to run Marlowe contacts on the Cardano blockchain in conjunction with Marlowe Ru
 ## Developing contracts in Blockly
 
 The playground provides a mechanism for creating and viewing contracts
-in a visual form, rather than in text. This is discussed in [Writing Marlowe with Blockly](../getting-started/writing-marlowe-with-blockly.md). 
+in a visual form, rather than in text. See [Marlowe Playground](../development/playground.md) for more details. 
 Note that the Blockly editor also offers access to the metadata editor
 and static analysis.
 

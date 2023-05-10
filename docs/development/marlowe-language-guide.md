@@ -32,9 +32,11 @@ In modelling basic parts of Marlowe, a combination of Haskell `data` types are u
 
 In addition to writing contracts in the textual version of Marlowe, you can also use one of the following visual programming environments:
 
-1. [Using Blockly](getting-started/writing-marlowe-with-blockly.md)
-2. [Using JavaScript (TypeScript)](getting-started/using-the-javascript-editor.md)
-3. [Using Haskell](getting-started/using-the-haskell-editor.md)
+1. Blockly
+2. JavaScript (TypeScript)
+3. Haskell
+
+See [Marlowe Playground](playground.md) for details. 
 
 ## About a Marlowe contract
 
