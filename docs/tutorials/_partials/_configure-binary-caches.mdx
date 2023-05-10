@@ -1,0 +1,45 @@
+
+:::caution
+An improperly configured cache will lead to lengthy compile times up to multiple hours long.
+
+:::
+
+### Linux
+
+#### non-NixOS Install
+
+If you are running Nix as a single user, edit the `/etc/nix/nix.conf` file.
+
+```
+substituters        = https://cache.iog.io https://iohk.cachix.org https://cache.nixos.org/
+trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ= iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+```
+
+Restart the Nix daemon after updating `/etc/nix/nix.conf`.
+
+### NixOS Install
+
+If running this directly from an installation of NixOS, configure the following options:
+
+```
+nix.settings = {
+  substituters        = [ "https://cache.iog.io" "https://iohk.cachix.org" ];
+  trusted-public-keys = [ "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=" "iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo=" ];
+};
+```
+
+### macOS
+
+Configuration for macOS requires the same step as a non-NixOS install in addition to enabling the [sandbox](https://developer.apple.com/documentation/xcode/configuring-the-macos-app-sandbox/).
+
+```
+sandbox = true
+extra-sandbox-paths = /System/Library/Frameworks /System/Library/PrivateFrameworks /usr/lib /private/tmp /private/var/tmp /usr/bin/env
+```
+
+Restart the Nix daemon after updating `/etc/nix/nix.conf`.
+
+```
+sudo launchctl stop org.nixos.nix-daemon
+sudo launchctl start org.nixos.nix-daemon
+```

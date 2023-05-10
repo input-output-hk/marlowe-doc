@@ -39,6 +39,7 @@ const sidebars = {
         description: 'Learn from Marlowe\'s library of written and video tutorials',
       },
       items: [
+        'tutorials/deploy-marlowe-runtime',
         'tutorials/written-tutorials-index',
         'tutorials/video-tutorials-index',
         'tutorials/marlowe-model',
