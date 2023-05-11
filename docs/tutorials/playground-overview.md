@@ -64,7 +64,7 @@ The program editor used in the Playground is the Monaco editor --
 <https://microsoft.github.io/monaco-editor/> -- and many of its features
 are available, including the menu available on right-click.
 
-## The JavaScript Editor: developing embedded contracts
+## The JavaScript editor: developing embedded contracts
 
 For details of how the JavaScript embedding for Marlowe is defined, see
 [Marlowe embedded in JavaScript](javascript-embedding.md). 
@@ -130,11 +130,7 @@ prompt you to add metadata for the fields that correspond to the
 appropriate elements of the contract, and to delete the fields that do
 not correspond to anything in the contract.
 
-Contract metadata not only provides documentation for Marlowe contracts,
-but is also used in Marlowe Run, the end-user client that is to be used
-to run Marlowe contacts on the Cardano blockchain.
-
-## The Haskell Editor: developing embedded contracts
+## The Haskell editor: developing embedded contracts
 
 The editor supports the development of Marlowe contracts described in
 Haskell. We can use Haskell to make contract definitions more readable
@@ -195,10 +191,10 @@ Contract metadata not only provides documentation for Marlowe contracts,
 but is also used in the front end web app, the end-user client that is to be used
 to run Marlowe contacts on the Cardano blockchain in conjunction with Marlowe Runtime.
 
-## Developing contracts in Blockly
+## The Blockly editor
 
-The playground provides a mechanism for creating and viewing contracts
-in a visual form, rather than in text. This is discussed in [Writing Marlowe with Blockly](../getting-started/writing-marlowe-with-blockly.md). 
+The Blockly editor provides a mechanism for creating and viewing contracts
+in a visual form rather than in text. See [Marlowe Playground](../development/playground.md) to see a video showing how to create Marlowe contracts using the Blockly editor. 
 Note that the Blockly editor also offers access to the metadata editor
 and static analysis.
 

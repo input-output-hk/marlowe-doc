@@ -19,15 +19,17 @@ Designing Marlowe contracts only requires clear logical thinking, not specialize
 
 A Marlowe contract is built by combining a small number of building blocks that describe making a payment, making an observation of something in the "real world," waiting until a certain condition becomes true, and other similar types of concepts. 
 
+## Building a contract
+
+The [Marlowe Playground](development/playground.md) is a plug-and-play smart contract builder and simulator that is simple to use, visual, and modular. 
+
 ## Tutorials
 
 If you want to learn Marlowe from the ground up, start with Marlowe's [written tutorials](tutorials/written-tutorials-index.md) and [video tutorials](tutorials/video-tutorials-index.md). 
 
-Or jump right into the [Marlowe Playground](https://play.marlowe-finance.io): 
-
-[![Marlowe Playground](../static/img/landing-page-example.png)](https://play.marlowe-finance.io)
-
 See also: 
+
+## [Marlowe Playground](development/playground.md)
 
 ## [Marlowe contract development and deployment overview](development/deployment-overview-developer-audience.md)
 
