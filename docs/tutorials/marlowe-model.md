@@ -98,7 +98,7 @@ can be generated in each *slot*, which are 1 second long.
 The mechanisms by which these blocks are generated, and by whom, are not
 relevant here, but contracts will be expressed in terms of POSIX time.
 
-### UTXO, wallets and the Marlowe Run app
+### UTXO, wallets and contracts
 
 Value on the blockchain resides in the UTXO, which are protected
 cryptographically by a private key held by the owner. These keys can be
@@ -112,12 +112,14 @@ essentially what a contract is, a script that protects an UTXO, and it
 can propagate itself throughout a chain of transactions.
 
 To interact with a contract running on the blockchain, users will need
-to use the Marlowe Run client application. This, in turn, will interact
+to use the Marlowe REST API or the Marlowe CLI. This, in turn, will interact
 with users' wallets to authenticate transactions that spend
 crypto-assets, since deposits are made from users' wallets, and
-payments received by them. Note, however, that these are definitely
+payments received by them. 
+
+Note, however, that these are definitely
 *off-chain* actions that need to be initiated by code running off chain,
-typically this will be in the Marlowe Run application: they cannot be
+typically this will be with the Marlowe REST API or Marlowe CLI: they cannot be
 made to happen by the contract running on chain itself.
 
 ### Omniscient simulation
@@ -126,7 +128,7 @@ The Marlowe Playground supports contract simulation. This is an
 *omniscient* simulation, in which the user is able to perform any action
 for any role, and thus can observe the execution from the perspective of
 all the users simultaneously. This contrasts with the experience of
-running a contract in Marlowe Run, in which each participant sees the
+running a contract using a client, in which each participant sees the
 contract from their own point of view. In particular, participants are
 only able to interact with a running contract that is waiting for input
 from them; if that's not the case, then they will see that the contract
@@ -212,7 +214,6 @@ does not affect the contract's behaviour.
 
 ![transaction](images/transaction.svg)
 
-**INTERNAL NOTE -- fix how we display footnote citations**
 
 [^1]: We can think of oracles as another kind of party to the contract;
     under this view notifications become the choices made by that party.
