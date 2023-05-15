@@ -260,9 +260,7 @@ Extended Marlowe is not directly executable, it has to be translated to
 core Marlowe before execution, deployment, or analysis, through the
 process of *instantiation*. The purpose of Extended Marlowe is to allow
 Marlowe contracts to be reusable in different situations without
-cluttering the code that goes on-chain (core Marlowe). In Marlowe Run
-and the Marlowe Playground templates need to be instantiated before
-being run or simulated, respectively.
+cluttering the code that goes on-chain (core Marlowe). In the Marlowe Playground, templates need to be instantiated before being simulated.
 
 ## Transactions
 
