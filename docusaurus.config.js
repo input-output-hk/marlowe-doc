@@ -38,7 +38,7 @@ const config = {
         },
         blog: false,
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom.scss'),
         },
       }),
     ],
@@ -55,6 +55,7 @@ const config = {
       }),
     ],
   ],
+  plugins: ['docusaurus-plugin-sass'],
   markdown: {
     mermaid: true,
   },
@@ -75,12 +76,7 @@ const config = {
             type: 'doc',
             docId: 'introduction',
             position: 'left',
-            label: 'Getting Started',
-          },
-          {
-            to: '/docs',
             label: 'Documentation',
-            position: 'left',
           },
           {
             type: 'dropdown',
