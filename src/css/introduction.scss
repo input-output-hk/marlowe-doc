@@ -7,7 +7,8 @@
 .card {
   display: flex;
   flex-direction: column;
-  border-radius: 8px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
   padding: 20px;
 
   h4 {
@@ -24,6 +25,8 @@
   }
 
   &:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+
     .arrow {
       transform: translateX(5px);
     }
