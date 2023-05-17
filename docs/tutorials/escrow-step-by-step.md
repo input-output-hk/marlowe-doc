@@ -1,6 +1,5 @@
 ---
 title: Marlowe escrow step-by-step
-sidebar_position: 1
 ---
 
 # Marlowe escrow step-by-step

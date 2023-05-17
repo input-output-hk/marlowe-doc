@@ -1,6 +1,5 @@
 ---
 title: Migrating from earlier versions of Marlowe
-sidebar_position: 1
 ---
 
 # Migrating from earlier versions of Marlowe

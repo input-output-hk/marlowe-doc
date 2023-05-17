@@ -1,6 +1,7 @@
 ---
 title: Introducing Marlowe
-sidebar_position: 1
+sidebar_position: 0
+sidebar_label: Introduction
 ---
 
 ## Powerful
@@ -21,7 +22,7 @@ A Marlowe contract is built by combining a small number of building blocks that 
 
 ## Building a contract
 
-The [Marlowe Playground](development/playground.md) is a plug-and-play smart contract builder and simulator that is simple to use, visual, and modular. 
+The [Marlowe Playground](developer-tools/playground.md) is a plug-and-play smart contract builder and simulator that is simple to use, visual, and modular. 
 
 ## Tutorials
 
@@ -29,10 +30,10 @@ If you want to learn Marlowe from the ground up, start with Marlowe's [written t
 
 See also: 
 
-## [Marlowe Playground](development/playground.md)
+## [Marlowe Playground](developer-tools/playground.md)
 
-## [Marlowe contract development and deployment overview](development/deployment-overview-developer-audience.md)
+## [Marlowe contract development and deployment overview](developer-tools/deployment-overview-developer-audience.md)
 
-## [Advantages of using Marlowe DSL](development/dsl.md)
+## [Advantages of using Marlowe DSL](platform-and-architecture/dsl.md)
 
-## [How Marlowe contracts are protected](development/platform.md#how-marlowe-contracts-are-protected)
+## [How Marlowe contracts are protected](platform-and-architecture/platform.md#how-marlowe-contracts-are-protected)

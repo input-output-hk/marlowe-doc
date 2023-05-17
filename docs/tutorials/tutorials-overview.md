@@ -1,6 +1,6 @@
 ---
 title: Tutorials overview
-sidebar_position: 1
+sidebar_position: 0
 ---
 
 Take a look at our written tutorials and video tutorials. 

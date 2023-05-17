@@ -2,9 +2,9 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 
-import Bridge from './../../static/img/bridge.svg';
-import Tools from './../../static/img/tools.svg';
-import Contract from './../../static/img/contract.svg';
+import Bridge from '@site/static/img/bridge.svg';
+import Tools from '@site/static/img/tools.svg';
+import Contract from '@site/static/img/contract.svg';
 
 import styles from './styles.module.css';
 

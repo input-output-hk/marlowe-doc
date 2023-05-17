@@ -1,6 +1,5 @@
 ---
 title: Potential problems with contracts
-sidebar_position: 1
 ---
 
 # Potential problems with contracts

@@ -1,6 +1,5 @@
 ---
 title: Using Marlowe from the ghci command line
-sidebar_position: 1
 ---
 
 # Using Marlowe from the ghci command line

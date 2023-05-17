@@ -1,6 +1,5 @@
 ---
 title: The semantics of Marlowe 2.0
-sidebar_position: 1
 ---
 
 # The semantics of Marlowe 2.0

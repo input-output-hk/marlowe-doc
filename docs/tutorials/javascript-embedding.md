@@ -1,6 +1,5 @@
 ---
 title: Marlowe embedded in JavaScript
-sidebar_position: 1
 ---
 
 # Marlowe embedded in JavaScript

@@ -1,6 +1,5 @@
 ---
 title: Static analysis
-sidebar_position: 1
 ---
 
 # Static analysis
