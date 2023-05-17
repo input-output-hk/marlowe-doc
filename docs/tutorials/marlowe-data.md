@@ -1,6 +1,5 @@
 ---
 title: The Marlowe data types
-sidebar_position: 1
 ---
 
 # The Marlowe data types

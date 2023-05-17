@@ -1,6 +1,5 @@
 ---
 title: The Marlowe model
-sidebar_position: 1
 ---
 
 # The Marlowe model

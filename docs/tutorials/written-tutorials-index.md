@@ -1,6 +1,6 @@
 ---
 title: Written tutorials index
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 | Written tutorial | Description | 

@@ -78,27 +78,9 @@ const config = {
             label: 'Getting Started',
           },
           {
-            type: 'dropdown',
+            to: '/docs',
             label: 'Documentation',
             position: 'left',
-            items: [
-              {
-                label: 'Examples',
-                to: '/docs/category/examples',
-              },
-              {
-                label: 'Tutorials',
-                to: '/docs/category/tutorials',
-              },
-              {
-                label: 'Platform and Architecture',
-                to: '/docs/category/platform-and-architecture',
-              },
-              {
-                label: 'Developer Tools',
-                to: '/docs/category/developer-tools',
-              },
-            ],
           },
           {
             type: 'dropdown',

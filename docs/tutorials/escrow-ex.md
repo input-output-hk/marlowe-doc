@@ -1,6 +1,5 @@
 ---
 title: A first example
-sidebar_position: 1
 ---
 
 This tutorial introduces a simple financial contract in pseudocode,

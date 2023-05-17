@@ -1,6 +1,5 @@
 ---
 title: Marlowe embedded in Haskell
-sidebar_position: 1
 ---
 
 In this tutorial we go back to the escrow example, and show how we can

@@ -1,6 +1,5 @@
 ---
 title: ACTUS and Marlowe
-sidebar_position: 1
 ---
 
 This tutorial gives an introduction to the general idea of the ACTUS

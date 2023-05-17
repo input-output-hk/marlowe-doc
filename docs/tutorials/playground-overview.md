@@ -1,6 +1,5 @@
 ---
 title: The Marlowe Playground
-sidebar_position: 1
 ---
 
 # The Marlowe Playground
@@ -194,7 +193,7 @@ to run Marlowe contacts on the Cardano blockchain in conjunction with Marlowe Ru
 ## The Blockly editor
 
 The Blockly editor provides a mechanism for creating and viewing contracts
-in a visual form rather than in text. See [Marlowe Playground](../development/playground.md) to see a video showing how to create Marlowe contracts using the Blockly editor. 
+in a visual form rather than in text. See [Marlowe Playground](/developer-tools/playground.md) to see a video showing how to create Marlowe contracts using the Blockly editor. 
 Note that the Blockly editor also offers access to the metadata editor
 and static analysis.
 

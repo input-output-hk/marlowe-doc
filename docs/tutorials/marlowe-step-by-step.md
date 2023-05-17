@@ -1,6 +1,5 @@
 ---
 title: Marlowe step by step
-sidebar_position: 1
 ---
 
 # Marlowe step by step
