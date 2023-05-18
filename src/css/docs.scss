@@ -13,6 +13,22 @@ pre code {
   }
 }
 
+.pagination-nav {
+  .pagination-nav__link {
+    &:not(:empty) {
+      box-shadow: var(--ifm-global-shadow-lw);
+
+      .pagination-nav__label {
+        font-size: 1rem;
+      }
+
+      .pagination-nav__sublabel {
+        display: none;
+      }
+    }
+  }  
+}
+
 html[data-theme='dark'] {
   .prism-code code {
     background-color: var(--color-marlowe-grey-20);
