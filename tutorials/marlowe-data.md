@@ -352,7 +352,6 @@ infrastructure in which it is run.
 -   The model manages the refund of funds back to the owner of a
     particular account when a contract reaches the point of `Close`.
 
-**INTERNAL NOTE: Find better display solution for footnotes here**
 
 [^1]: In fact we used `newtype` declarations rather than `data` types
     because they are more efficiently implemented.

@@ -22,19 +22,19 @@ A zero-coupon bond is a loan where the principal is lent at the start of the con
 
 Zero-Coupon Bond (ZCB) approached using three available methods:
 
-> * [Marlowe Runtime CLI](https://github.com/input-output-hk/marlowe-starter-kit/blob/main/01-runtime-cli.ipynb)
-> * [Marlowe Runtime REST API](https://github.com/input-output-hk/marlowe-starter-kit/blob/main/02-runtime-rest.ipynb)
-> * [Marlowe CLI](https://github.com/input-output-hk/marlowe-starter-kit/blob/main/03-marlowe-cli.ipynb)
+* [Marlowe Runtime CLI](https://github.com/input-output-hk/marlowe-starter-kit/blob/main/01-runtime-cli.ipynb)
+* [Marlowe Runtime REST API](https://github.com/input-output-hk/marlowe-starter-kit/blob/main/02-runtime-rest.ipynb)
+* [Marlowe CLI](https://github.com/input-output-hk/marlowe-starter-kit/blob/main/03-marlowe-cli.ipynb)
 
 ## 2. Escrow
 
 An escrow contract is a purchase in which: (i) the contract holds funds until the buyer and seller agree that the goods were delivered faithfully; (ii) a mediator resolves any dispute. 
 
-> * [Escrow contract using Marlowe Runtime REST API](https://github.com/input-output-hk/marlowe-starter-kit/blob/main/04-escrow-rest.ipynb)
+* [Escrow contract using Marlowe Runtime REST API](https://github.com/input-output-hk/marlowe-starter-kit/blob/main/04-escrow-rest.ipynb)
 
 ## 3. Swap contract
 
 A swap contract is a trade of one commodity for another. 
 
-> * [Swap contract for ada and djed using Marlowe Runtime REST API](https://github.com/input-output-hk/marlowe-starter-kit/blob/main/05-swap-rest.ipynb)
+* [Swap contract for ada and djed using Marlowe Runtime REST API](https://github.com/input-output-hk/marlowe-starter-kit/blob/main/05-swap-rest.ipynb)
 

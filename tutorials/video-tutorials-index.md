@@ -99,10 +99,6 @@ The videos listed below cover the full spectrum of topics related to Marlowe. So
 
 A set of videos that introduce Marlowe, a domain-specific language for financial contracts on blockchain, a set of examples of Marlowe in practice, and the Marlowe Playground, a browser-based tool for creating, simulating and analysing Marlowe contracts.
 
-> *Internal note*
-> 
-> *Brian is reviewing this set of videos to identify any that have become obsolete. We can include the full list as a reference on an archive page and present a subset of them here.* 
-
 | Video Title | Presenter | Date |
 |-------------|-----------|-------------|
 | [Playlist](https://www.youtube.com/playlist?list=PLqu19-ygE4ofUgGpslOs5zCr9Z6zCMibq) | Simon Thompson | Last updated Jul 2022 | 
