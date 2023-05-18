@@ -22,7 +22,7 @@ Beyond the notable benefit of being usable by non-programmers, the Marlowe langu
 
 Marlowe is an [*embedded* DSL](https://en.wikipedia.org/wiki/Domain-specific_language), hosted in [TypeScript](https://www.typescriptlang.org/), [JavaScript](https://www.javascript.com/) and [Haskell](https://www.haskell.org/), offering you a choice of editors depending on your preference and skill set. 
 
-> * "TypeScript code converts to JavaScript, which runs anywhere JavaScript runs." ([from the typescriptlang.org website](https://www.typescriptlang.org/))
+* "TypeScript code converts to JavaScript, which runs anywhere JavaScript runs." ([from the typescriptlang.org website](https://www.typescriptlang.org/))
 
 TypeScript and JavaScript offer flexibility and speed of use with a thriving ecosystem, while Haskell is a functional programming language with its own established ecosystem and solid testing framework. 
 
