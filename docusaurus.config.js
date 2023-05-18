@@ -29,7 +29,7 @@ const config = {
       'docusaurus-preset-openapi',
       ({
         api: {
-          path: require.resolve('./openapi.latest.json'),
+          path: require.resolve('./static/api/openapi.latest.json'),
           routeBasePath: 'api',
         },
         docs: {
