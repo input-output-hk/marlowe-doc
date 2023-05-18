@@ -2,6 +2,7 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
+const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -55,7 +56,18 @@ const config = {
       }),
     ],
   ],
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: [
+    'docusaurus-plugin-sass',
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'tutorials',
+        path: 'tutorials',
+        routeBasePath: 'tutorials',
+        sidebarPath: require.resolve('./sidebar-tutorial.js'),
+      },
+    ],
+  ],
   markdown: {
     mermaid: true,
   },
@@ -63,13 +75,17 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      docs: {
+        sidebar: {
+          hideable: true,
+        },
+      },
       navbar: {
         title: '',
         logo: {
           alt: 'Marlowe Logo',
-          src: 'img/marlowe-logo-light.svg',
+          src: 'img/marlowe-logo-primary-black-purple.svg',
+          srcDark: 'img/marlowe-logo-primary-white-purple.svg',
         },
         items: [
           {
@@ -77,6 +93,11 @@ const config = {
             docId: 'introduction',
             position: 'left',
             label: 'Documentation',
+          },
+          {
+            to: 'tutorials/tutorials-overview',
+            position: 'left',
+            label: 'Tutorials',
           },
           {
             type: 'dropdown',
@@ -107,65 +128,10 @@ const config = {
           },
         ],
       },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Getting Started',
-                to: '/docs/introduction',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Github',
-                href: 'https://github.com/input-output-hk/marlowe',
-              },
-              {
-                label: 'Stack Exchange',
-                href: 'https://cardano.stackexchange.com/',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discord.gg/inputoutput',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/InputOutputHK',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Privacy Policy',
-                href: 'https://static.iohk.io/gdpr/IOHK-Data-Protection-GDPR-Policy.pdf',
-              },
-              {
-                label: 'Terms and Conditions',
-                href: 'https://plutus-static.s3.eu-central-1.amazonaws.com/IOHK+Website+Terms+%26+Conditions+(Final).pdf',
-              },
-              {
-                label: 'iohk.io',
-                href: 'https://iohk.io',
-              },
-              {
-                label: 'cardano.org',
-                href: 'https://cardano.org',
-              },
-            ],
-          },
-        ],
-        // copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-      },
       prism: {
         theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,
+        additionalLanguages: ['rest', 'haskell', 'http'],
       },
     }
   ),

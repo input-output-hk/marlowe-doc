@@ -1,0 +1,71 @@
+/* You can override the default Infima variables here. */
+:root {
+  --color-marlowe-white: #FFFFFF;
+  --color-marlowe-black: #1C1C1C;
+  --color-marlowe-green: #C2F71C;
+  --color-marlowe-red: #F93A36;
+  --color-marlowe-orange: #FF7347;
+  --color-marlowe-yellow: #FFBE3C;
+
+  --color-marlowe-purple-0: #E0D1FE;
+  --color-marlowe-purple-4: #C0A4FE;
+  --color-marlowe-purple-8: #9D76FC;
+  --color-marlowe-purple-12: #8053FA;
+  --color-marlowe-purple: #511CF7;
+  --color-marlowe-purple-16: #3E14D4;
+  --color-marlowe-purple-20: #2D0EB1;
+  --color-marlowe-purple-24: #1F088F;
+  --color-marlowe-purple-28: #150576;
+
+  --color-marlowe-grey-0: #FAFAFA;
+  --color-marlowe-grey-4: #F5F5F5;
+  --color-marlowe-grey-8: #EFEFEF;
+  --color-marlowe-grey-12: #EAEAEA;
+  --color-marlowe-grey: #E5E5E5;
+  --color-marlowe-grey-16: #ACACAC;
+  --color-marlowe-grey-20: #737373;
+  --color-marlowe-grey-24: #393939;
+  --color-marlowe-grey-28: #1C1C1C;
+
+  --ifm-font-family-base: 'Inter';
+  --ifm-font-family-monospace: 'Source Code Pro';
+
+  --ifm-color-primary: var(--color-marlowe-purple-16);
+  --ifm-color-primary-dark: var(--color-marlowe-purple-20);
+  --ifm-color-primary-darker: var(--color-marlowe-purple-24);
+  --ifm-color-primary-darkest: var(--color-marlowe-purple-28);
+
+  --ifm-link-color: var(--color-marlowe-purple-20);
+  --ifm-link-hover-color: var(--color-marlowe-purple-20);
+  --ifm-link-hover-decoration: var(--color-marlowe-purple-20);
+  --ifm-menu-color-active: var(--color-marlowe-purple-20);
+  --ifm-navbar-link-hover-color: var(--color-marlowe-purple-20);
+  --ifm-breadcrumb-color-active: var(--color-marlowe-purple-20);
+
+  --ifm-navbar-search-input-placeholder-color: var(--color-marlowe-grey-24);
+
+  --ifm-color-secondary: var(--color-marlowe-grey);
+  --ifm-color-secondary-light: var(--color-marlowe-grey-12);
+  --ifm-color-secondary-dark: var(--color-marlowe-grey-16);
+  --ifm-color-secondary-lighter: var(--color-marlowe-grey-8);
+  --ifm-color-secondary-darker: var(--color-marlowe-grey-20);
+  --ifm-color-secondary-lightest: var(--color-marlowe-grey-4);
+  --ifm-color-secondary-darkest: var(--color-marlowe-grey-24);
+}
+
+html[data-theme='dark'] {
+  --ifm-color-primary: var(--color-marlowe-purple-8);
+  --ifm-link-color: var(--color-marlowe-purple-8);
+  --ifm-link-hover-color: var(--color-marlowe-purple-8);
+  --ifm-link-hover-decoration: var(--color-marlowe-purple-8);
+  --ifm-menu-color-active: var(--color-marlowe-purple-8);
+  --ifm-navbar-link-hover-color: var(--color-marlowe-purple-8);
+  --ifm-breadcrumb-color-active: var(--color-marlowe-purple-8);
+
+  --ifm-navbar-search-input-placeholder-color: var(--color-marlowe-grey-8);
+
+  --ifm-heading-color: var(--color-marlowe-grey-8);
+  --ifm-pre-color: var(--color-marlowe-grey-4);
+  --ifm-pre-background: var(--color-marlowe-grey-20);
+  --ifm-code-background: var(--color-marlowe-grey-20);
+}

@@ -1,11 +1,11 @@
 @use 'introduction';
+@use 'colors';
+@use 'fonts';
+@use 'docs';
 
-// Google Font
-@import url("https://fonts.googleapis.com/css?family=Inter&display=swap");
-
-/* You can override the default Infima variables here. */
-:root {
-  --ifm-font-family-base: 'Inter';
+article {
+  margin-left: 3rem;
+  margin-right: 3rem;
 }
 
 .sub-heading {
@@ -40,6 +40,6 @@
   margin-left: 6px;
 
   path {
-    stroke: var(--ifm-link-color);
+    stroke: var(--color-marlowe-purple);
   }
 }
