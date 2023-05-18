@@ -2,6 +2,7 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
+const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -55,7 +56,18 @@ const config = {
       }),
     ],
   ],
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: [
+    'docusaurus-plugin-sass',
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'tutorials',
+        path: 'tutorials',
+        routeBasePath: 'tutorials',
+        sidebarPath: require.resolve('./sidebar-tutorial.js'),
+      },
+    ],
+  ],
   markdown: {
     mermaid: true,
   },
@@ -72,7 +84,8 @@ const config = {
         title: '',
         logo: {
           alt: 'Marlowe Logo',
-          src: 'img/marlowe-logo-light.svg',
+          src: 'img/marlowe-logo-primary-black-purple.svg',
+          srcDark: 'img/marlowe-logo-primary-white-purple.svg',
         },
         items: [
           {
@@ -80,6 +93,11 @@ const config = {
             docId: 'introduction',
             position: 'left',
             label: 'Documentation',
+          },
+          {
+            to: 'tutorials/tutorials-overview',
+            position: 'left',
+            label: 'Tutorials',
           },
           {
             type: 'dropdown',
@@ -112,6 +130,8 @@ const config = {
       },
       prism: {
         theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,
+        additionalLanguages: ['rest', 'haskell', 'http'],
       },
     }
   ),

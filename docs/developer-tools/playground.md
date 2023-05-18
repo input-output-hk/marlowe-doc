@@ -48,14 +48,6 @@ Even though we use the term "JavaScript," the Marlowe *Script framework* is writ
 
 Experienced Haskell developers can use the embedded Haskell editor in the Playground to render Marlowe code. Marlowe is written as a Haskell data type, and thus it is straightforward to generate Marlowe smart contracts using Haskell.
 
-## Additional resources 
-
-* More about how to use the Haskell editor: [Marlowe embedded in Haskell](tutorials/embedded-marlowe.md) 
-
-* [Marlowe Playground in-depth written tutorial](tutorials/playground-overview.md)
-
-* [More Marlowe Playground video tutorials](tutorials/video-tutorials-index.md#marlowe-playground-tutorials)
-
 ### IOG Academy's self-paced course on learning Haskell
 
 * [On YouTube](https://youtu.be/pkU8eiNZipQ)

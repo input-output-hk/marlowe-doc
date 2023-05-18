@@ -1,0 +1,29 @@
+.theme-code-block {
+  box-shadow: none !important;
+}
+
+pre code {
+  background-color: var(--ifm-code-background);
+}
+
+.prism-code code {
+  background-color: var(--color-marlowe-grey-4);
+  .theme-code-block-highlighted-line {
+    background-color: var(--color-marlowe-grey-8);
+  }
+}
+
+html[data-theme='dark'] {
+  .prism-code code {
+    background-color: var(--color-marlowe-grey-20);
+    .theme-code-block-highlighted-line {
+      background-color: var(--color-marlowe-grey-16);
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  code {
+    background-color: var(--color-marlowe-grey-20);
+  }
+}

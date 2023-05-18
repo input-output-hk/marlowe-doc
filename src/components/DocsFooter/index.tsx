@@ -12,8 +12,8 @@ function DocsFooter() {
   return (
     <footer className={styles['footer-wrapper']}>
       <div className={styles['logo-wrapper']}>
-        <img src={useBaseUrl('/img/marlowe-logo-light.svg')} className={styles['light-logo']} />
-        <img src={useBaseUrl('/img/marlowe-logo-dark.svg')} className={styles['dark-logo']} />
+        <img src={useBaseUrl('/img/marlowe-logo-primary-black-purple.svg')} className={styles['light-logo']} />
+        <img src={useBaseUrl('/img/marlowe-logo-primary-white-purple.svg')} className={styles['dark-logo']} />
       </div>
       <div className={styles['copyright-wrapper']}>
       {`© ${new Date().getFullYear()} IOHK All rights reserved`}
