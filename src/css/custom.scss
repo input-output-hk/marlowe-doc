@@ -3,9 +3,25 @@
 // Google Font
 @import url("https://fonts.googleapis.com/css?family=Inter&display=swap");
 
+$marlowe-purple: #511CF7;
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-font-family-base: 'Inter';
+  --ifm-link-color: #511CF7;
+  --ifm-link-hover-color: #511CF7;
+  --ifm-link-hover-decoration: #511CF7;
+
+  --ifm-menu-color-active: #511CF7;
+
+  --ifm-navbar-link-hover-color: #511CF7;
+
+  --ifm-breadcrumb-color-active: #511CF7;
+}
+
+article {
+  margin-left: 3rem;
+  margin-right: 3rem;
 }
 
 .sub-heading {
@@ -40,6 +56,6 @@
   margin-left: 6px;
 
   path {
-    stroke: var(--ifm-link-color);
+    stroke: $marlowe-purple;
   }
 }

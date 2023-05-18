@@ -39,3 +39,9 @@
   align-items: center;
   margin-bottom: 1rem;
 }
+
+html[data-theme='dark'] {
+  .card:hover {
+    --ifm-card-background-color: var(--color-gray-78) !important;
+  }
+}
