@@ -73,11 +73,11 @@ The lesson assumes that the following environment variables have been set.
 
 It also assumes that the parties have addresses, signing keys, and funds.
 - Ada Provider
-    - [keys/lender.address](keys/lender.address): Cardano address for the ada provider
-    - [keys/lender.skey](keys/lender.skey): location of signing key file for the ada provider
+    - `keys/lender.address` (keys/lender.address): Cardano address for the ada provider
+    - `keys/lender.skey` (keys/lender.skey): location of signing key file for the ada provider
 - Dollar Provider
-    - [keys/borrower.address](keys/borrower.address): Cardano address for the dollar provider
-    - [keys/borrower.skey](keys/borrower.skey): location of signing key file for the dollar provider
+    - `keys/borrower.address` (keys/borrower.address): Cardano address for the dollar provider
+    - `keys/borrower.skey` (keys/borrower.skey): location of signing key file for the dollar provider
 
 ### Access to Cardano node and Marlowe Runtime
 
@@ -345,7 +345,7 @@ Here are the steps for checking the safety of a contract:
 6. Use [Marlowe CLI\'s](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/ReadMe.md) `marlowe-cli run analyze` tool to study whether the contract can run on a Cardano network.
 7. Run *all execution paths* of the contract on a [Cardano testnet](https://docs.cardano.org/cardano-testnet/overview).
 
-See [Lesson 1](01-runtime-cli.ipynb) for an example of performing step 6.
+See [Lesson 1](runtime-cli.md) for an example of performing step 6.
 
 ## Transaction 1: Ada provider Creates Swap Contract with Initial ADA
 

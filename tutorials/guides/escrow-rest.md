@@ -84,14 +84,14 @@ The lesson assumes that the following environment variables have been set.
 
 It also assumes that the parties have addresses, signing keys, and funds.
 - Seller
-    - [keys/lender.address](keys/lender.address): Cardano address for the seller
-    - [keys/lender.skey](keys/lender.skey): location of signing key file for the seller
+    - `keys/lender.address`: Cardano address for the seller
+    - `keys/lender.skey`: location of signing key file for the seller
 - Buyer
-    - [keys/borrower.address](keys/borrower.address): Cardano address for the buyer
-    - [keys/borrower.skey](keys/borrower.skey): location of signing key file for the buyer
+    - `keys/borrower.address`: Cardano address for the buyer
+    - `keys/borrower.skey`: location of signing key file for the buyer
 - Mediator
-    - [keys/mediator.address](keys/mediator.address): Cardano address for the mediator
-    - [keys/mediator.skey](keys/mediator.skey): location of signing key file for the mediator
+    - `keys/mediator.address`: Cardano address for the mediator
+    - `keys/mediator.skey`: location of signing key file for the mediator
 
 ### Access to Cardano node and Marlowe Runtime
 
@@ -532,7 +532,7 @@ Here are the steps for checking the safety of a contract:
 6. Use [Marlowe CLI\'s](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/ReadMe.md) `marlowe-cli run analyze` tool to study whether the contract can run on a Cardano network.
 7. Run *all execution paths* of the contract on a [Cardano testnet](https://docs.cardano.org/cardano-testnet/overview).
 
-See [Lesson 1](01-runtime-cli.ipynb) for an example of performing step 6.
+See [Lesson 1](runtime-cli.md) for an example of performing step 6.
 
 ## Transaction 1: Mediator Creates Escrow Contract with Initial ADA
 

@@ -73,11 +73,11 @@ The lesson assumes that the following environment variables have been set.
 
 It also assumes that the Lender and Borrower parties have addresses, signing keys, and funds.
 - Lender
-    - [keys/lender.address](keys/lender.address): Cardano address for the lender
-    - [keys/lender.skey](keys/lender.skey): location of signing key file for the lender
+    - `keys/lender.address`: Cardano address for the lender
+    - `keys/lender.skey`: location of signing key file for the lender
 - Borrower
-    - [keys/borrower.address](keys/borrower.address): Cardano address for the borrower
-    - [keys/borrower.skey](keys/borrower.skey): location of signing key file for the borrower
+    - `keys/borrower.address`: Cardano address for the borrower
+    - `keys/borrower.skey`: location of signing key file for the borrower
 
 ### Access to Cardano node and Marlowe Runtime
 

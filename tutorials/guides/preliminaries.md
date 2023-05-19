@@ -73,7 +73,7 @@ Note the test network magic number:
 - `preprod` = 1
 - `preview` = 2
 
-## Creating Addresses and Signing Keys
+## Creating addresses and signing keys
 
 The [Cardano Developers Portal](https://developers.cardano.org/docs/stake-pool-course/handbook/keys-addresses/) contains instructions for creating addresses and signing keys.
 
@@ -85,7 +85,7 @@ This starter kit uses the following addresses:
 
 The instructions below detail how to create signing keys and addresses for these parties. It is assumed that one has the signing key and address for the faucet and that the faucet is already funded with test ada.
 
-***IMPORTANT:*** The [keys/](keys/) folder holds the signing keys that will be created for interacting with the Marlowe contract. If you delete or lose these files, then you also forever lose the test ada stored at those addresses. Either backup these files or, after running the tutorials, send the remaining test ada back to a more permanent wallet or return it to the faucet.
+***IMPORTANT:*** The `keys/` folder holds the signing keys that will be created for interacting with the Marlowe contract. If you delete or lose these files, then you also forever lose the test ada stored at those addresses. Either backup these files or, after running the tutorials, send the remaining test ada back to a more permanent wallet or return it to the faucet.
 
 ### The Faucet
 
@@ -225,7 +225,7 @@ echo "MEDIATOR_ADDR = $MEDIATOR_ADDR"
     MEDIATOR_ADDR = addr_test1vr6tytqs3x8qgewhw89m3xrz58t3tqu2hfsecw0u06lf3hg052wsv
 
 
-## Obtaining Test Ada
+## Obtaining test ada
 
 In order to execute transactions on a Cardano network, one needs the native currency ada to pay fees and use as funds. There are the faucets for the public testnets at https://docs.cardano.org/cardano-testnet/tools/faucet where one can obtain test ada daily.
 
@@ -241,7 +241,7 @@ echo "FAUCET_ADDR = $FAUCET_ADDR"
     FAUCET_ADDR = addr_test1vq9prvx8ufwutkwxx9cmmuuajaqmjqwujqlp9d8pvg6gupczgtm9j
 
 
-## Fund the Addresses of the Parties
+## Fund the addresses of the parties
 
 We'll fund each address with 1000 test ada.
 
@@ -257,13 +257,13 @@ echo "MEDIATOR_ADDR = $MEDIATOR_ADDR"
     MEDIATOR_ADDR = addr_test1vr6tytqs3x8qgewhw89m3xrz58t3tqu2hfsecw0u06lf3hg052wsv
 
 
-### Using Daedalus or a Web-Browser Wallet
+### Using Daedalus or a browser wallet
 
 If you already have a wallet that contains test ada, then you can just send the funds to the addresses of the keys that we created in the previous section. The screenshot below shows using Daedalus to fund the lender address.
 
 ![Sending funds with Daedalus](/img/daedalus-example.png)
 
-### Using a Local Faucet at the Command Line
+### Using a local faucet at the command line
 
 One can use `cardano-cli` or `marlowe-cli` send funds to an address. Here we use `marlowe-cli`.
 
