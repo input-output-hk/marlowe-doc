@@ -1,0 +1,32 @@
+---
+title: Deploy Marlowe Runtime
+---
+
+In this tutorial, you will deploy Marlowe Runtime with Docker in a Nix environment.
+## Prerequisites
+
+To follow this tutorial, you need to:
+
+ * Have a single or multi-user installation of nix
+ * Working installation of [Docker](https://docs.docker.com/engine/install/)
+
+## Configure binary caches
+
+import Configure from '../_partials/_configure-binary-caches.mdx';
+
+<Configure />
+
+## Start a Nix Shell
+
+Nix is the recommended method of starting an environment to run all the steps below.
+
+```
+nix develop github:input-output-hk/marlowe-starter-kit
+```
+
+## Connect to Marlowe Runtime
+
+Run `docker ps -a` to see a list of the running containers.
+
+Check the service is healthy by running `curl -sSI localhost:3780/healthcheck
+`. If all the containers are running, this should return a 200 response.

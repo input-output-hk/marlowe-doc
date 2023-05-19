@@ -95,7 +95,7 @@ const config = {
             label: 'Documentation',
           },
           {
-            to: 'tutorials/tutorials-overview',
+            to: 'tutorials',
             position: 'left',
             label: 'Tutorials',
           },
