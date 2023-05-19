@@ -11,11 +11,11 @@ The token-swap contract example is a simple Marlowe contract that lets parties t
 
 You can ask questions about Marlowe in [the #ask-marlowe channel on the IOG Discord](https://discord.com/channels/826816523368005654/936295815926927390) or post problems with this lesson to [the issues list for the Marlowe Starter Kit github repository](https://github.com/input-output-hk/marlowe-starter-kit/issues).
 
-In this demonsration we use Marlowe Runtime\'s REST API, served via `marlowe-web-server`, to run this contract on Cardano\'s `preprod` public testnet. Marlowe contracts may use either addresses or role tokens for authorization: here we use role tokens and we have Marlowe Runtime mint them.
+In this demonstration we use Marlowe Runtime\'s REST API, served via `marlowe-web-server`, to run this contract on Cardano\'s `preprod` public testnet. Marlowe contracts may use either addresses or role tokens for authorization: here we use role tokens and we have Marlowe Runtime mint them.
 
 In [Marlowe Playground](https://play.marlowe-finance.io/), the contract looks like this in Blockly format.
 
-![Marlowe contract for swapping tokens](images/swap-playground.png)
+![Marlowe contract for swapping tokens](/img/swap-playground.png)
 
 In Marlowe format it appears as
 ```
@@ -63,7 +63,7 @@ When
 
 ## Preliminaries
 
-See [Lesson 0. Preliminaries](00-preliminaries.md) for information on setting up one's environment for using this tutorial.
+See [Preliminaries](preliminaries.md) for information on setting up one's environment for using this tutorial.
 
 The lesson assumes that the following environment variables have been set.
 - `CARDANO_NODE_SOCKET_PATH`: location of Cardano node's socket.
@@ -81,7 +81,7 @@ It also assumes that the parties have addresses, signing keys, and funds.
 
 ### Access to Cardano node and Marlowe Runtime
 
-If we're using [demeter.run](https://demeter.run/)'s Cardano Marlowe Runtime extension, then we already have access to Cardano Node and Marlowe Runtime. The followind commands will set the required environment variables to use a local docker deployment on the default ports. It will also set some supplementary environment variables.
+If we're using [demeter.run](https://demeter.run/)'s Cardano Marlowe Runtime extension, then we already have access to Cardano Node and Marlowe Runtime. The following commands will set the required environment variables to use a local docker deployment on the default ports. It will also set some supplementary environment variables.
 
 
 ```bash
@@ -145,7 +145,7 @@ Note the test network magic number:
 
 ### Ada Provider address and funds
 
-Check that an address and key has been created for the ada provider. If not, see "Creating Addresses and Signing Keys" in [Lesson 0. Preliminaries](00-preliminaries.md).
+Check that an address and key has been created for the ada provider. If not, see "Creating Addresses and Signing Keys" in [Preliminaries](preliminaries.md).
 
 
 ```bash
@@ -181,7 +181,7 @@ echo "$EXPLORER_URL"/address/"$ADA_PROVIDER_ADDR"
 
 ### Dollar Provider address and funds
 
-Check that an address and key has been created for the dollar provider. If not, see "Creating Addresses and Signing Keys" in [Lesson 0. Preliminaries](00-preliminaries.md).
+Check that an address and key has been created for the dollar provider. If not, see "Creating Addresses and Signing Keys" in [Preliminaries](preliminaries.md).
 
 
 ```bash
@@ -268,7 +268,7 @@ Now design the contract.
 9. Set "Amount of dollars" to 100,000,000, since the units of measure are millionths.
 10. Select "Download as JSON", set the file name to "swap-contract.json", and store the file in this folder, namely [marlowe-starter-kit/](.).
 
-![Setting parameters for the swap contract in Marlowe Playground](images/swap-simulation.png)
+![Setting parameters for the swap contract in Marlowe Playground](/img/swap-simulation.png)
 
 ## Examine the contract
 

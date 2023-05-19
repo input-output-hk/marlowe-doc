@@ -11,11 +11,11 @@ The escrow contract example is a simple Marlowe contract where a seller offers m
 
 You can ask questions about Marlowe in [the #ask-marlowe channel on the IOG Discord](https://discord.com/channels/826816523368005654/936295815926927390) or post problems with this lesson to [the issues list for the Marlowe Starter Kit github repository](https://github.com/input-output-hk/marlowe-starter-kit/issues).
 
-In this demonsration we use Marlowe Runtime\'s REST API, served via `marlowe-web-server`, to run this contract on Cardano\'s `preprod` public testnet. Marlowe contracts may use either addresses or role tokens for authorization: here we use role tokens and we have Marlowe Runtime mint them.
+In this demonstration we use Marlowe Runtime\'s REST API, served via `marlowe-web-server`, to run this contract on Cardano\'s `preprod` public testnet. Marlowe contracts may use either addresses or role tokens for authorization: here we use role tokens and we have Marlowe Runtime mint them.
 
 In [Marlowe Playground](https://play.marlowe-finance.io/), the contract looks like this in Blockly format.
 
-![Marlowe contract for escrow](images/escrow-playground.png)
+![Marlowe contract for escrow](/img/escrow-playground.png)
 
 In Marlowe format it appears as
 ```
@@ -70,11 +70,11 @@ When [
 
 The flow chart below shows the possible execution paths of the escrow contract. This example demonstrates the shaded path.
 
-![Flow chart for escrow contract, with the "dismiss claim" execution path highlighted](images/04-dismiss-claim.svg)
+![Flow chart for escrow contract, with the "dismiss claim" execution path highlighted](/img/04-dismiss-claim.svg)
 
 ## Preliminaries
 
-See [Lesson 0. Preliminaries](00-preliminaries.md) for information on setting up one's environment for using this tutorial.
+See [Preliminaries](preliminaries.md) for information on setting up one's environment for using this tutorial.
 
 The lesson assumes that the following environment variables have been set.
 - `CARDANO_NODE_SOCKET_PATH`: location of Cardano node's socket.
@@ -95,7 +95,7 @@ It also assumes that the parties have addresses, signing keys, and funds.
 
 ### Access to Cardano node and Marlowe Runtime
 
-If we're using [demeter.run](https://demeter.run/)'s Cardano Marlowe Runtime extension, then we already have access to Cardano Node and Marlowe Runtime. The followind commands will set the required environment variables to use a local docker deployment on the default ports. It will also set some supplementary environment variables.
+If we're using [demeter.run](https://demeter.run/)'s Cardano Marlowe Runtime extension, then we already have access to Cardano Node and Marlowe Runtime. The following commands will set the required environment variables to use a local docker deployment on the default ports. It will also set some supplementary environment variables.
 
 
 ```bash
@@ -159,7 +159,7 @@ Note the test network magic number:
 
 ### Seller address and funds
 
-Check that an address and key has been created for the seller. If not, see "Creating Addresses and Signing Keys" in [Lesson 0. Preliminaries](00-preliminaries.md).
+Check that an address and key has been created for the seller. If not, see "Creating Addresses and Signing Keys" in [Preliminaries](preliminaries.md).
 
 
 ```bash
@@ -195,7 +195,7 @@ echo "$EXPLORER_URL"/address/"$SELLER_ADDR"
 
 ### Buyer address and funds
 
-Check that an address and key has been created for the buyer. If not, see "Creating Addresses and Signing Keys" in [Lesson 0. Preliminaries](00-preliminaries.md).
+Check that an address and key has been created for the buyer. If not, see "Creating Addresses and Signing Keys" in [Preliminaries](preliminaries.md).
 
 
 ```bash
@@ -231,7 +231,7 @@ echo "$EXPLORER_URL"/address/"$BUYER_ADDR"
 
 ### Mediator address and funds
 
-Check that an address and key has been created for the mediator. If not, see "Creating Addresses and Signing Keys" in [Lesson 0. Preliminaries](00-preliminaries.md).
+Check that an address and key has been created for the mediator. If not, see "Creating Addresses and Signing Keys" in [Preliminaries](preliminaries.md).
 
 
 ```bash
@@ -318,7 +318,7 @@ If you want to create the contract in Marlowe Playground, do the following:
 
 ***Be careful setting the deadlines because, if these mistakenly are in the past or in the too-near future, then parts of the contract will time out and not operate as described in this tutorial.***
 
-![Setting parameters for the escrow bond contract in Marlowe Playground](images/escrow-simulation.png)
+![Setting parameters for the escrow bond contract in Marlowe Playground](/img/escrow-simulation.png)
 
 ### *Alternative 2:* Use Marlowe CLI to generate the contract
 

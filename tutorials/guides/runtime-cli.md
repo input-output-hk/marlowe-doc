@@ -7,7 +7,7 @@ sidebar_position: 2
 
 The zero-coupon bond example is a simple Marlowe contract where a lender provides principal to a borrower who repays it back with interest.
 
-In this demonsration we use Marlowe Runtime\'s command-line interface, `marlowe-runtime-cli`, to run this contract on Cardano\'s `preprod` public testnet. Marlowe contracts may use either addresses or role tokens for authorization: here we use addresses.
+In this demonstration we use Marlowe Runtime\'s command-line interface, `marlowe-runtime-cli`, to run this contract on Cardano\'s `preprod` public testnet. Marlowe contracts may use either addresses or role tokens for authorization: here we use addresses.
 
 [A video works through this Jupyter notebook.](https://youtu.be/pjDtuD5rimI)
 
@@ -15,7 +15,7 @@ You can ask questions about Marlowe in [the #ask-marlowe channel on the IOG Disc
 
 In [Marlowe Playground](https://play.marlowe-finance.io/), the contract looks like this in Blockly format.
 
-![Zero-coupon bond Marlowe contract](images/01-zcb-contract.png)
+![Zero-coupon bond Marlowe contract](/img/01-zcb-contract.png)
 
 In Marlowe format it appears as
 ```
@@ -63,7 +63,7 @@ When
 
 ## Preliminaries
 
-See [Lesson 0. Preliminaries](00-preliminaries.md) for information on setting up one's environment for using this tutorial.
+See [Preliminaries](preliminaries.md) for information on setting up one's environment for using this tutorial.
 
 The lesson assumes that the following environment variables have been set.
 - `CARDANO_NODE_SOCKET_PATH`: location of Cardano node's socket.
@@ -81,7 +81,7 @@ It also assumes that the Lender and Borrower parties have addresses, signing key
 
 ### Access to Cardano node and Marlowe Runtime
 
-If we're using [demeter.run](https://demeter.run/)'s Cardano Marlowe Runtime extension, then we already have access to Cardano Node and Marlowe Runtime. The followind commands will set the required environment variables to use a local docker deployment on the default ports. It will also set some supplementary environment variables.
+If we're using [demeter.run](https://demeter.run/)'s Cardano Marlowe Runtime extension, then we already have access to Cardano Node and Marlowe Runtime. The following commands will set the required environment variables to use a local docker deployment on the default ports. It will also set some supplementary environment variables.
 
 
 ```bash
@@ -141,7 +141,7 @@ Note the test network magic number:
 
 ### Lender address and funds
 
-Check that an address and key has been created for the lender. If not, see "Creating Addresses and Signing Keys" in [Lesson 0. Preliminaries](00-preliminaries.md).
+Check that an address and key has been created for the lender. If not, see "Creating Addresses and Signing Keys" in [Preliminaries](preliminaries.md).
 
 
 ```bash
@@ -177,7 +177,7 @@ echo "$EXPLORER_URL"/address/"$LENDER_ADDR"
 
 ### Borrower address and funds
 
-Check that an address and key has been created for the borrower. If not, see "Creating Addresses and Signing Keys" in [Lesson 0. Preliminaries](00-preliminaries.md).
+Check that an address and key has been created for the borrower. If not, see "Creating Addresses and Signing Keys" in [Preliminaries](preliminaries.md).
 
 
 ```bash
@@ -874,9 +874,9 @@ marlowe-runtime-cli deposit \
 
 
 
-The [Marlowe Debugging Cookbook](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe/debugging-cookbook.md) guides interpretation of error messages. Also, one can determine the possible actions for the contract at its current stage of execution by studing the contract\'s current state or by using Marlowe playground to simulate the contract.
+The [Marlowe Debugging Cookbook](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe/debugging-cookbook.md) guides interpretation of error messages. Also, one can determine the possible actions for the contract at its current stage of execution by studying the contract\'s current state or by using Marlowe playground to simulate the contract.
 
-![Simulation of zero-coupon bond contract in Marlowe Playground](images/zcb-simulation.png)
+![Simulation of zero-coupon bond contract in Marlowe Playground](/img/zcb-simulation.png)
 
 Once again, use `marlowe-cli` to submit the transaction and then wait for confirmation.
 
@@ -1191,7 +1191,7 @@ echo "$EXPLORER_URL"/transaction/"$TX_3?tab=utxo"
     https://preprod.cardanoscan.io/transaction/d159062c1321707d12d7abe14cfaca1881a7b1e3c65bb4d637070e4fc0da08c3?tab=utxo
 
 
-One can see that the lender received back the 80 ada of principal and the 2 ada deposited when the contract was created, along with the additional 5 ada of interest, totallying 87 ada.
+One can see that the lender received back the 80 ada of principal and the 2 ada deposited when the contract was created, along with the additional 5 ada of interest, totalling 87 ada.
 
 
 ```bash

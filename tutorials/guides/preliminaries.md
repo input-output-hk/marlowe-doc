@@ -5,7 +5,7 @@ sidebar_position: 1
 
 ***Before running this notebook, you might want to use Jupyter's "clear output" function to erase the results of the previous execution of this notebook. That will make more apparent what has been executed in the current session.***
 
-The [demeter.run](https://demeter.run/) web3 development platform provides an extension *Cardano Marlowe Runtime* that has Marlowe tools installed and makes available the Marlowe Runtime backend services and a Cardano node. If you are not using [demeter.run](https://demeter.run/), then see [the docker page](docker.md) for instructions on deploying Marlowe Runtime using docker.
+The [demeter.run](https://demeter.run/) web3 development platform provides an extension *Cardano Marlowe Runtime* that has Marlowe tools installed and makes available the Marlowe Runtime backend services and a Cardano node. If you are not using [demeter.run](https://demeter.run/), then see [the docker page](../playbooks/deploy-marlowe-runtime.mdx) for instructions on deploying Marlowe Runtime using docker.
 
 This notebook provides instructions on setting up signing keys and addresses for this starter kit. It covers the following information:
 
@@ -32,11 +32,11 @@ Three alternative workflows are available for running Marlowe contracts:
 
 Marlowe Runtime provides a variety of transaction-building, UTxO management, querying, and submission services for using Marlowe contracts: this makes it easy to run Marlowe contracts without attending to the details of the Cardano ledger and Plutus smart contracts. On the contrary, Marlowe CLI does not support querying and UTxO management, so it is best suited for experienced Cardano developers.
 
-![Tools for Running and Querying Marlowe Contracts](images/marlowe-tools.png)
+![Tools for Running and Querying Marlowe Contracts](/img/marlowe-tools.png)
 
 ### Access to Cardano node and Marlowe Runtime
 
-If we're using [demeter.run](https://demeter.run/)'s Cardano Marlowe Runtime extension, then we already have access to Cardano Node and Marlowe Runtime. The followind commands will set the required environment variables to use a local docker deployment on the default ports. It will also set some supplementary environment variables.
+If we're using [demeter.run](https://demeter.run/)'s Cardano Marlowe Runtime extension, then we already have access to Cardano Node and Marlowe Runtime. The following commands will set the required environment variables to use a local docker deployment on the default ports. It will also set some supplementary environment variables.
 
 
 ```bash
@@ -259,9 +259,9 @@ echo "MEDIATOR_ADDR = $MEDIATOR_ADDR"
 
 ### Using Daedalus or a Web-Browser Wallet
 
-If you already have a wallet wallet that contains test ada, then you can just send the funds to the addresses of the keys that we created in the previous section. The screenshot below shows using Daedalus to fund the lender address.
+If you already have a wallet that contains test ada, then you can just send the funds to the addresses of the keys that we created in the previous section. The screenshot below shows using Daedalus to fund the lender address.
 
-![Sending funds with Daedalus](images/daedalus-example.png)
+![Sending funds with Daedalus](/img/daedalus-example.png)
 
 ### Using a Local Faucet at the Command Line
 

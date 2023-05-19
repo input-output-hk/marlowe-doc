@@ -11,11 +11,11 @@ The zero-coupon bond example is a simple Marlowe contract where a lender provide
 
 You can ask questions about Marlowe in [the #ask-marlowe channel on the IOG Discord](https://discord.com/channels/826816523368005654/936295815926927390) or post problems with this lesson to [the issues list for the Marlowe Starter Kit github repository](https://github.com/input-output-hk/marlowe-starter-kit/issues).
 
-In this demonsration we use Marlowe Runtime\'s REST API, served via `marlowe-web-server`, to run this contract on Cardano\'s `preprod` public testnet. Marlowe contracts may use either addresses or role tokens for authorization: here we use role tokens and we have Marlowe Runtime mint them.
+In this demonstration we use Marlowe Runtime\'s REST API, served via `marlowe-web-server`, to run this contract on Cardano\'s `preprod` public testnet. Marlowe contracts may use either addresses or role tokens for authorization: here we use role tokens and we have Marlowe Runtime mint them.
 
 In [Marlowe Playground](https://play.marlowe-finance.io/), the contract looks like this in Blockly format.
 
-![Zero-coupon bond Marlowe contract](images/02-zcb-contract.png)
+![Zero-coupon bond Marlowe contract](/img/02-zcb-contract.png)
 
 In Marlowe format it appears as
 ```
@@ -63,7 +63,7 @@ When
 
 ## Preliminaries
 
-See [Lesson 0. Preliminaries](00-preliminaries.md) for information on setting up one's environment for using this tutorial.
+See [Preliminaries](preliminaries.md) for information on setting up one's environment for using this tutorial.
 
 The lesson assumes that the following environment variables have been set.
 - `CARDANO_NODE_SOCKET_PATH`: location of Cardano node's socket.
@@ -81,7 +81,7 @@ It also assumes that the Lender and Borrower parties have addresses, signing key
 
 ### Access to Cardano node and Marlowe Runtime
 
-If we're using [demeter.run](https://demeter.run/)'s Cardano Marlowe Runtime extension, then we already have access to Cardano Node and Marlowe Runtime. The followind commands will set the required environment variables to use a local docker deployment on the default ports. It will also set some supplementary environment variables.
+If we're using [demeter.run](https://demeter.run/)'s Cardano Marlowe Runtime extension, then we already have access to Cardano Node and Marlowe Runtime. The following commands will set the required environment variables to use a local docker deployment on the default ports. It will also set some supplementary environment variables.
 
 
 ```bash
@@ -145,7 +145,7 @@ Note the test network magic number:
 
 ### Lender address and funds
 
-Check that an address and key has been created for the lender. If not, see "Creating Addresses and Signing Keys" in [Lesson 0. Preliminaries](00-preliminaries.md).
+Check that an address and key has been created for the lender. If not, see "Creating Addresses and Signing Keys" in [Preliminaries](preliminaries.md).
 
 
 ```bash
@@ -181,7 +181,7 @@ echo "$EXPLORER_URL"/address/"$LENDER_ADDR"
 
 ### Borrower address and funds
 
-Check that an address and key has been created for the borrower. If not, see "Creating Addresses and Signing Keys" in [Lesson 0. Preliminaries](00-preliminaries.md).
+Check that an address and key has been created for the borrower. If not, see "Creating Addresses and Signing Keys" in [Preliminaries](preliminaries.md).
 
 
 ```bash
@@ -268,7 +268,7 @@ If you want to create the contract in Marlowe Playground, do the following:
 8. Set the "Interest" to 5 ada.
 9. Select "Download as JSON", set the file name to "zcb-contract.json", and store the file in this folder, namely [marlowe-starter-kit/01-runtime-rest/](.).
 
-![Setting parameters for the zero-coupon bond contract in Marlowe Playground](images/zcb-playground.png)
+![Setting parameters for the zero-coupon bond contract in Marlowe Playground](/img/zcb-playground.png)
 
 ### *Alternative 2:* Use Marlowe CLI to generate the contract
 
@@ -1308,4 +1308,4 @@ curl -sS "$MARLOWE_RT_WEBSERVER_URL/openapi.json" | json2yaml | head -n 20
 
 It is also available at https://marlowe-finance.io/docs/development/runtime-rest-api/.
 
-![Marlowe Runtime OpenAPI](images/openapi.png)
+![Marlowe Runtime OpenAPI](/img/openapi.png)
