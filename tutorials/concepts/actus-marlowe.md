@@ -185,6 +185,8 @@ Example ACTUS contract terms: one installment of interest, followed by the repay
 
 The example produces the following projected cash-flows:
 
+| Contract Id | Event Type | Event Time | Amount | Currency |
+| --- | --- | --- | --- | --- |
 |PAM example|IED|2024-01-01 00:00:00:000|-20.0|₳|
 |PAM example|IP|2025-01-01 00:00:00:000|2.0|₳|
 |PAM example|MD|2025-01-01 00:00:00:000|20.0|₳|
