@@ -147,3 +147,90 @@ couponBondFor3Month12Percent =
 > bond is issued, and who will pay that counterparty if the issuer
 > defaults; if the issuer does make the payment in time, then the
 > guarantor should recover their money.
+
+## ACTUS Contract Terms
+
+In general an ACTUS contract is specified by the ACTUS contract terms. The technical specification
+of the ACTUS taxonomy defines all the parameters that are allowed in the ACTUS contract terms in a
+[dictionary](https://github.com/actusfrf/actus-dictionary/blob/master/actus-dictionary-terms.json).
+ACTUS contract terms fully describe a financial contract and therefore allow to generate projected
+cash-flows. The projected cash-flow then are used as a basis to generate Marlowe contracts
+corresponding to ACTUS contracts terms.
+
+The ACTUS Principle At Maturity (PAM) contract is a loan with periodic interest payments on a fixed
+schedule and a final payment of the principal.
+
+Example ACTUS contract terms: one installment of interest, followed by the repayment of the principal
+
+``` json
+{
+ "contractType": "PAM",
+ "contractID": "pam example",
+ "statusDate": "2023-12-31T00:00:00",
+ "contractDealDate": "2023-12-28T00:00:00",
+ "currency": "ADA",
+ "notionalPrincipal": "20",
+ "initialExchangeDate": "2024-01-01T00:00:00",
+ "maturityDate": "2025-01-01T00:00:00",
+ "nominalInterestRate": "0.1",
+ "cycleAnchorDateOfInterestPayment": "2025-01-01T00:00:00",
+ "cycleOfInterestPayment": "P1YL0",
+ "dayCountConvention": "30E360",
+ "endOfMonthConvention": "SD",
+ "premiumDiscountAtIED": "   0",
+ "rateMultiplier": "1.0",
+ "contractRole": "RPA"
+}
+```
+
+The example produces the following projected cash-flows:
+
+|PAM example|IED|2024-01-01 00:00:00:000|-20.0|₳|
+|PAM example|IP|2025-01-01 00:00:00:000|2.0|₳|
+|PAM example|MD|2025-01-01 00:00:00:000|20.0|₳|
+
+That are translated into the following Marlowe contract:
+
+```
+When [
+  (Case
+     (Deposit
+        (Role "party")
+        (Role "party")
+        (Token "" "")
+        (Constant 20000000))
+     (Pay
+        (Role "party")
+        (Party
+           (Role "counterparty"))
+        (Token "" "")
+        (Constant 20000000)
+        (When [
+           (Case
+              (Deposit
+                 (Role "counterparty")
+                 (Role "counterparty")
+                 (Token "" "")
+                 (Constant 2000000))
+              (Pay
+                 (Role "counterparty")
+                 (Party
+                    (Role "party"))
+                 (Token "" "")
+                 (Constant 2000000)
+                 (When [
+                    (Case
+                       (Deposit
+                          (Role "counterparty")
+                          (Role "counterparty")
+                          (Token "" "")
+                          (Constant 20000000))
+                       (Pay
+                          (Role "counterparty")
+                          (Party
+                             (Role "party"))
+                          (Token "" "")
+                          (Constant 20000000) Close))] 1735689600000 Close)))] 1735689600000 Close)))] 1704067200000 Close
+```
+
+The ACTUS specification is implemented in a separate [repository](https://github.com/input-output-hk/actus-core).
