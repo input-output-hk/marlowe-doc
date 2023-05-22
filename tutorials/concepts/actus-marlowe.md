@@ -191,7 +191,7 @@ The example produces the following projected cash-flows:
 
 That are translated into the following Marlowe contract:
 
-```
+``` haskell
 When [
   (Case
      (Deposit
