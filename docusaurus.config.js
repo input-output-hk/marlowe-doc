@@ -111,15 +111,15 @@ const config = {
               },
               {
                 label: 'Stack Exchange',
-                href: 'https://cardano.stackexchange.com/',
+                href: 'https://cardano.stackexchange.com/questions/tagged/marlowe',
               },
               {
                 label: 'Discord',
-                href: 'https://discord.gg/inputoutput',
+                href: 'https://discord.com/channels/826816523368005654/936295815926927390',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/InputOutputHK',
+                href: 'https://twitter.com/marlowe_io',
               },
             ],
           },
