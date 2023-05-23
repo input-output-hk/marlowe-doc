@@ -150,17 +150,17 @@ couponBondFor3Month12Percent =
 
 ## ACTUS Contract Terms
 
-In general an ACTUS contract is specified by the ACTUS contract terms. The technical specification
+In general, an ACTUS contract is specified by the ACTUS contract terms. The technical specification
 of the ACTUS taxonomy defines all the parameters that are allowed in the ACTUS contract terms in a
 [dictionary](https://github.com/actusfrf/actus-dictionary/blob/master/actus-dictionary-terms.json).
-ACTUS contract terms fully describe a financial contract and therefore allow to generate projected
-cash-flows. The projected cash-flow then are used as a basis to generate Marlowe contracts
-corresponding to ACTUS contracts terms.
+ACTUS contract terms fully describe a financial contract and, therefore, allow projected cashflows
+to be generated. The projected cashflows are then used as a basis to generate Marlowe contracts
+corresponding to ACTUS contract terms.
 
 The ACTUS Principle At Maturity (PAM) contract is a loan with periodic interest payments on a fixed
 schedule and a final payment of the principal.
 
-Example ACTUS contract terms: one installment of interest, followed by the repayment of the principal
+Example ACTUS contract terms: one installment of interest, followed by the repayment of the principal.
 
 ``` json
 {
@@ -183,7 +183,7 @@ Example ACTUS contract terms: one installment of interest, followed by the repay
 }
 ```
 
-The example produces the following projected cash-flows:
+The example produces the following projected cashflows:
 
 | Contract Id | Event Type | Event Time | Amount | Currency |
 | --- | --- | --- | --- | --- |
@@ -191,7 +191,7 @@ The example produces the following projected cash-flows:
 |PAM example|IP|2025-01-01 00:00:00:000|2.0|₳|
 |PAM example|MD|2025-01-01 00:00:00:000|20.0|₳|
 
-That are translated into the following Marlowe contract:
+The projected cashflows are translated into the following Marlowe contract:
 
 ``` haskell
 When [
