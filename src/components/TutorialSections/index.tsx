@@ -78,7 +78,7 @@ function TutorialSections() {
                 </p>
               </div>
               <div className="card__footer">
-                <Link to="/tutorials/concepts/overview">
+                <Link to="/tutorials/videos">
                   Start <ArrowRight className="arrow" />
                 </Link>
               </div>
