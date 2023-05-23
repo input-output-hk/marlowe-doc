@@ -16,11 +16,11 @@ function DocsFooter() {
         <img src={useBaseUrl('/img/marlowe-logo-primary-white-purple.svg')} className={styles['dark-logo']} />
       </div>
       <div className={styles['copyright-wrapper']}>
-      {`© ${new Date().getFullYear()} IOHK All rights reserved`}
+      {`© ${new Date().getFullYear()} Input Output Global, Inc. All Rights Reserved.`}
       </div>
       <div className={styles['footer-icon-wrapper']}>
         <div className={styles['social-icon']}>
-          <Link href="https://github.com/input-output-hk/marlowe" rel="noopener noreferrer">
+          <Link href="https://github.com/input-output-hk/marlowe-cardano" rel="noopener noreferrer">
             <Github />
           </Link>
         </div>
@@ -30,7 +30,7 @@ function DocsFooter() {
           </Link>
         </div>
         <div className={styles['social-icon']}>
-          <Link href="https://twitter.com/InputOutputHK" rel="noopener noreferrer">
+          <Link href="https://twitter.com/marlowe_io" rel="noopener noreferrer">
             <Twitter />
           </Link>
         </div>

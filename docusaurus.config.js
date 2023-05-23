@@ -34,8 +34,8 @@ const config = {
         },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/input-output-hk/marlowe-doc/edit/main/docs',
+          // editUrl:
+          //   'https://github.com/input-output-hk/marlowe-doc/edit/main/docs',
         },
         blog: false,
         theme: {
@@ -86,6 +86,7 @@ const config = {
           alt: 'Marlowe Logo',
           src: 'img/marlowe-logo-primary-black-purple.svg',
           srcDark: 'img/marlowe-logo-primary-white-purple.svg',
+          href: 'https://marlowe.iohk.io/',
         },
         items: [
           {
