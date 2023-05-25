@@ -3,7 +3,7 @@ title: Marlowe Playground
 sidebar_position: 3
 ---
 
-In the following video, Pablo Lamela, Marlowe Engineering Lead, shows how to create Marlowe contracts in [Marlowe Playground](https://play.marlowe-finance.io/#/) using Blockly. 
+In the following video, Pablo Lamela, Marlowe Engineering Lead, shows how to create Marlowe contracts in [Marlowe Playground](https://play.marlowe.iohk.io/#/) using Blockly. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/EgCqG0hPmwc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen = "true"></iframe>
 
@@ -15,7 +15,7 @@ Once you have created a contract, you can analyze its behavior through formal ve
 
 ## Multiple Playground language options for creating Marlowe smart contracts
 
-The [Playground](https://play.marlowe-finance.io/#/) provides multiple language options for building contracts: 
+The [Playground](https://play.marlowe.iohk.io/#/) provides multiple language options for building contracts: 
 
 1. Use the Blockly visual drag and drop programming tool to create contracts by fitting together blocks that represent the different components. Blockly is an intuitive low-code tool to get started with building Marlowe smart contracts. 
 

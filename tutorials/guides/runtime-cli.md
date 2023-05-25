@@ -13,7 +13,7 @@ In this demonstration we use Marlowe Runtime\'s command-line interface, `marlowe
 
 You can ask questions about Marlowe in [the #ask-marlowe channel on the IOG Discord](https://discord.com/channels/826816523368005654/936295815926927390) or post problems with this lesson to [the issues list for the Marlowe Starter Kit github repository](https://github.com/input-output-hk/marlowe-starter-kit/issues).
 
-In [Marlowe Playground](https://play.marlowe-finance.io/), the contract looks like this in Blockly format.
+In [Marlowe Playground](https://play.marlowe.iohk.io/), the contract looks like this in Blockly format.
 
 ![Zero-coupon bond Marlowe contract](/img/01-zcb-contract.png)
 
@@ -213,7 +213,7 @@ echo "$EXPLORER_URL"/address/"$BORROWER_ADDR"
 
 ## Design the contract
 
-The zero-coupon bond contract can be downloaded from the [Marlowe Playground](https://play.marlowe-finance.io/) as a JSON file, or it can be generated using [Marlowe CLI](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-cli#readme) using the `marlowe-cli template` command.
+The zero-coupon bond contract can be downloaded from the [Marlowe Playground](https://play.marlowe.iohk.io/) as a JSON file, or it can be generated using [Marlowe CLI](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-cli#readme) using the `marlowe-cli template` command.
 
 Here we generate the contract using Marlowe CLI.
 
@@ -408,7 +408,7 @@ Here are the steps for checking the safety of a contract:
 2. Understand Cardano\'s [Extended UTxO Model](https://docs.cardano.org/learn/eutxo-explainer).
 3. Read and understand the [Marlowe Best Practices Guide](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe/best-practices.md).
 4. Read and understand the [Marlowe Security Guide](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe/security.md).
-5. Use [Marlowe Playground](https://play.marlowe-finance.io/) to flag warnings, perform static analysis, and simulate the contract.
+5. Use [Marlowe Playground](https://play.marlowe.iohk.io/) to flag warnings, perform static analysis, and simulate the contract.
 6. Use [Marlowe CLI\'s](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/ReadMe.md) `marlowe-cli run analyze` tool to study whether the contract can run on a Cardano network.
 7. Run *all execution paths* of the contract on a [Cardano testnet](https://docs.cardano.org/cardano-testnet/overview).
 

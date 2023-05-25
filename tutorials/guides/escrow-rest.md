@@ -13,7 +13,7 @@ You can ask questions about Marlowe in [the #ask-marlowe channel on the IOG Disc
 
 In this demonstration we use Marlowe Runtime\'s REST API, served via `marlowe-web-server`, to run this contract on Cardano\'s `preprod` public testnet. Marlowe contracts may use either addresses or role tokens for authorization: here we use role tokens and we have Marlowe Runtime mint them.
 
-In [Marlowe Playground](https://play.marlowe-finance.io/), the contract looks like this in Blockly format.
+In [Marlowe Playground](https://play.marlowe.iohk.io/), the contract looks like this in Blockly format.
 
 ![Marlowe contract for escrow](/img/escrow-playground.png)
 
@@ -267,7 +267,7 @@ echo "$EXPLORER_URL"/address/"$MEDIATOR_ADDR"
 
 ## Design the contract
 
-The escrow contract can be downloaded from the [Marlowe Playground](https://play.marlowe-finance.io/) as a JSON file, or it can be generated using [Marlowe CLI](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-cli#readme) using the `marlowe-cli template` command.
+The escrow contract can be downloaded from the [Marlowe Playground](https://play.marlowe.iohk.io/) as a JSON file, or it can be generated using [Marlowe CLI](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-cli#readme) using the `marlowe-cli template` command.
 
 Set the purchase prices to 75 ada.
 
@@ -305,7 +305,7 @@ HOUR=$((60 * MINUTE)) # 1 hour = 60 minutes
 
 If you want to create the contract in Marlowe Playground, do the following:
 
-1. Visit https://play.marlowe-finance.io/ in a web browser.
+1. Visit https://play.marlowe.iohk.io/ in a web browser.
 2. Select "Open an Example".
 3. Select "Marlowe" or "Blockly" under "Escrow".
 4. Select "Send to Simulator".
@@ -528,7 +528,7 @@ Here are the steps for checking the safety of a contract:
 2. Understand Cardano\'s [Extended UTxO Model](https://docs.cardano.org/learn/eutxo-explainer).
 3. Read and understand the [Marlowe Best Practices Guide](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe/best-practices.md).
 4. Read and understand the [Marlowe Security Guide](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe/security.md).
-5. Use [Marlowe Playground](https://play.marlowe-finance.io/) to flag warnings, perform static analysis, and simulate the contract.
+5. Use [Marlowe Playground](https://play.marlowe.iohk.io/) to flag warnings, perform static analysis, and simulate the contract.
 6. Use [Marlowe CLI\'s](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/ReadMe.md) `marlowe-cli run analyze` tool to study whether the contract can run on a Cardano network.
 7. Run *all execution paths* of the contract on a [Cardano testnet](https://docs.cardano.org/cardano-testnet/overview).
 

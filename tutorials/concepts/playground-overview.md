@@ -5,7 +5,7 @@ sidebar_position: 7
 
 # The Marlowe Playground
 
-This tutorial gives an overview of the [Marlowe Playground](https://play.marlowe-finance.io/#/), an online tool that allows users to create, to analyse, to interact with and to simulate the operation of embedded Marlowe contracts.
+This tutorial gives an overview of the [Marlowe Playground](https://play.marlowe.iohk.io/#/), an online tool that allows users to create, to analyse, to interact with and to simulate the operation of embedded Marlowe contracts.
 
 ## Introducing the Marlowe Playground
 
