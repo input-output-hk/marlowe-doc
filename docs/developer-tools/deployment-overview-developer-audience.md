@@ -5,7 +5,7 @@ sidebar_position: 2
 
 ## How do I run my Marlowe contract on the Cardano blockchain?
 
-1. Design your contract using [Marlowe Playground](https://play.marlowe-finance.io/#/).
+1. Design your contract using [Marlowe Playground](https://play.marlowe.iohk.io/#/).
 
 2. Press the `Send to Simulator` button and then press `Download as JSON` to download your contract in JSON format.
 
