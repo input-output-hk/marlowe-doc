@@ -1,6 +1,6 @@
 ---
 title: Marlowe Playground
-sidebar_position: 3
+sidebar_position: 1
 ---
 
 In the following video, Pablo Lamela, Marlowe Engineering Lead, shows how to create Marlowe contracts in [Marlowe Playground](https://play.marlowe.iohk.io/#/) using Blockly. 
