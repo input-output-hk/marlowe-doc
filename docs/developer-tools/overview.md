@@ -1,7 +1,33 @@
 ---
-title: Development and deployment overview
-sidebar_position: 2
+title: Overview
+sidebar_position: 0
 ---
+
+![Developer tools ecosystem](/img/dev-tools-ecosystem.png)
+
+### Marlowe Runtime
+
+Marlowe Runtime consists of a series of services that can be divided into frontend and backend components. Marlowe Runtime Backend Services are off-chain components largely responsible for interfacing with a Cardano node. They offer abstractions to hide many implementation details of Plutus and Cardano node directly.
+
+To interface with Marlowe Runtime, there are two ways:
+ - Marlowe Runtime Web's REST API
+ - Using `marlowe-cli`
+
+There are two main use cases when considering usage of Marlowe as a layer for smart contract developers. Depending on the complexity of the smart contract and DApp, higher level operations provide a simplified interface for focusing mainly on smart contract logic rather than implementation details. However, more complex workflows might need lower level control where an understanding of Plutus might be required.
+
+#### High level operation
+
+* Supports a straightforward workflow for users that just want to run contracts from the command line.
+* Hides details of input and state of Marlowe contracts.
+* Hides and automates many aspects of Plutus and interaction with the Cardano node.
+* Focuses on the Marlowe contract.
+
+#### Low level operation
+
+* Supports developer workflows for debugging and fine-grained control of each atomic operation involved in running Marlowe contracts.
+* Controls modification of Marlowe state and construction of Marlowe input.
+* Controls construction and submission of validators, datums, and redeemers.
+* Focus on the mechanics of Marlowe on Plutus and Cardano.
 
 ## How do I run my Marlowe contract on the Cardano blockchain?
 
@@ -20,4 +46,3 @@ sidebar_position: 2
 ## Running your contract with Marlowe Runtime
 
 5. *If you want to run your contract from the command-line using the Marlowe Runtime backend,* then follow the [tutorial for Marlowe Runtime](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/tutorial.ipynb). A video [Marlowe Runtime Tutorial](https://youtu.be/WlsX9GhpKu8) demonstrates its use.
-
