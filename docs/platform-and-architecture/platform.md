@@ -7,7 +7,7 @@ sidebar_position: 2
 
 When compared to a [Turing-complete](https://en.wikipedia.org/wiki/Turing_completeness) language, the Marlowe DSL provides significantly greater security, certainty, [guarantees of termination](https://en.wikipedia.org/wiki/Halting_problem), and behavior correctness.
 
-The design guarantees the following:
+The design ensures the following:
 - Contracts are finite. No recursion or loops.
 - Contracts will terminate. Timeout on all actions.
 - Contracts have a defined lifetime. 
@@ -46,7 +46,7 @@ Instead, the contract can wait for a period of time for the participant to commi
 This prevents a participant from being able to stop a contract merely by choosing to not take part. 
 
 At this point any unspent funds left in the contract are **refunded** to participants, and the contract stops, or *terminates*. 
-Any funds put into the contract by a participant *can\'t be locked up forever*: at this point the commitment effectively ends.
+Any funds put into the contract by a participant *can't be locked up forever*: at this point the commitment effectively ends.
 
 In Marlowe, a running contract cannot force a deposit or a choice to happen: all it can do is to request a deposit or choice from a participant. 
 In other words, for these actions it cannot "*push*," but it can "*pull*." 

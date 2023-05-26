@@ -12,7 +12,7 @@ Beyond the notable benefit of being usable by non-programmers, the Marlowe langu
 *   Ensures that certain sorts of flawed programs cannot even be written by designing those possibilities out of the language. 
 *   Avoids some of the unanticipated exploits which have been a problem for existing blockchains.
 *   More easily checks that programs have the intended properties. 
-*   Makes sure that the contract will never fail to make a payment that it should.
+*   Ensures that the contract consistently fulfills its payment obligations.
 *   Helps people write programs in the language using special-purpose tools. 
 *   Emulates how a contract will behave before it is run for real on the blockchain, ensuring that the contract performs as intended through static analysis.
 *   Provides valuable diagnostics to potential participants before they commit to a contract. 
