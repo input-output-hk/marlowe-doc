@@ -168,6 +168,3 @@ There is a data structure in the Haskell source files that describes the differe
 There is a message type that shows what all the available messages are for that protocol. 
 Each message indicates the initial state of the message. 
 For example, `RunMarloweSync` starts in the state `StInit`, then transitions into the `MarloweSync.StInit` state. 
-
-> For more detailed documentation about the typed protocol framework, please see: [Network.TypedProtocol.Core documentation](https://input-output-hk.github.io/ouroboros-network/typed-protocols/Network-TypedProtocol-Core.html). 
-

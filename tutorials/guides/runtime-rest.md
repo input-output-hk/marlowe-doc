@@ -266,7 +266,7 @@ If you want to create the contract in Marlowe Playground, do the following:
 6. Set the "Payback Deadline" to three hours into the future.
 7. Set the "Principal" to 80 ada.
 8. Set the "Interest" to 5 ada.
-9. Select "Download as JSON", set the file name to "zcb-contract.json", and store the file in this folder, namely [marlowe-starter-kit/01-runtime-rest/](.).
+9. Select "Download as JSON", set the file name to "zcb-contract.json", and store the file in this folder, namely `marlowe-starter-kit/02-runtime-rest/`.
 
 ![Setting parameters for the zero-coupon bond contract in Marlowe Playground](/img/zcb-playground.png)
 
@@ -1306,6 +1306,6 @@ curl -sS "$MARLOWE_RT_WEBSERVER_URL/openapi.json" | json2yaml | head -n 20
             type: object
 
 
-It is also available at https://marlowe-finance.io/docs/development/runtime-rest-api/.
+It is also available at the [Reference API](/api/introduction) page.
 
 ![Marlowe Runtime OpenAPI](/img/openapi.png)
