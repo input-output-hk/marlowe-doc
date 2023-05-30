@@ -123,7 +123,9 @@ function DocsFooter() {
             <p className={styles.disclaimer}>
               Disclaimer: The Playground is a tool for simulating Marlowe smart
               contracts in a testing environment and is not intended for mainnet
-              deployment or on-chain use.
+              deployment or on-chain use. Nothing on this website is intended to
+              be professional advice, including without limitation, financial,
+              investment, or advice.
             </p>
             <p className={styles.copyright}>
               © {new Date().getFullYear()} Input Output Global, Inc. All Rights
