@@ -92,7 +92,7 @@ To make sure that the contract makes progress eventually, the contract `When cas
 
 A let contract `Let id val cont` allows a contract to *record* a value, at a particular point in time, and gives it a name using an identifier. In this case, the expression `val` is evaluated and stored with the name `id`. The contract then continues as `cont`.
 
-As well as allowing us to use abbreviations, this mechanism also means that we can capture and save volatile values that might change over time, e.g., the current price of oil, or the current slot number, at a particular point in the execution of the contract, to be used later on in contract execution.
+As well as allowing us to use abbreviations, this mechanism also means that we can capture and save volatile values that might change over time, for example, the current price of oil, or the current slot number, at a particular point in the execution of the contract, to be used later on in contract execution.
 
 ### Assert
 
