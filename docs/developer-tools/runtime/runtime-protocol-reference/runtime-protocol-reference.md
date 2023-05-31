@@ -6,22 +6,22 @@ sidebar_position: 1
 ## Introduction
 
 Marlowe Runtime is the application backend for managing Marlowe contracts on the Cardano blockchain. 
-The term "Runtime" refers to the whole system, its components and sub-components. 
-The Runtime and its protocols and sub-protocols communicate with one another to enable the Runtime core functions, which are discovering and querying on-chain Marlowe contracts, and creating Marlowe transactions. 
+The term "Runtime" refers to the whole system, its components, and sub-components. 
+Runtime and its protocols and sub-protocols communicate with one another to enable Runtime core functions, which are discovering and querying on-chain Marlowe contracts, and creating Marlowe transactions. 
 
-The Marlowe Runtime protocol enables communicating with the Runtime directly. 
+The Marlowe Runtime protocol enables communicating with Runtime directly. 
 
-These protocols, and specifically this root-level `marlowe-runtime-cli` protocol, is the primary API for the Runtime. 
-If you want to communicate with the Runtime, ultimately, you will be using the `marlowe-runtime-cli` protocol and its sub-protocols. 
+These protocols, and specifically this root-level `marlowe-runtime-cli` protocol, is the primary API for Runtime. 
+If you want to communicate with Runtime, ultimately, you will be using the `marlowe-runtime-cli` protocol and its sub-protocols. 
 
-In the larger context of working with the Runtime, you don't necessarily need to be aware of the protocols to be able to communicate with the Runtime. 
-For example, if you are using the REST API or Runtime CLI, under the hood, they all communicate with the Runtime using this protocol, as does everything that communicates with the Runtime. 
+In the larger context of working with Runtime, you don't necessarily need to be aware of the protocols to be able to communicate with Runtime. 
+For example, if you are using the REST API or Runtime CLI, under the hood, they all communicate with Runtime using this protocol, as does everything that communicates with Runtime. 
 
 ### Intended audience
 
-This document is intended for developers who are writing client applications that interact with the Runtime. 
-You may be writing scripts, command-line tools, servers for DApps that communicate with the Runtime, or something similar. 
-If you don't want to use the REST API, Runtime CLI or Marlowe CLI, or any other intermediary, but instead want to connect directly to the TCP socket that the Runtime exposes, this document is a useful reference because it describes the behavior and syntax of these protocols, their states and messages. 
+This document is intended for developers who are writing client applications that interact with Runtime. 
+You may be writing scripts, command-line tools, servers for DApps that communicate with Runtime, or something similar. 
+If you don't want to use the REST API, Runtime CLI, or Marlowe CLI, or any other intermediary, but instead want to connect directly to the TCP socket that Runtime exposes, this document is a useful reference because it describes the behavior, syntax, states, and messages of these protocols. 
 
 ## Key concepts
 
@@ -30,11 +30,11 @@ If you don't want to use the REST API, Runtime CLI or Marlowe CLI, or any other 
 | Peer role | The peer role is either server or client. All protocol sessions take place between two peers -- one server and one client. | 
 | Protocol state | A description of the current state of a protocol session. | 
 | Peer agency | Describes which peer role is able to send messages to the other in a given protocol state. Agency is exclusive (either server or client has agency, never both). When one peer is able to send a message to the other peer, it has agency. When a peer is in a state of only being able to receive a message, we say it does not have agency. States in which neither peer has agency are terminal states. | 
-| Messages | Packets of data that a peer can send to another peer when it has agency. When a message is sent, that event transitions the protocol state from one state to another state. | 
+| Messages | Packets of data that a peer can send to another peer when it has agency. When a message is sent, that event transitions the protocol state from one state to another. | 
 
 ### About messages and agency
 
-Certain message types are only available from certain states, and when a peer sends a message to the other peer, it changes the state of the protocol, potentially changing the peer agency as well. 
+Certain message types are only available from certain states, and when a peer sends a message to another, it changes the state of the protocol, potentially changing the peer agency also. 
 In the majority of cases, agency alternates when a peer sends a message to the other peer. 
 For example, the client will send a message to the server, then the server will gain agency. 
 Then the server sends a message back to the client and the client will gain agency again. 
@@ -69,26 +69,26 @@ stateDiagram-v2
 
 :::info 
 
-The protocols are all defined using the [typed-protocols library](https://github.com/input-output-hk/typed-protocols). 
+The protocols are all defined using the **[typed-protocols library](https://github.com/input-output-hk/typed-protocols)**. 
 
 :::
 
 The top-level protocol is the Marlowe Runtime protocol. It is defined here: 
 
-* [https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/proxy-api/Language/Marlowe/Protocol/Types.hs](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/proxy-api/Language/Marlowe/Protocol/Types.hs)
+- **[https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/proxy-api/Language/Marlowe/Protocol/Types.hs](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/proxy-api/Language/Marlowe/Protocol/Types.hs)**
 
 ### Four sub-protocols
 
 The Marlowe Runtime protocol consists of four sub-protocols: 
 
-1. [Marlowe Sync](marlowesync-subprotocol.md)
-2. [Marlowe Header Sync](marloweheadersync-subprotocol.md)
-3. [Marlowe Query](marlowequery-subprotocol.md) 
-4. [Tx Job](txjob-subprotocol.md) 
+1. **[Marlowe Sync](marlowesync-subprotocol.md)**
+2. **[Marlowe Header Sync](marloweheadersync-subprotocol.md)**
+3. **[Marlowe Query](marlowequery-subprotocol.md)** 
+4. **[Tx Job](txjob-subprotocol.md)** 
 
 ### Client starts session
 
-The Client starts a session by sending a message to the server saying which sub-protocol it intends to communicate with, then a protocol session for the sub-protocol begins. 
+The client starts a session by sending a message to the server saying which sub-protocol it intends to communicate with, then a protocol session for the sub-protocol begins. 
 
 ### Marlowe Runtime protocol states
 
@@ -113,20 +113,19 @@ Once in that protocol state, the protocol stays there for the rest of the sessio
 | --- | --- | --- | --- |
 | 1. `Init` | `Client` | | The initial state. |
 | 2. `MarloweSync st` | Determined by `st` | | The peers are communicating via the `MarloweSync` sub-protocol. |
-| | | `st` | A protocol state from [MarloweSync](#1-marlowe-sync-sub-protocol) |
+| | | `st` | A protocol state from **[MarloweSync](#1-marlowe-sync-sub-protocol)** |
 | 3. `MarloweHeaderSync st` | Determined by `st` | | The peers are communicating via the `MarloweHeaderSync` sub-protocol. |
-| | | `st` | A protocol state from [MarloweHeaderSync](#1-marlowe-header-sync-sub-protocol) |
+| | | `st` | A protocol state from **[MarloweHeaderSync](#1-marlowe-header-sync-sub-protocol)** |
 | 4. `MarloweQuery st` | Determined by `st` | | The peers are communicating via the `MarloweQuery` sub-protocol. |
-| | | `st` | A protocol state from [MarloweQuery](#1-marlowe-query-sub-protocol) |
+| | | `st` | A protocol state from **[MarloweQuery](#1-marlowe-query-sub-protocol)** |
 | 5. `TxJob st` | Determined by `st` | | The peers are communicating via the `Job MarloweTxCommand` sub-protocol. |
-| | | `st` | A protocol state from [Job MarloweTxCommand](#1-tx-job-sub-protocol) |
+| | | `st` | A protocol state from **[Job MarloweTxCommand](#1-tx-job-sub-protocol)** |
 
 
-### Eight message types
+### Message types
 
 There are eight message types in the Marlowe Runtime protocol. 
-The first four message types initiate sub-protocol sessions. 
-The final four are carriers for sub-protocol messages. 
+The first four initiate sub-protocol sessions, while the final four are carriers for sub-protocol messages. 
 For example, the `MarloweSync` message type embeds a message from the sub-protocol in the Marlowe Runtime protocol. 
 
 | Message | Begin state | End state | Parameter | Description |
@@ -151,7 +150,7 @@ The binary format describes how each message type is converted into binary data,
 
 At this time, Haskell is the only supported language that has the functions for this. 
 
-If you are using Haskell, use the [Marlowe client library](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-client), one of our libraries in our marlowe-cardano repo. It exports a monad transformer called `MarloweT` that enables you to run a client of the Marlowe Runtime protocol. Run that monad transformer by providing the port number and host address of the Runtime and it will connect to it and handle the binary format for you. 
+If you are using Haskell, use the **[Marlowe client library](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-client)**, one of our libraries in our marlowe-cardano repo. It exports a monad transformer called `MarloweT` that enables you to run a client of the Marlowe Runtime protocol. Run that monad transformer by providing the port number and host address of Runtime and it will connect to it and handle the binary format for you. 
 
 ## Messaging behavior
 
@@ -164,7 +163,7 @@ When finished, it disconnects and the session is over.
 
 ## About the Haskell source files
 
-There is a data structure in the Haskell source files that describes the different states of the protocol. 
+There is a data structure in the Haskell source files that describes the different protocol states. 
 There is a message type that shows what all the available messages are for that protocol. 
 Each message indicates the initial state of the message. 
 For example, `RunMarloweSync` starts in the state `StInit`, then transitions into the `MarloweSync.StInit` state. 

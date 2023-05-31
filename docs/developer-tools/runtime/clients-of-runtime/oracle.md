@@ -3,30 +3,30 @@ title: General-purpose oracle for Marlowe Runtime
 sidebar_position: 4
 ---
 
-This oracle watches the blockchain for Marlowe contracts that have a `Choice` action ready for input. The start of the contract remaining on chain must be of the form `When [... (Case (Choice (ChoiceId symbol address) ...)) ...] ...`, where `address` is the address of the oracle and `symbol` is the symbol that the oracle should report a value for (see [the list of data feeds](#data-feeds-available)). If the `When` contract contains several `Case` terms for oracle input, the oracle arbitrarily selects one of them. Note that the `ChosenNum` provided by the oracle is an `Integer` representing the scaled value of the raw real number. For example, a 4.30% annual interest rate might be reported as `4300`. Needless to say, it is *critically important* that the Marlowe contract correctly interpret the integer that the oracle reports to it.
+This oracle watches the blockchain for Marlowe contracts that have a `Choice` action ready for input. The start of the contract remaining on chain must be of the form `When [... (Case (Choice (ChoiceId symbol address) ...)) ...] ...`, where `address` is the address of the oracle and `symbol` is the symbol that the oracle should report a value for (see **[the list of data feeds](#data-feeds-available)**). If the `When` contract contains several `Case` terms for oracle input, the oracle arbitrarily selects one of them. Note that the `ChosenNum` provided by the oracle is an `Integer` representing the scaled value of the raw real number. For example, a 4.30% annual interest rate might be reported as `4300`. Needless to say, it is *critically important* that the Marlowe contract correctly interprets the integer that the oracle reports to it.
 
 ![Block for oracle input in a Marlowe contract](/img/oracle-block.png)
 
 
-A [video demonstrates the Marlowe oracle](https://youtu.be/n1Mv3I7QoTE).
+A **[video demonstrates the Marlowe oracle](https://youtu.be/n1Mv3I7QoTE)**.
 
 
 ## Security considerations
 
 *The security of a Marlowe contract that uses oracle(s) depends upon trust in the oracle(s). For the oracle presented here, this means that the parties to the contract must trust the holder of the signing (private) key for the oracle address and the infrastructure running the oracle.*
 
-The security of an oracle-reliant Marlowe contract might be increased by combining reports from several independent, trusted oracles. The diagram below shows an example of averaging the reports of three oracles. Note that a more secure approach would be to use the [median](https://en.wikipedia.org/wiki/Median) (middle value) of the three reports instead of the [mean](https://en.wikipedia.org/wiki/Mean) (average) of them.
+The security of an oracle-reliant Marlowe contract might be increased by combining reports from several independent, trusted oracles. The diagram below shows an example of averaging the reports of three oracles. Note that a more secure approach would be to use the **[median](https://en.wikipedia.org/wiki/Median)** (middle value) of the three reports instead of the **[mean](https://en.wikipedia.org/wiki/Mean)** (average) of them.
 
 ![Averaging three oracles in a Marlowe contract](/img/oracle-averaging.png)
 
 
 ## Data feeds available
 
-The `SOFR` data feed provides the [Secured Overnight Financing Rate from the New York Federal Reserve Board](https://www.newyorkfed.org/markets/reference-rates/sofr), *measured in basis points*. Thus a report of `430` corresponds to a 4.30% annual rate.
+The `SOFR` data feed provides the **[Secured Overnight Financing Rate from the New York Federal Reserve Board](https://www.newyorkfed.org/markets/reference-rates/sofr)**, *measured in basis points*. Thus a report of `430` corresponds to a 4.30% annual rate.
 
-The `BTCETH`, `BTCEUR`, `BTCGBP`, `BTCJPY`, `BTCUSD`, `ADABTC`, `ADAETH`, `ADAEUR`, `ADAGBP`, `ADAJPY`, `ADAUSD`, `ETHBTC`, `ETHEUR`, `ETHGBP`, `ETHJPY`, and `ETHUSD` data feeds provide cryptocurrency prices from [CoinGecko](https://www.coingecko.com/), measured in parts per hundred million (/ 100,000,000). The first three letters of the symbol are the *base currency* and the last three letters are the *quote currency*. Thus a report of `20970500` for `ADAGBP` corresponds to £0.209705/₳.
+The `BTCETH`, `BTCEUR`, `BTCGBP`, `BTCJPY`, `BTCUSD`, `ADABTC`, `ADAETH`, `ADAEUR`, `ADAGBP`, `ADAJPY`, `ADAUSD`, `ETHBTC`, `ETHEUR`, `ETHGBP`, `ETHJPY`, and `ETHUSD` data feeds provide cryptocurrency prices from **[CoinGecko](https://www.coingecko.com/)**, measured in parts per hundred million (/ 100,000,000). The first three letters of the symbol are the *base currency* and the last three letters are the *quote currency*. Thus a report of `20970500` for `ADAGBP` corresponds to £0.209705/₳.
 
-One can add data feeds to the oracle by adding a new oracle module (like [`Network.Oracle.Sofr`](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-apps/oracle/Network/Oracle/Sofr.hs)) modifying [`Network.Oracle`](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-apps/oracle/Network/Oracle.hs).
+One can add data feeds to the oracle by adding a new oracle module (like **[`Network.Oracle.Sofr`](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-apps/oracle/Network/Oracle/Sofr.hs)**) modifying **[`Network.Oracle`](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-apps/oracle/Network/Oracle.hs)**.
 
 
 ## Running the oracle
@@ -36,7 +36,7 @@ The oracle requires two command-line arguments:
 1. The address of the oracle.
 2. The signing key file for the oracle.
 
-See [Help](#help) for option arguments that select the Cardano network and polling frequency.
+See **[Help](#help)** for option arguments that select the Cardano network and polling frequency.
 
 For example, executing the oracle as
 
@@ -120,7 +120,7 @@ In the above, the oracle attempted to provide input to the first contract, but t
 
 ## Creating example contracts
 
-The `bash` script [create-example-contracts.sh](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-apps/create-example-contract.sh) is provided for creating Marlowe contracts that require oracle input. It takes three arguments:
+The `bash` script **[create-example-contracts.sh](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-apps/create-example-contract.sh)** is provided for creating Marlowe contracts that require oracle input. It takes three arguments:
 
 1. The symbol that the oracle should report.
 2. The address of the oracle.
@@ -170,11 +170,11 @@ when:
 
 ## Design
 
-The oracle uses a Marlowe Runtime *discovery follower* to watch the blockchain for new Marlowe contracts. In parallel with that, it examines the creation and subsequent transaction of the contract to see if the contract might ever need input from the oracle. If the contract will not need oracle input, then it stops watching the contract. If the oracle will need oracle input, then it waits for the contract's last unspent transaction and provide oracle input to that if the current state of the contract requires such input. The oracle construction a transaction with input consisting of the correct `IChoice` to report the value for the requested symbol.
+The oracle uses a Marlowe Runtime discovery follower to watch the blockchain for new Marlowe contracts. In parallel with that, the follower examines the creation and subsequent transaction of the contract to see if the contract might ever need input from the oracle. If the contract will not need oracle input, then the follower stops watching the contract. If the oracle will need oracle input, the follower waits for the contract's last unspent transaction and provides oracle input to that if the current state of the contract requires such input. The oracle construction a transaction with input consisting of the correct `IChoice` to report the value for the requested symbol.
 
 ![Design of the Marlowe Oracle](/img/oracle-design.png)
 
-A future version of this oracle will allow requiring that a fee be paid to the oracle in return for the oracle's successful report. The diagram below shows that construct. The oracle would ignore contracts that did not have a `Pay` with sufficient Ada to the oracle.
+A future version of this oracle will allow requiring that a fee be paid to the oracle in return for the oracle's successful report. The diagram below shows that construct. The oracle would ignore contracts that did not have a `Pay` with sufficient ada to the oracle.
 
 ![Block for a fee-based oracle input in a Marlowe contract](/img/oracle-fee.png)
 

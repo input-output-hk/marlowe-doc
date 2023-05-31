@@ -3,7 +3,7 @@ title: Marlowe Runtime
 sidebar_position: 1
 ---
 
-Marlowe Runtime is the application backend for managing Marlowe contracts on the Cardano blockchain. It provides easy-to-use, higher-level APIs and complete backend services that enable developers to build and deploy enterprise and Web 3 DApp solutions using Marlowe, but without having to assemble the “plumbing” that manually orchestrates a backend workflow for a Marlowe-based application. 
+Marlowe Runtime is the application backend for managing Marlowe contracts on the Cardano blockchain. It provides easy-to-use, higher-level APIs and complete backend services that enable developers to build and deploy enterprise and Web3 DApp solutions using Marlowe, but without having to assemble the “plumbing” that manually orchestrates a backend workflow for a Marlowe-based application. 
 
 ## Marlowe Runtime's role
 
@@ -27,13 +27,13 @@ More specifically, the tasks you can do with Runtime include the following:
 
 For a detailed overview description of Runtime, please see: 
 
-* [High-level introduction to Marlowe Runtime](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/ReadMe.md)
+* **[High-level introduction to Marlowe Runtime](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/doc/ReadMe.md)**
 
 The ReadMe file covers the following topics: 
 
 * Marlowe Runtime diagrams
 * Architecture
-* Backend Services
+* Backend services
 * Marlowe Runtime command-line interface
 * Web services
 * Related documentation
@@ -46,5 +46,5 @@ See also:
 
 | Video title | Presenter | Date |
 |-------------|-----------|-------------|
-| [Using the Marlowe Runtime backend to execute a Marlowe contract on Cardano's preview network](https://youtu.be/WlsX9GhpKu8) | Brian Bush | Oct 2022 | 
-| [Marlowe Runtime](https://youtu.be/8Bx2b2Gag0o) | Brian Bush | Oct 2022 | 
+| **[Using the Marlowe Runtime backend to execute a Marlowe contract on Cardano's preview network](https://youtu.be/WlsX9GhpKu8)** | Brian Bush | Oct 2022 | 
+| **[Marlowe Runtime](https://youtu.be/8Bx2b2Gag0o)** | Brian Bush | Oct 2022 | 

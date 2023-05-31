@@ -5,7 +5,7 @@ sidebar_position: 2
 
 The MarloweSync sub-protocol is defined here: 
 
-* [https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/history-api/Language/Marlowe/Protocol/Sync/Types.hs](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/history-api/Language/Marlowe/Protocol/Sync/Types.hs)
+- **[https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/history-api/Language/Marlowe/Protocol/Sync/Types.hs](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-runtime/history-api/Language/Marlowe/Protocol/Sync/Types.hs)**
 
 Below is a state diagram for the MarloweSync sub-protocol: 
 
@@ -60,8 +60,8 @@ A contract step is either an "apply inputs" step with an apply inputs transactio
 
 | Message | Begin state | End state | Parameter | Description |
 | --- | --- | --- | --- | --- |
-| 1. `FollowContract id` | `Init` | `Follow` |  | Follow a contract by id. |
-| | | | `id` | The ID of the contract to follow (i.e. the tx-in that created the contract |
+| 1. `FollowContract id` | `Init` | `Follow` |  | Follow a contract by ID. |
+| | | | `id` | The ID of the contract to follow (ie, the tx-in that created the contract) |
 | 2. `ContractNotFound` | `Follow` | `Done` |  | The requested contract could not be found. |
 | 3. `ContractFound blk v create` | `Follow` | `Idle v` |  | The requested contract was found. |
 | | | | `blk` | The block header of the block that contains the creation transaction. |
