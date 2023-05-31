@@ -59,7 +59,7 @@ Available options:
                            value to assign to it (in POSIX milliseconds).
   --value-arg NAME=INTEGER The name of a numeric parameter in the contract and a
                            value to assign to it.
-  --min-utxo LOVELACE      An amount which should be used as min ADA requirement
+  --min-utxo LOVELACE      An amount which should be used as min ada requirement
                            for the Contract UTXO.
   -h,--help                Show this help text
 ```
