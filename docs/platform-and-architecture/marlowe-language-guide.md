@@ -7,27 +7,29 @@ Marlowe is designed to create the following building blocks of financial contrac
 
 * payments to and deposits from participants, 
 * choices by participants, and 
-* real world information. 
+* real-world information. 
 
-Marlowe is a small language, with a handful of different constructs that, for each contract, describe behaviour involving a fixed, finite set of roles. When a contract is run, the roles it involves are fulfilled by participants, which are identities on the blockchain. Each role is represented by a token on the chain. Roles can be transferred during contract execution, meaning that they can essentially be traded. 
+Marlowe is a small language, with a handful of different constructs that, for each contract, describe behaviour involving a fixed, finite set of roles. When a contract is run, the roles it involves are fulfilled by participants, which are identities on the blockchain. Each role is represented by a token on-chain. Roles can be transferred during contract execution, meaning that they can essentially be traded. 
 
-Contracts are built by putting together a small number of these constructs that, in combination, describe and model many different kinds of financial contracts. Some examples include: 
+Contracts are built by putting together a small number of these constructs that, in combination, describe and model many different kinds of financial contracts. 
+
+Some examples include: 
 
 * a running contract that can make a payment to a role or to a public key, 
 * a contract that can wait for an action by one of the roles, such as a deposit of currency, or 
 * a choice from a set of options. 
 
-See the Sample Escrow Contract below.
+See the sample escrow contract below.
 
-Crucially, a contract cannot wait indefinitely for an action: if no action has been initiated by a given time (the timeout), then the contract will continue with an alternative behavior, such as, for example, refunding any funds in the contract as a remedial action. 
+Crucially, a contract cannot wait indefinitely for an action: if no action has been initiated by a set time (the timeout), then the contract will continue with an alternative behavior, such as, for example, refunding any funds in the contract as a remedial action. 
 
 Marlowe contracts can branch based on alternatives and have a finite lifetime, at the end of which any remaining money is returned to the participants. This feature means that money cannot be locked forever in a contract. Depending on the current state of a contract, it may make a choice between two alternative future courses of action, which are themselves contracts. When no further actions are required, the contract will close, and any remaining currency in the contract will be refunded.
 
 ## Using Haskell types
 
-Haskell types are used to represent the various components of the contract, including *accounts*, *values*, *observations*, and *actions*. These Marlowe elements are used to supply external information and inputs to a running contract to control how it will evolve.
+Haskell types represent the various components of the contract, including *accounts*, *values*, *observations*, and *actions*. These Marlowe elements are used to supply external information and inputs to a running contract to control how it will evolve.
 
-In modelling basic parts of Marlowe, a combination of Haskell `data` types are used, that define *new* types, and `type` synonyms that give a new name to an existing type.
+In modeling basic parts of Marlowe, a combination of Haskell `data` types are used, that define *new* types, and `type` synonyms that give a new name to an existing type.
 
 ## Programming environments
 
@@ -37,7 +39,7 @@ In addition to writing contracts in the textual version of Marlowe, you can also
 2. JavaScript (TypeScript)
 3. Haskell
 
-See [Marlowe Playground](../developer-tools/playground.md) for details. 
+See **[Marlowe Playground](../developer-tools/playground.md)** for details. 
 
 ## About a Marlowe contract
 
@@ -54,7 +56,7 @@ data Contract = Close
               | Assert Observation Contract
 ```
 
-Marlowe has *six* ways of building contracts. Five of these methods – `Pay`, `Let`, `If`, `When`, and `Assert` – build a complex contract from simpler contracts, and the sixth method, `Close`, is a simple contract. At each step of execution, as well as returning a new state and continuation contract, it is possible that effects – payments – and warnings can also be generated.
+Marlowe has *six* ways of building contracts. Five of these methods – `Pay`, `Let`, `If`, `When`, and `Assert` – build a complex contract from simpler contracts, and the sixth method, `Close`, is a simple contract. At each step of execution, besides returning a new state and continuation contract, it is possible that effects – payments – and warnings can also be generated.
 
 ### Pay
 
@@ -62,17 +64,17 @@ A payment contract `Pay a p t v cont` will make a payment of value `v` of token 
 
 ### Close
 
-A contract `Close` provides for the contract to be closed (or terminated). The only action that it performs is to provide refunds to the owners of accounts that contain a positive balance. This is performed one account per step, but all accounts will be refunded in a single transaction.
+A contract `Close` provides for the contract to be closed (or terminated). The only action that it performs is providing refunds to the owners of accounts with a positive balance. This is performed one account per step, but all accounts will be refunded in a single transaction.
 
 Before moving onto other forms of contracts, we need to outline *values*, *observations*, and *actions*:
 
-- Values - include quantities that change with time, including “the current slot interval”, “the current balance of some token in an account”, and any choices that have already been made (*volatile values*). Values can also be combined using addition, subtraction and negation, and can be conditional on an observation.
+- Values - include quantities that change with time, including “the current slot interval”, “the current balance of some token in an account”, and any choices that have already been made (*volatile values*). Values can also be combined using addition, subtraction, and negation, and can be conditional on an observation.
 - Observations - are boolean values derived by comparing values, and can be combined using the standard boolean operators. It is also possible to observe whether any choice has been made (for a particular identified choice). Observations will have a value at every step of execution. 
 - Actions - happen at particular points during execution, for example:
     - depositing money
     - making a choice between various alternatives, including an *oracle* value
     - notifying the contract about an observation that became true
-- Oracles - are being developed for Cardano blockchain, and will be available for use within Marlowe on Cardano. Until then we have introduced an *oracle prototype*, which is implemented in the Marlowe Playground. We model oracles as choices that are made by a participant with a specific Oracle role, "kraken".
+- Oracles - are being developed for the Cardano blockchain, and will be available for use within Marlowe on Cardano. Until then we have introduced an *oracle prototype*, which is implemented in the Marlowe Playground. We model oracles as choices made by a participant with a specific Oracle role, "kraken".
 
 ### If
 
@@ -80,23 +82,23 @@ The conditional If `obs cont1 cont2` will continue as `cont1` or `cont2`, depend
 
 ### When
 
-This is the most complex constructor for contracts, with the form `When cases timeout cont`. It is a contract that is *triggered on actions*, which may or may not happen at any particular slot: what happens when various actions happen is described by the cases in the contract.
+This is the most complex constructor for contracts, with the form `When cases timeout cont`. It is a contract *triggered on actions*, which may or may not happen at any particular slot: what happens when various actions happen is described by the cases in the contract.
 
 In the contract `When cases timeout cont`, the list `cases` contains a collection of cases. Each case has the form `Case ac co` where `ac` is an action and `co` a continuation (another contract). When a particular action, for example, `ac`, happens, the state is updated accordingly and the contract will continue as the corresponding continuation `co`.
 
-In order to make sure that the contract makes progress eventually, the contract `When cases timeout cont` will continue as `cont` once the `timeout`, a slot number, is reached.
+To make sure that the contract makes progress eventually, the contract `When cases timeout cont` will continue as `cont` once the `timeout`, a slot number, is reached.
 
 ### Let
 
-A let contract `Let id val cont` allows a contract to *record* a value, in a particular point in time, and give it a name using an identifier. In this case, the expression `val` is evaluated, and stored with the name `id`. The contract then continues as `cont`.
+A let contract `Let id val cont` allows a contract to *record* a value, at a particular point in time, and gives it a name using an identifier. In this case, the expression `val` is evaluated and stored with the name `id`. The contract then continues as `cont`.
 
-As well as allowing us to use abbreviations, this mechanism also means that we can capture and save volatile values that might be changing with time, e.g. the current price of oil, or the current slot number, at a particular point in the execution of the contract, to be used later on in contract execution.
+As well as allowing us to use abbreviations, this mechanism also means that we can capture and save volatile values that might change over time, e.g., the current price of oil, or the current slot number, at a particular point in the execution of the contract, to be used later on in contract execution.
 
 ### Assert
 
-An assert contract `Assert obs cont` does not have any effect on the state of the contract, it immediately continues as `cont`, but it issues a warning when the Observation `obs` is false. It can be used to ensure that a property holds in any given point of the contract, since static analysis will fail if any execution causes an assert to be false.
+An assert contract `Assert obs cont` does not have any effect on the state of the contract, it immediately continues as `cont`, but it issues a warning when the observation `obs` is false. It can be used to ensure that a property holds in any given point of the contract, since static analysis will fail if any execution causes an assert to be false.
 
-## Sample Escrow contract
+## Sample escrow contract
 
 Suppose that `alice` wants to buy a cat from `bob`, but neither of them trusts the other. Fortunately, they have a mutual friend `carol` whom they both trust to be neutral (but not enough to give her the money and act as an intermediary). They therefore agree on the following contract, written using simple functional pseudocode. This kind of contract is a simple example of *escrow*:
               
@@ -110,7 +112,7 @@ The contract is described using the *constructors* of a Haskell data type. The o
 
 The second contract is itself another `When` – asking for a decision from bob – but inside that, there is a choice: If `alice` and `bob` agree on what to do, it is done; if not, `carol` is asked to arbitrate and make a decision.
 
-In general, `When` offers a list of cases, each with an action and a corresponding contract that is triggered when that action happens. Using this we can allow for the option of `bob` making the first choice, rather than `alice`, like this:     
+In general, `When` offers a list of cases, each with an action and a corresponding contract triggered when that action happens. Using this we can allow for the option of `bob` making the first choice, rather than `alice`, like this:     
                      
      When [ Case aliceChoice
                   (When [ Case bobChoice
@@ -153,7 +155,7 @@ The outermost `When` calls for the first choice to be made by Alice: if Alice ha
 
 ### Marlowe accounts and token usage
 
-A Marlowe Account holds amounts of multiple currencies and/or fungible and non-fungible tokens. A concrete amount is indexed by a `Token`, which is a pair of `CurrencySymbol` and `TokenName`. You can think of an Account as a Map Token Integer, where:
+A Marlowe account holds amounts of multiple currencies and/or fungible and non-fungible tokens. A concrete amount is indexed by a `Token`, which is a pair of `CurrencySymbol` and `TokenName`. You can think of an account as a map token integer, where:
 `data Token = Token CurrencySymbol TokenName`
 
 The ada token of Cardano is represented as `Token adaSymbol adaToken`, however, you can create your own currencies and tokens. 

@@ -3,19 +3,19 @@ title: Marlowe Playground
 sidebar_position: 1
 ---
 
-In the following video, Pablo Lamela, Marlowe Engineering Lead, shows how to create Marlowe contracts in [Marlowe Playground](https://play.marlowe.iohk.io/#/) using Blockly. 
+In the following video, Pablo Lamela, Marlowe Engineering Lead, shows how to create Marlowe contracts in **[Marlowe Playground](https://play.marlowe.iohk.io/#/)** using Blockly. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/EgCqG0hPmwc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen = "true"></iframe>
 
-## A low-code pathway for building, simulating and analyzing smart contracts
+## A low-code pathway for building, simulating, and analyzing smart contracts
 
-Intended to be used by both low-code professionals and experienced developers alike, the [Playground](https://play.marlowe-finance.io) provides multiple methods for building, simulating and analyzing Marlowe smart contracts in a sandbox environment using an iterative design process. 
+Intended to be used by both low-code professionals and experienced developers alike, the **[Playground](https://play.marlowe-finance.io)** provides multiple methods for building, simulating, and analyzing Marlowe smart contracts in a sandbox environment using an iterative design process. 
 
 Once you have created a contract, you can analyze its behavior through formal verification and testing; for example, you can check whether any payments made by the contract could conceivably fail. You can also step through how your contract will behave, simulating the actions of the participants.
 
 ## Multiple Playground language options for creating Marlowe smart contracts
 
-The [Playground](https://play.marlowe.iohk.io/#/) provides multiple language options for building contracts: 
+The **[Playground](https://play.marlowe.iohk.io/#/)** provides multiple language options for building contracts: 
 
 1. Use the Blockly visual drag and drop programming tool to create contracts by fitting together blocks that represent the different components. Blockly is an intuitive low-code tool to get started with building Marlowe smart contracts. 
 
@@ -40,7 +40,7 @@ You can also use the embedded JavaScript editor to write Marlowe code in the Pla
 
 **About the Marlowe library, JavaScript, and TypeScript**
 
-Even though we use the term "JavaScript," the Marlowe *Script framework* is written in TypeScript. Although JavaScript is a subset of TypeScript, programmers with limited TypeScript expertise are advised to learn the basics of TypeScript before using the Marlowe JavaScript code. For more information, see the [TypeScript website](https://www.typescriptlang.org/). 
+Even though we use the term "JavaScript," the Marlowe *Script framework* is written in TypeScript. Although JavaScript is a subset of TypeScript, programmers with limited TypeScript expertise are advised to learn the basics of TypeScript before using the Marlowe JavaScript code. For more information, see the **[TypeScript website](https://www.typescriptlang.org/)**. 
 
 :::
 
@@ -50,6 +50,6 @@ Experienced Haskell developers can use the embedded Haskell editor in the Playgr
 
 ### IOG Academy's self-paced course on learning Haskell
 
-* [On YouTube](https://youtu.be/pkU8eiNZipQ)
+* **[On YouTube](https://youtu.be/pkU8eiNZipQ)**
 
-* [On GitHub](https://github.com/input-output-hk/haskell-course)
+* **[On GitHub](https://github.com/input-output-hk/haskell-course)**

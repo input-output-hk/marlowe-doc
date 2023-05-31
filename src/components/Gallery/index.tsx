@@ -251,7 +251,7 @@ function Gallery() {
           wordSpacing="0"
         >
           <tspan x="409.817" y="421.333">
-            Gallery of Marlowe Contracts on Cardano Mainnet
+            Gallery of Marlowe contracts on Cardano mainnet
           </tspan>
         </text>
         <a transform="translate(-31.222 54.29)">
@@ -523,7 +523,7 @@ function Gallery() {
               wordSpacing="0"
             >
               <tspan x="-167.484" y="-467.429">
-                Sale of a Token for Ada
+                Sale of a token for ada
               </tspan>
             </text>
             <image
@@ -567,7 +567,7 @@ function Gallery() {
                 Marlowe contract and the buyer{" "}
               </tspan>
               <tspan x="-141.195" y="-245.635">
-                purchases it with Ada.
+                purchases it with ada.
               </tspan>
             </text>
           </g>
@@ -615,10 +615,10 @@ function Gallery() {
               wordSpacing="0"
             >
               <tspan x="-147.072" y="-467.429">
-                Sale of a Token for{" "}
+                Sale of a token for{" "}
               </tspan>
               <tspan x="-114.9" y="-446.896">
-                Stablecoins
+                stablecoins
               </tspan>
             </text>
             <image
@@ -710,10 +710,10 @@ function Gallery() {
               wordSpacing="0"
             >
               <tspan x="-154.464" y="-467.429">
-                Sale of a Token with{" "}
+                Sale of a token with{" "}
               </tspan>
               <tspan x="-104.204" y="-446.896">
-                Royalties
+                royalties
               </tspan>
             </text>
             <image
@@ -805,10 +805,10 @@ function Gallery() {
               wordSpacing="0"
             >
               <tspan x="-149.181" y="-467.429">
-                Swap of Tokens for{" "}
+                Swap of tokens for{" "}
               </tspan>
               <tspan x="-94.208" y="-446.896">
-                Tokens
+                tokens
               </tspan>
             </text>
             <image
@@ -900,7 +900,7 @@ function Gallery() {
               wordSpacing="0"
             >
               <tspan x="-171.497" y="-467.429">
-                Small Airdrop of Tokens
+                Small airdrop of tokens
               </tspan>
             </text>
             <image
@@ -989,10 +989,10 @@ function Gallery() {
               wordSpacing="0"
             >
               <tspan x="-181.969" y="-467.429">
-                Several NFTs Bundled as a{" "}
+                Several NFTs bundled as a{" "}
               </tspan>
               <tspan x="-127.603" y="-446.896">
-                Collective NFT
+                collective NFT
               </tspan>
             </text>
             <image
@@ -1084,7 +1084,7 @@ function Gallery() {
               wordSpacing="0"
             >
               <tspan x="-173.261" y="-467.429">
-                Shared Ownership of an{" "}
+                Shared ownership of an{" "}
               </tspan>
               <tspan x="-79.722" y="-446.896">
                 NFT
@@ -1179,10 +1179,10 @@ function Gallery() {
               wordSpacing="0"
             >
               <tspan x="-181.605" y="-467.429">
-                NFT Used as Collateral for{" "}
+                NFT used as collateral for{" "}
               </tspan>
               <tspan x="-92.491" y="-446.896">
-                a Loan
+                a loan
               </tspan>
             </text>
             <image
@@ -1274,10 +1274,10 @@ function Gallery() {
               wordSpacing="0"
             >
               <tspan x="-164.684" y="-467.429">
-                Pawning a Token for a{" "}
+                Pawning a token for a{" "}
               </tspan>
               <tspan x="-110.261" y="-446.896">
-                Stablecoin
+                stablecoin
               </tspan>
             </text>
             <image
@@ -1369,7 +1369,7 @@ function Gallery() {
               wordSpacing="0"
             >
               <tspan x="-167.288" y="-467.429">
-                Token Sale with Oracle
+                Token sale with oracle
               </tspan>
             </text>
             <image
@@ -1407,7 +1407,7 @@ function Gallery() {
               wordSpacing="0"
             >
               <tspan x="-177.835" y="-280.835">
-                Tokens are sold for Ada, where a{" "}
+                Tokens are sold for ada, where a{" "}
               </tspan>
               <tspan x="-169.547" y="-263.235">
                 price oracle sets the exchange{" "}
@@ -1550,10 +1550,10 @@ function Gallery() {
               wordSpacing="0"
             >
               <tspan x="-150.329" y="-467.429">
-                ACTUS Contract for{" "}
+                ACTUS contract for{" "}
               </tspan>
               <tspan x="-158.328" y="-446.896">
-                Principal at Maturity
+                principal at maturity
               </tspan>
             </text>
             <image
@@ -1645,10 +1645,10 @@ function Gallery() {
               wordSpacing="0"
             >
               <tspan x="-147.24" y="-467.429">
-                Coupon Bond with{" "}
+                Coupon bond with{" "}
               </tspan>
               <tspan x="-110.019" y="-446.896">
-                Guarantor
+                guarantor
               </tspan>
             </text>
             <image
@@ -1737,10 +1737,10 @@ function Gallery() {
               wordSpacing="0"
             >
               <tspan x="-166.103" y="-467.429">
-                A Geolocated Marlowe{" "}
+                A geolocated Marlowe{" "}
               </tspan>
               <tspan x="-102.048" y="-446.896">
-                Contract
+                contract
               </tspan>
             </text>
             <image
@@ -1829,10 +1829,10 @@ function Gallery() {
               wordSpacing="0"
             >
               <tspan x="-143.031" y="-467.429">
-                First Peer-to-Peer{" "}
+                First peer-to-peer{" "}
               </tspan>
               <tspan x="-183.351" y="-446.896">
-                Marlowe Loan on Mainnet
+                Marlowe loan on mainnet
               </tspan>
             </text>
             <image
@@ -1921,10 +1921,10 @@ function Gallery() {
               wordSpacing="0"
             >
               <tspan x="-161.156" y="-467.429">
-                First Reference Script{" "}
+                First reference script{" "}
               </tspan>
               <tspan x="-163.172" y="-446.896">
-                Execution on Mainnet
+                execution on mainnet
               </tspan>
             </text>
             <image
@@ -2019,7 +2019,7 @@ function Gallery() {
                 First Plutus V2 on{" "}
               </tspan>
               <tspan x="-100.723" y="-446.896">
-                Mainnet
+                mainnet
               </tspan>
             </text>
             <image
@@ -2111,10 +2111,10 @@ function Gallery() {
               wordSpacing="0"
             >
               <tspan x="-183.043" y="-467.429">
-                First Marlowe Token Swap{" "}
+                First Marlowe token swap{" "}
               </tspan>
               <tspan x="-115.059" y="-446.896">
-                on Mainnet
+                on mainnet
               </tspan>
             </text>
             <image
@@ -2206,10 +2206,10 @@ function Gallery() {
               wordSpacing="0"
             >
               <tspan x="-182.753" y="-467.429">
-                First Marlowe Contract on{" "}
+                First Marlowe contract on{" "}
               </tspan>
               <tspan x="-100.723" y="-446.896">
-                Mainnet
+                mainnet
               </tspan>
             </text>
             <image
