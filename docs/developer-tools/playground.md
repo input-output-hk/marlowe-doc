@@ -50,6 +50,6 @@ Experienced Haskell developers can use the embedded Haskell editor in the Playgr
 
 ### IOG Academy's self-paced course on learning Haskell
 
-* **[On YouTube](https://youtu.be/pkU8eiNZipQ)**
+* **[On YouTube](https://www.youtube.com/playlist?list=PLNEK_Ejlx3x1D9Vq5kqeC3ZDEP7in4dqb)**
 
 * **[On GitHub](https://github.com/input-output-hk/haskell-course)**
