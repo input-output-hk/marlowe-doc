@@ -1,0 +1,21 @@
+.card__header {
+  display: inherit;
+  padding: var(--ifm-card-vertical-spacing) var(--ifm-card-horizontal-spacing);
+}
+
+.card__footer {
+  display: inline;
+  padding: var(--ifm-card-vertical-spacing) var(--ifm-card-horizontal-spacing);
+}
+
+.title {
+  margin-left: 10px;
+}
+
+.icon {
+  margin-right: 6px;
+}
+
+.text {
+  margin-right: 8px;
+}

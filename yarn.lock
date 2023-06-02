@@ -8417,6 +8417,7 @@ __metadata:
     string_decoder: ^1.3.0
     typescript: ^4.9.4
     url: ^0.11.0
+    use-http: ^1.0.28
   languageName: unknown
   linkType: soft
 
@@ -12422,12 +12423,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"urs@npm:^0.0.8":
+  version: 0.0.8
+  resolution: "urs@npm:0.0.8"
+  peerDependencies:
+    react: ^16.13.1 || ^17.0.0
+    react-dom: ^16.13.1 || ^17.0.0
+  checksum: ab36ebdc648ca29f2fbbd40ebb300d5b750b1d4e0b4c7855b21ad630e6724f5a419f49976f5f06685ab20ca052e75137119bfed58dc23187e4bbb5ae1369f8c5
+  languageName: node
+  linkType: hard
+
 "use-composed-ref@npm:^1.3.0":
   version: 1.3.0
   resolution: "use-composed-ref@npm:1.3.0"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
   checksum: f771cbadfdc91e03b7ab9eb32d0fc0cc647755711801bf507e891ad38c4bbc5f02b2509acadf9c965ec9c5f2f642fd33bdfdfb17b0873c4ad0a9b1f5e5e724bf
+  languageName: node
+  linkType: hard
+
+"use-http@npm:^1.0.28":
+  version: 1.0.28
+  resolution: "use-http@npm:1.0.28"
+  dependencies:
+    urs: ^0.0.8
+    use-ssr: ^1.0.24
+    utility-types: ^3.10.0
+  peerDependencies:
+    react: ^16.13.1 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
+  checksum: d13b35ba32eb3fc8696c0d2a642e7b90e0a5326cc06497438c03954a5cda817f24b7733e3a1029ebc5c748c8d64a6c4a9b829d21d8a9089a9757a4ad3d05a351
   languageName: node
   linkType: hard
 
@@ -12454,6 +12479,16 @@ __metadata:
     "@types/react":
       optional: true
   checksum: ed3f2ddddf6f21825e2ede4c2e0f0db8dcce5129802b69d1f0575fc1b42380436e8c76a6cd885d4e9aa8e292e60fb8b959c955f33c6a9123b83814a1a1875367
+  languageName: node
+  linkType: hard
+
+"use-ssr@npm:^1.0.24":
+  version: 1.0.25
+  resolution: "use-ssr@npm:1.0.25"
+  peerDependencies:
+    react: ^16.13.1 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
+  checksum: 1f76b860d3592bba524a67ae8d5e21007dcf47aaadf0a08b283d57a1c7518923622bcd4d26d667f0d6b84359f06f1d9a112becd85ff75646c5ba73d06cf0287e
   languageName: node
   linkType: hard
 
