@@ -11,7 +11,7 @@ Marlowe Runtime consists of a series of services that can be divided into fronte
 
 There are two ways to interface with Marlowe Runtime:
  - Marlowe Runtime web REST API
- - Using `marlowe-cli`
+ - Using `marlowe-runtime-cli`
 
 There are two main use cases when considering usage of Marlowe as a layer for smart contract developers. Depending on the complexity of the smart contract and DApp, higher level operations provide a simplified interface for focusing mainly on smart contract logic rather than implementation details. However, more complex workflows might need lower level control where an understanding of Plutus might be required.
 
