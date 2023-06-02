@@ -74,7 +74,7 @@ This command generates static content into the `build` directory and can be serv
 Use Docker build and serve the documentation to avoid needing local installations of yarn and node.
 
 ```
-$docker build -t docs .
+$ docker build -t docs .
 $ docker run -it -p 8080:8080 docs
 ```
 

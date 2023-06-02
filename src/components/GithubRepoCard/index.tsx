@@ -10,7 +10,6 @@ export interface RepoCard {
 
 const GithubRepoCard: React.FC<RepoCard> = ({ username, repo }) => {
   const { loading, error, data = [] } = useFetch(`https://api.github.com/repos/${username}/${repo}`, {}, [])
-  console.log(data)
   return (
     <div className="card">
       <div className={styles.card__header}>
