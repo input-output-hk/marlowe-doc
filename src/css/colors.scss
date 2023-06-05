@@ -1,3 +1,5 @@
+@use 'osano' as o;
+
 /* You can override the default Infima variables here. */
 :root {
   --color-marlowe-white: #FFFFFF;
@@ -51,6 +53,8 @@
   --ifm-color-secondary-darker: var(--color-marlowe-grey-20);
   --ifm-color-secondary-lightest: var(--color-marlowe-grey-4);
   --ifm-color-secondary-darkest: var(--color-marlowe-grey-24);
+
+  @include o.osano-vars;
 }
 
 html[data-theme='dark'] {

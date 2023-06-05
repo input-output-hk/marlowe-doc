@@ -4,6 +4,15 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const OSANO_SRC = process.env.OSANO_SRC;
+const scripts = [];
+if (OSANO_SRC) {
+  scripts.push({
+    src: OSANO_SRC,
+    async: false
+  })
+}
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Marlowe',
@@ -136,6 +145,7 @@ const config = {
       },
     }
   ),
+  scripts
 };
 
 module.exports = config;
