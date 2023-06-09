@@ -305,7 +305,7 @@ function Gallery() {
               <a
                 target="rwm"
                 transform="translate(-3.408 -13.18)"
-                xlinkHref="https://marlowe-finance.io/"
+                xlinkHref="https://marlowe.iohk.io/"
               >
                 <text
                   display="inline"
