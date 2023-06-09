@@ -524,7 +524,7 @@ If we were running the contract on the Cardano `mainnet`, then we\'d want to che
 
 Here are the steps for checking the safety of a contract:
 
-1. Understand the [Marlowe Language](https://marlowe-finance.io/).
+1. Understand the [Marlowe Language](https://marlowe.iohk.io/).
 2. Understand Cardano\'s [Extended UTxO Model](https://docs.cardano.org/learn/eutxo-explainer).
 3. Read and understand the [Marlowe Best Practices Guide](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe/best-practices.md).
 4. Read and understand the [Marlowe Security Guide](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe/security.md).
