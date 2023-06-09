@@ -11,7 +11,7 @@ The zero-coupon bond example is a simple Marlowe contract where a lender provide
 
 You can ask questions about Marlowe in [the #ask-marlowe channel on the IOG Discord](https://discord.com/channels/826816523368005654/936295815926927390) or post problems with this lesson to [the issues list for the Marlowe Starter Kit github repository](https://github.com/input-output-hk/marlowe-starter-kit/issues).
 
-In this demonstration we use Marlowe Runtime\'s REST API, served via `marlowe-web-server`, to run this contract on Cardano\'s `preprod` public testnet. Marlowe contracts may use either addresses or role tokens for authorization: here we use role tokens and we have Marlowe Runtime mint them.
+In this demonstration we use Marlowe Runtime's REST API, served via `marlowe-web-server`, to run this contract on Cardano's `preprod` public testnet. Marlowe contracts may use either addresses or role tokens for authorization: here we use role tokens and we have Marlowe Runtime mint them.
 
 In [Marlowe Playground](https://play.marlowe.iohk.io/), the contract looks like this in Blockly format.
 
@@ -408,23 +408,23 @@ json2yaml zcb-contract.json
 
 ### \[Optional, but recommended\] Check the safety of the contract
 
-If we were running the contract on the Cardano `mainnet`, then we\'d want to check its safety before creating it, so that there is no chance that we might lose funds.
+If we were running the contract on the Cardano `mainnet`, then we'd want to check its safety before creating it, so that there is no chance that we might lose funds.
 
 Here are the steps for checking the safety of a contract:
 
 1. Understand the [Marlowe Language](https://marlowe-finance.io/).
-2. Understand Cardano\'s [Extended UTxO Model](https://docs.cardano.org/learn/eutxo-explainer).
+2. Understand Cardano's [Extended UTxO Model](https://docs.cardano.org/learn/eutxo-explainer).
 3. Read and understand the [Marlowe Best Practices Guide](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe/best-practices.md).
 4. Read and understand the [Marlowe Security Guide](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe/security.md).
 5. Use [Marlowe Playground](https://play.marlowe.iohk.io/) to flag warnings, perform static analysis, and simulate the contract.
-6. Use [Marlowe CLI\'s](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/ReadMe.md) `marlowe-cli run analyze` tool to study whether the contract can run on a Cardano network.
+6. Use [Marlowe CLI's](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/ReadMe.md) `marlowe-cli run analyze` tool to study whether the contract can run on a Cardano network.
 7. Run *all execution paths* of the contract on a [Cardano testnet](https://docs.cardano.org/cardano-testnet/overview).
 
 See [Lesson 1](runtime-cli.md) for an example of performing step 6.
 
 ## Transaction 1. Create the Contract
 
-A `HTTP` `POST` request to Marlowe Runtime\'s `/contracts` endpoint will build the creation transaction for a Marlowe contract. We provide it the JSON file containing the contract and tell it the `MIN_LOVELACE` value that we previously chose. Anyone could create the contract, but in this example the lender will be doing so, so we provide their address to fund the transaction and to receive the change from it.
+A `HTTP` `POST` request to Marlowe Runtime's `/contracts` endpoint will build the creation transaction for a Marlowe contract. We provide it the JSON file containing the contract and tell it the `MIN_LOVELACE` value that we previously chose. Anyone could create the contract, but in this example the lender will be doing so, so we provide their address to fund the transaction and to receive the change from it.
 
 First we create the JSON body of the request to build the creation transaction.
 
@@ -560,7 +560,7 @@ cardano-cli query utxo --testnet-magic "$CARDANO_TESTNET_MAGIC" --address "$BORR
 
 ## View the details of the contract on the blockchain
 
-Marlowe Runtime\'s `HTTP` `GET` endpoint `/contracts/{contractId}` can fetch a contract from the blockchain and return information about it.
+Marlowe Runtime's `HTTP` `GET` endpoint `/contracts/{contractId}` can fetch a contract from the blockchain and return information about it.
 
 
 ```bash
@@ -707,7 +707,7 @@ curl -sS "$CONTRACT_URL" | json2yaml
 
 ## Transaction 2. The lender deposits the principal
 
-The lender deposits their 80 ada of principal into the contract using Marlowe Runtime\'s `HTTP` `POST` `/contract/{contractId}/transactions` endpoint. The lender is providing the funding for and receiving the change from this transaction, so we provide their address.
+The lender deposits their 80 ada of principal into the contract using Marlowe Runtime's `HTTP` `POST` `/contract/{contractId}/transactions` endpoint. The lender is providing the funding for and receiving the change from this transaction, so we provide their address.
 
 The deposit is represented as JSON input to the contract. The `marlowe-cli input deposit` tool conveniently formats the correct JSON for a deposit.
 
@@ -850,7 +850,7 @@ cardano-cli query utxo --testnet-magic "$CARDANO_TESTNET_MAGIC" --tx-in "$TX_2#1
     088395d43bd1aefc7a5b1dc41b472a74f59cca631a61af7c9a212c5c8fa56c14     1        2000000 lovelace + TxOutDatumHash ScriptDataInBabbageEra "6db2f6b791dcab9fca1b17ccfe35d0a486c260fc300c48d14e24f78e90da6b86"
 
 
-Marlowe\'s role-payout address holds the 80 ada on behalf of the borrower.
+Marlowe's role-payout address holds the 80 ada on behalf of the borrower.
 
 
 ```bash
@@ -864,7 +864,7 @@ cardano-cli query utxo --testnet-magic "$CARDANO_TESTNET_MAGIC" --tx-in "$TX_2#3
 
 ## View the further progress of the contract on the blockchain
 
-Marlowe Runtime\'s `HTTP` `GET` endpoint `/contracts/{contractId}/transactions/{transactionId}` can fetch a contract from the blockchain and return information about it.
+Marlowe Runtime's `HTTP` `GET` endpoint `/contracts/{contractId}/transactions/{transactionId}` can fetch a contract from the blockchain and return information about it.
 
 
 ```bash
@@ -1134,7 +1134,7 @@ cardano-cli query utxo --testnet-magic "$CARDANO_TESTNET_MAGIC" --address "$BORR
     d08277e718607803947c16d13d6ba78a464d48667cb08f199fbf3257791f7047     1        1043020 lovelace + 1 89506f74616aa4b5a42ec352a56ab7815e547e23e2a32417f400e43c.426f72726f776572 + TxOutDatumNone
 
 
-The 85 ada are at Marlowe\'s role-payout address, held for the benefit of the lender.
+The 85 ada are at Marlowe's role-payout address, held for the benefit of the lender.
 
 
 ```bash
@@ -1150,7 +1150,7 @@ The Marlowe contract has closed, so there is no output to its script address.
 
 ## View the completion of the contract on the blockchain
 
-Marlowe Runtime\'s `HTTP` `GET` endpoint `/contracts/{contractId}/transactions/{transactionId}` can fetch a contract from the blockchain and return information about it.
+Marlowe Runtime's `HTTP` `GET` endpoint `/contracts/{contractId}/transactions/{transactionId}` can fetch a contract from the blockchain and return information about it.
 
 
 ```bash
