@@ -15,6 +15,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@datapunt/matomo-tracker-react": "^0.5.1",
     "@docusaurus/core": "^2.4.1",
     "@docusaurus/plugin-content-docs": "^2.4.1",
     "@docusaurus/plugin-content-pages": "^2.4.1",

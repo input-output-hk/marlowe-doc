@@ -1656,6 +1656,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@datapunt/matomo-tracker-js@npm:^0.5.1":
+  version: 0.5.1
+  resolution: "@datapunt/matomo-tracker-js@npm:0.5.1"
+  checksum: b6ed7f9120c896a93c342a3e8c53eec7cd5fcf85106f2b206fff33aa3144a9b008de79d922024db8b376be0c135e06e51b7da0699dbdd37f53c1cff27eb85cd3
+  languageName: node
+  linkType: hard
+
+"@datapunt/matomo-tracker-react@npm:^0.5.1":
+  version: 0.5.1
+  resolution: "@datapunt/matomo-tracker-react@npm:0.5.1"
+  dependencies:
+    "@datapunt/matomo-tracker-js": ^0.5.1
+  peerDependencies:
+    react: ">= 16.8.0"
+  checksum: 3284634192917862229fac62c32900464bb85c1bdbf67953680cc267ac9abc4301259b1c6b6c56f734904b5f1753532f6898719eb92af49d32ed5d1a54a64512
+  languageName: node
+  linkType: hard
+
 "@discoveryjs/json-ext@npm:0.5.7":
   version: 0.5.7
   resolution: "@discoveryjs/json-ext@npm:0.5.7"
@@ -8392,6 +8410,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "marlowe-doc@workspace:."
   dependencies:
+    "@datapunt/matomo-tracker-react": ^0.5.1
     "@docusaurus/core": ^2.4.1
     "@docusaurus/module-type-aliases": ^2.4.1
     "@docusaurus/plugin-content-docs": ^2.4.1

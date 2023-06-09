@@ -145,7 +145,11 @@ const config = {
       },
     }
   ),
-  scripts
+  scripts,
+  customFields: {
+    matomoBaseUrl: process.env.MATOMO_BASE_URL,
+    matomoSiteId: process.env.MATOMO_SITE_ID
+  }
 };
 
 module.exports = config;
