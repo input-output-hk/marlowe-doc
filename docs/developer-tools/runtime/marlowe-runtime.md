@@ -40,9 +40,11 @@ The ReadMe file covers the following topics:
 
 See also: 
 
-## [Runtime protocol reference](runtime-protocol-reference/runtime-protocol-reference.md)
+### [Deploying Marlowe Runtime](../../../tutorials/playbooks/deploy-marlowe-runtime)
 
-## Runtime video tutorials
+### [Runtime protocol reference](runtime-protocol-reference/runtime-protocol-reference.md)
+
+### Runtime video tutorials
 
 | Video title | Presenter | Date |
 |-------------|-----------|-------------|
