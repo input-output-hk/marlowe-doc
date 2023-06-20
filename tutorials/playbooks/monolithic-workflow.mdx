@@ -41,25 +41,43 @@ An installation of the following tools is required:
  - `cardano-cli`
  - `jq`
 
-This tutorial will require a setup of the Cardano node through docker compose shown in [Deploy Marlowe Runtime](deploy-marlowe-runtime).
+### Start a Cardano Node with Docker
 
-Alternatively, start a Nix shell from the marlowe-cardano repo which will have all of the tools installed in addition to examples for Jupyter notebooks.
+Open a terminal and start a Cardano node in a container with the `node-ipc` volume:
+
+ ```
+docker run -e NETWORK=preprod -v node-ipc:/ipc inputoutput/cardano-node
+ ```
+
+### Development Environment
+
+If the tools above are not yet installed, open a new terminal. Start a nix shell from the Marlowe starter kit:
+
+```
+nix develop github:input-output-hk/marlowe-starter-kit
+```
 
 ## Set the node socket and testnet
 
+Using the `node-ipc` volume name, inspect the node socket and set the path to `CARDANO_NODE_SOCKET_PATH`.
+
+Then allow read and write from that path.
+
 ```bash
-export CARDANO_NODE_SOCKET_PATH=$(docker volume inspect marlowe-starter-kit_shared | jq -r '.[0].Mountpoint')/node.socket
+export CARDANO_NODE_SOCKET_PATH=$(docker volume inspect node-ipc | jq -r '.[0].Mountpoint')/node.socket
 
 f=$(dirname $CARDANO_NODE_SOCKET_PATH)
 while [[ $f != / ]]; do sudo chmod a+rx "$f"; f=$(dirname "$f"); done
 sudo chmod a+rwx $CARDANO_NODE_SOCKET_PATH
 ```
 
-Using the preprod testnet, set the environment variable:
+Assuming the preprod testnet is used, set the environment variable:
 
 ```bash
 export CARDANO_TESTNET_MAGIC=1
 ```
+
+This enviroment variable will be used across `marlowe-cli` and `cardano-cli` for building transactions.
 
 ## Wallet
 
