@@ -93,7 +93,7 @@ function DocsFooter() {
               </div>
               <div className={styles.linksList}>
                 <h2 className={styles.linksHeading}>Legal</h2>
-                <div class={styles.linkItem}>
+                <div className={styles.linkItem}>
                   <Link
                     target="_blank"
                     href="https://docs.google.com/document/d/13zJ5jdaKjXgAytvDn0kln8UFDhyFr3AS/view"
