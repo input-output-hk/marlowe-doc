@@ -38,6 +38,9 @@ Marlowe Runtime provides a variety of transaction-building, UTxO management, que
 
 If we're using [demeter.run](https://demeter.run/)'s Cardano Marlowe Runtime extension, then we already have access to Cardano Node and Marlowe Runtime. The following commands will set the required environment variables to use a local docker deployment on the default ports. It will also set some supplementary environment variables.
 
+import SyncStatus from '../_partials/_check-sync-status.mdx';
+
+<SyncStatus />
 
 ```bash
 if [[ -z "$MARLOWE_RT_PORT" ]]
