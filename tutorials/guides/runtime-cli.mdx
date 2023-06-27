@@ -63,7 +63,7 @@ When
 
 ## Preliminaries
 
-See [Preliminaries](preliminaries.md) for information on setting up one's environment for using this tutorial.
+See [Preliminaries](preliminaries.mdx) for information on setting up one's environment for using this tutorial.
 
 The lesson assumes that the following environment variables have been set.
 - `CARDANO_NODE_SOCKET_PATH`: location of Cardano node's socket.
@@ -83,6 +83,9 @@ It also assumes that the Lender and Borrower parties have addresses, signing key
 
 If we're using [demeter.run](https://demeter.run/)'s Cardano Marlowe Runtime extension, then we already have access to Cardano Node and Marlowe Runtime. The following commands will set the required environment variables to use a local docker deployment on the default ports. It will also set some supplementary environment variables.
 
+import SyncStatus from '../_partials/_check-sync-status.mdx';
+
+<SyncStatus />
 
 ```bash
 if [[ -z "$MARLOWE_RT_PORT" ]]
@@ -141,7 +144,7 @@ Note the test network magic number:
 
 ### Lender address and funds
 
-Check that an address and key has been created for the lender. If not, see "Creating Addresses and Signing Keys" in [Preliminaries](preliminaries.md).
+Check that an address and key has been created for the lender. If not, see "Creating Addresses and Signing Keys" in [Preliminaries](preliminaries.mdx).
 
 
 ```bash
@@ -177,7 +180,7 @@ echo "$EXPLORER_URL"/address/"$LENDER_ADDR"
 
 ### Borrower address and funds
 
-Check that an address and key has been created for the borrower. If not, see "Creating Addresses and Signing Keys" in [Preliminaries](preliminaries.md).
+Check that an address and key has been created for the borrower. If not, see "Creating Addresses and Signing Keys" in [Preliminaries](preliminaries.mdx).
 
 
 ```bash

@@ -63,7 +63,7 @@ When
 
 ## Preliminaries
 
-See [Preliminaries](preliminaries.md) for information on setting up one's environment for using this tutorial.
+See [Preliminaries](preliminaries.mdx) for information on setting up one's environment for using this tutorial.
 
 The lesson assumes that the following environment variables have been set.
 - `CARDANO_NODE_SOCKET_PATH`: location of Cardano node's socket.
@@ -83,6 +83,9 @@ It also assumes that the parties have addresses, signing keys, and funds.
 
 If we're using [demeter.run](https://demeter.run/)'s Cardano Marlowe Runtime extension, then we already have access to Cardano Node and Marlowe Runtime. The following commands will set the required environment variables to use a local docker deployment on the default ports. It will also set some supplementary environment variables.
 
+import SyncStatus from '../_partials/_check-sync-status.mdx';
+
+<SyncStatus />
 
 ```bash
 if [[ -z "$MARLOWE_RT_WEBSERVER_PORT" ]]
@@ -145,7 +148,7 @@ Note the test network magic number:
 
 ### Ada Provider address and funds
 
-Check that an address and key has been created for the ada provider. If not, see "Creating Addresses and Signing Keys" in [Preliminaries](preliminaries.md).
+Check that an address and key has been created for the ada provider. If not, see "Creating Addresses and Signing Keys" in [Preliminaries](preliminaries.mdx).
 
 
 ```bash
@@ -181,7 +184,7 @@ echo "$EXPLORER_URL"/address/"$ADA_PROVIDER_ADDR"
 
 ### Dollar Provider address and funds
 
-Check that an address and key has been created for the dollar provider. If not, see "Creating Addresses and Signing Keys" in [Preliminaries](preliminaries.md).
+Check that an address and key has been created for the dollar provider. If not, see "Creating Addresses and Signing Keys" in [Preliminaries](preliminaries.mdx).
 
 
 ```bash
@@ -345,7 +348,7 @@ Here are the steps for checking the safety of a contract:
 6. Use [Marlowe CLI\'s](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe-cli/ReadMe.md) `marlowe-cli run analyze` tool to study whether the contract can run on a Cardano network.
 7. Run *all execution paths* of the contract on a [Cardano testnet](https://docs.cardano.org/cardano-testnet/overview).
 
-See [Lesson 1](runtime-cli.md) for an example of performing step 6.
+See [Lesson 1](runtime-cli.mdx) for an example of performing step 6.
 
 ## Transaction 1: Ada provider Creates Swap Contract with Initial ADA
 

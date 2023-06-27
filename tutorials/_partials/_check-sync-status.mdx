@@ -1,0 +1,9 @@
+:::tip
+
+When running Cardano node with mainnet, sync times could be extremely large due to size of the chain. Consider running the node on better hardware, and allow ample time to completely sync.
+
+:::
+
+Check the status of the node with `cardano-cli query tip --testnet-magic $CARDANO_TESTNET_MAGIC`.
+
+Set `CARDANO_TESTNET_MAGIC=1`for preprod or `CARDANO_TESTNET_MAGIC=2` for preview. Otherwise, omit the flag for mainnet.
