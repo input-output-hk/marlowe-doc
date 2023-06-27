@@ -1,10 +1,17 @@
 
 :::caution
+
 An improperly configured cache will lead to lengthy compile times up to multiple hours long.
 
 :::
 
 ### Linux
+
+:::caution
+
+macOS is not directly supported at this time. It is highly recommended to use a Linux VM instead.
+
+:::
 
 #### non-NixOS Install
 
@@ -28,6 +35,7 @@ nix.settings = {
 };
 ```
 
+<!--
 ### macOS
 
 Configuration for macOS requires the same step as a non-NixOS install in addition to enabling the [sandbox](https://developer.apple.com/documentation/xcode/configuring-the-macos-app-sandbox/).
@@ -36,6 +44,7 @@ Configuration for macOS requires the same step as a non-NixOS install in additio
 sandbox = true
 extra-sandbox-paths = /System/Library/Frameworks /System/Library/PrivateFrameworks /usr/lib /private/tmp /private/var/tmp /usr/bin/env
 ```
+-->
 
 Restart the Nix daemon after updating `/etc/nix/nix.conf`.
 
