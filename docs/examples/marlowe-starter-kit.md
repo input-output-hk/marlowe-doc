@@ -1,5 +1,5 @@
 ---
-title: Example contracts
+title: Marlowe starter kit
 ---
 
 To help jumpstart your Marlowe contract creation experience, we encourage you to fork and clone the **[Marlowe starter kit repository](https://github.com/input-output-hk/marlowe-starter-kit)**. 
