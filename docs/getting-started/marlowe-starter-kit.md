@@ -1,18 +1,13 @@
 ---
 title: Marlowe starter kit
+sidebar_position: 2
 ---
 
 To help jumpstart your Marlowe contract creation experience, we encourage you to fork and clone the **[Marlowe starter kit repository](https://github.com/input-output-hk/marlowe-starter-kit)**. 
 
-The Marlowe starter kit provides tutorials for developers to learn and run simple Marlowe contracts on the Cardano blockchain. There are two methods available for deployment: 
+The Marlowe starter kit provides tutorials for developers to learn and run simple Marlowe contracts on the Cardano blockchain. 
 
-1. Through the cloud-hosted Marlowe Runtime extension in **[demeter.run](https://demeter.run)**, you can use the starter kit without installing any software. 
-
-2. Alternatively, you can run your own Docker containers locally for Marlowe Runtime. 
-
-> * **[Demonstration of deploying Marlowe Runtime using Docker](https://youtu.be/45F5ld8NNHM)** for use with the Marlowe starter kit. 
-
-If you are unfamiliar with the Marlowe language, you may want to experiment with Marlowe Playground before trying the starter kit. 
+If you are unfamiliar with the Marlowe language, you may want to experiment with **[Marlowe Playground](https://play.marlowe.iohk.io/#/)** before trying the starter kit. 
 
 The starter kit includes the following three on-chain example contracts along with instructions for setting up your environment for running them. 
 
