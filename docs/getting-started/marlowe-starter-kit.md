@@ -1,6 +1,7 @@
 ---
 title: Marlowe starter kit
-sidebar_position: 2
+sidebar_position: 3
+slug: /docs/examples/examples-starter-kit
 ---
 
 To help jumpstart your Marlowe contract creation experience, we encourage you to fork and clone the **[Marlowe starter kit repository](https://github.com/input-output-hk/marlowe-starter-kit)**. 
