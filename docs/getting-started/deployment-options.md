@@ -1,6 +1,6 @@
 ---
 title: Deployment options
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 There are two methods available for deploying Marlowe Runtime, the application backend for managing Marlowe contracts on the Cardano blockchain. The first method is a hosted solution that requires no installation. The second method is self-hosting, which requires more time and effort. 
