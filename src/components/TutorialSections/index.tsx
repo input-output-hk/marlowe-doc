@@ -33,7 +33,7 @@ function TutorialSections() {
               </div>
               <div className="card__body">
                 <p>
-                  More experienced users of Marlowe can learn from real-word usage of smart contracts with guided steps.
+                  More experienced users of Marlowe can learn from real-world usage of smart contracts with guided steps.
                 </p>
               </div>
               <div className="card__footer">
