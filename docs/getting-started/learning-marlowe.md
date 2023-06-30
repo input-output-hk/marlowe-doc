@@ -27,6 +27,8 @@ See the **[tutorials section](../../tutorials)** to learn about key concepts, gu
 
 * **[Developer tools overview and approaches to running your contracts](../developer-tools/overview)**
 
+* **[Marlowe starter kit](marlowe-starter-kit)**
+
 * **[Marlowe Runtime](../developer-tools/runtime/marlowe-runtime)**
 
 * **[Developer discussions](../support/dev-discussions)**
