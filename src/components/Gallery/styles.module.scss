@@ -1,0 +1,41 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 calc(var(--ifm-spacing-horizontal) * -1);
+
+  margin-bottom: 32px;
+}
+
+.card {
+  background-color: var(--ifm-card-background-color);
+  border-radius: var(--ifm-card-border-radius);
+  box-shadow: var(--ifm-global-shadow-lw);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  height: 280px;
+
+  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.16);
+
+  a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    z-index: 10;
+  }
+
+  svg {
+    color: var(--ifm-header-color);
+  }
+
+  &:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+  }
+}
+
+.body {
+  padding: var(--ifm-card-vertical-spacing) var(--ifm-card-horizontal-spacing);
+  padding-bottom: 0;
+}
