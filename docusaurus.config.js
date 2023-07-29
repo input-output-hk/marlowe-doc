@@ -35,12 +35,9 @@ const config = {
 
   presets: [
     [
-      'docusaurus-preset-openapi',
+      "classic",
+      /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        api: {
-          path: require.resolve('./static/api/openapi.latest.json'),
-          routeBasePath: 'api',
-        },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // editUrl:
