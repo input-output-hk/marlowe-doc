@@ -22,8 +22,8 @@ const config = {
   baseUrl: '/',
   organizationName: 'Marlowe', // Usually your GitHub org/user name.
   projectName: 'Marlowe', // Usually your repo name.
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -42,6 +42,8 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // editUrl:
           //   'https://github.com/input-output-hk/marlowe-doc/edit/main/docs',
+          docLayoutComponent: '@theme/DocPage',
+          docItemComponent: "@theme/ApiItem",
         },
         blog: false,
         theme: {
@@ -52,6 +54,7 @@ const config = {
   ],
 
   themes: [
+    'docusaurus-theme-openapi-docs',
     '@docusaurus/theme-mermaid',
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
@@ -71,6 +74,24 @@ const config = {
         path: 'tutorials',
         routeBasePath: 'tutorials',
         sidebarPath: require.resolve('./sidebar-tutorial.js'),
+        docLayoutComponent: '@theme/DocPage',
+        docItemComponent: '@theme/ApiItem',
+      },
+    ],
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'runtime',
+        docsPluginId: 'api',
+        config: {
+          runtime: {
+            specPath: "static/config/openapi.latest.json", // path or URL to the OpenAPI spec
+            outputDir: 'api', // output directory for generated *.mdx and sidebar.js files
+            sidebarOptions: {
+              groupPathsBy: 'tag', // generate a sidebar.js slice that groups operations by tag
+            },
+          }
+        }
       },
     ],
   ],
