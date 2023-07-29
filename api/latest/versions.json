@@ -1,0 +1,12 @@
+[
+  {
+    "version": "0.0.3",
+    "label": "v0.0.3",
+    "baseUrl": "/api/latest"
+  },
+  {
+    "version": "0.0.2",
+    "label": "v0.0.2",
+    "baseUrl": "/api/0.0.2"
+  }
+]

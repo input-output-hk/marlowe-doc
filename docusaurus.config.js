@@ -85,13 +85,35 @@ const config = {
         docsPluginId: 'api',
         config: {
           runtime: {
-            specPath: "static/config/openapi.latest.json", // path or URL to the OpenAPI spec
-            outputDir: 'api', // output directory for generated *.mdx and sidebar.js files
+            specPath: "static/api/openapi.latest.json", // path or URL to the OpenAPI spec
+            outputDir: 'api/latest', // output directory for generated *.mdx and sidebar.js files
             sidebarOptions: {
               groupPathsBy: 'tag', // generate a sidebar.js slice that groups operations by tag
             },
-          }
+            version: '0.0.3',
+            label: 'v0.0.3',
+            baseUrl: '/api/latest',
+            versions: {
+              '0.0.2': {
+                specPath: 'static/api/openapi.0.0.2.json',
+                outputDir: 'api/0.0.2', // No trailing slash
+                label: 'v0.0.2',
+                baseUrl: '/api/0.0.2', // Leading slash is important
+              },
+            },
+          },
         }
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'api',
+        path: 'api',
+        routeBasePath: 'api',
+        sidebarPath: require.resolve('./sidebars-api.js'),
+        docLayoutComponent: '@theme/DocPage',
+        docItemComponent: '@theme/ApiItem',
       },
     ],
   ],
