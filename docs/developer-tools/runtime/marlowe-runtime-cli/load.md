@@ -1,5 +1,5 @@
 ---
-title: Apply multiple inputs to a contract
+title: Load a contract into the contract store
 sidebar_position: 10
 ---
 
