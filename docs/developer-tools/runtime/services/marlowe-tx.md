@@ -1,37 +1,41 @@
 ---
-title: Marlowe transaction service
+title: Marlowe contract service
 ---
 
-The `marlowe-tx` executable provides services related to building and submitting transactions for Marlowe contracts.
+The `marlowe-contract` executable provides services related to managing the Marlowe Runtime contract store.
 
 ```console
-marlowe-tx : the transaction creation server of the Marlowe Runtime
+marlowe-contract : a contract storage service for the Marlowe Runtime.
 
-Usage: marlowe-tx [--chain-sync-port PORT_NUMBER] 
-                  [--chain-sync-query-port PORT_NUMBER] 
-                  [--chain-sync-command-port PORT_NUMBER] 
-                  [--chain-sync-host HOST_NAME] [--command-port PORT_NUMBER] 
-                  [-h|--host HOST_NAME]
+Usage: marlowe-contract [-h|--host HOST_NAME] [-p|--port PORT_NUMBER] 
+                        [--query-port PORT_NUMBER] [--transfer-port PORT_NUMBER]
+                        [-b|--buffer-size INTEGER] [-s|--store-dir DIR] 
+                        [--store-staging-dir DIR] 
+                        [--store-lock-microseconds-between-retries MICRO_SECONDS]
+                        [--http-port PORT_NUMBER]
 
-  Marlowe runtime transaction creation server
+  Contract storage service for Marlowe Runtime
 
 Available options:
   -h,--help                Show this help text
-  --chain-sync-port PORT_NUMBER
-                           The port number of the chain sync server.
-                           (default: 3715)
-  --chain-sync-query-port PORT_NUMBER
-                           The port number of the chain sync query server.
-                           (default: 3716)
-  --chain-sync-command-port PORT_NUMBER
-                           The port number of the chain sync job server.
-                           (default: 3720)
-  --chain-sync-host HOST_NAME
-                           The host name of the chain sync server.
+  -h,--host HOST_NAME      The host name to run the server on.
                            (default: "127.0.0.1")
-  --command-port PORT_NUMBER
-                           The port number to run the job server on.
-                           (default: 3723)
-  -h,--host HOST_NAME      The host name to run the tx server on.
-                           (default: "127.0.0.1")
+  -p,--port PORT_NUMBER    The port number to run the marlowe load server on.
+                           (default: 3727)
+  --query-port PORT_NUMBER The port number to run the query server on.
+                           (default: 3728)
+  --transfer-port PORT_NUMBER
+                           The port number to run the transfer server on.
+                           (default: 3729)
+  -b,--buffer-size INTEGER The number of contracts to accept from the client
+                           before flushing to disk. (default: 512)
+  -s,--store-dir DIR       The root directory of the contract store
+                           (default: "/home/jamie/.local/share/marlowe/runtime/marlowe-contract/store")
+  --store-staging-dir DIR  The root directory of the contract store staging
+                           areas (default: "/tmp/nix-shell.d8ALWo")
+  --store-lock-microseconds-between-retries MICRO_SECONDS
+                           The number of microseconds to wait between retries
+                           when acquiring the store lock (default: 500000)
+  --http-port PORT_NUMBER  Port number to serve the http healthcheck API on
+                           (default: 8080)
 ```
