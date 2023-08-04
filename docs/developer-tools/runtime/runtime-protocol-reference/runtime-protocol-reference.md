@@ -149,7 +149,7 @@ Once in that protocol state, the protocol stays there for the rest of the sessio
 ### Message types
 
 There are eight message types in the Marlowe Runtime protocol. 
-The first sevent initiate sub-protocol sessions, while the final sevent are carriers for sub-protocol messages. 
+The first seven initiate sub-protocol sessions, while the final seven are carriers for sub-protocol messages. 
 For example, the `MarloweSync` message type embeds a message from the sub-protocol in the Marlowe Runtime protocol. 
 
 | Message | Begin state | End state | Parameter | Description |
