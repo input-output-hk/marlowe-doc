@@ -5,7 +5,7 @@ import ArrowRight from '@site/static/icons/arrow_right.svg';
 
 import styles from './styles.module.scss';
 
-function Explorer() {
+function MarloweScan() {
   return(
     <div className={styles.gallery}>
       <div className={styles.card}>
@@ -39,4 +39,4 @@ function Explorer() {
   );
 }
 
-export default Explorer;
+export default MarloweScan;
