@@ -69,12 +69,26 @@ $ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
+### OpenAPI
+
+Create the initial scaffold to serve the API doc. This creates a `version.json` file for tracking.
+
+```
+$ docusaurus gen-api-docs all
+```
+
+Generate the remaining versioned documentation:
+
+```
+$ docusaurus gen-api-docs:version runtime:all
+```
+
 ### Docker
 
 Use Docker build and serve the documentation to avoid needing local installations of yarn and node.
 
 ```
-$docker build -t docs .
+$ docker build -t docs .
 $ docker run -it -p 8080:8080 docs
 ```
 
