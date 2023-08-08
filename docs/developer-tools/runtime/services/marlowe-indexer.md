@@ -11,7 +11,7 @@ Usage: marlowe-indexer [--chain-sync-port PORT_NUMBER]
                        [--chain-sync-query-port PORT_NUMBER] 
                        [--chain-sync-host HOST_NAME]
                        (-d|--database-uri DATABASE_URI) 
-                       [--log-config-file FILE_PATH]
+                       [--http-port PORT_NUMBER]
 
   Contract indexing service for Marlowe Runtime
 
@@ -29,7 +29,6 @@ Available options:
   -d,--database-uri DATABASE_URI
                            URI of the database where the contract information is
                            saved.
-  --log-config-file FILE_PATH
-                           The logging configuration JSON file.
-
+  --http-port PORT_NUMBER  Port number to serve the http healthcheck API on
+                           (default: 8080)
 ```

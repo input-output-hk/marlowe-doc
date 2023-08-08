@@ -8,11 +8,10 @@ The `marlowe-chain-sync` executable provides services for querying the blockchai
 marlowe-chain-sync : a chain sync server for the Marlowe Runtime.
 
 Usage: marlowe-chain-sync [--version] (-s|--socket-path SOCKET_FILE) 
-                  [-m|--testnet-magic INTEGER] (-d|--database-uri DATABASE_URI)
-                  [-h|--host HOST_NAME] 
-                  [--port PORT_NUMBER] [--query-port PORT_NUMBER] 
-                  [--job-port PORT_NUMBER] [--block-cost COST_UNITS] 
-                  [--tx-cost COST_UNITS] [--max-cost COST_UNITS]
+                          [-m|--testnet-magic INTEGER]
+                          (-d|--database-uri DATABASE_URI) [-h|--host HOST_NAME]
+                          [--port PORT_NUMBER] [--query-port PORT_NUMBER] 
+                          [--job-port PORT_NUMBER] [--http-port PORT_NUMBER]
 
   Chain sync server for Marlowe Runtime.
 
@@ -30,23 +29,12 @@ Available options:
                            saved.
   -h,--host HOST_NAME      The hostname to serve the chain sync protocol on.
                            (default: "127.0.0.1")
-  --port PORT_NUMBER
-                           The port number to serve the chain sync protocol on.
+  --port PORT_NUMBER       The port number to serve the chain sync protocol on.
                            (default: 3715)
-  --query-port PORT_NUMBER
-                           The port number to serve the query protocol on.
+  --query-port PORT_NUMBER The port number to serve the query protocol on.
                            (default: 3716)
-  --job-port PORT_NUMBER
-                           The port number to serve the job protocol on.
+  --job-port PORT_NUMBER   The port number to serve the job protocol on.
                            (default: 3720)
-  --block-cost COST_UNITS  The number of cost units to associate with persisting
-                           a block when computing the cost model. (default: 1)
-  --tx-cost COST_UNITS     The number of cost units to associate with persisting
-                           a transaction when computing the cost model.
-                           (default: 10)
-  --max-cost COST_UNITS    The maximum number of cost units that can be batched
-                           when persisting blocks. If the cost of the current
-                           batch would exceed this value, the chain sync client
-                           will wait until the current batch is persisted before
-                           requesting another block. (default: 100000)
+  --http-port PORT_NUMBER  Port number to serve the http healthcheck API on
+                           (default: 8080)
 ```
