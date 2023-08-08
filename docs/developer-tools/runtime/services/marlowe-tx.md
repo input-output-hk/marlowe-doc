@@ -1,41 +1,55 @@
 ---
-title: Marlowe contract service
+title: Marlowe transaction service
 ---
 
-The `marlowe-contract` executable provides services related to managing the Marlowe Runtime contract store.
+The `marlowe-tx` executable provides services related to building and submitting transactions for Marlowe contracts.
 
 ```console
-marlowe-contract : a contract storage service for the Marlowe Runtime.
+marlowe-tx : the transaction creation server of the Marlowe Runtime
 
-Usage: marlowe-contract [-h|--host HOST_NAME] [-p|--port PORT_NUMBER] 
-                        [--query-port PORT_NUMBER] [--transfer-port PORT_NUMBER]
-                        [-b|--buffer-size INTEGER] [-s|--store-dir DIR] 
-                        [--store-staging-dir DIR] 
-                        [--store-lock-microseconds-between-retries MICRO_SECONDS]
-                        [--http-port PORT_NUMBER]
+Usage: marlowe-tx [--chain-sync-port PORT_NUMBER]
+                  [--chain-sync-query-port PORT_NUMBER]
+                  [--chain-sync-command-port PORT_NUMBER]
+                  [--chain-sync-host HOST_NAME]
+                  [--contract-query-port PORT_NUMBER]
+                  [--contract-host HOST_NAME] [--command-port PORT_NUMBER]
+                  [-h|--host HOST_NAME] [--submit-confirmation-blocks INTEGER]
+                  [--analysis-timeout SECONDS] [--http-port PORT_NUMBER]
 
-  Contract storage service for Marlowe Runtime
+  Marlowe runtime transaction creation server
 
 Available options:
   -h,--help                Show this help text
-  -h,--host HOST_NAME      The host name to run the server on.
+  --chain-sync-port PORT_NUMBER
+                           The port number of the chain sync server.
+                           (default: 3715)
+  --chain-sync-query-port PORT_NUMBER
+                           The port number of the chain sync query server.
+                           (default: 3716)
+  --chain-sync-command-port PORT_NUMBER
+                           The port number of the chain sync job server.
+                           (default: 3720)
+  --chain-sync-host HOST_NAME
+                           The host name of the chain sync server.
                            (default: "127.0.0.1")
-  -p,--port PORT_NUMBER    The port number to run the marlowe load server on.
-                           (default: 3727)
-  --query-port PORT_NUMBER The port number to run the query server on.
+  --contract-query-port PORT_NUMBER
+                           The port number of the contract query server.
                            (default: 3728)
-  --transfer-port PORT_NUMBER
-                           The port number to run the transfer server on.
-                           (default: 3729)
-  -b,--buffer-size INTEGER The number of contracts to accept from the client
-                           before flushing to disk. (default: 512)
-  -s,--store-dir DIR       The root directory of the contract store
-                           (default: "/home/jamie/.local/share/marlowe/runtime/marlowe-contract/store")
-  --store-staging-dir DIR  The root directory of the contract store staging
-                           areas (default: "/tmp/nix-shell.d8ALWo")
-  --store-lock-microseconds-between-retries MICRO_SECONDS
-                           The number of microseconds to wait between retries
-                           when acquiring the store lock (default: 500000)
+  --contract-host HOST_NAME
+                           The host name of the contract server.
+                           (default: "127.0.0.1")
+  --command-port PORT_NUMBER
+                           The port number to run the job server on.
+                           (default: 3723)
+  -h,--host HOST_NAME      The host name to run the tx server on.
+                           (default: "127.0.0.1")
+  --submit-confirmation-blocks INTEGER
+                           The number of blocks after a transaction has been
+                           confirmed to wait before displaying the block in
+                           which was confirmed.
+                           (default: BlockNo {unBlockNo = 0})
+  --analysis-timeout SECONDS
+                           The amount of time allotted for safety analysis of a
+                           contract. (default: 15s)
   --http-port PORT_NUMBER  Port number to serve the http healthcheck API on
-                           (default: 8080)
-```
+                           (default: 8080)```
