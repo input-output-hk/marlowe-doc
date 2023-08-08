@@ -15,7 +15,7 @@ Available options:
 
 Available commands:
   contract                 Query the (merkleized) source of a contract in the
-                           contract store
+                           contract store.
   closure                  Query the deep dependency closure of a contract in
                            the store.
   adjacency                Query the immediate dependencies of a contract in the
