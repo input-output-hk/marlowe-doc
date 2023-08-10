@@ -30,9 +30,9 @@ Available options:
   -b,--buffer-size INTEGER The number of contracts to accept from the client
                            before flushing to disk. (default: 512)
   -s,--store-dir DIR       The root directory of the contract store
-                           (default: "/home/jamie/.local/share/marlowe/runtime/marlowe-contract/store")
+                           (default: "$XDG_DATA_DIR/marlowe/runtime/marlowe-contract/store")
   --store-staging-dir DIR  The root directory of the contract store staging
-                           areas (default: "/tmp/nix-shell.d8ALWo")
+                           areas
   --store-lock-microseconds-between-retries MICRO_SECONDS
                            The number of microseconds to wait between retries
                            when acquiring the store lock (default: 500000)
