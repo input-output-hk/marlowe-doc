@@ -52,4 +52,5 @@ Available options:
                            The amount of time allotted for safety analysis of a
                            contract. (default: 15s)
   --http-port PORT_NUMBER  Port number to serve the http healthcheck API on
-                           (default: 8080)```
+                           (default: 8080)
+```
