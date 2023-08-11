@@ -1513,6 +1513,9 @@
         }
       },
       "post": {
+        "security": [],
+        "summary": "Create withdrawals",
+        "operationId": "createWithdrawals",
         "parameters": [
           {
             "in": "header",
@@ -2078,6 +2081,9 @@
     },
     "/contracts/{contractId}/next": {
       "get": {
+        "security": [],
+        "summary": "Get transaction output by ID",
+        "operationId": "getTransactionOutputByID",
         "parameters": [
           {
             "in": "path",
@@ -2233,6 +2239,9 @@
     },
     "/contracts/sources": {
       "post": {
+        "security": [],
+        "summary": "Access contract import",
+        "operationId": "accessContractImport",
         "parameters": [
           {
             "in": "query",
@@ -2372,6 +2381,9 @@
     },
     "/contracts/sources/{contractSourceId}": {
       "get": {
+        "security":[],
+        "summary": "Get contract import by ID",
+        "operationId": "getcontractImportByID",
         "parameters": [
           {
             "in": "path",
@@ -2507,6 +2519,9 @@
     },
     "/contracts/sources/{contractSourceId}/adjacency": {
       "get": {
+        "security": [],
+        "summary": "Get adjacency by ID",
+        "operationId": "getAdjacencyByID",
         "parameters": [
           {
             "in": "path",
@@ -2637,6 +2652,9 @@
     },
     "/contracts/sources/{contractSourceId}/closure": {
       "get": {
+        "security": [],
+        "summary": "Get closure by ID",
+        "operationId": "getClosureByID",
         "parameters": [
           {
             "in": "path",
@@ -4542,5 +4560,11 @@
       }
     }
   },
-  "openapi": "3.0.0"
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "localhost:3780",
+      "description": ""
+    }
+  ]
 }
