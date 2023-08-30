@@ -4,7 +4,7 @@ sidebar_position: 5
 ---
 
 In many real world scenarios, the size of a Marlowe contract can pose challenges. For instance,
-a a contract may be too big to fit on a Cardano transaction. To handle this
+a contract may be too big to fit on a Cardano transaction. To handle this
 situation, the Marlowe semantics and plutus validator both support a size optimization
 called merkleization. Merkleization is a process that transforms a contract
 from a tree structure into a merkle DAG (directed-acyclic graph) consisting of
@@ -119,7 +119,7 @@ apply thereafter.
 
 ## On-chain requirements
 
-The marlowe validator does not use the `Input` type from the semantics module
+The Marlowe validator does not use the `Input` type from the semantics module
 in its redeemer type. Instead, it uses a `MarloweTxInput`, which does not
 include the continuation contract in the merkleized case. Instead, the
 merkleized case just contains the hash. This is to avoid having to hash the
@@ -127,7 +127,7 @@ continuation contract in the validator to check the integrity of the hash, which
 is expensive. Instead, when building a transaction with a `MerkleizedInput` in
 the redeemer, the continuation contract must be added as a script datum to an
 additional transaction output on the transaction. This will cause the hash of
-that datum to be verified by the ledger rules instead, saving plutus execution
+that datum to be verified by the ledger rules instead, saving Plutus execution
 costs. The validator then looks up this additional datum from the script
-context using the hash provided by the `MerkleizedInput`, and convert the
+context using the hash provided by the `MerkleizedInput`, and converts the
 `MarloweTxInput` to an `Input`, which is passed to the semantic validator.
