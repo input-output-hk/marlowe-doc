@@ -9,7 +9,7 @@ lot of duplication of things such as continuations, actions, and so on, because
 all definitions must be fully inlined at the usage site.
 
 The Marlowe object bundle format addresses this limitation by representing a
-contract as a list of labelled objects which may reference other objects by
+contract as a list of labeled objects which may reference other objects by
 label. A related concept is [merkleization](large-contracts.md) which allows
 contract terms to be defined incrementally and deterministically as the contract
 progresses. The object bundle format is more general than merkleization, and is
@@ -18,8 +18,8 @@ of merkleization is to reduce the size of contracts on-chain).
 
 ## Objects, labels and references
 
-An object bundle is a list of labelled objects. A label is an arbitrary name
-used as a unique identifier for an object withing a bundle. An object is either
+An object bundle is a list of labeled objects. A label is an arbitrary name
+used as a unique identifier for an object within a bundle. An object is either
 an action, contract, observation, token, value, or party. Objects can reference
 other objects by label.
 
@@ -28,8 +28,8 @@ other objects by label.
 An object can be an action, a contract, an observation, a token, a value, or a
 party. Each of these is structurally the same as their corresponding core Marlowe
 language construct, with the exception that the object versions allow for
-references. For example, in core marlowe, a party can either be a role or an
-address. In object marlowe, a part can be a role, and address, or a label that
+references. For example, in core Marlowe, a party can either be a role or an
+address. In object Marlowe, a party can be a role, and address, or a label that
 references a previously defined party.
 
 ### Labels
@@ -58,17 +58,17 @@ serves no functional purpose.
 ## Linking
 
 Linking is the process of converting an object bundle into a set of core
-marlowe language constructs. The primary purpose of this is to produce a core
-marlowe contract from a bundle. The general linking algorithm is:
+Marlowe language constructs. The primary purpose of this is to produce a core
+Marlowe contract from a bundle. The general linking algorithm is:
 
 - Allocate an empty linked object buffer
-- For each labelled object in the bundle:
+- For each labeled object in the bundle:
     - If the label is present in the linked object buffer, halt with a `DuplicateLabel` error.
     - Resolve any references in the object.
         - If a reference is not present in the linked object buffer, halt with an `UnknownSymbol` error.
         - If the referenced object is of the wrong type, halt with a `TypeMismatch` error.
         - Replace the reference with the referenced object.
-    - Add the linked object to the linked object buffer
+    - Add the linked object to the linked object buffer.
 - Yield the linked object buffer.
 
 ## Archive format
