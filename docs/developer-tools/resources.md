@@ -16,7 +16,7 @@ sidebar_position: 6
 
 ## Specifications
 
-- **[Marlowe Specification, Version 3](https://github.com/input-output-hk/marlowe/releases/tag/SCP-4415)**
+- **[Marlowe Specification, Version 3](https://github.com/input-output-hk/marlowe/releases/tag/v3)**
 - **[Marlowe-Cardano Specification](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe/specification/marlowe-cardano-specification.md)**
 
 ## Testing and debugging
