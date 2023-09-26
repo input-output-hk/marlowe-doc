@@ -60,9 +60,7 @@
               "Accept-Ranges": {
                 "schema": {
                   "items": {
-                    "enum": [
-                      "contractId"
-                    ],
+                    "enum": ["contractId"],
                     "type": "string"
                   },
                   "type": "array"
@@ -662,6 +660,161 @@
         }
       }
     },
+    "/contracts/{contractId}/next": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "contractId",
+            "required": true,
+            "schema": {
+              "description": "A reference to a transaction output with a transaction ID and index. The value must be URL encoded by replacing the '#' character with %23.",
+              "example": "98d601c9307dd43307cf68a03aad0086d4e07a789b66919ccf9f7f7676577eb7%231",
+              "pattern": "^[a-fA-F0-9]{64}%23[0-9]+$",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "validityStart",
+            "required": true,
+            "schema": { "format": "yyyy-mm-ddThh:MM:ssZ", "type": "string" }
+          },
+          {
+            "in": "query",
+            "name": "validityEnd",
+            "required": true,
+            "schema": { "format": "yyyy-mm-ddThh:MM:ssZ", "type": "string" }
+          },
+          {
+            "in": "query",
+            "name": "party",
+            "schema": {
+              "items": {
+                "description": "Party (A role name or an Address)",
+                "type": "string"
+              },
+              "type": "array"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": { "$ref": "#/components/schemas/Next" }
+              }
+            },
+            "description": "",
+            "headers": {
+              "X-Network-Id": {
+                "schema": {
+                  "description": "The latest known point in the chain on a peer.",
+                  "oneOf": [{ "type": "string" }, { "type": "integer" }]
+                }
+              },
+              "X-Node-Tip": {
+                "schema": {
+                  "description": "The latest known point in the chain on a peer.",
+                  "oneOf": [
+                    {
+                      "properties": {
+                        "genesisTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "blockHeader": {
+                          "$ref": "#/components/schemas/BlockHeader"
+                        },
+                        "slotTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    }
+                  ]
+                }
+              },
+              "X-Runtime-Chain-Tip": {
+                "schema": {
+                  "description": "The latest known point in the chain on a peer.",
+                  "oneOf": [
+                    {
+                      "properties": {
+                        "genesisTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "blockHeader": {
+                          "$ref": "#/components/schemas/BlockHeader"
+                        },
+                        "slotTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    }
+                  ]
+                }
+              },
+              "X-Runtime-Tip": {
+                "schema": {
+                  "description": "The latest known point in the chain on a peer.",
+                  "oneOf": [
+                    {
+                      "properties": {
+                        "genesisTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "blockHeader": {
+                          "$ref": "#/components/schemas/BlockHeader"
+                        },
+                        "slotTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    }
+                  ]
+                }
+              },
+              "X-Runtime-Version": {
+                "schema": { "pattern": "^\\d+(\\.\\d+)*$", "type": "string" }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid `party` or `validityEnd` or `validityStart`"
+          },
+          "404": { "description": "`contractId` not found" }
+        }
+      }
+    },
     "/contracts/{contractId}/transactions": {
       "get": {
         "security": [],
@@ -702,9 +855,7 @@
               "Accept-Ranges": {
                 "schema": {
                   "items": {
-                    "enum": [
-                      "transactionId"
-                    ],
+                    "enum": ["transactionId"],
                     "type": "string"
                   },
                   "type": "array"
@@ -1340,6 +1491,540 @@
         }
       }
     },
+    "/contracts/sources": {
+      "post": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "main",
+            "required": true,
+            "schema": {
+              "description": "An arbitrary text identifier for an object in a Marlowe object bundle.",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ObjectBundle" }
+            },
+            "application/json;charset=utf-8": {
+              "schema": { "$ref": "#/components/schemas/ObjectBundle" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostContractSourceResponse"
+                }
+              }
+            },
+            "description": "",
+            "headers": {
+              "X-Network-Id": {
+                "schema": {
+                  "description": "The latest known point in the chain on a peer.",
+                  "oneOf": [{ "type": "string" }, { "type": "integer" }]
+                }
+              },
+              "X-Node-Tip": {
+                "schema": {
+                  "description": "The latest known point in the chain on a peer.",
+                  "oneOf": [
+                    {
+                      "properties": {
+                        "genesisTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "blockHeader": {
+                          "$ref": "#/components/schemas/BlockHeader"
+                        },
+                        "slotTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    }
+                  ]
+                }
+              },
+              "X-Runtime-Chain-Tip": {
+                "schema": {
+                  "description": "The latest known point in the chain on a peer.",
+                  "oneOf": [
+                    {
+                      "properties": {
+                        "genesisTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "blockHeader": {
+                          "$ref": "#/components/schemas/BlockHeader"
+                        },
+                        "slotTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    }
+                  ]
+                }
+              },
+              "X-Runtime-Tip": {
+                "schema": {
+                  "description": "The latest known point in the chain on a peer.",
+                  "oneOf": [
+                    {
+                      "properties": {
+                        "genesisTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "blockHeader": {
+                          "$ref": "#/components/schemas/BlockHeader"
+                        },
+                        "slotTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    }
+                  ]
+                }
+              },
+              "X-Runtime-Version": {
+                "schema": { "pattern": "^\\d+(\\.\\d+)*$", "type": "string" }
+              }
+            }
+          },
+          "400": { "description": "Invalid `body` or `main`" }
+        }
+      }
+    },
+    "/contracts/sources/{contractSourceId}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "contractSourceId",
+            "required": true,
+            "schema": {
+              "description": "The hex-encoded identifier of a Marlowe contract source",
+              "pattern": "^[a-fA-F0-9]{64}$",
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": true,
+            "in": "query",
+            "name": "expand",
+            "schema": { "default": false, "type": "boolean" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": { "$ref": "#/components/schemas/Contract" }
+              }
+            },
+            "description": "",
+            "headers": {
+              "X-Network-Id": {
+                "schema": {
+                  "description": "The latest known point in the chain on a peer.",
+                  "oneOf": [{ "type": "string" }, { "type": "integer" }]
+                }
+              },
+              "X-Node-Tip": {
+                "schema": {
+                  "description": "The latest known point in the chain on a peer.",
+                  "oneOf": [
+                    {
+                      "properties": {
+                        "genesisTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "blockHeader": {
+                          "$ref": "#/components/schemas/BlockHeader"
+                        },
+                        "slotTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    }
+                  ]
+                }
+              },
+              "X-Runtime-Chain-Tip": {
+                "schema": {
+                  "description": "The latest known point in the chain on a peer.",
+                  "oneOf": [
+                    {
+                      "properties": {
+                        "genesisTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "blockHeader": {
+                          "$ref": "#/components/schemas/BlockHeader"
+                        },
+                        "slotTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    }
+                  ]
+                }
+              },
+              "X-Runtime-Tip": {
+                "schema": {
+                  "description": "The latest known point in the chain on a peer.",
+                  "oneOf": [
+                    {
+                      "properties": {
+                        "genesisTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "blockHeader": {
+                          "$ref": "#/components/schemas/BlockHeader"
+                        },
+                        "slotTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    }
+                  ]
+                }
+              },
+              "X-Runtime-Version": {
+                "schema": { "pattern": "^\\d+(\\.\\d+)*$", "type": "string" }
+              }
+            }
+          },
+          "400": { "description": "Invalid `expand`" },
+          "404": { "description": "`contractSourceId` not found" }
+        }
+      }
+    },
+    "/contracts/sources/{contractSourceId}/adjacency": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "contractSourceId",
+            "required": true,
+            "schema": {
+              "description": "The hex-encoded identifier of a Marlowe contract source",
+              "pattern": "^[a-fA-F0-9]{64}$",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListObject_ContractSourceId"
+                }
+              }
+            },
+            "description": "",
+            "headers": {
+              "X-Network-Id": {
+                "schema": {
+                  "description": "The latest known point in the chain on a peer.",
+                  "oneOf": [{ "type": "string" }, { "type": "integer" }]
+                }
+              },
+              "X-Node-Tip": {
+                "schema": {
+                  "description": "The latest known point in the chain on a peer.",
+                  "oneOf": [
+                    {
+                      "properties": {
+                        "genesisTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "blockHeader": {
+                          "$ref": "#/components/schemas/BlockHeader"
+                        },
+                        "slotTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    }
+                  ]
+                }
+              },
+              "X-Runtime-Chain-Tip": {
+                "schema": {
+                  "description": "The latest known point in the chain on a peer.",
+                  "oneOf": [
+                    {
+                      "properties": {
+                        "genesisTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "blockHeader": {
+                          "$ref": "#/components/schemas/BlockHeader"
+                        },
+                        "slotTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    }
+                  ]
+                }
+              },
+              "X-Runtime-Tip": {
+                "schema": {
+                  "description": "The latest known point in the chain on a peer.",
+                  "oneOf": [
+                    {
+                      "properties": {
+                        "genesisTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "blockHeader": {
+                          "$ref": "#/components/schemas/BlockHeader"
+                        },
+                        "slotTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    }
+                  ]
+                }
+              },
+              "X-Runtime-Version": {
+                "schema": { "pattern": "^\\d+(\\.\\d+)*$", "type": "string" }
+              }
+            }
+          },
+          "404": { "description": "`contractSourceId` not found" }
+        }
+      }
+    },
+    "/contracts/sources/{contractSourceId}/closure": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "contractSourceId",
+            "required": true,
+            "schema": {
+              "description": "The hex-encoded identifier of a Marlowe contract source",
+              "pattern": "^[a-fA-F0-9]{64}$",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json;charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListObject_ContractSourceId"
+                }
+              }
+            },
+            "description": "",
+            "headers": {
+              "X-Network-Id": {
+                "schema": {
+                  "description": "The latest known point in the chain on a peer.",
+                  "oneOf": [{ "type": "string" }, { "type": "integer" }]
+                }
+              },
+              "X-Node-Tip": {
+                "schema": {
+                  "description": "The latest known point in the chain on a peer.",
+                  "oneOf": [
+                    {
+                      "properties": {
+                        "genesisTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "blockHeader": {
+                          "$ref": "#/components/schemas/BlockHeader"
+                        },
+                        "slotTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    }
+                  ]
+                }
+              },
+              "X-Runtime-Chain-Tip": {
+                "schema": {
+                  "description": "The latest known point in the chain on a peer.",
+                  "oneOf": [
+                    {
+                      "properties": {
+                        "genesisTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "blockHeader": {
+                          "$ref": "#/components/schemas/BlockHeader"
+                        },
+                        "slotTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    }
+                  ]
+                }
+              },
+              "X-Runtime-Tip": {
+                "schema": {
+                  "description": "The latest known point in the chain on a peer.",
+                  "oneOf": [
+                    {
+                      "properties": {
+                        "genesisTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "blockHeader": {
+                          "$ref": "#/components/schemas/BlockHeader"
+                        },
+                        "slotTimeUTC": {
+                          "format": "yyyy-mm-ddThh:MM:ssZ",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["genesisTimeUTC"],
+                      "type": "object"
+                    }
+                  ]
+                }
+              },
+              "X-Runtime-Version": {
+                "schema": { "pattern": "^\\d+(\\.\\d+)*$", "type": "string" }
+              }
+            }
+          },
+          "404": { "description": "`contractSourceId` not found" }
+        }
+      }
+    },
     "/withdrawals": {
       "get": {
         "security": [],
@@ -1381,9 +2066,7 @@
               "Accept-Ranges": {
                 "schema": {
                   "items": {
-                    "enum": [
-                      "withdrawalId"
-                    ],
+                    "enum": ["withdrawalId"],
                     "type": "string"
                   },
                   "type": "array"
@@ -1513,9 +2196,6 @@
         }
       },
       "post": {
-        "security": [],
-        "summary": "Create withdrawals",
-        "operationId": "createWithdrawals",
         "parameters": [
           {
             "in": "header",
@@ -2078,710 +2758,6 @@
           }
         }
       }
-    },
-    "/contracts/{contractId}/next": {
-      "get": {
-        "security": [],
-        "summary": "Get transaction output by ID",
-        "operationId": "getTransactionOutputByID",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "contractId",
-            "required": true,
-            "schema": {
-              "description": "A reference to a transaction output with a transaction ID and index. The value must be URL encoded by replacing the '#' character with %23.",
-              "example": "98d601c9307dd43307cf68a03aad0086d4e07a789b66919ccf9f7f7676577eb7%231",
-              "pattern": "^[a-fA-F0-9]{64}%23[0-9]+$",
-              "type": "string"
-            }
-          },
-          {
-            "in": "query",
-            "name": "validityStart",
-            "required": true,
-            "schema": { "format": "yyyy-mm-ddThh:MM:ssZ", "type": "string" }
-          },
-          {
-            "in": "query",
-            "name": "validityEnd",
-            "required": true,
-            "schema": { "format": "yyyy-mm-ddThh:MM:ssZ", "type": "string" }
-          },
-          {
-            "in": "query",
-            "name": "party",
-            "schema": {
-              "items": {
-                "description": "Party (A role name or an Address)",
-                "type": "string"
-              },
-              "type": "array"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json;charset=utf-8": {
-                "schema": { "$ref": "#/components/schemas/Next" }
-              }
-            },
-            "description": "",
-            "headers": {
-              "X-Network-Id": {
-                "schema": {
-                  "description": "The latest known point in the chain on a peer.",
-                  "oneOf": [{ "type": "string" }, { "type": "integer" }]
-                }
-              },
-              "X-Node-Tip": {
-                "schema": {
-                  "description": "The latest known point in the chain on a peer.",
-                  "oneOf": [
-                    {
-                      "properties": {
-                        "genesisTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    },
-                    {
-                      "properties": {
-                        "blockHeader": {
-                          "$ref": "#/components/schemas/BlockHeader"
-                        },
-                        "slotTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    }
-                  ]
-                }
-              },
-              "X-Runtime-Chain-Tip": {
-                "schema": {
-                  "description": "The latest known point in the chain on a peer.",
-                  "oneOf": [
-                    {
-                      "properties": {
-                        "genesisTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    },
-                    {
-                      "properties": {
-                        "blockHeader": {
-                          "$ref": "#/components/schemas/BlockHeader"
-                        },
-                        "slotTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    }
-                  ]
-                }
-              },
-              "X-Runtime-Tip": {
-                "schema": {
-                  "description": "The latest known point in the chain on a peer.",
-                  "oneOf": [
-                    {
-                      "properties": {
-                        "genesisTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    },
-                    {
-                      "properties": {
-                        "blockHeader": {
-                          "$ref": "#/components/schemas/BlockHeader"
-                        },
-                        "slotTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    }
-                  ]
-                }
-              },
-              "X-Runtime-Version": {
-                "schema": { "pattern": "^\\d+(\\.\\d+)*$", "type": "string" }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid `party` or `validityEnd` or `validityStart`"
-          },
-          "404": { "description": "`contractId` not found" }
-        }
-      }
-    },
-    "/contracts/sources": {
-      "post": {
-        "security": [],
-        "summary": "Access contract import",
-        "operationId": "accessContractImport",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "main",
-            "required": true,
-            "schema": {
-              "description": "An arbitrary text identifier for an object in a Marlowe object bundle.",
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": { "$ref": "#/components/schemas/ObjectBundle" }
-            },
-            "application/json;charset=utf-8": {
-              "schema": { "$ref": "#/components/schemas/ObjectBundle" }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json;charset=utf-8": {
-                "schema": {
-                  "$ref": "#/components/schemas/PostContractSourceResponse"
-                }
-              }
-            },
-            "description": "",
-            "headers": {
-              "X-Network-Id": {
-                "schema": {
-                  "description": "The latest known point in the chain on a peer.",
-                  "oneOf": [{ "type": "string" }, { "type": "integer" }]
-                }
-              },
-              "X-Node-Tip": {
-                "schema": {
-                  "description": "The latest known point in the chain on a peer.",
-                  "oneOf": [
-                    {
-                      "properties": {
-                        "genesisTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    },
-                    {
-                      "properties": {
-                        "blockHeader": {
-                          "$ref": "#/components/schemas/BlockHeader"
-                        },
-                        "slotTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    }
-                  ]
-                }
-              },
-              "X-Runtime-Chain-Tip": {
-                "schema": {
-                  "description": "The latest known point in the chain on a peer.",
-                  "oneOf": [
-                    {
-                      "properties": {
-                        "genesisTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    },
-                    {
-                      "properties": {
-                        "blockHeader": {
-                          "$ref": "#/components/schemas/BlockHeader"
-                        },
-                        "slotTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    }
-                  ]
-                }
-              },
-              "X-Runtime-Tip": {
-                "schema": {
-                  "description": "The latest known point in the chain on a peer.",
-                  "oneOf": [
-                    {
-                      "properties": {
-                        "genesisTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    },
-                    {
-                      "properties": {
-                        "blockHeader": {
-                          "$ref": "#/components/schemas/BlockHeader"
-                        },
-                        "slotTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    }
-                  ]
-                }
-              },
-              "X-Runtime-Version": {
-                "schema": { "pattern": "^\\d+(\\.\\d+)*$", "type": "string" }
-              }
-            }
-          },
-          "400": { "description": "Invalid `body` or `main`" }
-        }
-      }
-    },
-    "/contracts/sources/{contractSourceId}": {
-      "get": {
-        "security":[],
-        "summary": "Get contract import by ID",
-        "operationId": "getcontractImportByID",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "contractSourceId",
-            "required": true,
-            "schema": {
-              "description": "The hex-encoded identifier of a Marlowe contract source",
-              "pattern": "^[a-fA-F0-9]{64}$",
-              "type": "string"
-            }
-          },
-          {
-            "allowEmptyValue": true,
-            "in": "query",
-            "name": "expand",
-            "schema": { "default": false, "type": "boolean" }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json;charset=utf-8": {
-                "schema": { "$ref": "#/components/schemas/Contract" }
-              }
-            },
-            "description": "",
-            "headers": {
-              "X-Network-Id": {
-                "schema": {
-                  "description": "The latest known point in the chain on a peer.",
-                  "oneOf": [{ "type": "string" }, { "type": "integer" }]
-                }
-              },
-              "X-Node-Tip": {
-                "schema": {
-                  "description": "The latest known point in the chain on a peer.",
-                  "oneOf": [
-                    {
-                      "properties": {
-                        "genesisTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    },
-                    {
-                      "properties": {
-                        "blockHeader": {
-                          "$ref": "#/components/schemas/BlockHeader"
-                        },
-                        "slotTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    }
-                  ]
-                }
-              },
-              "X-Runtime-Chain-Tip": {
-                "schema": {
-                  "description": "The latest known point in the chain on a peer.",
-                  "oneOf": [
-                    {
-                      "properties": {
-                        "genesisTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    },
-                    {
-                      "properties": {
-                        "blockHeader": {
-                          "$ref": "#/components/schemas/BlockHeader"
-                        },
-                        "slotTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    }
-                  ]
-                }
-              },
-              "X-Runtime-Tip": {
-                "schema": {
-                  "description": "The latest known point in the chain on a peer.",
-                  "oneOf": [
-                    {
-                      "properties": {
-                        "genesisTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    },
-                    {
-                      "properties": {
-                        "blockHeader": {
-                          "$ref": "#/components/schemas/BlockHeader"
-                        },
-                        "slotTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    }
-                  ]
-                }
-              },
-              "X-Runtime-Version": {
-                "schema": { "pattern": "^\\d+(\\.\\d+)*$", "type": "string" }
-              }
-            }
-          },
-          "400": { "description": "Invalid `expand`" },
-          "404": { "description": "`contractSourceId` not found" }
-        }
-      }
-    },
-    "/contracts/sources/{contractSourceId}/adjacency": {
-      "get": {
-        "security": [],
-        "summary": "Get adjacency by ID",
-        "operationId": "getAdjacencyByID",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "contractSourceId",
-            "required": true,
-            "schema": {
-              "description": "The hex-encoded identifier of a Marlowe contract source",
-              "pattern": "^[a-fA-F0-9]{64}$",
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json;charset=utf-8": {
-                "schema": {
-                  "$ref": "#/components/schemas/ListObject_ContractSourceId"
-                }
-              }
-            },
-            "description": "",
-            "headers": {
-              "X-Network-Id": {
-                "schema": {
-                  "description": "The latest known point in the chain on a peer.",
-                  "oneOf": [{ "type": "string" }, { "type": "integer" }]
-                }
-              },
-              "X-Node-Tip": {
-                "schema": {
-                  "description": "The latest known point in the chain on a peer.",
-                  "oneOf": [
-                    {
-                      "properties": {
-                        "genesisTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    },
-                    {
-                      "properties": {
-                        "blockHeader": {
-                          "$ref": "#/components/schemas/BlockHeader"
-                        },
-                        "slotTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    }
-                  ]
-                }
-              },
-              "X-Runtime-Chain-Tip": {
-                "schema": {
-                  "description": "The latest known point in the chain on a peer.",
-                  "oneOf": [
-                    {
-                      "properties": {
-                        "genesisTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    },
-                    {
-                      "properties": {
-                        "blockHeader": {
-                          "$ref": "#/components/schemas/BlockHeader"
-                        },
-                        "slotTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    }
-                  ]
-                }
-              },
-              "X-Runtime-Tip": {
-                "schema": {
-                  "description": "The latest known point in the chain on a peer.",
-                  "oneOf": [
-                    {
-                      "properties": {
-                        "genesisTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    },
-                    {
-                      "properties": {
-                        "blockHeader": {
-                          "$ref": "#/components/schemas/BlockHeader"
-                        },
-                        "slotTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    }
-                  ]
-                }
-              },
-              "X-Runtime-Version": {
-                "schema": { "pattern": "^\\d+(\\.\\d+)*$", "type": "string" }
-              }
-            }
-          },
-          "404": { "description": "`contractSourceId` not found" }
-        }
-      }
-    },
-    "/contracts/sources/{contractSourceId}/closure": {
-      "get": {
-        "security": [],
-        "summary": "Get closure by ID",
-        "operationId": "getClosureByID",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "contractSourceId",
-            "required": true,
-            "schema": {
-              "description": "The hex-encoded identifier of a Marlowe contract source",
-              "pattern": "^[a-fA-F0-9]{64}$",
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json;charset=utf-8": {
-                "schema": {
-                  "$ref": "#/components/schemas/ListObject_ContractSourceId"
-                }
-              }
-            },
-            "description": "",
-            "headers": {
-              "X-Network-Id": {
-                "schema": {
-                  "description": "The latest known point in the chain on a peer.",
-                  "oneOf": [{ "type": "string" }, { "type": "integer" }]
-                }
-              },
-              "X-Node-Tip": {
-                "schema": {
-                  "description": "The latest known point in the chain on a peer.",
-                  "oneOf": [
-                    {
-                      "properties": {
-                        "genesisTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    },
-                    {
-                      "properties": {
-                        "blockHeader": {
-                          "$ref": "#/components/schemas/BlockHeader"
-                        },
-                        "slotTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    }
-                  ]
-                }
-              },
-              "X-Runtime-Chain-Tip": {
-                "schema": {
-                  "description": "The latest known point in the chain on a peer.",
-                  "oneOf": [
-                    {
-                      "properties": {
-                        "genesisTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    },
-                    {
-                      "properties": {
-                        "blockHeader": {
-                          "$ref": "#/components/schemas/BlockHeader"
-                        },
-                        "slotTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    }
-                  ]
-                }
-              },
-              "X-Runtime-Tip": {
-                "schema": {
-                  "description": "The latest known point in the chain on a peer.",
-                  "oneOf": [
-                    {
-                      "properties": {
-                        "genesisTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    },
-                    {
-                      "properties": {
-                        "blockHeader": {
-                          "$ref": "#/components/schemas/BlockHeader"
-                        },
-                        "slotTimeUTC": {
-                          "format": "yyyy-mm-ddThh:MM:ssZ",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["genesisTimeUTC"],
-                      "type": "object"
-                    }
-                  ]
-                }
-              },
-              "X-Runtime-Version": {
-                "schema": { "pattern": "^\\d+(\\.\\d+)*$", "type": "string" }
-              }
-            }
-          },
-          "404": { "description": "`contractSourceId` not found" }
-        }
-      }
     }
   },
   "components": {
@@ -2806,18 +2782,13 @@
                   "$ref": "#/components/schemas/ContractHeader"
                 }
               },
-              "required": [
-                "resource",
-                "links"
-              ],
+              "required": ["resource", "links"],
               "type": "object"
             },
             "type": "array"
           }
         },
-        "required": [
-          "results"
-        ],
+        "required": ["results"],
         "type": "object"
       },
       "ContractHeader": {
@@ -2876,9 +2847,7 @@
       },
       "MarloweVersion": {
         "description": "A version of the Marlowe language.",
-        "enum": [
-          "v1"
-        ],
+        "enum": ["v1"],
         "type": "string"
       },
       "Metadata": {
@@ -2886,11 +2855,7 @@
       },
       "TxStatusHeader": {
         "description": "A header of the status of a transaction on the local node.",
-        "enum": [
-          "unsigned",
-          "submitted",
-          "confirmed"
-        ],
+        "enum": ["unsigned", "submitted", "confirmed"],
         "type": "string"
       },
       "BlockHeader": {
@@ -2911,11 +2876,7 @@
             "type": "integer"
           }
         },
-        "required": [
-          "slotNo",
-          "blockNo",
-          "blockHeaderHash"
-        ],
+        "required": ["slotNo", "blockNo", "blockHeaderHash"],
         "type": "object"
       },
       "ApplyInputsTxEnvelope": {
@@ -2938,11 +2899,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "type",
-          "description",
-          "cborHex"
-        ],
+        "required": ["type", "description", "cborHex"],
         "type": "object"
       },
       "SafetyError": {
@@ -4560,11 +4517,5 @@
       }
     }
   },
-  "openapi": "3.0.0",
-  "servers": [
-    {
-      "url": "localhost:3780",
-      "description": ""
-    }
-  ]
+  "openapi": "3.0.0"
 }
