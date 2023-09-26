@@ -7,10 +7,10 @@ The `marlowe-chain-sync` executable provides services for querying the blockchai
 ```console
 marlowe-chain-sync : a chain sync server for the Marlowe Runtime.
 
-Usage: marlowe-chain-sync [--version] (-s|--socket-path SOCKET_FILE) 
+Usage: marlowe-chain-sync [--version] (-s|--socket-path SOCKET_FILE)
                           [-m|--testnet-magic INTEGER]
                           (-d|--database-uri DATABASE_URI) [-h|--host HOST_NAME]
-                          [--port PORT_NUMBER] [--query-port PORT_NUMBER] 
+                          [--port PORT_NUMBER] [--query-port PORT_NUMBER]
                           [--job-port PORT_NUMBER] [--http-port PORT_NUMBER]
 
   Chain sync server for Marlowe Runtime.

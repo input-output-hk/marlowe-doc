@@ -1,4 +1,4 @@
---- 
+---
 title: Marlowe indexer service
 ---
 
@@ -7,10 +7,10 @@ The `marlowe-indexer` executable follows `marlowe-chain-sync` and writes Marlowe
 ```console
 marlowe-indexer : a contract indexing service for the Marlowe Runtime.
 
-Usage: marlowe-indexer [--chain-sync-port PORT_NUMBER] 
-                       [--chain-sync-query-port PORT_NUMBER] 
+Usage: marlowe-indexer [--chain-sync-port PORT_NUMBER]
+                       [--chain-sync-query-port PORT_NUMBER]
                        [--chain-sync-host HOST_NAME]
-                       (-d|--database-uri DATABASE_URI) 
+                       (-d|--database-uri DATABASE_URI)
                        [--http-port PORT_NUMBER]
 
   Contract indexing service for Marlowe Runtime

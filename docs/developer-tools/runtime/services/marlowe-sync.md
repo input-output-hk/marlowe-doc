@@ -8,10 +8,10 @@ The `marlowe-sync` executable provides protocols that access Marlowe contract in
 marlowe-sync : a contract synchronization and query service for the Marlowe
 Runtime.
 
-Usage: marlowe-sync (-d|--database-uri DATABASE_URI) [--sync-port PORT_NUMBER] 
-                    [--header-sync-port PORT_NUMBER] [--query-port PORT_NUMBER] 
-                    [-h|--host HOST_NAME] [--chain-sync-host HOST_NAME] 
-                    [--chain-sync-query-port PORT_NUMBER] 
+Usage: marlowe-sync (-d|--database-uri DATABASE_URI) [--sync-port PORT_NUMBER]
+                    [--header-sync-port PORT_NUMBER] [--query-port PORT_NUMBER]
+                    [-h|--host HOST_NAME] [--chain-sync-host HOST_NAME]
+                    [--chain-sync-query-port PORT_NUMBER]
                     [--http-port PORT_NUMBER]
 
   Contract synchronization and query service for Marlowe Runtime

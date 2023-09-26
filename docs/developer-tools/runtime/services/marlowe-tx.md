@@ -15,6 +15,7 @@ Usage: marlowe-tx [--chain-sync-port PORT_NUMBER]
                   [--contract-host HOST_NAME] [--command-port PORT_NUMBER]
                   [-h|--host HOST_NAME] [--submit-confirmation-blocks INTEGER]
                   [--analysis-timeout SECONDS] [--http-port PORT_NUMBER]
+                  --minting-policy-cmd CMD
 
   Marlowe runtime transaction creation server
 
@@ -53,4 +54,6 @@ Available options:
                            contract. (default: 15s)
   --http-port PORT_NUMBER  Port number to serve the http healthcheck API on
                            (default: 8080)
+  --minting-policy-cmd CMD A command which creates the role token minting policy
+                           for a contract.
 ```
