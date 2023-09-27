@@ -104,7 +104,7 @@ function DocsFooter() {
                 <div className={styles.linkItem}>
                   <Link
                     target="_blank"
-                    href="https://static.iohk.io/gdpr/IOHK-Data-Protection-GDPR-Policy.pdf"
+                    href="https://static.iohk.io/terms/iog-privacy-policy.pdf"
                   >
                     Privacy Policy
                   </Link>
