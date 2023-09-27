@@ -7,13 +7,13 @@ The `marlowe-chain-indexer` executable follows a local blockchain node and write
 ```console
 marlowe-chain-indexer : a chain indexer for the Marlowe Runtime.
 
-Usage: marlowe-chain-indexer [--version] (-s|--socket-path SOCKET_FILE) 
+Usage: marlowe-chain-indexer [--version] (-s|--socket-path SOCKET_FILE)
                              [-m|--testnet-magic INTEGER]
                              (-d|--database-uri DATABASE_URI)
                              --genesis-config-file-hash CONFIG_HASH
                              --genesis-config-file CONFIG_FILE
-                             --shelley-genesis-config-file CONFIG_FILE 
-                             [--block-cost COST_UNITS] [--tx-cost COST_UNITS] 
+                             --shelley-genesis-config-file CONFIG_FILE
+                             [--block-cost COST_UNITS] [--tx-cost COST_UNITS]
                              [--max-cost COST_UNITS] [--http-port PORT_NUMBER]
 
   Chain indexer for Marlowe Runtime.
@@ -49,4 +49,3 @@ Available options:
   --http-port PORT_NUMBER  Port number to serve the http healthcheck API on
                            (default: 8080)
 ```
-

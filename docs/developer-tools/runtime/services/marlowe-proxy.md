@@ -7,15 +7,15 @@ The `marlowe-proxy` executable provides a single unified public API for the whol
 ```console
 marlowe-proxy : an API proxy service for the Marlowe Runtime.
 
-Usage: marlowe-proxy [-h|--host HOST_NAME] [-p|--port PORT_NUMBER] 
+Usage: marlowe-proxy [-h|--host HOST_NAME] [-p|--port PORT_NUMBER]
                      [--port-traced PORT_NUMBER] [--marlowe-sync-host HOST_NAME]
-                     [--marlowe-sync-port PORT_NUMBER] 
-                     [--marlowe-header-port PORT_NUMBER] 
-                     [--marlowe-query-port PORT_NUMBER] 
-                     [--marlowe-contract-host HOST_NAME] 
-                     [--marlowe-load-port PORT_NUMBER] 
-                     [--marlowe-transfer-port PORT_NUMBER] 
-                     [--contract-query-port PORT_NUMBER] [--tx-host HOST_NAME] 
+                     [--marlowe-sync-port PORT_NUMBER]
+                     [--marlowe-header-port PORT_NUMBER]
+                     [--marlowe-query-port PORT_NUMBER]
+                     [--marlowe-contract-host HOST_NAME]
+                     [--marlowe-load-port PORT_NUMBER]
+                     [--marlowe-transfer-port PORT_NUMBER]
+                     [--contract-query-port PORT_NUMBER] [--tx-host HOST_NAME]
                      [--tx-command-port PORT_NUMBER] [--http-port PORT_NUMBER]
 
   API proxy service for Marlowe Runtime
