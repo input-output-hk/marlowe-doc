@@ -5,8 +5,16 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 const OSANO_SRC = process.env.OSANO_SRC;
-const scripts = [];
+const scripts = [
+  {
+    src: 'https://www.feedbackrocket.io/sdk/v1.1.js',
+    async: true,
+    'data-fr-id': 'MUUFimprPtTseMFmHxVrP',
+    'data-fr-theme': 'dynamic',
+  },
+];
 if (OSANO_SRC) {
+  // @ts-ignore
   scripts.push({
     src: OSANO_SRC,
     async: false
