@@ -3,11 +3,11 @@ title: Runner
 sidebar_position: 6
 ---
 
-Runner is a DApp that is designed to deploy your contract to the blockchain, whether you are deploying to the preview, preprod or mainnet network node. 
+Runner is a DApp that is designed to deploy your contract to the blockchain, whether you are deploying to the preview, pre-production or mainnet network. 
 
 Once you have finished creating, simulating and testing your Marlowe smart contract, such as by using Marlowe Playground, you can then deploy your smart contract to Runner by using one of these methods: 
 
-1. Send your contract to Runner by selecting the "Send to Runner" button in Playground, or 
+1. Send your contract to Runner by selecting the 'Send to Runner' button in Playground, or 
 2. Download your contract as a JSON file, then upload it to Runner. 
 
 ## Runner's ease of use
@@ -26,7 +26,7 @@ Runner will mint the role tokens that are required by the contract. Whoever has 
 
 ### Source graph view 
 
-When building a contract DApp from the TS-SDK, Haskell, PureScript, or other languages, viewing it in Runner can be useful for analyzing the contract’s logic from the Source graph view. 
+When building a contract DApp from the TS-SDK, Haskell, PureScript, or other languages, viewing it in Runner can be useful for analyzing the contract’s logic from the 'Source' graph view. 
 
 ### Advancing the contract
 
@@ -54,7 +54,7 @@ For especially complex and sophisticated contract scenarios, you may need to cus
 
 #### Suitable contracts for Runner
 
-Contracts that fit and execute on the chain will work in Runner. Contract examples that are included with Playground are suitable for Runner. 
+Contracts that fit and execute on the chain will work in Runner. Contract examples that are included within Playground are suitable for Runner. 
 
 ## Considerations before you deploy
 
