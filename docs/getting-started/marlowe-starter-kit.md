@@ -1,12 +1,12 @@
 ---
-title: Marlowe Starter Kit
+title: Marlowe starter kit
 sidebar_position: 3
 ---
 
 To jumpstart your Marlowe contract creation, **[fork and clone the Marlowe starter kit repository](https://github.com/input-output-hk/marlowe-starter-kit)**. 
 
 ## Introduction
-The Marlowe Starter Kit aims to offer comprehensive tutorials for developers looking to experiment with simple Marlowe contracts on the Cardano blockchain. 
+The Marlowe starter kit aims to offer comprehensive tutorials for developers looking to experiment with simple Marlowe contracts on the Cardano blockchain. 
 
 If you are unfamiliar with the Marlowe language, you may want to experiment with the **[Marlowe Playground](https://play.marlowe.iohk.io/#/)** before diving into the starter kit.
 
