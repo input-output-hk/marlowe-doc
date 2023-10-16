@@ -1966,7 +1966,7 @@
     },
     "/healthcheck": {
       "get": {
-        "operationId": "health-check-endpoint",
+        "operationId": "healthcheck",
         "description": "Returns the health status of the runtime service.",
         "responses": {
           "200": {
@@ -2076,7 +2076,7 @@
           }
         },
         "security": [],
-        "summary": "Get health of runtime"
+        "summary": "Check if the server is running and ready to respond to requests."
       }
     },
     "/payouts": {
