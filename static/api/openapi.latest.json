@@ -7,7 +7,7 @@
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
     "title": "Marlowe Runtime REST API",
-    "version": "0.0.5"
+    "version": "0.0.5.1"
   },
   "servers": [
     { "url": "https://marlowe-runtime-preprod-web.scdev.aws.iohkdev.io" },
@@ -1187,9 +1187,10 @@
         "summary": "Submit contract to chain"
       }
     },
-    "/contracts/{contractId}/next/getNextStepsForContract": {
+    "/contracts/{contractId}/next": {
       "get": {
         "description": "Get inputs which could be performed on a contract withing a time range by the requested parties.",
+        "operationId": "getNextStepsForContract",
         "parameters": [
           {
             "in": "path",
@@ -1966,8 +1967,8 @@
     },
     "/healthcheck": {
       "get": {
+        "description": "Check if the server is running and ready to respond to requests.",
         "operationId": "healthcheck",
-        "description": "Returns the health status of the runtime service.",
         "responses": {
           "200": {
             "content": { "application/json;charset=utf-8": {} },
@@ -2076,7 +2077,7 @@
           }
         },
         "security": [],
-        "summary": "Check if the server is running and ready to respond to requests."
+        "summary": "Test server status"
       }
     },
     "/payouts": {
