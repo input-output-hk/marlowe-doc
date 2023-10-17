@@ -1966,6 +1966,8 @@
     },
     "/healthcheck": {
       "get": {
+        "operationId": "healthcheck",
+        "description": "Returns the health status of the runtime service.",
         "responses": {
           "200": {
             "content": { "application/json;charset=utf-8": {} },
@@ -2073,7 +2075,8 @@
             }
           }
         },
-        "security": []
+        "security": [],
+        "summary": "Check if the server is running and ready to respond to requests."
       }
     },
     "/payouts": {
