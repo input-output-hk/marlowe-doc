@@ -21,7 +21,7 @@ To use the capabilities of the Marlowe TS-SDK, have an active link to a Marlowe 
 - **[Marlowe Payouts](https://github.com/input-output-hk/marlowe-payouts)**  
 Engineered with the Marlowe TS-SDK, this DApp offers a streamlined approach to discerning and extracting payouts from Marlowe contracts on the Cardano blockchain. With a commitment to user experience, it ensures intuitive interactions and unhindered connectivity to the Cardano network.
 - **[Vesting Prototype](https://github.com/input-output-hk/marlowe-ts-sdk/blob/main/pocs/contract-example/vesting-flow.html)**  
-Dive into the [Vesting](https://github.com/input-output-hk/marlowe-vesting) DApp, tailored for:
+Dive into the **[Vesting DApp](https://github.com/input-output-hk/marlowe-vesting)**, tailored for:
   - Tokenomics orchestration.
   - Timed fund safeguards.
   - Pre-planned fund distributions to diverse stakeholders.
