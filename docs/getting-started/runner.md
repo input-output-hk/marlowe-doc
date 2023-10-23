@@ -48,11 +48,15 @@ While Marlowe supports merkleization, Runner does not yet support it.
 
 The state of Marlowe contracts is determined by the inputs to the contract at each step, making the contract’s behavior easier to understand and predict. 
 
-### More complex and sophisticated contracts
+## Hardware wallets
+
+Currently, Runner does not work with hardware wallets such as Ledger and Trezor. 
+
+## More complex and sophisticated contracts
 
 For especially complex and sophisticated contract scenarios, you may need to customize your approach. Runner is not intended yet to be able to manage very complex contracts. 
 
-#### Suitable contracts for Runner
+### Suitable contracts for Runner
 
 Contracts that fit and execute on the chain will work in Runner. Contract examples that are included within Playground are suitable for Runner. 
 
