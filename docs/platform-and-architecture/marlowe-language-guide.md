@@ -159,3 +159,35 @@ A Marlowe account holds amounts of multiple currencies and/or fungible and non-f
 `data Token = Token CurrencySymbol TokenName`
 
 The ada token of Cardano is represented as `Token adaSymbol adaToken`, however, you can create your own currencies and tokens. 
+
+## Minimum ada requirements
+
+There is a minimum ada requirement to create a contract. However, when the contract involves different native tokens in the output, the minimum ada requirement increases to accommodate every potential contract path. 
+
+### Ledger rule
+
+The **[minimum ada requirement](https://docs.cardano.org/native-tokens/minimum-ada-value-requirement/)** is a ledger rule that requires every Tx output to contain a minimum amount of ada. 
+
+This amount increases with the number of different native tokens in the output. The node will reject transaction outputs that don't satisfy the minimum ada requirement.
+
+### Deposited at contract creation, refunded at closing
+
+The minimum ada deposit is deposited into a Marlowe contract account when it is created. The deposit is held in this account until the contract closes. Afterwards it is refunded. 
+
+### Maximum required ada deposit
+
+The amount of ada deposited should be enough to cover the maximum required ada deposit for the Marlowe script output at any point in the contract.
+
+### Minimum ada requirement starts low, may increase depending on actions
+
+The Marlowe script output holds all the funds in the contract accounts. At the beginning of the contract, typically there will be only one account that holds the min ada deposit. At the start, the min ada requirement is rather low. 
+
+If the contract contains deposit actions that put native tokens into accounts, the min ada requirement will increase. If you did not deposit enough ada to cover that increased min ada requirement, you will be unable to take those deposit actions, blocking the contract from advancing. This will not lock funds; the contract will simply timeout and the money in the accounts will get refunded.
+
+### Simulate all potential contract paths
+
+When creating a contract, you need to evaluate all possible paths, keeping track of the number of native tokens in the accounts at each step. The highest value of this number will determine the maximum required ada deposit. This is the safe amount to use as the min ada deposit for that contract.
+
+### Without sufficient minimum ada deposit, certain contract paths may be inaccessible
+
+It would be impossible to create a Marlowe contract that does not satisfy the min ada requirement because such a transaction would violate the ledger rules (eg, you can't create a Marlowe contract that has 0 total money in the accounts). While it is possible to create a contract with an insufficient min ada deposit, you may never be able to execute certain paths of the contract.
