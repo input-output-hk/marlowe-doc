@@ -43,8 +43,7 @@ const config = {
         },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // editUrl:
-          //   'https://github.com/input-output-hk/marlowe-doc/edit/main/docs',
+          editUrl: 'https://github.com/input-output-hk/marlowe-doc/edit/main',
         },
         blog: false,
         theme: {
