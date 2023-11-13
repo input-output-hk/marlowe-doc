@@ -1,10 +1,6 @@
-import React from "react";
-import { MatomoContext } from "@site/src/context/MatomoContext";
+import React, { PropsWithChildren } from "react";
+import { AnalyticsProvider } from "../analytics/AnalyticsContext";
 
-export default function Root({ children }) {
-  return (
-    <MatomoContext>
-      {children}
-    </MatomoContext>
-  );
+export default function Root({ children }: PropsWithChildren) {
+  return <AnalyticsProvider>{children}</AnalyticsProvider>;
 }
