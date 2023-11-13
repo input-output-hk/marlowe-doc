@@ -145,9 +145,9 @@ const config = {
     }),
   scripts,
   customFields: {
-    posthogApiKey: "phc_WtP5YRiiIxBn7U1D4iXHI7cJXDSBhNMdWxe4sTcBV5v",
-    posthogApiHost: "https://eu.posthog.com",
-    posthogProjectId: 11672,
+    posthogApiKey: process.env.POSTHOG_API_KEY,
+    posthogApiHost: process.env.POSTHOG_API_HOST,
+    posthogProjectId: process.env.POSTHOG_PROJECT_ID,
   },
 };
 
