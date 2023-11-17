@@ -5,7 +5,7 @@ sidebar_position: 8
 
 ## Support and release cadence
 
-At the moment, Marlowe does not strictly adhere to [Semantic Versioning](https://semver.org/). Prior to a `v1` release, changes may be breaking and backporting future fixes is to be determined.
+At the moment, Marlowe does not strictly adhere to [**Semantic Versioning**](https://semver.org/). Prior to a `v1` release, changes may be breaking and backporting future fixes is to be determined.
 
 Releases are not operating at a regular cadence yet although critical bug fixes will typically lead to faster releases.
 
