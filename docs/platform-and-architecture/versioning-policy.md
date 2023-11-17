@@ -3,11 +3,13 @@ title: Versioning policy
 sidebar_position: 8
 ---
 
+This document is intended to provide guidance for compatibility of tools within Marlowe with Cardano node. Developers can use this for tracking purposes and more formal support policies as the project matures.
+
 ## Support and release cadence
 
 At the moment, Marlowe does not strictly adhere to [**Semantic Versioning**](https://semver.org/). Prior to a `v1` release, changes may be breaking and backporting future fixes is to be determined.
 
-Releases are not operating at a regular cadence yet although critical bug fixes will typically lead to faster releases.
+Releases are not operating at a regular cadence yet, although critical bug fixes will typically lead to faster releases.
 
 ## Release history
 
