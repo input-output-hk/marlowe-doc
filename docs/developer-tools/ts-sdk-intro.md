@@ -11,14 +11,14 @@ The **[Marlowe TypeScript SDK (TS-SDK)](https://github.com/input-output-hk/marlo
 1. **Smart contract toolkit**: Craft, deploy, and manage Marlowe smart contracts on the Cardano blockchain with the tools and libraries in the TS-SDK.
 2. **Integration with Marlowe Playground**: The TS-SDK works well with the Marlowe Playground, an online interface dedicated to designing, simulating, and scrutinizing Marlowe contracts.
 3. **Wallet connectivity**: With built-in modules, the TS-SDK promotes smooth interactions with various wallet extensions. This ensures easy access to wallet data and the efficient integration of Marlowe contracts with a variety of wallet interfaces.
-4. **Proof-of-concept (PoC) templates**: Embark on your DApp journey using the TS-SDK's distilled example templates. These PoC templates serve as launching pads for your customized applications.
+4. **Prototype DApp examples**: Embark on your DApp journey using the TS-SDK's distilled prototype examples. These prototypes serve as launching pads for your customized applications.
 
 ## Getting started
 To use the capabilities of the Marlowe TS-SDK, you will need to have a URL to a running instance of the Marlowe Runtime and a compatible wallet extension installed in your browser. Please refer to the **[Marlowe starter kit](https://github.com/input-output-hk/marlowe-starter-kit)** for guidance about accessing a running instance of the Runtime. 
 
-## PoC templates
+## Prototype examples
 
-- **[Marlowe payouts DApp](https://github.com/input-output-hk/marlowe-payouts)**: Engineered with the Marlowe TS-SDK, this DApp offers a streamlined approach to discerning and extracting payouts from Marlowe contracts on the Cardano blockchain. With a commitment to user experience, it ensures intuitive interactions and unhindered connectivity to the Cardano network.
+- **[Payouts DApp prototype](payouts-dapp-prototype.md)**: Engineered with the Marlowe TS-SDK, this DApp offers a streamlined approach to discerning and extracting payouts from Marlowe contracts on the Cardano blockchain. With a commitment to user experience, it ensures intuitive interactions and unhindered connectivity to the Cardano network.
 - **[Vesting prototype repo](https://github.com/input-output-hk/marlowe-vesting)**: Manages the phased allocation of shares over a designated time frame. Users can easily retrieve shares upon vesting. Tailored for projects that require the following sorts of capabilities: 
   - Tokenomics orchestration
   - Timed fund safeguards
