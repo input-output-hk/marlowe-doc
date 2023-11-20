@@ -7,7 +7,7 @@ sidebar_position: 3
 
 The **[payouts DApp prototype](https://github.com/input-output-hk/marlowe-payouts)** is an example of a decentralized application designed to help users discover, track, and withdraw tokens from Marlowe smart contracts that use role tokens. It enables holders of role tokens in Marlowe smart contracts to withdraw the received funds, simplifying the process of tracking and withdrawing their payouts. 
 
-Since role tokens can be ada handles, ada domains, or custom tokens, users have a lot of flexibility with how to use the payouts DApp component. 
+Since role tokens can be [**ada handles**](https://handle.tools/), [**ada domains**](https://www.adadomains.io/), or custom tokens, users have a lot of flexibility with how to use the payouts DApp component. 
 
 ## Built with the Marlowe TS-SDK
 
