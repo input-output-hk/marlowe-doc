@@ -37,8 +37,8 @@ Releases are not operating at a regular cadence yet, although critical bug fixes
 |        | Cardano Node 1.35.7 | Cardano Node 8.0.8 | Cardano Node 8.1.1 | Cardano Node 8.1.2 |
 | -------| ------------------| --------------| ------------| -----------|
 | `marlowe-cli-0.1.0.0` | ✗ | ✗ | ✗ | ✓ |
-| `marlowe-cli-0.0.12.0` | ✓ | ✓ | ✓ | ? |
-| `marlowe-cli-0.0.11.0` | ✓ | ✓ | ✓ | ? |
+| `marlowe-cli-0.0.12.0` | ✓ | ✓ | ✓ | ✗ |
+| `marlowe-cli-0.0.11.0` | ✓ | ✓ | ✓ | ✗ |
 
 :::note
 
