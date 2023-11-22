@@ -63,7 +63,7 @@ The state of Marlowe contracts is determined by the inputs to the contract at ea
 
 ## Wallets
 
-Runner supports web3 wallets Lace, Nami, and Eternl. 
+Runner supports web3 wallets [**Lace**](https://www.lace.io/), [**Nami**](https://namiwallet.io/), and [**Eternl**](https://eternl.io/app/mainnet/welcome).  
 
 Currently, Runner does not work with hardware wallets such as Ledger and Trezor. 
 
