@@ -61,7 +61,9 @@ While Marlowe supports merkleization, Runner does not yet support it.
 
 The state of Marlowe contracts is determined by the inputs to the contract at each step, making the contract’s behavior easier to understand and predict. 
 
-## Hardware wallets
+## Wallets
+
+Runner supports web3 wallets Lace, Nami, and Eternl. 
 
 Currently, Runner does not work with hardware wallets such as Ledger and Trezor. 
 
