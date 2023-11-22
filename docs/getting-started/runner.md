@@ -3,16 +3,29 @@ title: Runner
 sidebar_position: 6
 ---
 
-Runner is a DApp that is designed to deploy your contract to the blockchain, whether you are deploying to the preview, pre-production or mainnet network. 
+## A developer tool and a DApp for running contracts on the blockchain
 
-Once you have finished creating, simulating and testing your Marlowe smart contract, such as by using Marlowe Playground, you can then deploy your smart contract to Runner by using one of these methods: 
+Runner is a user-friendly developer tool and a simple DApp you can use to deploy and execute your contract on Cardano right from the browser, whether you are deploying to the preview, pre-production or mainnet network. 
 
-1. Send your contract to Runner by selecting the 'Send to Runner' button in Playground, or 
-2. Download your contract as a JSON file, then upload it to Runner. 
+Runner makes contract deployment simple for both DApp builders and traditional developers, enabling the execution of contracts created in Playground without requiring any backend orchestration or programming knowledge. 
 
-## Runner's ease of use
+## Customizable DApp template
 
-Using Runner is quite simple and intuitive. It requires no knowledge of command-line tools. You will only need to specify the network you want to work with, connect a wallet that is on the same network, and have your password details available so that you can sign transactions with your wallet. You will also need to have any required tokens or funds available in your wallet. 
+Furthermore, Marlowe Runner is an [**open-source developer application**](https://github.com/input-output-hk/marlowe-runner), making it easy for you to replicate it to create a customized end-user interface. So, not only does it serve as a tool for running contracts on the blockchain, but also as a customizable DApp template that you can use to create your own custom DApp for your precise use case.
+
+## Simple to use
+
+Using Runner requires no knowledge of command-line tools, so it is quite simple and intuitive to use. You will only need to specify the network you want to work with, connect a wallet that is on the same network, and have your password details available so that you can sign transactions with your wallet. You will also need to have any required tokens or funds available in your wallet. 
+
+### Deploying your contract
+
+Once you have finished creating, simulating and testing your Marlowe smart contract in the Playground, you can deploy your smart contract to Runner by using one of these methods: 
+
+1. From the Playground, select 'Send to Simulator,' then 'Export to Marlowe Runner.'
+2. Alternatively, download your contract from the Playground as a JSON file, then upload it to Runner. 
+
+> * [**Access Runner on the preview network**](https://preview.runner.marlowe.iohk.io/)
+> * [**Access Runner on the pre-production network**](https://preprod.runner.marlowe.iohk.io/)
 
 ## Technical details
 
@@ -48,7 +61,9 @@ While Marlowe supports merkleization, Runner does not yet support it.
 
 The state of Marlowe contracts is determined by the inputs to the contract at each step, making the contract’s behavior easier to understand and predict. 
 
-## Hardware wallets
+## Wallets
+
+Runner supports web3 wallets Lace, Nami, and Eternl. 
 
 Currently, Runner does not work with hardware wallets such as Ledger and Trezor. 
 
