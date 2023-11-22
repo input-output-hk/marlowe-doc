@@ -3,9 +3,11 @@ title: Runner
 sidebar_position: 6
 ---
 
-## A developer tool and a DApp for running contracts on the blockchain
+In this video, Nick Stanford, Developer Relations Manager for Smart Contracts, shows you how to deploy and execute contracts created in Marlowe Playground using Marlowe Runner, beta version. Marlowe Runner is a developer tool with a friendly user interface for deploying and executing smart contracts on Cardano, straight from a browser.
 
-Runner is a user-friendly developer tool and a simple DApp you can use to deploy and execute your contract on Cardano right from the browser, whether you are deploying to the preview, pre-production or mainnet network. 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/B5XcH0j7Y7w?si=9e0Rf2TLo1Y2kMHp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## A developer tool and a DApp for running contracts on the blockchain
 
 Runner makes contract deployment simple for both DApp builders and traditional developers, enabling the execution of contracts created in Playground without requiring any backend orchestration or programming knowledge. 
 
