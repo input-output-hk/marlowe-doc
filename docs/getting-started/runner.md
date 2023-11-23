@@ -3,7 +3,7 @@ title: Runner
 sidebar_position: 6
 ---
 
-In this video, Nick Stanford, Developer Relations Manager for Smart Contracts, shows you how to deploy and execute contracts created in Marlowe Playground using Marlowe Runner, beta version. Marlowe Runner is a developer tool with a friendly user interface for deploying and executing smart contracts on Cardano, straight from a browser.
+This video explains how to deploy and execute contracts created in Marlowe Playground using Marlowe Runner, beta version. Marlowe Runner is a developer tool with a friendly user interface for deploying and executing smart contracts on Cardano, straight from a browser.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/B5XcH0j7Y7w?si=9e0Rf2TLo1Y2kMHp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
