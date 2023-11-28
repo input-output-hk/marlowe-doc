@@ -18,7 +18,6 @@ To use the capabilities of the Marlowe TS-SDK, you will need to have a URL to a 
 
 ## Prototype examples
 
-- **[Runner DApp prototype](../getting-started/runner)**: Developed in PureScript, Runner is a simple DApp you can use to deploy and progress your contract on Cardano easily from the browser, whether you are deploying to the preview, pre-production or mainnet network. 
 - **[Payouts DApp prototype](payouts-dapp-prototype.md)**: Engineered with the Marlowe TS-SDK, this DApp offers a streamlined approach to discerning and extracting payouts from Marlowe contracts on the Cardano blockchain. With a commitment to user experience, it ensures intuitive interactions and unhindered connectivity to the Cardano network.
 - **[Vesting prototype repo](https://github.com/input-output-hk/marlowe-vesting)**: Manages the phased allocation of shares over a designated time frame. Users can easily retrieve shares upon vesting. Tailored for projects that require the following sorts of capabilities: 
   - Tokenomics orchestration
