@@ -38,7 +38,7 @@ The ReadMe file covers the following topics:
 * Web services
 * Related documentation
 
-### [Getting started > Deployment options](../../getting-started/deployment-options)
+### [Getting started > Deployment options](/tutorials/guides/deployment-options)
 
 ### [Tutorials > Playbooks > Deploying Marlowe Runtime](../../../tutorials/playbooks/deploying-marlowe-runtime)
 

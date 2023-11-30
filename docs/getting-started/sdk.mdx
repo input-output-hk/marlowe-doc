@@ -1,0 +1,18 @@
+---
+title: SDK
+sidebar_position: 6
+---
+
+An SDK(Software Development Kit) can help accelerate the development process by providing libraries and tools.
+
+Marlowe has a REST API with many endpoints and parameters. A good SDK ultimately aims to help developers avoid problems such as JSON serialization, constructing proper request formats, and finding the correct inputs from documentation.
+
+The following languages are currently supported by IOG:
+
+[![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://github.com/input-output-hk/marlowe-ts-sdk)
+
+An example of how an SDK is useful can be seen from the [API schema](https://raw.githubusercontent.com/input-output-hk/marlowe-doc/main/static/api/openapi.latest.json). Instead the Marlowe's Typescript SDK provides a [`GetContractsRequest`](https://input-output-hk.github.io/marlowe-ts-sdk/interfaces/_marlowe_io_runtime_rest_client.contract.GetContractsRequest.html) method that can take in optional proerties.
+
+This example would show party addresses, roles, tags, and a range are parts of an operation for getting contracts. A developer would have the option to learn about these properties through their coding environment rather than scanning through the API reference.
+
+Although new SDKs can be created in the future, it is impractical to have an exhaustive list of all possible languages. Furthermore, third party SDKs may also emergy as the community expands on the existing ecosystem. Developers who are using SDKs to build and deploy smart contracts should still spend time validating code used within abstractions.
