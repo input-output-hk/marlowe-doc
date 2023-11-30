@@ -1,6 +1,6 @@
 ---
 title: Deployment options
-sidebar_position: 2
+sidebar_position: 0
 ---
 
 There are three methods available for deploying **[Marlowe Runtime services](../platform-and-architecture/architecture)**, the application backend for managing Marlowe contracts on the Cardano blockchain. 
