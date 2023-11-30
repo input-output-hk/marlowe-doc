@@ -337,7 +337,7 @@ say that the contract passed all the tests, or to explain how it fails,
 and giving the sequence of transactions that lead to the error. As an
 exercise, try this with the `Escrow` contract, changing the initial
 deposit from Alice to something smaller than 450 lovelace. More details
-are given in the section on [static analysis](static-analysis.md) below. 
+are given in the section on [static analysis](/tutorials/guides/static-analysis).
 
 The **Analyse reachability** button will check whether any parts of a
 contract will never be executed, however participants interact with the
