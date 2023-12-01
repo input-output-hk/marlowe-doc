@@ -1,6 +1,6 @@
 ---
 title: Payouts DApp prototype
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 ## Discover, track, and withdraw tokens
