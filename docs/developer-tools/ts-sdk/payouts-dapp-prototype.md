@@ -27,7 +27,7 @@ For example, it is possible to integrate the payouts DApp into a wallet so that 
 
 ## Use alongside Marlowe Runner
 
-Using the payouts DApp functionality alongside **[Runner](../getting-started/runner)**, you can connect a wallet authorized to receive funds to the payouts DApp when advancing a contract through Runner. Once the wallet is connected, Runner will display a list of contracts you are part of. 
+Using the payouts DApp functionality alongside **[Runner](../../getting-started/runner)**, you can connect a wallet authorized to receive funds to the payouts DApp when advancing a contract through Runner. Once the wallet is connected, Runner will display a list of contracts you are part of. 
 
 The payouts DApp lists available tokens that an authorized role can withdraw for that wallet. The recipient clicks the ‘Withdraw’ button and sees a prompt to sign the transaction. After the recipient signs the transaction, the transaction is confirmed. The recipient can then see the funds in their wallet. 
 
