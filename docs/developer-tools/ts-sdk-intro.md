@@ -9,14 +9,13 @@ The **[Marlowe TypeScript SDK (TS-SDK)](https://github.com/input-output-hk/marlo
 
 ## Features at a glance
 
-1. **Smart contract toolkit**: Craft, deploy, and manage Marlowe smart contracts on Cardano with the tools and libraries in the TS-SDK: 
+1. **Smart contract toolkit**: Craft and manage Marlowe smart contracts on Cardano with the tools and libraries in the TS-SDK: 
    - [**@marlowe.io/language-core-v1**](https://input-output-hk.github.io/marlowe-ts-sdk/modules/_marlowe_io_language_core_v1.html) 
-   - [**@marlowe.io/wallet**](https://input-output-hk.github.io/marlowe-ts-sdk/modules/_marlowe_io_wallet.html)
    - [**@marlowe.io/marlowe-object**](https://input-output-hk.github.io/marlowe-ts-sdk/modules/_marlowe_io_marlowe_object.html). 
 2. **Integration with Marlowe Playground**: TS-SDK works well with [**Marlowe Playground**](https://play.marlowe.iohk.io/), an online interface dedicated to designing, simulating, and testing Marlowe contracts.
 3. **Wallet connectivity**: With built-in modules (`CIP-30`, `Lucid` adapters), TS-SDK promotes smooth interactions with various wallet extensions, such as [**Lace**](https://www.lace.io/), [**Nami**](https://namiwallet.io/), and [**Eternl**](https://eternl.io/app/mainnet/welcome). This ensures easy access to wallet data and the efficient integration of Marlowe contracts with a variety of wallet interfaces. (See [**@marlowe.io/wallet**](https://input-output-hk.github.io/marlowe-ts-sdk/modules/_marlowe_io_wallet.html)).
 4. **Integration with Runtime**: TS-SDK aims to provide a Runtime Rest Client which has one-to-one feature parity with [`marlowe-runtime-web`](https://github.com/input-output-hk/marlowe-cardano/tree/main/marlowe-runtime-web), so you can benefit from all the Runtime features in a JavaScript and TypeScript environment. (See [**@marlowe.io/runtime-rest-client**](https://input-output-hk.github.io/marlowe-ts-sdk/modules/_marlowe_io_runtime_rest_client.html)).
-5. **Coordination between wallets and Runtime**: TS-SDK provides abstractions over the Runtime Rest Client and the wallets that remove the 'plumbing' logic and allow you to focus on your core business logic. (See [**@marlowe.io/runtime-lifecycle**](https://input-output-hk.github.io/marlowe-ts-sdk/modules/_marlowe_io_runtime_lifecycle.html)). 
+5. **Coordination between wallets and Runtime**: TS-SDK provides abstractions over the Runtime Rest Client and the wallets that remove the 'plumbing' logic and allow you to focus on your core business logic. Building, signing and submitting a transaction over Cardano has never been simpler! This package eases the deployment and lifecycle management of your contracts. (See [**@marlowe.io/runtime-lifecycle**](https://input-output-hk.github.io/marlowe-ts-sdk/modules/_marlowe_io_runtime_lifecycle.html)). 
 6. **Prototype DApp examples**: You can embark on your DApp journey using the TS-SDK's distilled prototype examples. These prototypes serve as launching pads for your customized applications.
 
 ## Getting started
