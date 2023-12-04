@@ -26,7 +26,7 @@ the account) to make a complete payment.
 
 ## An example
 
-Let us look at this example, in [Blockly](https://play.marlowe.iohk.io/#/blockly):
+Let us look at this example, in [**Blockly**](https://play.marlowe.iohk.io/#/blockly):
 
 ![An example contract in Blockly](/img/analysis1.png)
 
