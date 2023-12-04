@@ -1,9 +1,9 @@
 ---
-title: Static analysis
-sidebar_position: 9
+title: Static analysis using Blockly
+sidebar_position: 7
 ---
 
-# Static analysis
+# Static analysis using Blockly
 
 One distinctive feature of Marlowe -- probably its most distinctive
 feature -- is that we can analyze contracts, and deduce properties of
@@ -26,7 +26,7 @@ the account) to make a complete payment.
 
 ## An example
 
-Let us look at this example, in Blockly:
+Let us look at this example, in [**Blockly**](https://play.marlowe.iohk.io/#/blockly):
 
 ![An example contract in Blockly](/img/analysis1.png)
 
@@ -58,6 +58,45 @@ then the analysis -- this time invoked from the Blockly view -- will
 succeed:
 
 ![Successful analysis](/img/analysis4.png)
+
+The corrected contract is shown below:
+
+```
+When
+    [Case
+        (Deposit
+            (Role "alice")
+            (Role "alice")
+            (Token "" "")
+            (Constant 2)
+        )
+        (When
+            [Case
+                (Choice
+                    (ChoiceId
+                        "bool"
+                        (Role "bob")
+                    )
+                    [Bound 0 1]
+                )
+                (Pay
+                    (Role "alice")
+                    (Party (Role "bob"))
+                    (Token "" "")
+                    (AddValue
+                        (Constant 1)
+                        (ChoiceValue
+                            (ChoiceId
+                                "bool"
+                                (Role "bob")
+                            ))
+                    )
+                    Close 
+                )]
+            1677621600000 Close 
+        )]
+    1675202400000 Close 
+```
 
 ## Under the hood
 

@@ -1,9 +1,9 @@
 ---
 title: Deployment options
-sidebar_position: 2
+sidebar_position: 0
 ---
 
-There are three methods available for deploying **[Marlowe Runtime services](../platform-and-architecture/architecture)**, the application backend for managing Marlowe contracts on the Cardano blockchain. 
+There are three methods available for deploying **[Marlowe Runtime services](/docs/platform-and-architecture/architecture)**, the application backend for managing Marlowe contracts on the Cardano blockchain. 
 
 The three deployment approaches are: 
 
@@ -38,7 +38,7 @@ Additionally, you can watch a **[brief video walkthrough (2:32)](https://youtu.b
 
 ## Local deployment using Docker only
 
-You can deploy **[Marlowe Runtime services](../platform-and-architecture/architecture)**, Jupyter notebooks and a Cardano node locally through Docker. This workflow runs everything in Docker containers. 
+You can deploy **[Marlowe Runtime services](/docs/platform-and-architecture/architecture)**, Jupyter notebooks and a Cardano node locally through Docker. This workflow runs everything in Docker containers. 
 
    * Requires Intel-based architecture
    * Requires local installation of Docker
@@ -50,7 +50,7 @@ For more details, please see **[Local deploys with Docker](https://github.com/in
 
 ## Local deployment using a combination of Docker and Nix
 
-You can deploy **[Marlowe Runtime services](../platform-and-architecture/architecture)** and a Cardano node in Docker, combined with using a Nix shell to run the Jupyter notebooks from the HOST and set up all the required tools and environment variables. 
+You can deploy **[Marlowe Runtime services](/docs/platform-and-architecture/architecture)** and a Cardano node in Docker, combined with using a Nix shell to run the Jupyter notebooks from the HOST and set up all the required tools and environment variables. 
 
    * Requires Linux
    * Requires local installation of Docker

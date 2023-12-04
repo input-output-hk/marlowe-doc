@@ -28,15 +28,17 @@ can issue warnings from being ever written, but that would require
 Marlowe contracts to be dependently-typed, and writing expressions that
 are dependently-typed is much more cumbersome.
 
-Instead, Marlowe allows contracts that issue warning to be written, and
-we provide [static analysis tools](static-analysis.md) that let contract
-developers check whether a particular contract can possibly issue
-warnings. Additionally, we provide fall-back behaviours for when a
-contract produces a warning, despite our advice. We provide fall-back
-behaviours because we acknowledge that analysing big contracts can be
-very computationally expensive, and because mistakes can be made. We
-want badly written contracts to fail in the most harmless way possible,
-that is conservatively.
+### Static analysis
+
+Marlowe allows contracts that issue warnings to be written, and
+we provide [**static analysis tools**](/tutorials/guides/static-analysis) 
+that let contract developers check whether a particular contract can
+possibly issue warnings. Additionally, we provide fall-back behaviors
+for when a contract produces a warning, despite our advice. We provide
+fall-back behaviors because we acknowledge that analyzing big contracts
+can be very computationally expensive, and because mistakes can be made.
+We want badly written contracts to fail in the most harmless way possible,
+that is, conservatively.
 
 ### Non-positive payments
 
