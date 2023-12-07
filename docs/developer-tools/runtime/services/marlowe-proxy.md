@@ -5,23 +5,29 @@ title: Marlowe proxy service
 The `marlowe-proxy` executable provides a single unified public API for the whole runtime.
 
 ```console
-marlowe-proxy : an API proxy service for the Marlowe Runtime.
+marlowe-proxy: The API gateway server for the Marlowe Runtime.
 
-Usage: marlowe-proxy [-h|--host HOST_NAME] [-p|--port PORT_NUMBER]
+Usage: marlowe-proxy [--version] [-h|--host HOST_NAME] [-p|--port PORT_NUMBER] 
                      [--port-traced PORT_NUMBER] [--marlowe-sync-host HOST_NAME]
-                     [--marlowe-sync-port PORT_NUMBER]
-                     [--marlowe-header-port PORT_NUMBER]
-                     [--marlowe-query-port PORT_NUMBER]
-                     [--marlowe-contract-host HOST_NAME]
-                     [--marlowe-load-port PORT_NUMBER]
-                     [--marlowe-transfer-port PORT_NUMBER]
-                     [--contract-query-port PORT_NUMBER] [--tx-host HOST_NAME]
+                     [--marlowe-sync-port PORT_NUMBER] 
+                     [--marlowe-header-port PORT_NUMBER] 
+                     [--marlowe-bulk-port PORT_NUMBER] 
+                     [--marlowe-query-port PORT_NUMBER] 
+                     [--marlowe-contract-host HOST_NAME] 
+                     [--marlowe-load-port PORT_NUMBER] 
+                     [--marlowe-transfer-port PORT_NUMBER] 
+                     [--contract-query-port PORT_NUMBER] [--tx-host HOST_NAME] 
                      [--tx-command-port PORT_NUMBER] [--http-port PORT_NUMBER]
 
-  API proxy service for Marlowe Runtime
+  The API gateway server for the Marlowe Runtime. It exposes all the public protocols of the
+  Marlowe runtime as a single multiplexed protocol: marlowe sync, marlowe header sync, marlowe
+  bulk sync, marlowe query, marlowe transaction job, marlowe load, marlowe transfer, and contract
+  store query. Please consult the help text for the individual services for detailed descriptions
+  of these individual protocols.
 
 Available options:
   -h,--help                Show this help text
+  --version                Show version.
   -h,--host HOST_NAME      The host name to run the server on.
                            (default: "127.0.0.1")
   -p,--port PORT_NUMBER    The port number to run the server on. (default: 3700)
@@ -42,6 +48,11 @@ Available options:
                            synchronization API. Can be set as the environment
                            variable MARLOWE_RT_SYNC_MARLOWE_HEADER_PORT
                            (default: 3725)
+  --marlowe-bulk-port PORT_NUMBER
+                           The port number of the marlowe-sync server's bulk
+                           synchronization API. Can be set as the environment
+                           variable MARLOWE_RT_SYNC_MARLOWE_BULK_PORT
+                           (default: 3730)
   --marlowe-query-port PORT_NUMBER
                            The port number of the marlowe-sync server's query
                            API. Can be set as the environment variable
