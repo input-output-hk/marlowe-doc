@@ -24,10 +24,12 @@ parameterized by the type of query that the server supports.
 | Message | Begin state | End state | Parameter | Description |
 | --- | --- | --- | --- | --- |
 | 1. `Request req` | `Req` | `Res a` |  | Sends a request to the server. |
+| | | | `ctx` | An optional Open Telemetry span context originating from the sender from which child spans on the server should descend. |
 | | | | `req` | A request tree with a result of type `a`. |
 | 2. `Respond a` | `Res a` | `Req` |  | Sends a response to the client. |
 | | | | `a` | The response type. |
 | 3. `Done` | `Req` | `Done` |  | Terminates the session. |
+| | | | `ctx` | An optional Open Telemetry span context originating from the sender from which child spans on the server should descend. |
 
 ### Request trees
 
