@@ -50,6 +50,7 @@ stateDiagram-v2
     state "Init" as init
     state "MarloweSync" as ms
     state "MarloweHeaderSync" as mhs
+    state "MarloweBulkSync" as mbs
     state "MarloweQuery" as mq
     state "TxJob" as tj
     state "MarloweLoad" as ml
@@ -58,6 +59,7 @@ stateDiagram-v2
     [*] --> init
     init --> ms: RunMarloweSync
     init --> mhs: RunMarloweHeaderSync
+    init --> mbs: RunMarloweBulkSync
     init --> mq: RunMarloweQuery
     init --> tj: RunTxJob
     init --> ml: RunMarloweLoad
@@ -65,6 +67,7 @@ stateDiagram-v2
     init --> mt: RunMarloweTransfer
     ms --> ms: MarloweSync
     mhs --> mhs: MarloweHeaderSync
+    mbs --> mbs: MarloweBulkSync
     mq --> mq: MarloweQuery
     tj --> tj: TxJob
     ml --> ml: MarloweLoad
@@ -72,6 +75,7 @@ stateDiagram-v2
     mt --> mt: MarloweTransfer
     ms --> [*]
     mhs --> [*]
+    mbs --> [*]
     mq --> [*]
     tj --> [*]
     ml --> [*]
@@ -95,6 +99,7 @@ The Marlowe Runtime protocol consists of four sub-protocols:
 
 1. **[Marlowe Sync](marlowesync-subprotocol.md)**
 2. **[Marlowe Header Sync](marloweheadersync-subprotocol.md)**
+2. **[Marlowe Bulk Sync](marlowebulksync-subprotocol.md)**
 3. **[Marlowe Query](marlowequery-subprotocol.md)** 
 4. **[Tx Job](txjob-subprotocol.md)** 
 5. **[Marlowe Load](marloweload-subprotocol.md)** 
@@ -112,11 +117,12 @@ At any given time, the Marlowe Runtime protocol can be in one of five states:
 1. `Init` 
 2. `MarloweSync` 
 3. `MarloweHeaderSync` 
-4. `MarloweQuery` 
-5. `TxJob`  
-6. `MarloweLoad`  
-7. `ConractQuery`  
-8. `MarloweTransfer`  
+4. `MarloweBulkSync` 
+5. `MarloweQuery` 
+6. `TxJob`  
+7. `MarloweLoad`  
+8. `ConractQuery`  
+9. `MarloweTransfer`  
 
 There is an `init` state, then there is one protocol state per sub-protocol. 
 These states transition in a fairly straightforward manner. 
@@ -134,15 +140,17 @@ Once in that protocol state, the protocol stays there for the rest of the sessio
 | | | `st` | A protocol state from **[MarloweSync](#1-marlowe-sync-sub-protocol)** |
 | 3. `MarloweHeaderSync st` | Determined by `st` | | The peers are communicating via the `MarloweHeaderSync` sub-protocol. |
 | | | `st` | A protocol state from **[MarloweHeaderSync](#1-marlowe-header-sync-sub-protocol)** |
-| 4. `MarloweQuery st` | Determined by `st` | | The peers are communicating via the `Query MarloweSyncRequest` sub-protocol. |
+| 4. `MarloweBulkSync st` | Determined by `st` | | The peers are communicating via the `MarloweBulkSync` sub-protocol. |
+| | | `st` | A protocol state from **[MarloweBulkSync](#1-marlowe-bulk-sync-sub-protocol)** |
+| 5. `MarloweQuery st` | Determined by `st` | | The peers are communicating via the `Query MarloweSyncRequest` sub-protocol. |
 | | | `st` | A protocol state from **[Query MarloweSyncRequest](#1-marlowe-query-sub-protocol)** |
-| 5. `TxJob st` | Determined by `st` | | The peers are communicating via the `Job MarloweTxCommand` sub-protocol. |
+| 6. `TxJob st` | Determined by `st` | | The peers are communicating via the `Job MarloweTxCommand` sub-protocol. |
 | | | `st` | A protocol state from **[Job MarloweTxCommand](#1-tx-job-sub-protocol)** |
-| 6. `MarloweLoad st` | Determined by `st` | | The peers are communicating via the `MarloweLoad` sub-protocol. |
+| 7. `MarloweLoad st` | Determined by `st` | | The peers are communicating via the `MarloweLoad` sub-protocol. |
 | | | `st` | A protocol state from **[MarloweLoad](#1-marlowe-load-sub-protocol)** |
-| 7. `ContractQuery st` | Determined by `st` | | The peers are communicating via the `Query ContractRequest` sub-protocol. |
+| 8. `ContractQuery st` | Determined by `st` | | The peers are communicating via the `Query ContractRequest` sub-protocol. |
 | | | `st` | A protocol state from **[Query ContractRequest](#1-contract-query-sub-protocol)** |
-| 8. `MarloweTransfer st` | Determined by `st` | | The peers are communicating via the `MarloweTransfer` sub-protocol. |
+| 9. `MarloweTransfer st` | Determined by `st` | | The peers are communicating via the `MarloweTransfer` sub-protocol. |
 | | | `st` | A protocol state from **[MarloweTransfer](#1-marlowe-transfer-sub-protocol)** |
 
 
@@ -156,24 +164,27 @@ For example, the `MarloweSync` message type embeds a message from the sub-protoc
 | --- | --- | --- | --- | --- |
 | 1. `RunMarloweSync` | `Init` | `MarloweSync Init` |  | Start a `MarloweSync` session. |
 | 2. `RunMarloweHeaderSync` | `Init` | `MarloweHeaderSync Idle` |  | Start a `MarloweHeaderSync` session. |
-| 3. `RunMarloweQuery` | `Init` | `MarloweQuery Req` |  | Start a `MarloweQuery` session. |
-| 4. `RunTxJob` | `Init` | `TxJob Init` |  | Start a `TxJob` session. |
-| 5. `RunMarloweLoad` | `Init` | `MarloweLoad (Processing RootNode)` |  | Start a `MarloweLoad` session. |
-| 6. `RunContractQuery` | `Init` | `ContractQuery Req` |  | Start a `ContractQuery` session. |
-| 7. `RunMarloweTransfer` | `Init` | `MarloweTransfer Idle` |  | Start a `MarloweTransfer` session. |
-| 8. `MarloweSync msg` | `MarloweSync st` | `MarloweSync st'` |  | Wrap a `MarloweSync` message. |
+| 3. `RunMarloweBulkSync` | `Init` | `MarloweBulkSync Idle` |  | Start a `MarloweBulkSync` session. |
+| 4. `RunMarloweQuery` | `Init` | `MarloweQuery Req` |  | Start a `MarloweQuery` session. |
+| 5. `RunTxJob` | `Init` | `TxJob Init` |  | Start a `TxJob` session. |
+| 6. `RunMarloweLoad` | `Init` | `MarloweLoad (Processing RootNode)` |  | Start a `MarloweLoad` session. |
+| 7. `RunContractQuery` | `Init` | `ContractQuery Req` |  | Start a `ContractQuery` session. |
+| 8. `RunMarloweTransfer` | `Init` | `MarloweTransfer Idle` |  | Start a `MarloweTransfer` session. |
+| 9. `MarloweSync msg` | `MarloweSync st` | `MarloweSync st'` |  | Wrap a `MarloweSync` message. |
 | | | | `msg` | A `MarloweSync` message with begin state `st` and end state `st'` |
-| 9. `MarloweHeaderSync msg` | `MarloweHeaderSync st` | `MarloweHeaderSync st'` |  | Wrap a `MarloweHeaderSync` message. |
+| 10. `MarloweHeaderSync msg` | `MarloweHeaderSync st` | `MarloweHeaderSync st'` |  | Wrap a `MarloweHeaderSync` message. |
 | | | | `msg` | A `MarloweHeaderSync` message with begin state `st` and end state `st'` |
-| 10. `MarloweQuery msg` | `MarloweQuery st` | `MarloweQuery st'` |  | Wrap a `MarloweQuery` message. |
+| 11. `MarloweBulkSync msg` | `MarloweBulkSync st` | `MarloweBulkSync st'` |  | Wrap a `MarloweBulkSync` message. |
+| | | | `msg` | A `MarloweBulkSync` message with begin state `st` and end state `st'` |
+| 12. `MarloweQuery msg` | `MarloweQuery st` | `MarloweQuery st'` |  | Wrap a `MarloweQuery` message. |
 | | | | `msg` | A `MarloweQuery` message with begin state `st` and end state `st'` |
-| 11. `TxJob msg` | `TxJob st` | `TxJob st'` |  | Wrap a `Job MarloweTxCommand` message. |
+| 13. `TxJob msg` | `TxJob st` | `TxJob st'` |  | Wrap a `Job MarloweTxCommand` message. |
 | | | | `msg` | A `TxJob` message with begin state `st` and end state `st'` |
-| 12. `MarloweLoad msg` | `MarloweLoad st` | `MarloweLoad st'` |  | Wrap a `Job MarloweTxCommand` message. |
+| 14. `MarloweLoad msg` | `MarloweLoad st` | `MarloweLoad st'` |  | Wrap a `Job MarloweTxCommand` message. |
 | | | | `msg` | A `MarloweLoad` message with begin state `st` and end state `st'` |
-| 13. `ContractQuery msg` | `ContractQuery st` | `ContractQuery st'` |  | Wrap a `Job MarloweTxCommand` message. |
+| 15. `ContractQuery msg` | `ContractQuery st` | `ContractQuery st'` |  | Wrap a `Job MarloweTxCommand` message. |
 | | | | `msg` | A `ContractQuery` message with begin state `st` and end state `st'` |
-| 14. `MarloweTransfer msg` | `MarloweTransfer st` | `MarloweTransfer st'` |  | Wrap a `Job MarloweTxCommand` message. |
+| 16. `MarloweTransfer msg` | `MarloweTransfer st` | `MarloweTransfer st'` |  | Wrap a `Job MarloweTxCommand` message. |
 | | | | `msg` | A `MarloweTransfer` message with begin state `st` and end state `st'` |
 
 ### Binary format for sending messages over TCP
@@ -188,7 +199,7 @@ If you are using Haskell, use the **[Marlowe client library](https://github.com/
 ## Messaging behavior
 
 On a functional level, the Marlowe Runtime protocol multiplexes the four sub-protocols into one. 
-The client always sends one of these seven message types (`RunMarloweSync`, `RunMarloweHeaderSync`, `RunMarloweQuery`, `RunTxJob`, `RunMarloweLoad`, `RunContractQuery`, `RunMarloweTransfer`) to start. 
+The client always sends one of these seven message types (`RunMarloweSync`, `RunMarloweHeaderSync`, `RunMarloweBulkSync`, `RunMarloweQuery`, `RunTxJob`, `RunMarloweLoad`, `RunContractQuery`, `RunMarloweTransfer`) to start. 
 Depending on which one it started the session with, it will then continuously send that message type between client and server. 
 If it starts with `RunMarloweSync`, the client and server will then just exchange `MarloweSync` messages back and forth. 
 Inside each of those is a message from the underlying `MarloweSync` protocol. 
