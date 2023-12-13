@@ -20,7 +20,7 @@ Usage: marlowe-sync [--version] (-d|--database-uri DATABASE_URI)
   These are: marlowe sync, marlowe header sync, marlowe bulk sync, and marlowe query.
 
   The marlowe sync protocol is a synchronization protocol which follows the history
-  of a specific marlowe contract.
+  of a specific Marlowe contract.
 
   The marlowe header sync protocol is a synchronization protocol which scans the chain
   for new Marlowe contracts and presents them as a compact summary called a header.
@@ -31,7 +31,7 @@ Usage: marlowe-sync [--version] (-d|--database-uri DATABASE_URI)
   application, and payout withdrawal.
 
   The marlowe query protocol supports multiple queries that allow clients to fetch
-  data about marlowe contracts as of the current blockchain tip. This means that it
+  data about Marlowe contracts as of the current blockchain tip. This means that it
   cannot guarantee consistent results between different queries, because the chain could
   update in between queries, changing the result of queries. If consistency is needed,
   use one of the sync protocols.

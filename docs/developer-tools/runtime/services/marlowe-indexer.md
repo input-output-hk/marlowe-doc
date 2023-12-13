@@ -18,7 +18,7 @@ Usage: marlowe-indexer [--version] [--chain-sync-port PORT_NUMBER]
   Marlowe contract transactions and saves them in a postgresql database. This database
   can be queried by downstream components, such as marlowe-sync.
 
-  There should only be one instance of marlowe-indexer writing data to a given marlowe
+  There should only be one instance of marlowe-indexer writing data to a given Marlowe
   database. There is no need to run multiple indexers. If you would like to scale runtime
   services, it is recommended to deploy a postgres replica cluster, run one indexer to
   populate it, and as many marlowe-sync instances as required to read from it.

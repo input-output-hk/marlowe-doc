@@ -11,8 +11,7 @@ The MarloweBulkSync sub-protocol is used to synchronize all marlowe contract tra
 The client receives a stream of blocks, each of which contains collections of create, apply inputs, and withdraw transactions.
 
 This is a firehose protocol. It gives far more information than the header sync
-or regular sync protocols, but for following a small set of contracts may be an
-inefficient choice.
+or regular sync protocols, but it may be inefficient for following a small set of contracts.
 
 ### Sub-protocol states
 
@@ -20,14 +19,14 @@ inefficient choice.
 | --- | --- | --- |
 | 1. `Idle` | `Client` | The initial state. | 
 | 2. `Intersect` | `Server` | When the client asks the server to fast forward to a known chain point. | 
-| 3. `Next` | `Server` | When the client asks the server to provide the next block of marlowe transactions. | 
+| 3. `Next` | `Server` | When the client asks the server to provide the next block of Marlowe transactions. | 
 | 4. `Poll` | `Client` | When the server has no more blocks to send (i.e., the client has reached the tip of the chain). | 
 | 5. `Done` | `Nobody` | The terminal state. | 
 
 ### The Intersect state 
 
 The Intersect is when the client asks the server to fast forward to a known chain point. 
-For example, in a situation where the client has already done a fair amount of synchronization, and then quits, when it starts up again, rather than starting over from Genesis, it can instead start from the point where it last left off. 
+For example, in a situation where the client has already done a fair amount of synchronization and then quits, when it starts up again, rather than starting over from Genesis, it can start from where it last left off.
 The Intersect is the server recognizing a point that both it and the client know about, then starting from there. 
 On the other hand, if the server does not or cannot recognize what the client is referencing, it will start from the beginning of the chain (from Genesis). 
 
@@ -42,7 +41,7 @@ On the other hand, if the server does not or cannot recognize what the client is
 | | | | `tip` | The tip of the chain. |
 | 3. `RollBackward point tip` | `Next` | `Idle` | | The client's current position was rolled back, the server tells the client of the point to which it was rolled back. |
 | | | | `point` | Chain point (either a block header or Genesis if the chain has rolled all the way back to Genesis). |
-| | | | `tip` | The tip of the chain. (either a block header or Genesis). |
+| | | | `tip` | The tip of the chain (either a block header or Genesis). |
 | 4. `Wait` | `Next` | `Poll` | | The client is at the chain tip. There are no more Marlowe contract transactions to send. The client may choose to wait and poll until more are available. |
 | 5. `Poll` | `Poll` | `Next` | | The client is checking with the server to find out if there are new blocks available. |
 | 6. `Cancel` | `Poll` | `Idle` | | The client doesn't wish to wait, and returns to the idle state. Usually, when you send a `cancel`, in nearly all cases, it is followed by a `done` message. This is the case for clients that are only concerned about getting everything that is currently on the chain. Once that point is reached, when it reaches the tip, it communicates `done`. |

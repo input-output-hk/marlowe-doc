@@ -199,7 +199,7 @@ If you are using Haskell, use the **[Marlowe client library](https://github.com/
 ## Messaging behavior
 
 On a functional level, the Marlowe Runtime protocol multiplexes the four sub-protocols into one. 
-The client always sends one of these seven message types (`RunMarloweSync`, `RunMarloweHeaderSync`, `RunMarloweBulkSync`, `RunMarloweQuery`, `RunTxJob`, `RunMarloweLoad`, `RunContractQuery`, `RunMarloweTransfer`) to start. 
+The client always sends one of these eight message types (`RunMarloweSync`, `RunMarloweHeaderSync`, `RunMarloweBulkSync`, `RunMarloweQuery`, `RunTxJob`, `RunMarloweLoad`, `RunContractQuery`, `RunMarloweTransfer`) to start. 
 Depending on which one it started the session with, it will then continuously send that message type between client and server. 
 If it starts with `RunMarloweSync`, the client and server will then just exchange `MarloweSync` messages back and forth. 
 Inside each of those is a message from the underlying `MarloweSync` protocol. 

@@ -32,11 +32,11 @@ Usage: marlowe-contract [--version] [-h|--host HOST_NAME]
   a stack-based interface for pushing a contract depth-first into the store.
 
   The marlowe transfer protocol is the other way to import a contract incrementally into the store.
-  It leverages the Marlowe object model to allow bundles of user-defined marlowe objects to be streamed
+  It leverages the Marlowe object model to allow bundles of user-defined Marlowe objects to be streamed
   into the store. marlowe-contract will link the contract on-the-fly, merkleize the intermediate contracts,
   and build the final contract incrementally. This protocol is generally more efficient and flexible than
   Marlowe load because it allows duplicate sub-contracts to be pre-abstracted by the user. It also supports
-  An export mode which will stream the closure of a contract from the store to the client as a Marlowe object
+  an export mode which will stream the closure of a contract from the store to the client as a Marlowe object
   bundle. This can be used to export continuations from the store and share it with other contract stores.
 
   The contract store query protocol provides queries that allow clients to fetch contracts by their hash,

@@ -30,7 +30,7 @@ Usage: marlowe-tx [--version] [--chain-sync-port PORT_NUMBER]
     • Which address to send change to.
     • Rules for role tokens in the contract. Includes rules for minting and distributing
       role tokens in the creation transaction and rules for using existing role tokens.
-    • Adding metadata to the transaction
+    • Adding metadata to the transaction.
     • The amount that should be deposited in the contract to cover min UTxO rules
       (can be omitted and the runtime will compute a worst-case value automatically.
     • The initial contract or the hash of a contract in the contract store to use as the
@@ -44,7 +44,7 @@ Usage: marlowe-tx [--version] [--chain-sync-port PORT_NUMBER]
 
     • What addresses can be used for coin selection.
     • Which address to send change to.
-    • Adding metadata to the transaction
+    • Adding metadata to the transaction.
     • The transaction's validity interval. If omitted, the runtime will compute default
       values from the current contract and the most recent block's slot number.
     • The initial contract or the hash of a contract in the contract store to use as the
@@ -66,8 +66,8 @@ Usage: marlowe-tx [--version] [--chain-sync-port PORT_NUMBER]
 
   Submit Command
 
-  The submit command will submit a signed transaction to a cardano node via a marlowe-chain-sync
-  instance. It waits until the transaction is confirmed and found in a block by marlowe-chain-sync
+  The submit command will submit a signed transaction to a Cardano node via a marlowe-chain-sync
+  instance. It waits until the transaction is confirmed and found in a block by marlowe-chain-sync.
   The options that can be configured for this command are:
 
     • The era of the transaction (babbage or conway)
@@ -78,7 +78,7 @@ Usage: marlowe-tx [--version] [--chain-sync-port PORT_NUMBER]
   marlowe-tx depends on a marlowe-chain-sync instance at various points. First, it runs a
   chain seek client for the lifetime of the service to keep track of what the current tip
   of the blockchain is. Second, it connects via both chain seek and chain query to fetch
-  current information about the UTxO for wallets and marlowe contracts needed to create
+  current information about the UTxO for wallets and Marlowe contracts needed to create
   transactions.
 
   marlowe-tx also depends on a marlowe-contract instance both to create contracts and
