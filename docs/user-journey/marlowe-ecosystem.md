@@ -1,5 +1,5 @@
 ---
-title: Marlowe Ecosystem
+title: Marlowe ecosystem
 sidebar_position: 10
 ---
 
