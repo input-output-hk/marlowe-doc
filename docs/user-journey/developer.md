@@ -1,5 +1,5 @@
 ---
-title: Dapp developer journey
+title: DApp developer journey
 sidebar_position: 40
 ---
 
