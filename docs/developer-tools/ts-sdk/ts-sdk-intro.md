@@ -3,6 +3,12 @@ title: TS-SDK introduction
 sidebar_position: 1
 ---
 
+:::warning
+
+The SDK is currently in *beta*. Future breaking changes may happen, and caution should be taken before use in production.
+
+:::
+
 The **[Marlowe TypeScript SDK (TS-SDK)](https://github.com/input-output-hk/marlowe-ts-sdk/)** consists of JavaScript and TypeScript libraries, available as npm packages. TS-SDK is engineered to support DApp developers with the tools they need to build and integrate with the Marlowe smart contract ecosystem on the Cardano blockchain. 
 
 ## Features at a glance
