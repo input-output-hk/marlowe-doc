@@ -68,7 +68,7 @@ The simulation will help to reveal any errors in your contract such as failing t
 
 ## Deploying a smart contract
 
-Use Marlowe Runner to deploy your smart contract to the blockchain. Marlowe Runner streamlines and simplifies the process of deploying smart contracts on Cardano. It eliminates the need for low-level tools and deploying your own backend Runtime instance. 
+Use Marlowe Runner ![](https://img.shields.io/badge/beta-2D0EB1) to deploy your smart contract to the blockchain. Marlowe Runner streamlines and simplifies the process of deploying smart contracts on Cardano. It eliminates the need for low-level tools and deploying your own backend Runtime instance. 
 
 * [**Access Runner on the preview network**](https://preview.runner.marlowe.iohk.io/)
 * [**Access Runner on the pre-production network**](https://preprod.runner.marlowe.iohk.io/)
