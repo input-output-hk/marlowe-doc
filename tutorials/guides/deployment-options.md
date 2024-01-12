@@ -34,7 +34,7 @@ Together, these two extensions provide the Marlowe Runtime backend services and 
 
 For details and step-by-step guidance, please see the **[Demeter run deployment document](https://github.com/input-output-hk/marlowe-starter-kit/blob/main/docs/demeter-run.md)** in the Marlowe starter kit. 
 
-Additionally, you can watch a **[brief video walkthrough (2:32)](https://youtu.be/XnZ8gCjpl1E)** of the process.
+Additionally, you can watch a **[brief video walkthrough (2:32)](https://www.youtube.com/watch?v=IHfVRO_7KeM&list=PLnPTB0CuBOByGbvUmubLs0a3Y0b_HqGPD&index=3)** of the process.
 
 ## Local deployment using Docker only
 
