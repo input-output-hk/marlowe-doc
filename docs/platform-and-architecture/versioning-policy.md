@@ -1,6 +1,6 @@
 ---
 title: Versioning policy
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 This document is intended to provide guidance for compatibility of tools within Marlowe with Cardano node. Developers can use this for tracking purposes and more formal support policies as the project matures.
