@@ -21,7 +21,7 @@ Role tokens are distributed at contract initialization.
 
 Participants who want to make a transaction include their role token as input. The token doesn’t stay with the script or go anywhere else; it simply passes through the script and returns to the participant, allowing them to authorize another transaction.
 
-You can view these role tokens in your wallet under NFTs/Assets with a name reflective of the name specified for the role in the smart contract. (In Nami, Lace does not carry the name over from the DApp to the asset.) 
+You can view these role tokens in your wallet under NFTs/Assets with a name reflective of the name specified for the role in the smart contract. 
 
 When designating an address after launching the contract, the open roles feature is used. 
 
