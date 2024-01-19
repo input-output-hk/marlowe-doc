@@ -5,13 +5,13 @@ sidebar_position: 5
 
 Generally speaking, participants are actors in a smart contract. These participants fulfill roles that specify the ability to execute certain actions in the contract.
 
-Roles can be hardcoded addresses, pre-determined prior to launching a contract or determined after launching a contract.
+Roles can be hardcoded addresses, pre-determined before launching a contract or determined after launching a contract.
 
 These roles are uniquely identified using role tokens.
 
 ## Role tokens
 
-Role tokens are used to identify roles to authorize transactions providing additional security and flexibility for your smart contracts. They are handled implicitly by the Marlowe Runtime. 
+Role tokens are used to identify roles to authorize transactions providing additional security and flexibility for your smart contracts. They are handled implicitly by Marlowe Runtime. 
 
 Each participant in a Marlowe contract has a role and each role has its own token. These tokens can be transferred between users in a peer-to-peer manner, allowing a participant to give their role to someone else.
 
@@ -33,7 +33,7 @@ This feature is best used when a developer is deploying a smart contract where c
 
 The developer would deploy a contract that could be verified on-chain before a user interacts with it. The user initiates some action, like a deposit or choice, which triggers the smart contract to assign them the appropriate role and distribute the role token from the validator script.
 
-The developer just needs to specify the `OpenRoles` type when setting participants in a contract, the rest is handled behind the scenes by the Marlowe Runtime. 
+The developer just needs to specify the `OpenRoles` type when setting participants in a contract, the rest is handled behind the scenes by Marlowe Runtime. 
 
 Because we have now introduced a separate validator script to help with our smart contract, we need to assign a 'thread token.'
 
