@@ -5,13 +5,15 @@ sidebar_position: 5
 
 Generally speaking, participants are actors in a smart contract. These participants fulfill roles that specify the ability to execute certain actions in the contract.
 
-Roles can be hardcoded addresses, pre-determined before launching a contract or determined after launching a contract.
+Roles can be hard coded addresses, pre-determined before launching a contract or determined after launching a contract.
 
 These roles are uniquely identified using role tokens.
 
 ## Role tokens
 
-Participants hold role tokens in their wallets. Role tokens are used to identify roles to authorize transactions providing additional security and flexibility for your smart contracts. They are handled implicitly by Marlowe Runtime. 
+Participants hold role tokens in their wallets as assets or NFTs. 
+
+Role tokens are used to identify roles to authorize transactions providing additional security and flexibility for your smart contracts. They are handled implicitly by Marlowe Runtime. 
 
 Each participant in a Marlowe contract has a role and each role has its own token. These tokens can be transferred between users in a peer-to-peer manner, allowing a participant to give their role to someone else.
 
@@ -20,8 +22,6 @@ There could be one or many tokens for a specific role.
 Role tokens are distributed at contract initialization.
 
 Participants who want to make a transaction include their role token as input. The token doesn’t stay with the script or go anywhere else; it simply passes through the script and returns to the participant, allowing them to authorize another transaction.
-
-You can view these role tokens in your wallet under NFTs/Assets with a name reflective of the name specified for the role in the smart contract. 
 
 When designating an address after launching the contract, the open roles feature is used. 
 
