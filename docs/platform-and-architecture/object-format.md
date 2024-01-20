@@ -1,6 +1,6 @@
 ---
 title: Marlowe object bundle format
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 One limitation of the Marlowe language is its lack of named abstraction (with

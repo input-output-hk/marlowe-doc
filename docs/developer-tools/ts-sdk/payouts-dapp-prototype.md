@@ -31,10 +31,3 @@ Using the payouts DApp functionality alongside **[Runner](../../getting-started/
 
 The payouts DApp lists available tokens that an authorized role can withdraw for that wallet. The recipient clicks the ‘Withdraw’ button and sees a prompt to sign the transaction. After the recipient signs the transaction, the transaction is confirmed. The recipient can then see the funds in their wallet. 
 
-## Role tokens
-
-At a high level, role tokens are a unique feature of Marlowe smart contracts that provide additional security and flexibility. They are used to authorize transactions, and any participant in a contract can hold them. 
-
-Each participant in a Marlowe contract has a role, and each role has its own role token. Participants hold role tokens in their wallets and use them to authorize transactions. Participants who want to make a transaction include their role token as input. The token doesn’t stay with the script or go anywhere else; it simply passes through the script and returns to the participant, allowing them to authorize another transaction.
-
-Role tokens can be transferred between wallets, which means a participant can give their role to someone else. This feature introduces flexibility and security beyond the use of private keys alone.

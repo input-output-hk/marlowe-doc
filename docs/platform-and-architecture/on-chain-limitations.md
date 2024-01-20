@@ -1,6 +1,6 @@
 ---
 title: Marlowe's on-chain limitations
-sidebar_position: 7
+sidebar_position: 8
 ---
 
 When developing smart contracts for Marlowe, there are a series of considerations to take into account before running them in production on mainnet. Highly recommended documents to review are **[Best Practices for Marlowe on Cardano](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe/best-practices.md)** and the **[Marlowe Security Guide](https://github.com/input-output-hk/marlowe-cardano/blob/main/marlowe/security.md)**.

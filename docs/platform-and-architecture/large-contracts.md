@@ -1,6 +1,6 @@
 ---
 title: Managing large contracts (Merkleization)
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 In many real world scenarios, the size of a Marlowe contract can pose challenges. For instance,
