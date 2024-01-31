@@ -15,7 +15,7 @@ function Topics() {
   return (
     <div className={styles.gallery}>
       <div className="sub-heading">
-        <div className="front-matter">
+        
           <p>
           Marlowe is a pioneering ecosystem within the Cardano blockchain, designed to cater to both seasoned developers and those with limited coding experience. 
           <br />
@@ -31,7 +31,7 @@ function Topics() {
           <br />
           The TypeScript SDK (TS-SDK) for Marlowe is an extensive toolkit that supports developers in building and integrating decentralized applications (DApps) with Marlowe smart contracts. The TS-SDK includes JavaScript and TypeScript libraries that streamline the development process, offering features such as wallet connectivity, integration with the Marlowe Runtime, and abstractions that simplify the interaction between wallets and the Runtime. 
           </p>
-        </div>
+        
       </div>
       <div className="sub-heading">
         <h3>Popular topics</h3>
