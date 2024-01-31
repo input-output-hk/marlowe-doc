@@ -3,7 +3,7 @@ title: Architecture
 sidebar_position: 2
 ---
 
-![Marlowe Runtime Architecture](/img/Marlowe-Runtime-Architecture-8-Apr-2023.png)
+![Marlowe Runtime Architecture](/img/Marlowe-Runtime-Architecture-31-Jan-2024.png)
 
 ## Overview of Marlowe architecture
 
