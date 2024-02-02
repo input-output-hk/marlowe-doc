@@ -17,19 +17,23 @@ function Topics() {
       <div className="sub-heading">
         
           <p>
+
           Marlowe is a pioneering ecosystem within the Cardano blockchain, designed to cater to both seasoned developers and those with limited coding experience. 
           <br />
           <br />
-          Marlowe stands out by offering a unique domain-specific language (DSL) that abstracts away the complexities of blockchain programming, making it accessible to both developers and business professionals alike. It simplifies the process of writing complex, secure, and verifiable smart contracts tailored for financial applications.
+          Marlowe stands out by offering a unique <a href="../../../docs/platform-and-architecture/dsl"><strong>domain-specific language (DSL)</strong></a> that abstracts away the complexities of blockchain programming, making it accessible to both developers and business professionals alike. It simplifies the process of writing complex, secure, and verifiable smart contracts tailored for financial applications.
           <br />
           <br />
-          The Marlowe Playground is a key component of the ecosystem, providing an intuitive web interface where users can write, simulate, and test their smart contracts without writing a single line of code by using the drag-and-drop coding tool, Blockly. For those with programming experience, Marlowe also offers the ability to write contracts in JavaScript, Haskell, and Marlowe. 
+          The <a href="../../../docs/developer-tools/playground"><strong>Marlowe Playground</strong></a> is a key component of the ecosystem, providing an intuitive web interface where users can write, simulate, and test their smart contracts without writing a single line of code by using the drag-and-drop coding tool, Blockly. For those with programming experience, Marlowe also offers the ability to write contracts in JavaScript, Haskell, and Marlowe. 
           <br />
           <br />
-          Marlowe Runner is an easy-to-use tool that facilitates the deployment and execution of Marlowe contracts on the blockchain, requiring no command-line expertise. With Marlowe Runner, you can deploy contracts created in the Marlowe Playground, test them, and interact with them in a simulated environment before committing to mainnet.
+          <a href="../../../docs/getting-started/runner"><strong>Marlowe Runner</strong></a> is an easy-to-use tool that facilitates the deployment and execution of Marlowe contracts on the blockchain, requiring no command-line expertise. With Marlowe Runner, you can deploy contracts created in the Marlowe Playground, test them, and interact with them in a simulated environment before committing to mainnet.
           <br />
           <br />
-          The TypeScript SDK (TS-SDK) for Marlowe is an extensive toolkit that supports developers in building and integrating decentralized applications (DApps) with Marlowe smart contracts. The TS-SDK includes JavaScript and TypeScript libraries that streamline the development process, offering features such as wallet connectivity, integration with the Marlowe Runtime, and abstractions that simplify the interaction between wallets and the Runtime. 
+          The <a href="../../../docs/developer-tools/ts-sdk/ts-sdk-intro"><strong>TypeScript SDK (TS-SDK)</strong></a> for Marlowe is an extensive toolkit that supports developers in building and integrating decentralized applications (DApps) with Marlowe smart contracts. The TS-SDK includes JavaScript and TypeScript libraries that streamline the development process, offering features such as wallet connectivity, integration with the Marlowe Runtime, and abstractions that simplify the interaction between wallets and the Runtime. 
+          <br />
+          <br />
+          See the <a href="../../../docs/user-journey/marlowe-ecosystem"><strong>user journey</strong></a> to learn more or <a href="../../../docs/getting-started/learning-marlowe"><strong>get started</strong></a> with development now. 
           </p>
         
       </div>
