@@ -84,14 +84,6 @@ function DocsFooter() {
                 </div>
               </div>
               <div className={styles.linksList}>
-                <h2 className={styles.linksHeading}>Support</h2>
-                <div className={styles.linkItem}>
-                  <Link target="_blank" href={SUPPORT}>
-                    IOG tech support
-                  </Link>
-                </div>
-              </div>
-              <div className={styles.linksList}>
                 <h2 className={styles.linksHeading}>Legal</h2>
                 <div className={styles.linkItem}>
                   <Link
